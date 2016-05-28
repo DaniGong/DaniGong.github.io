@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://danigong.github.io/</loc>
+    <lastmod>2016-05-27T23:12:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/mac_open_sublime/</loc>
+    <lastmod>2016-05-27T23:12:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/python_decorator_guide/</loc>
+    <lastmod>2016-05-25T22:26:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/about/</loc>
+    <lastmod>2016-05-25T22:16:40+08:00</lastmod>
+  </url>
+  
+</urlset>

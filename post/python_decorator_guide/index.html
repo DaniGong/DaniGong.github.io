@@ -1,0 +1,421 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Daniel Gong">
+		<meta name="description" content="Daniel&#39;s Blog">
+		<meta name="generator" content="Hugo 0.15" />
+		<title>A guide to Python&#39;s function decorators &middot; Daniel&#39;s Blog</title>
+		<link rel="shortcut icon" href="http://danigong.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="http://danigong.github.io/css/style.css">
+		<link rel="stylesheet" href="http://danigong.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://danigong.github.io/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="http://DaniGong.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Daniel&#39;s Blog" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://danigong.github.io/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://danigong.github.io/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://DaniGong.github.io/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>A guide to Python&#39;s function decorators</h1>
+                    <h2 class="headline">
+                    May 25, 2016 
+                    <br>
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>Python is rich with powerful features and expressive syntax. One of my favorites is decorators. In the context of design patterns, decorators dynamically alter the functionality of a function, method or class without having to directly use subclasses. This is ideal when you need to extend the functionality of functions that you don&rsquo;t want to modify. We can implement the decorator pattern anywhere, but Python facilitates the implementation by providing much more expressive features and syntax for that.</p>
+
+<p>In this post I will be discussing Python&rsquo;s function decorators in depth, accompanied by a bunch of examples on the way to clear up the concepts. All examples are in Python 2.7 but the same concepts should apply to Python 3 with some change in the syntax.</p>
+
+<p>Essentially, decorators work as wrappers, modifying the behavior of the code before and after a target function execution, without the need to modify the function itself, augmenting the original functionality, thus decorating it.</p>
+
+<h2 id="what-you-need-to-know-about-functions:24448b6c2a661c98161fc3da9e5d92cf">What you need to know about functions</h2>
+
+<p>Before diving in, there are some prerequisites that should be clear. In Python, functions are first class citizens, they are objects and that means we can do a lot of useful stuff with them.</p>
+
+<h3 id="assign-functions-to-variables:24448b6c2a661c98161fc3da9e5d92cf">Assign functions to variables</h3>
+
+<pre><code>def greet(name):
+    return &quot;hello &quot;+name
+
+greet_someone = greet
+print greet_someone(&quot;John&quot;)
+
+# Outputs: hello John
+</code></pre>
+
+<h3 id="define-functions-inside-other-functions:24448b6c2a661c98161fc3da9e5d92cf">Define functions inside other functions</h3>
+
+<pre><code>def greet(name):
+    def get_message():
+        return &quot;Hello &quot;
+
+    result = get_message()+name
+    return result
+
+print greet(&quot;John&quot;)
+
+# Outputs: Hello John
+</code></pre>
+
+<h3 id="functions-can-be-passed-as-parameters-to-other-functions:24448b6c2a661c98161fc3da9e5d92cf">Functions can be passed as parameters to other functions</h3>
+
+<pre><code>def greet(name):
+   return &quot;Hello &quot; + name 
+
+def call_func(func):
+    other_name = &quot;John&quot;
+    return func(other_name)  
+
+print call_func(greet)
+
+# Outputs: Hello John
+</code></pre>
+
+<h3 id="functions-can-return-other-functions:24448b6c2a661c98161fc3da9e5d92cf">Functions can return other functions</h3>
+
+<p>In other words, functions generating other functions.</p>
+
+<pre><code>def compose_greet_func():
+    def get_message():
+        return &quot;Hello there!&quot;
+
+    return get_message
+
+greet = compose_greet_func()
+print greet()
+
+# Outputs: Hello there!
+</code></pre>
+
+<h3 id="inner-functions-have-access-to-the-enclosing-scope:24448b6c2a661c98161fc3da9e5d92cf">Inner functions have access to the enclosing scope</h3>
+
+<p>More commonly known as a closure. A very powerful pattern that we will come across while building decorators. Another thing to note, Python only allows read access to the outer scope and not assignment. Notice how we modified the example above to read a &ldquo;name&rdquo; argument from the enclosing scope of the inner function and return the new function.</p>
+
+<pre><code>def compose_greet_func(name):
+    def get_message():
+        return &quot;Hello there &quot;+name+&quot;!&quot;
+
+    return get_message
+
+greet = compose_greet_func(&quot;John&quot;)
+print greet()
+
+# Outputs: Hello there John!
+</code></pre>
+
+<h2 id="composition-of-decorators:24448b6c2a661c98161fc3da9e5d92cf">Composition of Decorators</h2>
+
+<p>Function decorators are simply wrappers to existing functions. Putting the ideas mentioned above together, we can build a decorator. In this example let&rsquo;s consider a function that wraps the string output of another function by p tags.</p>
+
+<pre><code>def get_text(name):
+   return &quot;lorem ipsum, {0} dolor sit amet&quot;.format(name)
+
+def p_decorate(func):
+   def func_wrapper(name):
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(name))
+   return func_wrapper
+
+my_get_text = p_decorate(get_text)
+
+print my_get_text(&quot;John&quot;)
+
+# &lt;p&gt;Outputs lorem ipsum, John dolor sit amet&lt;/p&gt;
+</code></pre>
+
+<p>That was our first decorator. A function that takes another function as an argument, generates a new function, augmenting the work of the original function, and returning the generated function so we can use it anywhere. To have get_text itself be decorated by p_decorate, we just have to assign get_text to the result of p_decorate.</p>
+
+<pre><code>get_text = p_decorate(get_text)
+
+print get_text(&quot;John&quot;)
+
+# Outputs lorem ipsum, John dolor sit amet
+</code></pre>
+
+<p>Another thing to notice is that our decorated function takes a name argument. All what we had to do in the decorator is to let the wrapper of get_text pass that argument.</p>
+
+<h2 id="python-s-decorator-syntax:24448b6c2a661c98161fc3da9e5d92cf">Python&rsquo;s Decorator Syntax</h2>
+
+<p>Python makes creating and using decorators a bit cleaner and nicer for the programmer through some syntactic sugar To decorate get_text we don&rsquo;t have to <code>get_text = p_decorator(get_text)</code> There is a neat shortcut for that, which is to mention the name of the decorating function before the function to be decorated. The name of the decorator should be perpended with an @ symbol.</p>
+
+<pre><code>def p_decorate(func):
+   def func_wrapper(name):
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(name))
+   return func_wrapper
+
+@p_decorate
+def get_text(name):
+   return &quot;lorem ipsum, {0} dolor sit amet&quot;.format(name)
+
+print get_text(&quot;John&quot;)
+
+# Outputs &lt;p&gt;lorem ipsum, John dolor sit amet&lt;/p&gt;
+</code></pre>
+
+<p>Now let&rsquo;s consider we wanted to decorate our get_text function by 2 other functions to wrap a div and strong tag around the string output.</p>
+
+<pre><code>def p_decorate(func):
+   def func_wrapper(name):
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(name))
+   return func_wrapper
+
+def strong_decorate(func):
+    def func_wrapper(name):
+        return &quot;&lt;strong&gt;{0}&lt;/strong&gt;&quot;.format(func(name))
+    return func_wrapper
+
+def div_decorate(func):
+    def func_wrapper(name):
+        return &quot;&lt;div&gt;{0}&lt;/div&gt;&quot;.format(func(name))
+    return func_wrapper
+</code></pre>
+
+<p>With the basic approach, decorating get_text would be along the lines of</p>
+
+<pre><code>get_text = div_decorate(p_decorate(strong_decorate(get_text)))
+</code></pre>
+
+<p>With Python&rsquo;s decorator syntax, same thing can be achieved with much more expressive power.</p>
+
+<pre><code>@div_decorate
+@p_decorate
+@strong_decorate
+def get_text(name):
+   return &quot;lorem ipsum, {0} dolor sit amet&quot;.format(name)
+
+print get_text(&quot;John&quot;)
+
+# Outputs &lt;div&gt;&lt;p&gt;&lt;strong&gt;lorem ipsum, John dolor sit amet&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+
+<p>One important thing to notice here is that the order of setting our decorators matters. If the order was different in the example above, the output would have been different.</p>
+
+<h2 id="decorating-methods:24448b6c2a661c98161fc3da9e5d92cf">Decorating Methods</h2>
+
+<p>In Python, methods are functions that expect their first parameter to be a reference to the current object. We can build decorators for methods the same way, while taking self into consideration in the wrapper function.</p>
+
+<pre><code>def p_decorate(func):
+   def func_wrapper(self):
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(self))
+   return func_wrapper
+
+class Person(object):
+    def __init__(self):
+        self.name = &quot;John&quot;
+        self.family = &quot;Doe&quot;
+
+    @p_decorate
+    def get_fullname(self):
+        return self.name+&quot; &quot;+self.family
+
+my_person = Person()
+print my_person.get_fullname()
+</code></pre>
+
+<p>A much better approach would be to make our decorator useful for functions and methods alike. This can be done by putting *args and **kwargs as parameters for the wrapper, then it can accept any arbitrary number of arguments and keyword arguments.</p>
+
+<pre><code>def p_decorate(func):
+   def func_wrapper(*args, **kwargs):
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(*args, **kwargs))
+   return func_wrapper
+
+class Person(object):
+    def __init__(self):
+        self.name = &quot;John&quot;
+        self.family = &quot;Doe&quot;
+
+    @p_decorate
+    def get_fullname(self):
+        return self.name+&quot; &quot;+self.family
+
+my_person = Person()
+
+print my_person.get_fullname()
+</code></pre>
+
+<h2 id="passing-arguments-to-decorators:24448b6c2a661c98161fc3da9e5d92cf">Passing arguments to decorators</h2>
+
+<p>Looking back at the example before the one above, you can notice how redundant the decorators in the example are. 3 decorators(div_decorate, p_decorate, strong_decorate) each with the same functionality but wrapping the string with different tags. We can definitely do much better than that. Why not have a more general implementation for one that takes the tag to wrap with as a string? Yes please!</p>
+
+<pre><code>def tags(tag_name):
+    def tags_decorator(func):
+        def func_wrapper(name):
+            return &quot;&lt;{0}&gt;{1}&lt;/{0}&gt;&quot;.format(tag_name, func(name))
+        return func_wrapper
+    return tags_decorator
+
+@tags(&quot;p&quot;)
+def get_text(name):
+    return &quot;Hello &quot;+name
+
+print get_text(&quot;John&quot;)
+
+# Outputs &lt;p&gt;Hello John&lt;/p&gt;
+</code></pre>
+
+<p>It took a bit more work in this case. Decorators expect to receive a function as an argument, that is why we will have to build a function that takes those extra arguments and generate our decorator on the fly. In the example above tags, is our decorator generator.</p>
+
+<h2 id="debugging-decorated-functions:24448b6c2a661c98161fc3da9e5d92cf">Debugging decorated functions</h2>
+
+<p>At the end of the day decorators are just wrapping our functions, in case of debugging that can be problematic since the wrapper function does not carry the name, module and docstring of the original function. Based on the example above if we do:</p>
+
+<pre><code>print get_text.__name__
+# Outputs func_wrapper
+</code></pre>
+
+<p>The output was expected to be get_text yet, the attributes <strong>name</strong>, <strong>doc</strong>, and <strong>module</strong> of get_text got overridden by those of the wrapper(func_wrapper. Obviously we can re-set them within func_wrapper but Python provides a much nicer way.</p>
+
+<p>Functools to the rescue
+Fortunately Python (as of version 2.5) includes the functools module which contains functools.wraps. Wraps is a decorator for updating the attributes of the wrapping function(func_wrapper) to those of the original function(get_text). This is as simple as decorating func_wrapper by @wraps(func). Here is the updated example:</p>
+
+<pre><code>from functools import wraps
+
+def tags(tag_name):
+    def tags_decorator(func):
+        @wraps(func)
+        def func_wrapper(name):
+            return &quot;&lt;{0}&gt;{1}&lt;/{0}&gt;&quot;.format(tag_name, func(name))
+        return func_wrapper
+    return tags_decorator
+
+@tags(&quot;p&quot;)
+def get_text(name):
+    &quot;&quot;&quot;returns some text&quot;&quot;&quot;
+    return &quot;Hello &quot;+name
+
+print get_text.__name__ # get_text
+print get_text.__doc__ # returns some text
+print get_text.__module__ # __main__
+</code></pre>
+
+<p>You can notice from the output that the attributes of get_text are the correct ones now.</p>
+
+<h2 id="where-to-use-decorators:24448b6c2a661c98161fc3da9e5d92cf">Where to use decorators</h2>
+
+<p>The examples in this post are pretty simple relative to how much you can do with decorators. They can give so much power and elegance to your program. In general, decorators are ideal for extending the behavior of functions that we don&rsquo;t want to modify. For a great list of useful decorators I suggest you check out the Python Decorator Library</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/Your%20Twitter%20account">
+                        <img class="avatar" src="http://danigong.github.io/images/avatar.png">
+                        <div>
+                            <span class="dark">Daniel Gong</span>
+                            <span>I&#39;m an enthusiastic pythoner.</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fdanigong.github.io%2fpost%2fpython_decorator_guide%2f - A%20guide%20to%20Python%27s%20function%20decorators by @Your%20Twitter%20account"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'http:\/\/danigong.github.io\/post\/python_decorator_guide\/';
+    var disqus_title = 'A guide to Python\x27s function decorators';
+    var disqus_url = 'http:\/\/danigong.github.io\/post\/python_decorator_guide\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://danigong.github.io/post/mac_open_sublime/">Open Sublime with Terminal<aside class="dates">May 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://danigong.github.io/post/python_decorator_guide/">A guide to Python&#39;s function decorators<aside class="dates">May 25</aside></a>
+        </li>
+        
+   
+    
+        
+   
+</ul>
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.github.com/">
+        circlegithub
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 Daniel Gong
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://danigong.github.io/js/main.js"></script>
+<script src="http://danigong.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>
