@@ -3,8 +3,23 @@
   
   <url>
     <loc>http://danigong.github.io/</loc>
-    <lastmod>2016-05-27T23:12:14+08:00</lastmod>
+    <lastmod>2016-05-28T20:27:28+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/deploy_hugo_site_to_github/</loc>
+    <lastmod>2016-05-28T20:27:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/mongodb_setup/</loc>
+    <lastmod>2016-05-28T20:14:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/pyramid_dev_env_set/</loc>
+    <lastmod>2016-05-28T20:09:35+08:00</lastmod>
   </url>
   
   <url>

@@ -1,34 +1,101 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Daniel&#39;s Blog</title>
-    <link>http://DaniGong.github.io/</link>
-    <description>Recent content on Daniel&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+      <title> on Daniel Gong </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>http://danigong.github.io/</link>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 May 2016 23:12:14 +0800</lastBuildDate>
-    <atom:link href="http://DaniGong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Sat, 28 May 2016 20:27:28 CST</updated>
+    
+    <item>
+      <title>Deploy Hugo Site on GitHub Pages</title>
+      <link>http://danigong.github.io/post/deploy_hugo_site_to_github/</link>
+      <pubDate>Sat, 28 May 2016 20:27:28 CST</pubDate>
+      
+      <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a Repository: danigong.github.io (replace danigong with your own github username)&lt;/li&gt;
+&lt;li&gt;Change directory to root directory of the site.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd public
+$ git init
+$ git remote add origin https://github.com/danigong/danigong.github.io.git
+$ git add -A
+$ git commit -m &amp;quot;first commit&amp;quot;
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mongodb Setup</title>
+      <link>http://danigong.github.io/post/mongodb_setup/</link>
+      <pubDate>Sat, 28 May 2016 20:14:28 CST</pubDate>
+      
+      <guid>http://danigong.github.io/post/mongodb_setup/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;brew update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;brew install mongodb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;setup python driver for mongoldb:
+&lt;code&gt;
+pip install pymongo
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pyramid Dev Environment Setup</title>
+      <link>http://danigong.github.io/post/pyramid_dev_env_set/</link>
+      <pubDate>Sat, 28 May 2016 20:09:35 CST</pubDate>
+      
+      <guid>http://danigong.github.io/post/pyramid_dev_env_set/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download Setuptool: &lt;a href=&#34;http://peak.telecommunity.com/dist/ez_setup.py&#34;&gt;http://peak.telecommunity.com/dist/ez_setup.py&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install Setuptool: &lt;code&gt;sudo python ez_setup.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install virtulenv: &lt;code&gt;sudo easy_install virtualenv&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install Pyramid: &lt;code&gt;virtualenv —no-site-packages env&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd env&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bin/easy_install pyramid&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Will contain pyramid, template(Chameleon、Mako), PasteDeploy&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Open Sublime with Terminal</title>
       <link>http://danigong.github.io/post/mac_open_sublime/</link>
-      <pubDate>Fri, 27 May 2016 23:12:14 +0800</pubDate>
+      <pubDate>Fri, 27 May 2016 23:12:14 CST</pubDate>
       
       <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
       <description>
 
-&lt;h3 id=&#34;1-open-terminal:4bd67a746010167bd244fd9003575e90&#34;&gt;1. Open Terminal.&lt;/h3&gt;
+&lt;hr /&gt;
 
-&lt;h3 id=&#34;2-ln-s-applications-sublime-text-2-app-contents-sharedsupport-bin-subl-usr-local-bin-subl:4bd67a746010167bd244fd9003575e90&#34;&gt;2. &lt;code&gt;ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;a-simple-way-to-open-sublime-with-terminal:4bd67a746010167bd244fd9003575e90&#34;&gt;A simple way to open sublime with terminal:&lt;/h3&gt;
 
-&lt;h3 id=&#34;3-use-subl-command-to-edit-a-file:4bd67a746010167bd244fd9003575e90&#34;&gt;3. Use &lt;code&gt;subl&lt;/code&gt; command to edit a file.&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Open terminal.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;subl&lt;/code&gt; command to edit a file.&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
     <item>
       <title>A guide to Python&#39;s function decorators</title>
       <link>http://danigong.github.io/post/python_decorator_guide/</link>
-      <pubDate>Wed, 25 May 2016 22:26:53 +0800</pubDate>
+      <pubDate>Wed, 25 May 2016 22:26:53 CST</pubDate>
       
       <guid>http://danigong.github.io/post/python_decorator_guide/</guid>
       <description>
@@ -309,7 +376,7 @@ print get_text.__module__ # __main__
     <item>
       <title>About</title>
       <link>http://danigong.github.io/about/</link>
-      <pubDate>Wed, 25 May 2016 22:16:40 +0800</pubDate>
+      <pubDate>Wed, 25 May 2016 22:16:40 CST</pubDate>
       
       <guid>http://danigong.github.io/about/</guid>
       <description>

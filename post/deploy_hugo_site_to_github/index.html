@@ -1,10 +1,10 @@
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title> Posts &middot; Daniel Gong </title>
+    <title> Deploy Hugo Site on GitHub Pages &middot; Daniel Gong </title>
     
     <link rel="stylesheet" type="text/css" href="http://danigong.github.io//css/uno.min.css" />
     <link rel="stylesheet" type="text/css" href="http://danigong.github.io//css/lightGallery.css" />
@@ -12,24 +12,22 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://danigong.github.io/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="http://danigong.github.io/favicon.ico">
     
-    <link href="http://danigong.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Daniel Gong" />
+    <link href="" rel="alternate" type="application/rss+xml" title="Daniel Gong" />
     
     <script src="http://danigong.github.io//js/jquery.min.js"></script>
     <script src="http://danigong.github.io//js/main.min.js">
     </script>
 </head>
 
-    <body>
-        <div id="scriptHeader">
+  <body>
+    <div id="scriptHeader">
     <span class="mobile btn-mobile-menu">
             <i class="fa fa-bars btn-mobile-menu__icon"></i>
             <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
     </span>
     <header class="
         
-        
             panel-cover panel-cover--collapsed
-        
         "  style="background-image: url(/images/Uncharted4.jpg)" >
     <div class="panel-main">
         <div class="panel-main__inner panel-inverted">
@@ -104,41 +102,37 @@
     </header>
 </noscript>
 
-        <div class="content-wrapper">
-            <div class="content-wrapper__inner">
-                
-                <h2>2016</h2>
-                <ul id="list">
-                    
-                    <li>
-                        <a href="http://danigong.github.io/post/deploy_hugo_site_to_github/">Deploy Hugo Site on GitHub Pages </a>
-                        <div class="meta">Sat, May 28, 2016</div>
-                    </li>
-                    
-                    <li>
-                        <a href="http://danigong.github.io/post/mongodb_setup/">Mongodb Setup </a>
-                        <div class="meta">Sat, May 28, 2016</div>
-                    </li>
-                    
-                    <li>
-                        <a href="http://danigong.github.io/post/pyramid_dev_env_set/">Pyramid Dev Environment Setup </a>
-                        <div class="meta">Sat, May 28, 2016</div>
-                    </li>
-                    
-                    <li>
-                        <a href="http://danigong.github.io/post/mac_open_sublime/">Open Sublime with Terminal </a>
-                        <div class="meta">Fri, May 27, 2016</div>
-                    </li>
-                    
-                    <li>
-                        <a href="http://danigong.github.io/post/python_decorator_guide/">A guide to Python&#39;s function decorators </a>
-                        <div class="meta">Wed, May 25, 2016</div>
-                    </li>
-                    
-                </ul>
-                
-            </div>
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <div class="post">
+          <h1>Deploy Hugo Site on GitHub Pages</h1>
+          <span class="post-date">Sat, May 28, 2016</span>
+          <hr />
+
+<ol>
+<li>Create a Repository: danigong.github.io (replace danigong with your own github username)</li>
+<li>Change directory to root directory of the site.</li>
+<li><code>$ hugo --theme=hyde --baseUrl=&quot;http://danigong.github.io/</code></li>
+</ol>
+
+<pre><code>$ cd public
+$ git init
+$ git remote add origin https://github.com/danigong/danigong.github.io.git
+$ git add -A
+$ git commit -m &quot;first commit&quot;
+$ git push -u origin master
+</code></pre>
+
         </div>
-    </body>
-    
+        <div class="sharing">
+</div>
+        
+
+
+
+      </div>
+    </div>
+
+  </body>
+  
 </html>
