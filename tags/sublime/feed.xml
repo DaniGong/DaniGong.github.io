@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime on GS with Python</title>
+    <link>http://danigong.github.io/tags/sublime/</link>
+    <description>Recent content in Sublime on GS with Python</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 27 May 2016 23:12:14 +0800</lastBuildDate>
+    <atom:link href="http://danigong.github.io/tags/sublime/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Open Sublime with Terminal</title>
+      <link>http://danigong.github.io/post/mac_open_sublime/</link>
+      <pubDate>Fri, 27 May 2016 23:12:14 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;a-simple-way-to-open-sublime-with-terminal:4bd67a746010167bd244fd9003575e90&#34;&gt;A simple way to open sublime with terminal:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open terminal.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;subl&lt;/code&gt; command to edit a file.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

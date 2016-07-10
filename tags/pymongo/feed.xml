@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pymongo on GS with Python</title>
+    <link>http://danigong.github.io/tags/pymongo/</link>
+    <description>Recent content in Pymongo on GS with Python</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 May 2016 20:14:28 +0800</lastBuildDate>
+    <atom:link href="http://danigong.github.io/tags/pymongo/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mongodb Setup</title>
+      <link>http://danigong.github.io/post/mongodb_setup/</link>
+      <pubDate>Sat, 28 May 2016 20:14:28 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/mongodb_setup/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;brew update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;brew install mongodb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;setup python driver for mongoldb:
+&lt;code&gt;
+pip install pymongo
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
