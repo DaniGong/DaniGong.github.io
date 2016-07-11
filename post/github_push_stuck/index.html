@@ -2,18 +2,18 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Pymongo - GS with Python</title>
+  <title>Github Push Stucking when Writing Objects - GS with Python</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="Pymongo">
+  <meta name="description" content="To solve the github push stucking problem: Try to use the command as follows: git config --global http.postBuffer 524288000">
   <meta name="author" content="DanielGong">
-  <meta itemprop="name" content="Pymongo - GS with Python">
-  <meta itemprop="description" content="Pymongo">
+  <meta itemprop="name" content="Github Push Stucking when Writing Objects - GS with Python">
+  <meta itemprop="description" content="To solve the github push stucking problem: Try to use the command as follows: git config --global http.postBuffer 524288000">
   <meta itemprop="image" content="http://danigong.github.io/img/author.jpg">
   
   
   <meta name="twitter:description" content="GS with python">
-  <link rel="alternate" href="http://danigong.github.io/feed.xml" title="GS with Python" type="application/rss+xml"/>
+  
   <link rel="shortcut icon" href="http://danigong.github.io/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="http://danigong.github.io/apple-touch-icon.png" />
   <link rel="apple-touch-icon-precomposed" href="http://danigong.github.io/apple-touch-icon.png" />
@@ -57,21 +57,84 @@
 
   </header>
   <div id="container">
-    <div id="main">
-      
-      <h2 id="2016-05">2016-05</h2>
-      
-      <section class="post" itemscope itemprop="blogPost">
-    <a href="http://danigong.github.io/post/mongodb_setup/" title="Mongodb Setup" itemprop="url">
-    <h1 itemprop="name">Mongodb Setup</h1>
-    <p itemprop="description">brew update brew install mongodb setup python driver for mongoldb: pip install pymongo</p>
-    <time datetime="2016-05-28 20:14:28 &#43;0800 CST" itemprop="datePublished">2016/05/28/</time>
-  </a>
-</section>
+    <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+      <a href="http://danigong.github.io/post/github_push_stuck/" title="Github Push Stucking when Writing Objects" itemprop="url">Github Push Stucking when Writing Objects</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="" title="DanielGong">DanielGong</a>
+    
+  </p>
+  <p class="article-time">
+    <time datetime="2016-07-11 21:35:05 &#43;0800 CST" itemprop="datePublished">2016/07/11/</time>
+  </p>
+</header>
 
-      
-      
+	<div class="article-content">
+    
+    
+
+<h3 id="to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230">To solve the github push stucking problem:</h3>
+
+<p>Try to use the command as follows:</p>
+
+<pre><code>git config --global http.postBuffer 524288000
+</code></pre>
+
+	</div>
+  <footer class="article-footer clearfix">
+  
+
+<div class="article-tags">
+  <span></span>
+  
+  <a href="http://danigong.github.io/tags/git">git</a>
+  
+  <a href="http://danigong.github.io/tags/github">github</a>
+  
+</div>
+
+
+
+
+
+  <div class="article-share" id="share">
+    <div data-url="http://danigong.github.io/post/github_push_stuck/" data-title="Github Push Stucking when Writing Objects" data-tsina="" class="share clearfix">
     </div>
+  </div>
+</footer>
+
+	</article>
+  
+
+
+<section class="comment">
+<div id="disqus_thread"></div>
+</section>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = "http://danigong.github.io/post/github_push_stuck/";
+this.page.identifier = "http://danigong.github.io/post/github_push_stuck/";
+};
+(function() { 
+var d = document, s = d.createElement('script');
+
+s.src = '//DaniGong.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
     <div class="openaside"><a class="navbutton" href="#" title="ShowSideBar"></a></div>
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="HideSideBar"></a></div>
@@ -180,10 +243,6 @@
 
 
   
-<div class="rsspart">
-  <a rel="nofollow" href="http://danigong.github.io/feed.xml" type="application/rss+xml" target="_blank">RSS Subscription</a>
-</div>
-
 
 </aside>
 </div>
@@ -276,6 +335,38 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
   var $this = $('.share'),
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
@@ -302,6 +393,27 @@ $(document).ready(function(){
 });
 </script>
 
+
+<link rel="stylesheet" href="http://danigong.github.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="http://danigong.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
 
 
 <script>

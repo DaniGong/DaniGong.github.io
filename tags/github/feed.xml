@@ -6,8 +6,25 @@
     <description>Recent content in Github on GS with Python</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 28 May 2016 20:27:28 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jul 2016 21:35:05 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/tags/github/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Github Push Stucking when Writing Objects</title>
+      <link>http://danigong.github.io/post/github_push_stuck/</link>
+      <pubDate>Mon, 11 Jul 2016 21:35:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/github_push_stuck/</guid>
+      <description>
+
+&lt;h3 id=&#34;to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230&#34;&gt;To solve the github push stucking problem:&lt;/h3&gt;
+
+&lt;p&gt;Try to use the command as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global http.postBuffer 524288000
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Deploy Hugo Site on GitHub Pages</title>
