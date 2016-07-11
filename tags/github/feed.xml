@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github on GS with Python</title>
+    <title>Github on 小🐶&amp;python</title>
     <link>http://danigong.github.io/tags/github/</link>
-    <description>Recent content in Github on GS with Python</description>
+    <description>Recent content in Github on 小🐶&amp;python</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 11 Jul 2016 21:35:05 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/tags/github/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Github Push Stucking when Writing Objects</title>
+      <title>Github Push Stucking When Writing Objects</title>
       <link>http://danigong.github.io/post/github_push_stuck/</link>
       <pubDate>Mon, 11 Jul 2016 21:35:05 +0800</pubDate>
       
