@@ -1,833 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 小🐶&amp;python</title>
+    <title>Posts on B🐶Pythonic</title>
     <link>http://danigong.github.io/post/</link>
-    <description>Recent content in Posts on 小🐶&amp;python</description>
+    <description>Recent content in Posts on B🐶Pythonic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 11 Jul 2016 21:35:05 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Jul 2016 14:03:09 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Github Push Stucking When Writing Objects</title>
-      <link>http://danigong.github.io/post/github_push_stuck/</link>
-      <pubDate>Mon, 11 Jul 2016 21:35:05 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/post/github_push_stuck/</guid>
-      <description>
-
-&lt;h3 id=&#34;to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230&#34;&gt;To solve the github push stucking problem:&lt;/h3&gt;
-
-&lt;p&gt;Try to use the command as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git config --global http.postBuffer 524288000
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>PEP8中文翻译</title>
-      <link>http://danigong.github.io/post/translated_pep8/</link>
-      <pubDate>Mon, 11 Jul 2016 20:50:30 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/post/translated_pep8/</guid>
-      <description>
-
-&lt;p&gt;本文给出主Python版本标准库的编码约定。CPython的C代码风格参见PEP7。&lt;/p&gt;
-
-&lt;p&gt;本文和PEP 257 文档字符串标准改编自Guido最初的《Python Style Guide》, 并增加了Barry的GNU Mailman Coding Style Guide的部分内容。&lt;/p&gt;
-
-&lt;p&gt;本文会随着语言改变等而改变。&lt;/p&gt;
-
-&lt;p&gt;许多项目都有自己的编码风格指南，冲突时自己的指南为准。&lt;/p&gt;
-
-&lt;h2 id=&#34;一致性考虑:edc5269fa41451f694a3996ea7ada34a&#34;&gt;一致性考虑&lt;/h2&gt;
-
-&lt;p&gt;Guido的关键点之一是：代码更多是用来读而不是写。本指南旨在改善Python代码的可读性，即PEP 20所说的“可读性计数&amp;rdquo;(Readability counts)。&lt;/p&gt;
-
-&lt;p&gt;风格指南强调一致性。项目、模块或函数保持一致都很重要。&lt;/p&gt;
-
-&lt;p&gt;最重要的是知道何时不一致, 有时风格指南并不适用。当有疑惑时运用你的最佳判断，参考其他例子并多问！&lt;/p&gt;
-
-&lt;p&gt;特别注意：不要因为遵守本PEP而破坏向后兼容性！&lt;/p&gt;
-
-&lt;p&gt;部分可以违背指南情况：&lt;/p&gt;
-
-&lt;p&gt;-遵循指南会降低可读性。&lt;/p&gt;
-
-&lt;p&gt;-与周围其他代码不一致。&lt;/p&gt;
-
-&lt;p&gt;-代码在引入指南完成，暂时没有理由修改。&lt;/p&gt;
-
-&lt;p&gt;-旧版本兼容。&lt;/p&gt;
-
-&lt;h2 id=&#34;代码布局:edc5269fa41451f694a3996ea7ada34a&#34;&gt;代码布局&lt;/h2&gt;
-
-&lt;h3 id=&#34;缩进:edc5269fa41451f694a3996ea7ada34a&#34;&gt;缩进&lt;/h3&gt;
-
-&lt;p&gt;每级缩进用4个空格。&lt;/p&gt;
-
-&lt;p&gt;括号中使用垂直隐式缩进或使用悬挂缩进。后者应该注意第一行要没有参数，后续行要有缩进。&lt;/p&gt;
-
-&lt;p&gt;Yes&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 对准左括号
-foo = long_function_name(var_one, var_two,
-                         var_three, var_four)
-
-# 不对准左括号，但加多一层缩进，以和后面内容区别。
-def long_function_name(
-        var_one, var_two, var_three,
-        var_four):
-    print(var_one)
-
-# 悬挂缩进必须加多一层缩进.
-foo = long_function_name(
-    var_one, var_two,
-    var_three, var_four)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;No&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 不使用垂直对齐时，第一行不能有参数。
-foo = long_function_name(var_one, var_two,
-    var_three, var_four)
-
-# 参数的缩进和后续内容缩进不能区别。
-def long_function_name(
-    var_one, var_two, var_three,
-    var_four):
-    print(var_one)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;4个空格的规则是对续行可选的。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 悬挂缩进不一定是4个空格
-foo = long_function_name(
-  var_one, var_two,
-  var_three, var_four)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;if语句跨行时，两个字符关键字(比如if)加上一个空格，再加上左括号构成了很好的缩进。后续行暂时没有规定，至少有如下三种格式，建议使用第3种。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 没有额外缩进，不是很好看，个人不推荐.
-if (this_is_one_thing and
-    that_is_another_thing):
-    do_something()
-
-# 添加注释
-if (this_is_one_thing and
-    that_is_another_thing):
-    # Since both conditions are true, we can frobnicate.
-    do_something()
-
-# 额外添加缩进,推荐。
-# Add some extra indentation on the conditional continuation line.
-if (this_is_one_thing
-        and that_is_another_thing):
-    do_something()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;右边括号也可以另起一行。有两种格式，建议第2种。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 右括号不回退，个人不推荐
-my_list = [
-    1, 2, 3,
-    4, 5, 6,
-    ]
-result = some_function_that_takes_arguments(
-    &#39;a&#39;, &#39;b&#39;, &#39;c&#39;,
-    &#39;d&#39;, &#39;e&#39;, &#39;f&#39;,
-    )
-
-# 右括号回退
-my_list = [
-    1, 2, 3,
-    4, 5, 6,
-]
-result = some_function_that_takes_arguments(
-    &#39;a&#39;, &#39;b&#39;, &#39;c&#39;,
-    &#39;d&#39;, &#39;e&#39;, &#39;f&#39;,
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;空格或tab:edc5269fa41451f694a3996ea7ada34a&#34;&gt;空格或Tab?&lt;/h3&gt;
-
-&lt;p&gt;-空格是首选的缩进方法。&lt;/p&gt;
-
-&lt;p&gt;-Tab仅仅在已经使用tab缩进的代码中为了保持一致性而使用。&lt;/p&gt;
-
-&lt;p&gt;-Python 3中不允许混合使用Tab和空格缩进。&lt;/p&gt;
-
-&lt;p&gt;-Python 2的包含空格与Tab和空格缩进的应该全部转为空格缩进。&lt;/p&gt;
-
-&lt;p&gt;Python2命令行解释器使用-t选项时有非法混合Tab和空格的情况会告警。当使用-tt警告提升为错误。强烈推荐这些选项！另外个人推荐pep8和autopep8模块。&lt;/p&gt;
-
-&lt;h3 id=&#34;最大行宽:edc5269fa41451f694a3996ea7ada34a&#34;&gt;最大行宽&lt;/h3&gt;
-
-&lt;p&gt;限制所有行的最大行宽为79字符。&lt;/p&gt;
-
-&lt;p&gt;文本长块，比如文档字符串或注释，行长度应限制为72个字符。&lt;/p&gt;
-
-&lt;p&gt;多数工具默认的续行功能会破坏代码结构，使它更难理解，不推荐使用。但是超过80个字符加以提醒是必要的。一些工具可能根本不具备动态换行功能。&lt;/p&gt;
-
-&lt;p&gt;一些团队强烈希望更长的行宽。如果能达成一致，可以从从80提高到100个字符(最多99个字符)增加了标称线的长度，不过依旧建议文档字符串和注释保持在72的长度。&lt;/p&gt;
-
-&lt;p&gt;Python标准库比较保守，限制行宽79个字符(文档字符串/注释72）。&lt;/p&gt;
-
-&lt;p&gt;续行的首选方法是使用小括号、中括号和大括号反斜线仍可能在适当的时候。其次是反斜杠。比如with语句中：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;with open(&#39;/path/to/some/file/you/want/to/read&#39;) as file_1, \
-     open(&#39;/path/to/some/file/being/written&#39;, &#39;w&#39;) as file_2:
-    file_2.write(file_1.read())
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;类似的还有assert。&lt;/p&gt;
-
-&lt;p&gt;注意续行要尽量不影响可读性。比如通常在二元运算符之后续行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class Rectangle(Blob):
-
-    def __init__(self, width, height,
-                 color=&#39;black&#39;, emphasis=None, highlight=0):
-        if (width == 0 and height == 0 and
-                color == &#39;red&#39; and emphasis == &#39;strong&#39; or
-                highlight &amp;gt; 100):
-            raise ValueError(&amp;quot;sorry, you lose&amp;quot;)
-        if width == 0 and height == 0 and (color == &#39;red&#39; or
-                                           emphasis is None):
-            raise ValueError(&amp;quot;I don&#39;t think so -- values are %s, %s&amp;quot; %
-                             (width, height))
-        Blob.__init__(self, width, height,
-                      color, emphasis, highlight)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;空行:edc5269fa41451f694a3996ea7ada34a&#34;&gt;空行&lt;/h3&gt;
-
-&lt;p&gt;-两行空行分割顶层函数和类的定义。&lt;/p&gt;
-
-&lt;p&gt;-类的方法定义用单个空行分割。&lt;/p&gt;
-
-&lt;p&gt;-额外的空行可以必要的时候用于分割不同的函数组，但是要尽量节约使用。&lt;/p&gt;
-
-&lt;p&gt;-额外的空行可以必要的时候在函数中用于分割不同的逻辑块，但是要尽量节约使用。&lt;/p&gt;
-
-&lt;p&gt;-Python接 contol-L作为空白符；许多工具视它为分页符，这些要因编辑器而异。&lt;/p&gt;
-
-&lt;h3 id=&#34;源文件编码:edc5269fa41451f694a3996ea7ada34a&#34;&gt;源文件编码&lt;/h3&gt;
-
-&lt;p&gt;在核心Python发布的代码应该总是使用UTF-8(ASCII在Python 2)。&lt;/p&gt;
-
-&lt;p&gt;ASCII文件(Python 2)或UTF-8(Python 3)不应有编码声明。&lt;/p&gt;
-
-&lt;p&gt;标准库中非默认的编码应仅用于测试或当注释或文档字符串,比如包含非ASCII字符的作者姓名，尽量使用\x , \u , \U , or \N。&lt;/p&gt;
-
-&lt;p&gt;Python 3.0及以后版本，PEP 3131可供参考，部分内容如下：在Python标准库必须使用ASCII标识符，并尽量只使用英文字母。此外字符串和注释也必须用ASCII。唯一的例外是：（a）测试非ASCII的功能，和（b）作者的名字不是拉丁字母。&lt;/p&gt;
-
-&lt;h3 id=&#34;导入:edc5269fa41451f694a3996ea7ada34a&#34;&gt;导入&lt;/h3&gt;
-
-&lt;p&gt;导入在单独行&lt;/p&gt;
-
-&lt;p&gt;Yes：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import os
-import sys
-from subprocess import Popen, PIPE
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;No:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import sys, os
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-导入始终在文件的顶部，在模块注释和文档字符串之后，在模块全局变量和常量之前。&lt;/p&gt;
-
-&lt;p&gt;导入顺序如下：标准库进口,相关的第三方库，本地库。各组的导入之间要有空行。&lt;/p&gt;
-
-&lt;p&gt;相关的all放在导入之后。&lt;/p&gt;
-
-&lt;p&gt;-推荐绝对路径导入，因为它们通常更可读，而且往往是表现更好的（或至少提供更好的错误消息。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import mypkg.sibling
-from mypkg import sibling
-from mypkg.sibling import example
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在绝对路径比较长的情况下，也可以使用相对路径：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from . import sibling
-from .sibling import example
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Python 3中已经禁止隐式的相对导入。&lt;/p&gt;
-
-&lt;p&gt;-导入类的方法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from myclass import MyClass
-from foo.bar.yourclass import YourClass
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果和本地名字有冲突：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import myclass
-import foo.bar.yourclass
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-禁止使用通配符导入。&lt;/p&gt;
-
-&lt;p&gt;通配符导入(from &lt;module&gt; import *)应该避免，因为它不清楚命名空间有哪些名称存，混淆读者和许多自动化的工具。唯一的例外是重新发布对外的API时可以考虑使用。&lt;/p&gt;
-
-&lt;h2 id=&#34;字符串引用:edc5269fa41451f694a3996ea7ada34a&#34;&gt;字符串引用&lt;/h2&gt;
-
-&lt;p&gt;Python中单引号字符串和双引号字符串都是相同的。注意尽量避免在字符串中的反斜杠以提高可读性。&lt;/p&gt;
-
-&lt;p&gt;根据PEP 257, 三个引号都使用双引号。&lt;/p&gt;
-
-&lt;h2 id=&#34;表达式和语句中的空格:edc5269fa41451f694a3996ea7ada34a&#34;&gt;表达式和语句中的空格&lt;/h2&gt;
-
-&lt;h3 id=&#34;强制要求:edc5269fa41451f694a3996ea7ada34a&#34;&gt;强制要求&lt;/h3&gt;
-
-&lt;p&gt;-括号里边避免空格&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 括号里边避免空格
-# Yes
-spam(ham[1], {eggs: 2})
-# No
-spam( ham[ 1 ], { eggs: 2 } )
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-逗号，冒号，分号之前避免空格&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 逗号，冒号，分号之前避免空格
-# Yes
-if x == 4: print x, y; x, y = y, x
-# No
-if x == 4 : print x , y ; x , y = y , x
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-索引操作中的冒号当作操作符处理前后要有同样的空格(一个空格或者没有空格，个人建议是没有。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
-ham[lower:upper], ham[lower:upper:], ham[lower::step]
-ham[lower+offset : upper+offset]
-ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
-ham[lower + offset : upper + offset]
-# No
-ham[lower + offset:upper + offset]
-ham[1: 9], ham[1 :9], ham[1:9 :3]
-ham[lower : : upper]
-ham[ : upper]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;函数调用的左括号之前不能有空格&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-spam(1)
-dct[&#39;key&#39;] = lst[index]
-
-# No
-spam (1)
-dct [&#39;key&#39;] = lst [index]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-赋值等操作符前后不能因为对齐而添加多个空格&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-x = 1
-y = 2
-long_variable = 3
-
-# No
-x             = 1
-y             = 2
-long_variable = 3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;其他建议&lt;/p&gt;
-
-&lt;p&gt;-二元运算符两边放置一个空格:&lt;/p&gt;
-
-&lt;p&gt;涉及 =、符合操作符 ( += , -=等)、比较( == , &amp;lt; , &amp;gt; , != , &amp;lt;&amp;gt; , &amp;lt;= , &amp;gt;= , in , not in , is , is not )、布尔( and , or , not )。&lt;/p&gt;
-
-&lt;p&gt;-优先级高的运算符或操作符的前后不建议有空格。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-i = i + 1
-submitted += 1
-x = x*2 - 1
-hypot2 = x*x + y*y
-c = (a+b) * (a-b)
-
-# No
-i=i+1
-submitted +=1
-x = x * 2 - 1
-hypot2 = x * x + y * y
-c = (a + b) * (a - b)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-关键字参数和默认值参数的前后不要加空格&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-def complex(real, imag=0.0):
-    return magic(r=real, i=imag)
-
-# No
-def complex(real, imag = 0.0):
-    return magic(r = real, i = imag)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-函数注释中，=前后要有空格，冒号和&amp;rdquo;-&amp;gt;&amp;ldquo;的前面无空格，后面有空格。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-def munge(input: AnyStr):
-def munge(sep: AnyStr = None):
-def munge() -&amp;gt; AnyStr:
-def munge(input: AnyStr, sep: AnyStr = None, limit=1000):
-
-# No
-def munge(input: AnyStr=None):
-def munge(input:AnyStr):
-def munge(input: AnyStr)-&amp;gt;PosInt:
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-通常不推荐复合语句(Compound statements: 多条语句写在同一行)。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-if foo == &#39;blah&#39;:
-    do_blah_thing()
-do_one()
-do_two()
-do_three()
-
-# No
-if foo == &#39;blah&#39;: do_blah_thing()
-do_one(); do_two(); do_three()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-尽管有时可以在if/for/while 的同一行跟一小段代码，但绝不要跟多个子句，并尽量避免换行。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# No
-if foo == &#39;blah&#39;: do_blah_thing()
-for x in lst: total += x
-while t &amp;lt; 10: t = delay()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;更不是：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# No
-if foo == &#39;blah&#39;: do_blah_thing()
-else: do_non_blah_thing()
-
-try: something()
-finally: cleanup()
-
-do_one(); do_two(); do_three(long, argument,
-                             list, like, this)
-
-if foo == &#39;blah&#39;: one(); two(); three()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;注释:edc5269fa41451f694a3996ea7ada34a&#34;&gt;注释&lt;/h2&gt;
-
-&lt;p&gt;与代码自相矛盾的注释比没注释更差。修改代码时要优先更新注释！&lt;/p&gt;
-
-&lt;p&gt;注释是完整的句子。如果注释是断句，首字母应该大写，除非它是小写字母开头的标识符(永远不要修改标识符的大小写)。&lt;/p&gt;
-
-&lt;p&gt;如果注释很短，可以省略末尾的句号。注释块通常由一个或多个段落组成。段落由完整的句子构成且每个句子应该以点号(后面要有两个空格)结束，并注意断词和空格。&lt;/p&gt;
-
-&lt;p&gt;非英语国家的程序员请用英语书写你的注释，除非你120%确信代码永远不会被不懂你的语言的人阅读。&lt;/p&gt;
-
-&lt;h3 id=&#34;注释块:edc5269fa41451f694a3996ea7ada34a&#34;&gt;注释块&lt;/h3&gt;
-
-&lt;p&gt;注释块通常应用在代码前，并和这些代码有同样的缩进。每行以 &amp;lsquo;# &amp;lsquo;(除非它是注释内的缩进文本，注意#后面有空格)。&lt;/p&gt;
-
-&lt;p&gt;注释块内的段落用仅包含单个 &amp;lsquo;#&amp;rsquo; 的行分割。&lt;/p&gt;
-
-&lt;h3 id=&#34;行内注释:edc5269fa41451f694a3996ea7ada34a&#34;&gt;行内注释&lt;/h3&gt;
-
-&lt;p&gt;慎用行内注释(Inline Comments) 节俭使用行内注释。 行内注释是和语句在同一行，至少用两个空格和语句分开。行内注释不是必需的，重复罗嗦会使人分心。不要这样做：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;x = x + 1 # Increment x
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;但有时很有必要:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;x = x + 1 # Compensate for border
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;文档字符串:edc5269fa41451f694a3996ea7ada34a&#34;&gt;文档字符串&lt;/h3&gt;
-
-&lt;p&gt;文档字符串的标准参见：PEP 257。&lt;/p&gt;
-
-&lt;p&gt;-为所有公共模块、函数、类和方法书写文档字符串。非公开方法不一定有文档字符串，建议有注释(出现在 def 行之后)来描述这个方法做什么。&lt;/p&gt;
-
-&lt;p&gt;-更多参考：PEP 257 文档字符串约定。注意结尾的 &amp;ldquo;&amp;rdquo;&amp;rdquo; 应该单独成行，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;&amp;quot;&amp;quot;Return a foobang
-Optional plotz says to frobnicate the bizbaz first.
-&amp;quot;&amp;quot;&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-单行的文档字符串，结尾的 &amp;ldquo;&amp;rdquo;&amp;rdquo; 在同一行。&lt;/p&gt;
-
-&lt;h2 id=&#34;版本标签:edc5269fa41451f694a3996ea7ada34a&#34;&gt;版本标签&lt;/h2&gt;
-
-&lt;p&gt;版本注记 (Version Bookkeeping)&lt;/p&gt;
-
-&lt;p&gt;如果你必须在源文件中包含git、Subversion、CVS或RCS crud信息，放置在模块的文档字符串之后，任何其他代码之前，上下各用一个空行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;__version__ = &amp;quot;$Revision$&amp;quot;# $Source$
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;命名约定:edc5269fa41451f694a3996ea7ada34a&#34;&gt;命名约定&lt;/h2&gt;
-
-&lt;p&gt;Python库的命名约定有点混乱，不可能完全一致。但依然有些普遍推荐的命名规范的。新的模块和包 (包括第三方的框架) 应该遵循这些标准。对不同风格的已有的库，建议保持内部的一致性。&lt;/p&gt;
-
-&lt;h3 id=&#34;最重要的原则:edc5269fa41451f694a3996ea7ada34a&#34;&gt;最重要的原则&lt;/h3&gt;
-
-&lt;p&gt;用户可见的API命名应遵循使用约定而不是实现。&lt;/p&gt;
-
-&lt;h3 id=&#34;描述-命名风格:edc5269fa41451f694a3996ea7ada34a&#34;&gt;描述：命名风格&lt;/h3&gt;
-
-&lt;p&gt;有多种命名风格：&lt;/p&gt;
-
-&lt;p&gt;-b(单个小写字母)&lt;/p&gt;
-
-&lt;p&gt;-B(单个大写字母)&lt;/p&gt;
-
-&lt;p&gt;-lowercase(小写串)&lt;/p&gt;
-
-&lt;p&gt;-lower_case_with_underscores(带下划线的小写)&lt;/p&gt;
-
-&lt;p&gt;-UPPERCASE(大写串)&lt;/p&gt;
-
-&lt;p&gt;-UPPER_CASE_WITH_UNDERSCORES(带下划线的大写串)&lt;/p&gt;
-
-&lt;p&gt;-CapitalizedWords(首字母大写的单词串或驼峰缩写）&lt;/p&gt;
-
-&lt;p&gt;注意: 使用大写缩写时，缩写使用大写字母更好。故 HTTPServerError 比 HttpServerError 更好。&lt;/p&gt;
-
-&lt;p&gt;-mixedCase(混合大小写，第一个单词是小写)&lt;/p&gt;
-
-&lt;p&gt;-Capitalized_Words_With_Underscores（带下划线，首字母大写，丑陋）&lt;/p&gt;
-
-&lt;p&gt;还有一种风格使用短前缀分组名字。这在Python中不常用， 但出于完整性提一下。例如，os.stat()返回的元组有st_mode, st_size, st_mtime等等这样的名字(与POSIX系统调用结构体一致)。&lt;/p&gt;
-
-&lt;p&gt;X11库的所有公开函数以X开头, Python中通常认为是不必要的，因为属性和方法名有对象作前缀，而函数名有模块名为前缀。&lt;/p&gt;
-
-&lt;p&gt;下面讲述首尾有下划线的情况:&lt;/p&gt;
-
-&lt;p&gt;-_single_leading_underscore:(单前置下划线): 弱内部使用标志。 例如&amp;rdquo;from M import &amp;ldquo; 不会导入以下划线开头的对象。&lt;/p&gt;
-
-&lt;p&gt;-single_trailing&lt;em&gt;underscore&lt;/em&gt;(单后置下划线): 用于避免与 Python关键词的冲突。 例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Tkinter.Toplevel(master, class_=&#39;ClassName&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-&lt;strong&gt;double_leading_underscore(双前置下划线): 当用于命名类属性，会触发名字重整。 (在类FooBar中，&lt;/strong&gt;boo变成 _FooBar__boo)。&lt;/p&gt;
-
-&lt;p&gt;-&lt;strong&gt;double_leading_and_trailing_underscore&lt;/strong&gt;(双前后下划线)：用户名字空间的魔法对象或属性。例如:&lt;strong&gt;init&lt;/strong&gt; , &lt;strong&gt;import&lt;/strong&gt; or &lt;strong&gt;file&lt;/strong&gt;，不要自己发明这样的名字。&lt;/p&gt;
-
-&lt;h3 id=&#34;命名约定规范:edc5269fa41451f694a3996ea7ada34a&#34;&gt;命名约定规范&lt;/h3&gt;
-
-&lt;p&gt;-避免采用的名字&lt;/p&gt;
-
-&lt;p&gt;决不要用字符&amp;rsquo;l&amp;rsquo;(小写字母el)，&amp;rsquo;O&amp;rsquo;(大写字母oh)，或 &amp;lsquo;I&amp;rsquo;(大写字母eye) 作为单个字符的变量名。一些字体中，这些字符不能与数字1和0区别。用&amp;rsquo;L&amp;rsquo; 代替&amp;rsquo;l&amp;rsquo;时。&lt;/p&gt;
-
-&lt;p&gt;-包和模块名&lt;/p&gt;
-
-&lt;p&gt;模块名要简短，全部用小写字母，可使用下划线以提高可读性。包名和模块名类似，但不推荐使用下划线。&lt;/p&gt;
-
-&lt;p&gt;模块名对应到文件名，有些文件系统不区分大小写且截短长名字，在 Unix上不是问题，但当把代码迁移到 Mac、Windows 或 DOS 上时，就可能是个问题。当然随着系统的演进，这个问题已经不是经常出现。&lt;/p&gt;
-
-&lt;p&gt;另外有些模块底层用C或C++ 书写，并有对应的高层Python模块，C/C++模块名有一个前置下划线 (如：_socket)。&lt;/p&gt;
-
-&lt;p&gt;-类名&lt;/p&gt;
-
-&lt;p&gt;遵循CapWord。&lt;/p&gt;
-
-&lt;p&gt;接口需要文档化并且可以调用时，可能使用函数的命名规则。&lt;/p&gt;
-
-&lt;p&gt;注意大部分内置的名字是单个单词（或两个），CapWord只适用于异常名称和内置的常量。&lt;/p&gt;
-
-&lt;p&gt;-异常名&lt;/p&gt;
-
-&lt;p&gt;如果确实是错误，需要在类名添加后缀 &amp;ldquo;Error&amp;rdquo;。&lt;/p&gt;
-
-&lt;p&gt;-全局变量名&lt;/p&gt;
-
-&lt;p&gt;变量尽量只用于模块内部，约定类似函数。&lt;/p&gt;
-
-&lt;p&gt;对设计为通过 &amp;ldquo;from M import &amp;rdquo; 来使用的模块，应采用 &lt;strong&gt;all&lt;/strong&gt; 机制来防止导入全局变量；或者为全局变量加一个前置下划线。&lt;/p&gt;
-
-&lt;p&gt;-函数名&lt;/p&gt;
-
-&lt;p&gt;函数名应该为小写，必要时可用下划线分隔单词以增加可读性。 mixedCase(混合大小写)仅被允许用于兼容性考虑(如: threading.py)。&lt;/p&gt;
-
-&lt;p&gt;-函数和方法的参数&lt;/p&gt;
-
-&lt;p&gt;实例方法第一个参数是 &amp;lsquo;self&amp;rsquo;。&lt;/p&gt;
-
-&lt;p&gt;类方法第一个参数是 &amp;lsquo;cls&amp;rsquo;。&lt;/p&gt;
-
-&lt;p&gt;如果函数的参数名与保留关键字冲突，通常在参数名后加一个下划线。&lt;/p&gt;
-
-&lt;p&gt;-方法名和实例变量&lt;/p&gt;
-
-&lt;p&gt;同函数命名规则。&lt;/p&gt;
-
-&lt;p&gt;非公开方法和实例变量增加一个前置下划线。&lt;/p&gt;
-
-&lt;p&gt;为避免与子类命名冲突，采用两个前置下划线来触发重整。类Foo属性名为&lt;strong&gt;a， 不能以 Foo.&lt;/strong&gt;a访问。(执著的用户还是可以通过Foo._Foo__a。) 通常双前置下划线仅被用来避免与基类的属性发生命名冲突。&lt;/p&gt;
-
-&lt;p&gt;-常量&lt;/p&gt;
-
-&lt;p&gt;常量通常在模块级定义,由大写字母用下划线分隔组成。比如括MAX_OVERFLOW和TOTAL。&lt;/p&gt;
-
-&lt;p&gt;-继承设计&lt;/p&gt;
-
-&lt;p&gt;考虑类的方法和实例变量(统称为属性)是否公开。如果有疑问，选择不公开；把其改为公开比把公开属性改为非公开要容易。&lt;/p&gt;
-
-&lt;p&gt;公开属性可供所有人使用，并通常向后兼容。非公开属性不给第三方使用、可变甚至被移除。&lt;/p&gt;
-
-&lt;p&gt;这里不使用术语&amp;rdquo;private&amp;rdquo;， Python中没有属性是真正私有的。&lt;/p&gt;
-
-&lt;p&gt;另一类属性是子类API(在其他语言中通常称为 &amp;ldquo;protected&amp;rdquo;)。 一些类被设计为基类，可以扩展和修改。&lt;/p&gt;
-
-&lt;p&gt;谨记这些Python指南：&lt;/p&gt;
-
-&lt;p&gt;1.公开属性应该没有前导下划线。&lt;/p&gt;
-
-&lt;p&gt;2.如果公开属性名和保留关键字冲突，可以添加后置下划线&lt;/p&gt;
-
-&lt;p&gt;3.简单的公开数据属性，最好只公开属性名，没有复杂的访问/修改方法，python的Property提供了很好的封装方法。 d.如果不希望子类使用的属性，考虑用两个前置下划线(没有后置下划线)命名。&lt;/p&gt;
-
-&lt;h3 id=&#34;公共和内部接口:edc5269fa41451f694a3996ea7ada34a&#34;&gt;公共和内部接口&lt;/h3&gt;
-
-&lt;p&gt;任何向后兼容的保证只适用于公共接口。&lt;/p&gt;
-
-&lt;p&gt;文档化的接口通常是公共的，除非明说明是临时的或为内部接口、其他所有接口默认是内部的。&lt;/p&gt;
-
-&lt;p&gt;为了更好地支持内省，模块要在&lt;strong&gt;all&lt;/strong&gt;属性列出公共API。&lt;/p&gt;
-
-&lt;p&gt;内部接口要有前置下划线。&lt;/p&gt;
-
-&lt;p&gt;如果命名空间(包、模块或类)是内部的，里面的接口也是内部的。&lt;/p&gt;
-
-&lt;p&gt;导入名称应视为实现细节。其他模块不能间接访名字，除非在模块的API文档中明确记载，如os.path中或包的&lt;strong&gt;init&lt;/strong&gt;暴露了子模块。&lt;/p&gt;
-
-&lt;h2 id=&#34;编程建议:edc5269fa41451f694a3996ea7ada34a&#34;&gt;编程建议&lt;/h2&gt;
-
-&lt;p&gt;考-虑多种Python实现(PyPy, Jython, IronPython,Pyrex, Psyco, 等等)。&lt;/p&gt;
-
-&lt;p&gt;例如，CPython对a+=b或a=a+b等语句有高效的实现，但在Jython中运行很慢，尽量改用.join()。&lt;/p&gt;
-
-&lt;p&gt;-None比较用&amp;rsquo;is&amp;rsquo;或&amp;rsquo;is not&amp;rsquo;，不要用等号。&lt;/p&gt;
-
-&lt;p&gt;注意&amp;rdquo;if x is not None&amp;rdquo; 与&amp;rdquo;if x&amp;rdquo; 的区别。&lt;/p&gt;
-
-&lt;p&gt;-用&amp;rdquo;is not&amp;rdquo;代替&amp;rdquo;not &amp;hellip; is&amp;rdquo;。前者的可读性更好。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-if foo is not None
-
-# No
-if not foo is None
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-使用基于类的异常。&lt;/p&gt;
-
-&lt;p&gt;比较排序操作最好是实现所有六个操作，而不是代码中实现比较逻辑。functools.total_ordering()装饰符可以生成缺失的比较方法。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;__eq__，__ne__，__lt__，__lt__，__gt__，____）
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;PEP207 比较标准表明反射规则由Python完成。因此解释器可能会交换参数的位置，比如替换y &amp;gt; x为x &amp;lt; y，所以有必要实现这5种方法。&lt;/p&gt;
-
-&lt;p&gt;-使用函数定义def代替lambda赋值给标识符：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-def f(x): 
-    return 2*x
-
-# No
-f = lambda x: 2*x
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;前者更适合回调和字符串表示。&lt;/p&gt;
-
-&lt;p&gt;-异常类继承自Exception，而不是BaseException。&lt;/p&gt;
-
-&lt;p&gt;源于异常，而不是BaseException例外。从BaseException直接继承的例外情况追赶他们几乎总是错误的事情做保留。&lt;/p&gt;
-
-&lt;p&gt;要设计基于层次的异常，捕捉到需要的异常，而不是异常引发的位置。能回答：“出了什么问题？”，而不是仅仅指出“问题发生”(更多参考：PEP3151 重构OS和IO异常层次）&lt;/p&gt;
-
-&lt;p&gt;-适当使用异常链。在Python3中&amp;rdquo;raise X from Y&amp;rdquo;明确表示更换且保留了原来的traceback。&lt;/p&gt;
-
-&lt;p&gt;替换内部异常(在Python2: &amp;ldquo;raise X&amp;rdquo;或&amp;rdquo;raise X from None&amp;rdquo;)时，确保相关细节转移到新的异常（如转换KeyError为AttributeError保存属性名，或在新的异常中嵌入原始异常)。&lt;/p&gt;
-
-&lt;h2 id=&#34;python2中用-raise-valueerror-message-代替-raise-valueerror-message:edc5269fa41451f694a3996ea7ada34a&#34;&gt;Python2中用&amp;rdquo; raise ValueError(&amp;lsquo;message&amp;rsquo;)&amp;ldquo;代替&amp;rdquo;raise ValueError, &amp;lsquo;message&amp;rsquo;&amp;rdquo;&lt;/h2&gt;
-
-&lt;p&gt;后者不兼容Python3语法。前者续行方便。&lt;/p&gt;
-
-&lt;p&gt;-捕获异常时尽量指明具体异常，而不是空&amp;rdquo;except:&amp;ldquo;子句。比如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-try:
-    import platform_specific_module
-except ImportError:
-    platform_specific_module = None
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;空&amp;rdquo;except:&amp;ldquo;子句(相当于except Exception)会捕捉SystemExit和KeyboardInterrupt异常，难以用Control-C中断程序，并可掩盖其他问题。如果 你捕捉信号错误之外所有的异常，使用&amp;rdquo;except Exception&amp;rdquo;。&lt;/p&gt;
-
-&lt;p&gt;空&amp;rdquo;except:&amp;ldquo;子句适用的情况两种情况：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;a, 打印出或记录了traceback，至少让用户将知道已发生错误。 b, 代码需要做一些清理工作，并用 raise转发了异常。这样try&amp;hellip;finally可以捕捉到它。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;-Python 2.6以后建议用as显示绑定异常名：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-try:
-    process_data()
-except Exception as exc:
-    raise DataProcessingFailedError(str(exc))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这样才能兼容Python3语法并避免歧义。&lt;/p&gt;
-
-&lt;p&gt;-捕捉操作系统错误时，建议使用Python 3.3引入显式异常层次，支持内省errno值。&lt;/p&gt;
-
-&lt;p&gt;-此外所有try/except子句的代码要尽可的少，以免屏蔽其他的错误。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-try:
-    value = collection[key]
-except KeyError:
-    return key_not_found(key)
-else:
-    return handle_value(value)
-
-# No
-try:
-    # 太泛了!
-    return handle_value(collection[key])
-except KeyError:
-    # 会捕捉到handle_value()中的KeyError
-    return key_not_found(key)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-本地资源建议使用with语句，以确保即时清理。当然try / finally语句也是可以接受的。&lt;/p&gt;
-
-&lt;p&gt;-上下文管理器在做获取和释放资源之外的事情时，应通过独立的函数或方法。例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-with conn.begin_transaction():
-    do_stuff_in_transaction(conn)
-
-# No
-with conn:
-    do_stuff_in_transaction(conn)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;后者指明enter和exit方法。&lt;/p&gt;
-
-&lt;p&gt;-函数或者方法在没有返回时要明确返回None。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yesdef foo(x):
-    if x &amp;gt;= 0:
-        return math.sqrt(x)
-    else:
-        return Nonedef bar(x):
-    if x &amp;lt; 0:
-        return None
-    return math.sqrt(x)# Nodef foo(x):
-    if x &amp;gt;= 0:
-        return math.sqrt(x)def bar(x):
-    if x &amp;lt; 0:
-        return
-    return math.sqrt(x)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-使用字符串方法而不是string模块。&lt;/p&gt;
-
-&lt;p&gt;python 2.0以后字符串方法总是更快，且Unicode字符串相同的API。&lt;/p&gt;
-
-&lt;p&gt;-使用使用 .startswith()和.endswith()代替字符串切片来检查前缀和后缀。and&lt;/p&gt;
-
-&lt;p&gt;startswith()和endswith更简洁，利于减少错误。例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-if foo.startswith(&#39;bar&#39;):
-
-# No
-if foo[:3] == &#39;bar&#39;:
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-使用isinstance()代替对象类型的比较：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-if isinstance(obj, int):
-
-# No
-if type(obj) is type(1):
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;检查是否是字符串时，注意Python 2中str和unicode有公共的基类:&lt;/p&gt;
-
-&lt;p&gt;if isinstance(obj, basestring): 在 Python 2.2 中，types 模块为此定义了 StringTypes 类型，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-if isinstance(obj, basestring):
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Python3中Unicode和basestring的不再存在(只有str)和字节对象不再是字符串(是整数序列)&lt;/p&gt;
-
-&lt;p&gt;-对序列(字符串、列表 、元组), 空序列为false:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-if not seq:
-   pass
-if seq:
-   pass
-
-# No
-if len(seq):
-   pass
-if not len(seq):
-   pass
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-字符串后面不要有大量拖尾空格。&lt;/p&gt;
-
-&lt;p&gt;-不要用 == 进行布尔比较&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Yes
-if greeting::
-   pass
-
-# No
-if greeting == True
-   pass
-if greeting is True: # Worse
-   pass
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-Python标准库不使用的功能注释，这块有待用户去发现和体验有用的注释风格。下面有些第三方的建议(略)。&lt;/p&gt;
-
-&lt;p&gt;参考资料&lt;/p&gt;
-
-&lt;p&gt;-&lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP 8 - Style Guide for Python Code&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;-作者博客：&lt;a href=&#34;http://my.oschina.net/u/1433482&#34;&gt;http://my.oschina.net/u/1433482&lt;/a&gt;
--类型：翻译&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Machine Learning &amp; Deep Learning</title>
@@ -837,13 +17,19 @@ if greeting is True: # Worse
       <guid>http://danigong.github.io/post/ML_materials/</guid>
       <description>
 
-&lt;h2 id=&#34;机器学习-machine-learning-深度学习-deep-learning-资料-chapter-1:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;##机器学习(Machine Learning)&amp;amp;深度学习(Deep Learning)资料(Chapter 1)&lt;/h2&gt;
-
-&lt;h2 id=&#34;注-机器学习资料-篇目一-https-github-com-ty4z2008-qix-blob-master-dl-md-共500条-篇目二-https-github-com-ty4z2008-qix-blob-master-dl2-md-开始更新:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;#####注:机器学习资料&lt;a href=&#34;https://github.com/ty4z2008/Qix/blob/master/dl.md&#34;&gt;篇目一&lt;/a&gt;共500条,&lt;a href=&#34;https://github.com/ty4z2008/Qix/blob/master/dl2.md&#34;&gt;篇目二&lt;/a&gt;开始更新&lt;/h2&gt;
+&lt;h3 id=&#34;机器学习-machine-learning-深度学习-deep-learning-资料-chapter-1:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;机器学习(Machine Learning)&amp;amp;深度学习(Deep Learning)资料(Chapter 1)&lt;/h3&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;希望转载的朋友-你可以不用联系我-但是-一定要保留原文链接-因为这个项目还在继续也在不定期更新-希望看到文章的朋友能够学到更多-此外-某些资料在中国访问需要梯子:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;#####希望转载的朋友，你可以不用联系我．但是&lt;strong&gt;一定要保留原文链接&lt;/strong&gt;，因为这个项目还在继续也在不定期更新．希望看到文章的朋友能够学到更多．此外:某些资料在中国访问需要梯子.&lt;/h2&gt;
+&lt;h3 id=&#34;注-机器学习资料-篇目一-https-github-com-ty4z2008-qix-blob-master-dl-md-共500条-篇目二-https-github-com-ty4z2008-qix-blob-master-dl2-md-开始更新:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;注:机器学习资料&lt;a href=&#34;https://github.com/ty4z2008/Qix/blob/master/dl.md&#34;&gt;篇目一&lt;/a&gt;共500条,&lt;a href=&#34;https://github.com/ty4z2008/Qix/blob/master/dl2.md&#34;&gt;篇目二&lt;/a&gt;开始更新&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;希望转载的朋友-你可以不用联系我-但是-一定要保留原文链接-因为这个项目还在继续也在不定期更新-希望看到文章的朋友能够学到更多-此外-某些资料在中国访问需要梯子:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;希望转载的朋友，你可以不用联系我．但是&lt;strong&gt;一定要保留原文链接&lt;/strong&gt;，因为这个项目还在继续也在不定期更新．希望看到文章的朋友能够学到更多．此外:某些资料在中国访问需要梯子.&lt;/h3&gt;
+
+&lt;hr /&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.erogol.com/brief-history-machine-learning/&#34;&gt;《Brief History of Machine Learning》&lt;/a&gt;&lt;/li&gt;
@@ -3965,7 +3151,7 @@ pip install pymongo
     </item>
     
     <item>
-      <title>A guide to Python&#39;s function decorators</title>
+      <title>A Guide to Python&#39;s Function Decorators</title>
       <link>http://danigong.github.io/post/python_decorator_guide/</link>
       <pubDate>Wed, 25 May 2016 22:26:53 +0800</pubDate>
       
@@ -4244,6 +3430,1013 @@ print get_text.__module__ # __main__
 &lt;h2 id=&#34;where-to-use-decorators:24448b6c2a661c98161fc3da9e5d92cf&#34;&gt;Where to use decorators&lt;/h2&gt;
 
 &lt;p&gt;The examples in this post are pretty simple relative to how much you can do with decorators. They can give so much power and elegance to your program. In general, decorators are ideal for extending the behavior of functions that we don&amp;rsquo;t want to modify. For a great list of useful decorators I suggest you check out the Python Decorator Library&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python Property</title>
+      <link>http://danigong.github.io/post/python_property/</link>
+      <pubDate>Mon, 13 Jul 2015 22:55:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/python_property/</guid>
+      <description>
+
+&lt;h2 id=&#34;python-属性-property-详解:05e96a11594e29fc27254b4ee09656d0&#34;&gt;Python“属性（property）”详解&lt;/h2&gt;
+
+&lt;p&gt;Python中有一个被称为属性函数(property)的小概念，它可以做一些有用的事情。在这篇文章中，我们将看到如何能做以下几点：&lt;/p&gt;
+
+&lt;h3 id=&#34;将类方法转换为只读属性:05e96a11594e29fc27254b4ee09656d0&#34;&gt;将类方法转换为只读属性&lt;/h3&gt;
+
+&lt;h3 id=&#34;重新实现一个属性的setter和getter方法:05e96a11594e29fc27254b4ee09656d0&#34;&gt;重新实现一个属性的setter和getter方法&lt;/h3&gt;
+
+&lt;p&gt;在本文中，您将学习如何以几种不同的方式来使用内置的属性函数。希望读到文章的末尾时，你能看到它是多么有用。&lt;/p&gt;
+
+&lt;p&gt;开始&lt;/p&gt;
+
+&lt;p&gt;使用属性函数的最简单的方法之一是将它作为一个方法的装饰器来使用。这可以让你将一个类方法转变成一个类属性。当我需要做某些值的合并时，我发现这很有用。其他想要获取它作为方法使用的人，发现在写转换函数时它很有用。让我们来看一个简单的例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Person(object):
+    &amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;
+ 
+    #----------------------------------------------------------------------
+    def __init__(self, first_name, last_name):
+        &amp;quot;&amp;quot;&amp;quot;Constructor&amp;quot;&amp;quot;&amp;quot;
+        self.first_name = first_name
+        self.last_name = last_name
+ 
+    #----------------------------------------------------------------------
+    @property
+    def full_name(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Return the full name
+        &amp;quot;&amp;quot;&amp;quot;
+        return &amp;quot;%s %s&amp;quot; % (self.first_name, self.last_name)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在上面的代码中，我们创建了两个类属性：self.first_name和self.last_name。接下来，我们创建了一个full_name方法，它有一个@property装饰器。这使我们能够在Python解释器会话中有如下的交互：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; person = Person(&amp;quot;Mike&amp;quot;, &amp;quot;Driscoll&amp;quot;)
+&amp;gt;&amp;gt;&amp;gt; person.full_name
+&#39;Mike Driscoll&#39;
+&amp;gt;&amp;gt;&amp;gt; person.first_name
+&#39;Mike&#39;
+&amp;gt;&amp;gt;&amp;gt; person.full_name = &amp;quot;Jackalope&amp;quot;
+Traceback (most recent call last):
+  File &amp;quot;&amp;lt;string&amp;gt;&amp;quot;, line 1, in &amp;lt;fragment&amp;gt;
+AttributeError: can&#39;t set attribute
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;正如你所看到的，因为我们将方法变成了属性，我们可以使用正常的点符号访问它。但是，如果我们试图将该属性设为其他值，我们会引发一个AttributeError错误。改变full_name属性的唯一方法是间接这样做：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; person.first_name = &amp;quot;Dan&amp;quot;
+&amp;gt;&amp;gt;&amp;gt; person.full_name
+&#39;Dan Driscoll&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这是一种限制，因此让我们来看看另一个例子，其中我们可以创建一个允许设置的属性。&lt;/p&gt;
+
+&lt;p&gt;使用Python property取代setter和getter方法&lt;/p&gt;
+
+&lt;p&gt;让我们假设我们有一些遗留代码，它们是由一些对Python理解得不够好的人写的。如果你像我一样，你之前已经看到过这类的代码：&lt;/p&gt;
+
+&lt;p&gt;Python&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Fees(object):
+    &amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        &amp;quot;&amp;quot;&amp;quot;Constructor&amp;quot;&amp;quot;&amp;quot;
+        self._fee = None
+ 
+    #----------------------------------------------------------------------
+    def get_fee(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Return the current fee
+        &amp;quot;&amp;quot;&amp;quot;
+        return self._fee
+ 
+    #----------------------------------------------------------------------
+    def set_fee(self, value):
+        &amp;quot;&amp;quot;&amp;quot;
+        Set the fee
+        &amp;quot;&amp;quot;&amp;quot;
+        if isinstance(value, str):
+            self._fee = Decimal(value)
+        elif isinstance(value, Decimal):
+            self._fee = value
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;要使用这个类，我们必须要使用定义的getter和setter方法​​：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; f = Fees()
+&amp;gt;&amp;gt;&amp;gt; f.set_fee(&amp;quot;1&amp;quot;)
+&amp;gt;&amp;gt;&amp;gt; f.get_fee()
+Decimal(&#39;1&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果你想添加可以使用正常点符号访问的属性，而不破坏所有依赖于这段代码的应用程序，你可以通过添加一个属性函数非常简单地改变它：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Fees(object):
+    &amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        &amp;quot;&amp;quot;&amp;quot;Constructor&amp;quot;&amp;quot;&amp;quot;
+        self._fee = None
+ 
+    #----------------------------------------------------------------------
+    def get_fee(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        Return the current fee
+        &amp;quot;&amp;quot;&amp;quot;
+        return self._fee
+ 
+    #----------------------------------------------------------------------
+    def set_fee(self, value):
+        &amp;quot;&amp;quot;&amp;quot;
+        Set the fee
+        &amp;quot;&amp;quot;&amp;quot;
+        if isinstance(value, str):
+            self._fee = Decimal(value)
+        elif isinstance(value, Decimal):
+            self._fee = value
+ 
+    fee = property(get_fee, set_fee)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们在这段代码的末尾添加了一行。现在我们可以这样做：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; f = Fees()
+&amp;gt;&amp;gt;&amp;gt; f.set_fee(&amp;quot;1&amp;quot;)
+&amp;gt;&amp;gt;&amp;gt; f.fee
+Decimal(&#39;1&#39;)
+&amp;gt;&amp;gt;&amp;gt; f.fee = &amp;quot;2&amp;quot;
+&amp;gt;&amp;gt;&amp;gt; f.get_fee()
+Decimal(&#39;2&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;正如你所看到的，当我们以这种方式使用属性函数时，它允许fee属性设置并获取值本身而不破坏原有代码。让我们使用属性装饰器来重写这段代码，看看我们是否能得到一个允许设置的属性值。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Fees(object):
+    &amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        &amp;quot;&amp;quot;&amp;quot;Constructor&amp;quot;&amp;quot;&amp;quot;
+        self._fee = None
+ 
+    #----------------------------------------------------------------------
+    @property
+    def fee(self):
+        &amp;quot;&amp;quot;&amp;quot;
+        The fee property - the getter
+        &amp;quot;&amp;quot;&amp;quot;
+        return self._fee
+ 
+    #----------------------------------------------------------------------
+    @fee.setter
+    def fee(self, value):
+        &amp;quot;&amp;quot;&amp;quot;
+        The setter of the fee property
+        &amp;quot;&amp;quot;&amp;quot;
+        if isinstance(value, str):
+            self._fee = Decimal(value)
+        elif isinstance(value, Decimal):
+            self._fee = value
+ 
+#----------------------------------------------------------------------
+if __name__ == &amp;quot;__main__&amp;quot;:
+    f = Fees()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面的代码演示了如何为fee属性创建一个setter方法。你可以用一个名为@fee.setter的装饰器装饰第二个方法名也为fee的方法来实现这个。当你如下所做时，setter被调用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; f = Fees()
+&amp;gt;&amp;gt;&amp;gt; f.fee = &amp;quot;1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果你看属性函数的说明，它有fget, fset, fdel和doc几个参数。如果你想对属性使用del命令，你可以使用@fee.deleter创建另一个装饰器来装饰相同名字的函数从而实现删除的同样效果。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PEP8 Chinese Version</title>
+      <link>http://danigong.github.io/post/translated_pep8/</link>
+      <pubDate>Sat, 11 Jul 2015 20:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/translated_pep8/</guid>
+      <description>
+
+&lt;p&gt;本文给出主Python版本标准库的编码约定。CPython的C代码风格参见PEP7。&lt;/p&gt;
+
+&lt;p&gt;本文和PEP 257 文档字符串标准改编自Guido最初的《Python Style Guide》, 并增加了Barry的GNU Mailman Coding Style Guide的部分内容。&lt;/p&gt;
+
+&lt;p&gt;本文会随着语言改变等而改变。&lt;/p&gt;
+
+&lt;p&gt;许多项目都有自己的编码风格指南，冲突时自己的指南为准。&lt;/p&gt;
+
+&lt;h2 id=&#34;一致性考虑:edc5269fa41451f694a3996ea7ada34a&#34;&gt;一致性考虑&lt;/h2&gt;
+
+&lt;p&gt;Guido的关键点之一是：代码更多是用来读而不是写。本指南旨在改善Python代码的可读性，即PEP 20所说的“可读性计数&amp;rdquo;(Readability counts)。&lt;/p&gt;
+
+&lt;p&gt;风格指南强调一致性。项目、模块或函数保持一致都很重要。&lt;/p&gt;
+
+&lt;p&gt;最重要的是知道何时不一致, 有时风格指南并不适用。当有疑惑时运用你的最佳判断，参考其他例子并多问！&lt;/p&gt;
+
+&lt;p&gt;特别注意：不要因为遵守本PEP而破坏向后兼容性！&lt;/p&gt;
+
+&lt;p&gt;部分可以违背指南情况：&lt;/p&gt;
+
+&lt;p&gt;-遵循指南会降低可读性。&lt;/p&gt;
+
+&lt;p&gt;-与周围其他代码不一致。&lt;/p&gt;
+
+&lt;p&gt;-代码在引入指南完成，暂时没有理由修改。&lt;/p&gt;
+
+&lt;p&gt;-旧版本兼容。&lt;/p&gt;
+
+&lt;h2 id=&#34;代码布局:edc5269fa41451f694a3996ea7ada34a&#34;&gt;代码布局&lt;/h2&gt;
+
+&lt;h3 id=&#34;缩进:edc5269fa41451f694a3996ea7ada34a&#34;&gt;缩进&lt;/h3&gt;
+
+&lt;p&gt;每级缩进用4个空格。&lt;/p&gt;
+
+&lt;p&gt;括号中使用垂直隐式缩进或使用悬挂缩进。后者应该注意第一行要没有参数，后续行要有缩进。&lt;/p&gt;
+
+&lt;p&gt;Yes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 对准左括号
+foo = long_function_name(var_one, var_two,
+                         var_three, var_four)
+
+# 不对准左括号，但加多一层缩进，以和后面内容区别。
+def long_function_name(
+        var_one, var_two, var_three,
+        var_four):
+    print(var_one)
+
+# 悬挂缩进必须加多一层缩进.
+foo = long_function_name(
+    var_one, var_two,
+    var_three, var_four)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 不使用垂直对齐时，第一行不能有参数。
+foo = long_function_name(var_one, var_two,
+    var_three, var_four)
+
+# 参数的缩进和后续内容缩进不能区别。
+def long_function_name(
+    var_one, var_two, var_three,
+    var_four):
+    print(var_one)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4个空格的规则是对续行可选的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 悬挂缩进不一定是4个空格
+foo = long_function_name(
+  var_one, var_two,
+  var_three, var_four)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;if语句跨行时，两个字符关键字(比如if)加上一个空格，再加上左括号构成了很好的缩进。后续行暂时没有规定，至少有如下三种格式，建议使用第3种。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 没有额外缩进，不是很好看，个人不推荐.
+if (this_is_one_thing and
+    that_is_another_thing):
+    do_something()
+
+# 添加注释
+if (this_is_one_thing and
+    that_is_another_thing):
+    # Since both conditions are true, we can frobnicate.
+    do_something()
+
+# 额外添加缩进,推荐。
+# Add some extra indentation on the conditional continuation line.
+if (this_is_one_thing
+        and that_is_another_thing):
+    do_something()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;右边括号也可以另起一行。有两种格式，建议第2种。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 右括号不回退，个人不推荐
+my_list = [
+    1, 2, 3,
+    4, 5, 6,
+    ]
+result = some_function_that_takes_arguments(
+    &#39;a&#39;, &#39;b&#39;, &#39;c&#39;,
+    &#39;d&#39;, &#39;e&#39;, &#39;f&#39;,
+    )
+
+# 右括号回退
+my_list = [
+    1, 2, 3,
+    4, 5, 6,
+]
+result = some_function_that_takes_arguments(
+    &#39;a&#39;, &#39;b&#39;, &#39;c&#39;,
+    &#39;d&#39;, &#39;e&#39;, &#39;f&#39;,
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;空格或tab:edc5269fa41451f694a3996ea7ada34a&#34;&gt;空格或Tab?&lt;/h3&gt;
+
+&lt;p&gt;-空格是首选的缩进方法。&lt;/p&gt;
+
+&lt;p&gt;-Tab仅仅在已经使用tab缩进的代码中为了保持一致性而使用。&lt;/p&gt;
+
+&lt;p&gt;-Python 3中不允许混合使用Tab和空格缩进。&lt;/p&gt;
+
+&lt;p&gt;-Python 2的包含空格与Tab和空格缩进的应该全部转为空格缩进。&lt;/p&gt;
+
+&lt;p&gt;Python2命令行解释器使用-t选项时有非法混合Tab和空格的情况会告警。当使用-tt警告提升为错误。强烈推荐这些选项！另外个人推荐pep8和autopep8模块。&lt;/p&gt;
+
+&lt;h3 id=&#34;最大行宽:edc5269fa41451f694a3996ea7ada34a&#34;&gt;最大行宽&lt;/h3&gt;
+
+&lt;p&gt;限制所有行的最大行宽为79字符。&lt;/p&gt;
+
+&lt;p&gt;文本长块，比如文档字符串或注释，行长度应限制为72个字符。&lt;/p&gt;
+
+&lt;p&gt;多数工具默认的续行功能会破坏代码结构，使它更难理解，不推荐使用。但是超过80个字符加以提醒是必要的。一些工具可能根本不具备动态换行功能。&lt;/p&gt;
+
+&lt;p&gt;一些团队强烈希望更长的行宽。如果能达成一致，可以从从80提高到100个字符(最多99个字符)增加了标称线的长度，不过依旧建议文档字符串和注释保持在72的长度。&lt;/p&gt;
+
+&lt;p&gt;Python标准库比较保守，限制行宽79个字符(文档字符串/注释72）。&lt;/p&gt;
+
+&lt;p&gt;续行的首选方法是使用小括号、中括号和大括号反斜线仍可能在适当的时候。其次是反斜杠。比如with语句中：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;with open(&#39;/path/to/some/file/you/want/to/read&#39;) as file_1, \
+     open(&#39;/path/to/some/file/being/written&#39;, &#39;w&#39;) as file_2:
+    file_2.write(file_1.read())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;类似的还有assert。&lt;/p&gt;
+
+&lt;p&gt;注意续行要尽量不影响可读性。比如通常在二元运算符之后续行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Rectangle(Blob):
+
+    def __init__(self, width, height,
+                 color=&#39;black&#39;, emphasis=None, highlight=0):
+        if (width == 0 and height == 0 and
+                color == &#39;red&#39; and emphasis == &#39;strong&#39; or
+                highlight &amp;gt; 100):
+            raise ValueError(&amp;quot;sorry, you lose&amp;quot;)
+        if width == 0 and height == 0 and (color == &#39;red&#39; or
+                                           emphasis is None):
+            raise ValueError(&amp;quot;I don&#39;t think so -- values are %s, %s&amp;quot; %
+                             (width, height))
+        Blob.__init__(self, width, height,
+                      color, emphasis, highlight)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;空行:edc5269fa41451f694a3996ea7ada34a&#34;&gt;空行&lt;/h3&gt;
+
+&lt;p&gt;-两行空行分割顶层函数和类的定义。&lt;/p&gt;
+
+&lt;p&gt;-类的方法定义用单个空行分割。&lt;/p&gt;
+
+&lt;p&gt;-额外的空行可以必要的时候用于分割不同的函数组，但是要尽量节约使用。&lt;/p&gt;
+
+&lt;p&gt;-额外的空行可以必要的时候在函数中用于分割不同的逻辑块，但是要尽量节约使用。&lt;/p&gt;
+
+&lt;p&gt;-Python接 contol-L作为空白符；许多工具视它为分页符，这些要因编辑器而异。&lt;/p&gt;
+
+&lt;h3 id=&#34;源文件编码:edc5269fa41451f694a3996ea7ada34a&#34;&gt;源文件编码&lt;/h3&gt;
+
+&lt;p&gt;在核心Python发布的代码应该总是使用UTF-8(ASCII在Python 2)。&lt;/p&gt;
+
+&lt;p&gt;ASCII文件(Python 2)或UTF-8(Python 3)不应有编码声明。&lt;/p&gt;
+
+&lt;p&gt;标准库中非默认的编码应仅用于测试或当注释或文档字符串,比如包含非ASCII字符的作者姓名，尽量使用\x , \u , \U , or \N。&lt;/p&gt;
+
+&lt;p&gt;Python 3.0及以后版本，PEP 3131可供参考，部分内容如下：在Python标准库必须使用ASCII标识符，并尽量只使用英文字母。此外字符串和注释也必须用ASCII。唯一的例外是：（a）测试非ASCII的功能，和（b）作者的名字不是拉丁字母。&lt;/p&gt;
+
+&lt;h3 id=&#34;导入:edc5269fa41451f694a3996ea7ada34a&#34;&gt;导入&lt;/h3&gt;
+
+&lt;p&gt;导入在单独行&lt;/p&gt;
+
+&lt;p&gt;Yes：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import os
+import sys
+from subprocess import Popen, PIPE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import sys, os
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-导入始终在文件的顶部，在模块注释和文档字符串之后，在模块全局变量和常量之前。&lt;/p&gt;
+
+&lt;p&gt;导入顺序如下：标准库进口,相关的第三方库，本地库。各组的导入之间要有空行。&lt;/p&gt;
+
+&lt;p&gt;相关的all放在导入之后。&lt;/p&gt;
+
+&lt;p&gt;-推荐绝对路径导入，因为它们通常更可读，而且往往是表现更好的（或至少提供更好的错误消息。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import mypkg.sibling
+from mypkg import sibling
+from mypkg.sibling import example
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在绝对路径比较长的情况下，也可以使用相对路径：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from . import sibling
+from .sibling import example
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Python 3中已经禁止隐式的相对导入。&lt;/p&gt;
+
+&lt;p&gt;-导入类的方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from myclass import MyClass
+from foo.bar.yourclass import YourClass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果和本地名字有冲突：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import myclass
+import foo.bar.yourclass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-禁止使用通配符导入。&lt;/p&gt;
+
+&lt;p&gt;通配符导入(from &lt;module&gt; import *)应该避免，因为它不清楚命名空间有哪些名称存，混淆读者和许多自动化的工具。唯一的例外是重新发布对外的API时可以考虑使用。&lt;/p&gt;
+
+&lt;h2 id=&#34;字符串引用:edc5269fa41451f694a3996ea7ada34a&#34;&gt;字符串引用&lt;/h2&gt;
+
+&lt;p&gt;Python中单引号字符串和双引号字符串都是相同的。注意尽量避免在字符串中的反斜杠以提高可读性。&lt;/p&gt;
+
+&lt;p&gt;根据PEP 257, 三个引号都使用双引号。&lt;/p&gt;
+
+&lt;h2 id=&#34;表达式和语句中的空格:edc5269fa41451f694a3996ea7ada34a&#34;&gt;表达式和语句中的空格&lt;/h2&gt;
+
+&lt;h3 id=&#34;强制要求:edc5269fa41451f694a3996ea7ada34a&#34;&gt;强制要求&lt;/h3&gt;
+
+&lt;p&gt;-括号里边避免空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 括号里边避免空格
+# Yes
+spam(ham[1], {eggs: 2})
+# No
+spam( ham[ 1 ], { eggs: 2 } )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-逗号，冒号，分号之前避免空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 逗号，冒号，分号之前避免空格
+# Yes
+if x == 4: print x, y; x, y = y, x
+# No
+if x == 4 : print x , y ; x , y = y , x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-索引操作中的冒号当作操作符处理前后要有同样的空格(一个空格或者没有空格，个人建议是没有。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
+ham[lower:upper], ham[lower:upper:], ham[lower::step]
+ham[lower+offset : upper+offset]
+ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
+ham[lower + offset : upper + offset]
+# No
+ham[lower + offset:upper + offset]
+ham[1: 9], ham[1 :9], ham[1:9 :3]
+ham[lower : : upper]
+ham[ : upper]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;函数调用的左括号之前不能有空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+spam(1)
+dct[&#39;key&#39;] = lst[index]
+
+# No
+spam (1)
+dct [&#39;key&#39;] = lst [index]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-赋值等操作符前后不能因为对齐而添加多个空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+x = 1
+y = 2
+long_variable = 3
+
+# No
+x             = 1
+y             = 2
+long_variable = 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其他建议&lt;/p&gt;
+
+&lt;p&gt;-二元运算符两边放置一个空格:&lt;/p&gt;
+
+&lt;p&gt;涉及 =、符合操作符 ( += , -=等)、比较( == , &amp;lt; , &amp;gt; , != , &amp;lt;&amp;gt; , &amp;lt;= , &amp;gt;= , in , not in , is , is not )、布尔( and , or , not )。&lt;/p&gt;
+
+&lt;p&gt;-优先级高的运算符或操作符的前后不建议有空格。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+i = i + 1
+submitted += 1
+x = x*2 - 1
+hypot2 = x*x + y*y
+c = (a+b) * (a-b)
+
+# No
+i=i+1
+submitted +=1
+x = x * 2 - 1
+hypot2 = x * x + y * y
+c = (a + b) * (a - b)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-关键字参数和默认值参数的前后不要加空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+def complex(real, imag=0.0):
+    return magic(r=real, i=imag)
+
+# No
+def complex(real, imag = 0.0):
+    return magic(r = real, i = imag)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-函数注释中，=前后要有空格，冒号和&amp;rdquo;-&amp;gt;&amp;ldquo;的前面无空格，后面有空格。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+def munge(input: AnyStr):
+def munge(sep: AnyStr = None):
+def munge() -&amp;gt; AnyStr:
+def munge(input: AnyStr, sep: AnyStr = None, limit=1000):
+
+# No
+def munge(input: AnyStr=None):
+def munge(input:AnyStr):
+def munge(input: AnyStr)-&amp;gt;PosInt:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-通常不推荐复合语句(Compound statements: 多条语句写在同一行)。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+if foo == &#39;blah&#39;:
+    do_blah_thing()
+do_one()
+do_two()
+do_three()
+
+# No
+if foo == &#39;blah&#39;: do_blah_thing()
+do_one(); do_two(); do_three()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-尽管有时可以在if/for/while 的同一行跟一小段代码，但绝不要跟多个子句，并尽量避免换行。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# No
+if foo == &#39;blah&#39;: do_blah_thing()
+for x in lst: total += x
+while t &amp;lt; 10: t = delay()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;更不是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# No
+if foo == &#39;blah&#39;: do_blah_thing()
+else: do_non_blah_thing()
+
+try: something()
+finally: cleanup()
+
+do_one(); do_two(); do_three(long, argument,
+                             list, like, this)
+
+if foo == &#39;blah&#39;: one(); two(); three()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;注释:edc5269fa41451f694a3996ea7ada34a&#34;&gt;注释&lt;/h2&gt;
+
+&lt;p&gt;与代码自相矛盾的注释比没注释更差。修改代码时要优先更新注释！&lt;/p&gt;
+
+&lt;p&gt;注释是完整的句子。如果注释是断句，首字母应该大写，除非它是小写字母开头的标识符(永远不要修改标识符的大小写)。&lt;/p&gt;
+
+&lt;p&gt;如果注释很短，可以省略末尾的句号。注释块通常由一个或多个段落组成。段落由完整的句子构成且每个句子应该以点号(后面要有两个空格)结束，并注意断词和空格。&lt;/p&gt;
+
+&lt;p&gt;非英语国家的程序员请用英语书写你的注释，除非你120%确信代码永远不会被不懂你的语言的人阅读。&lt;/p&gt;
+
+&lt;h3 id=&#34;注释块:edc5269fa41451f694a3996ea7ada34a&#34;&gt;注释块&lt;/h3&gt;
+
+&lt;p&gt;注释块通常应用在代码前，并和这些代码有同样的缩进。每行以 &amp;lsquo;# &amp;lsquo;(除非它是注释内的缩进文本，注意#后面有空格)。&lt;/p&gt;
+
+&lt;p&gt;注释块内的段落用仅包含单个 &amp;lsquo;#&amp;rsquo; 的行分割。&lt;/p&gt;
+
+&lt;h3 id=&#34;行内注释:edc5269fa41451f694a3996ea7ada34a&#34;&gt;行内注释&lt;/h3&gt;
+
+&lt;p&gt;慎用行内注释(Inline Comments) 节俭使用行内注释。 行内注释是和语句在同一行，至少用两个空格和语句分开。行内注释不是必需的，重复罗嗦会使人分心。不要这样做：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x = x + 1 # Increment x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但有时很有必要:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;x = x + 1 # Compensate for border
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;文档字符串:edc5269fa41451f694a3996ea7ada34a&#34;&gt;文档字符串&lt;/h3&gt;
+
+&lt;p&gt;文档字符串的标准参见：PEP 257。&lt;/p&gt;
+
+&lt;p&gt;-为所有公共模块、函数、类和方法书写文档字符串。非公开方法不一定有文档字符串，建议有注释(出现在 def 行之后)来描述这个方法做什么。&lt;/p&gt;
+
+&lt;p&gt;-更多参考：PEP 257 文档字符串约定。注意结尾的 &amp;ldquo;&amp;rdquo;&amp;rdquo; 应该单独成行，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;&amp;quot;&amp;quot;Return a foobang
+Optional plotz says to frobnicate the bizbaz first.
+&amp;quot;&amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-单行的文档字符串，结尾的 &amp;ldquo;&amp;rdquo;&amp;rdquo; 在同一行。&lt;/p&gt;
+
+&lt;h2 id=&#34;版本标签:edc5269fa41451f694a3996ea7ada34a&#34;&gt;版本标签&lt;/h2&gt;
+
+&lt;p&gt;版本注记 (Version Bookkeeping)&lt;/p&gt;
+
+&lt;p&gt;如果你必须在源文件中包含git、Subversion、CVS或RCS crud信息，放置在模块的文档字符串之后，任何其他代码之前，上下各用一个空行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;__version__ = &amp;quot;$Revision$&amp;quot;# $Source$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;命名约定:edc5269fa41451f694a3996ea7ada34a&#34;&gt;命名约定&lt;/h2&gt;
+
+&lt;p&gt;Python库的命名约定有点混乱，不可能完全一致。但依然有些普遍推荐的命名规范的。新的模块和包 (包括第三方的框架) 应该遵循这些标准。对不同风格的已有的库，建议保持内部的一致性。&lt;/p&gt;
+
+&lt;h3 id=&#34;最重要的原则:edc5269fa41451f694a3996ea7ada34a&#34;&gt;最重要的原则&lt;/h3&gt;
+
+&lt;p&gt;用户可见的API命名应遵循使用约定而不是实现。&lt;/p&gt;
+
+&lt;h3 id=&#34;描述-命名风格:edc5269fa41451f694a3996ea7ada34a&#34;&gt;描述：命名风格&lt;/h3&gt;
+
+&lt;p&gt;有多种命名风格：&lt;/p&gt;
+
+&lt;p&gt;-b(单个小写字母)&lt;/p&gt;
+
+&lt;p&gt;-B(单个大写字母)&lt;/p&gt;
+
+&lt;p&gt;-lowercase(小写串)&lt;/p&gt;
+
+&lt;p&gt;-lower_case_with_underscores(带下划线的小写)&lt;/p&gt;
+
+&lt;p&gt;-UPPERCASE(大写串)&lt;/p&gt;
+
+&lt;p&gt;-UPPER_CASE_WITH_UNDERSCORES(带下划线的大写串)&lt;/p&gt;
+
+&lt;p&gt;-CapitalizedWords(首字母大写的单词串或驼峰缩写）&lt;/p&gt;
+
+&lt;p&gt;注意: 使用大写缩写时，缩写使用大写字母更好。故 HTTPServerError 比 HttpServerError 更好。&lt;/p&gt;
+
+&lt;p&gt;-mixedCase(混合大小写，第一个单词是小写)&lt;/p&gt;
+
+&lt;p&gt;-Capitalized_Words_With_Underscores（带下划线，首字母大写，丑陋）&lt;/p&gt;
+
+&lt;p&gt;还有一种风格使用短前缀分组名字。这在Python中不常用， 但出于完整性提一下。例如，os.stat()返回的元组有st_mode, st_size, st_mtime等等这样的名字(与POSIX系统调用结构体一致)。&lt;/p&gt;
+
+&lt;p&gt;X11库的所有公开函数以X开头, Python中通常认为是不必要的，因为属性和方法名有对象作前缀，而函数名有模块名为前缀。&lt;/p&gt;
+
+&lt;p&gt;下面讲述首尾有下划线的情况:&lt;/p&gt;
+
+&lt;p&gt;-_single_leading_underscore:(单前置下划线): 弱内部使用标志。 例如&amp;rdquo;from M import &amp;ldquo; 不会导入以下划线开头的对象。&lt;/p&gt;
+
+&lt;p&gt;-single_trailing&lt;em&gt;underscore&lt;/em&gt;(单后置下划线): 用于避免与 Python关键词的冲突。 例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Tkinter.Toplevel(master, class_=&#39;ClassName&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-&lt;strong&gt;double_leading_underscore(双前置下划线): 当用于命名类属性，会触发名字重整。 (在类FooBar中，&lt;/strong&gt;boo变成 _FooBar__boo)。&lt;/p&gt;
+
+&lt;p&gt;-&lt;strong&gt;double_leading_and_trailing_underscore&lt;/strong&gt;(双前后下划线)：用户名字空间的魔法对象或属性。例如:&lt;strong&gt;init&lt;/strong&gt; , &lt;strong&gt;import&lt;/strong&gt; or &lt;strong&gt;file&lt;/strong&gt;，不要自己发明这样的名字。&lt;/p&gt;
+
+&lt;h3 id=&#34;命名约定规范:edc5269fa41451f694a3996ea7ada34a&#34;&gt;命名约定规范&lt;/h3&gt;
+
+&lt;p&gt;-避免采用的名字&lt;/p&gt;
+
+&lt;p&gt;决不要用字符&amp;rsquo;l&amp;rsquo;(小写字母el)，&amp;rsquo;O&amp;rsquo;(大写字母oh)，或 &amp;lsquo;I&amp;rsquo;(大写字母eye) 作为单个字符的变量名。一些字体中，这些字符不能与数字1和0区别。用&amp;rsquo;L&amp;rsquo; 代替&amp;rsquo;l&amp;rsquo;时。&lt;/p&gt;
+
+&lt;p&gt;-包和模块名&lt;/p&gt;
+
+&lt;p&gt;模块名要简短，全部用小写字母，可使用下划线以提高可读性。包名和模块名类似，但不推荐使用下划线。&lt;/p&gt;
+
+&lt;p&gt;模块名对应到文件名，有些文件系统不区分大小写且截短长名字，在 Unix上不是问题，但当把代码迁移到 Mac、Windows 或 DOS 上时，就可能是个问题。当然随着系统的演进，这个问题已经不是经常出现。&lt;/p&gt;
+
+&lt;p&gt;另外有些模块底层用C或C++ 书写，并有对应的高层Python模块，C/C++模块名有一个前置下划线 (如：_socket)。&lt;/p&gt;
+
+&lt;p&gt;-类名&lt;/p&gt;
+
+&lt;p&gt;遵循CapWord。&lt;/p&gt;
+
+&lt;p&gt;接口需要文档化并且可以调用时，可能使用函数的命名规则。&lt;/p&gt;
+
+&lt;p&gt;注意大部分内置的名字是单个单词（或两个），CapWord只适用于异常名称和内置的常量。&lt;/p&gt;
+
+&lt;p&gt;-异常名&lt;/p&gt;
+
+&lt;p&gt;如果确实是错误，需要在类名添加后缀 &amp;ldquo;Error&amp;rdquo;。&lt;/p&gt;
+
+&lt;p&gt;-全局变量名&lt;/p&gt;
+
+&lt;p&gt;变量尽量只用于模块内部，约定类似函数。&lt;/p&gt;
+
+&lt;p&gt;对设计为通过 &amp;ldquo;from M import &amp;rdquo; 来使用的模块，应采用 &lt;strong&gt;all&lt;/strong&gt; 机制来防止导入全局变量；或者为全局变量加一个前置下划线。&lt;/p&gt;
+
+&lt;p&gt;-函数名&lt;/p&gt;
+
+&lt;p&gt;函数名应该为小写，必要时可用下划线分隔单词以增加可读性。 mixedCase(混合大小写)仅被允许用于兼容性考虑(如: threading.py)。&lt;/p&gt;
+
+&lt;p&gt;-函数和方法的参数&lt;/p&gt;
+
+&lt;p&gt;实例方法第一个参数是 &amp;lsquo;self&amp;rsquo;。&lt;/p&gt;
+
+&lt;p&gt;类方法第一个参数是 &amp;lsquo;cls&amp;rsquo;。&lt;/p&gt;
+
+&lt;p&gt;如果函数的参数名与保留关键字冲突，通常在参数名后加一个下划线。&lt;/p&gt;
+
+&lt;p&gt;-方法名和实例变量&lt;/p&gt;
+
+&lt;p&gt;同函数命名规则。&lt;/p&gt;
+
+&lt;p&gt;非公开方法和实例变量增加一个前置下划线。&lt;/p&gt;
+
+&lt;p&gt;为避免与子类命名冲突，采用两个前置下划线来触发重整。类Foo属性名为&lt;strong&gt;a， 不能以 Foo.&lt;/strong&gt;a访问。(执著的用户还是可以通过Foo._Foo__a。) 通常双前置下划线仅被用来避免与基类的属性发生命名冲突。&lt;/p&gt;
+
+&lt;p&gt;-常量&lt;/p&gt;
+
+&lt;p&gt;常量通常在模块级定义,由大写字母用下划线分隔组成。比如括MAX_OVERFLOW和TOTAL。&lt;/p&gt;
+
+&lt;p&gt;-继承设计&lt;/p&gt;
+
+&lt;p&gt;考虑类的方法和实例变量(统称为属性)是否公开。如果有疑问，选择不公开；把其改为公开比把公开属性改为非公开要容易。&lt;/p&gt;
+
+&lt;p&gt;公开属性可供所有人使用，并通常向后兼容。非公开属性不给第三方使用、可变甚至被移除。&lt;/p&gt;
+
+&lt;p&gt;这里不使用术语&amp;rdquo;private&amp;rdquo;， Python中没有属性是真正私有的。&lt;/p&gt;
+
+&lt;p&gt;另一类属性是子类API(在其他语言中通常称为 &amp;ldquo;protected&amp;rdquo;)。 一些类被设计为基类，可以扩展和修改。&lt;/p&gt;
+
+&lt;p&gt;谨记这些Python指南：&lt;/p&gt;
+
+&lt;p&gt;1.公开属性应该没有前导下划线。&lt;/p&gt;
+
+&lt;p&gt;2.如果公开属性名和保留关键字冲突，可以添加后置下划线&lt;/p&gt;
+
+&lt;p&gt;3.简单的公开数据属性，最好只公开属性名，没有复杂的访问/修改方法，python的Property提供了很好的封装方法。 d.如果不希望子类使用的属性，考虑用两个前置下划线(没有后置下划线)命名。&lt;/p&gt;
+
+&lt;h3 id=&#34;公共和内部接口:edc5269fa41451f694a3996ea7ada34a&#34;&gt;公共和内部接口&lt;/h3&gt;
+
+&lt;p&gt;任何向后兼容的保证只适用于公共接口。&lt;/p&gt;
+
+&lt;p&gt;文档化的接口通常是公共的，除非明说明是临时的或为内部接口、其他所有接口默认是内部的。&lt;/p&gt;
+
+&lt;p&gt;为了更好地支持内省，模块要在&lt;strong&gt;all&lt;/strong&gt;属性列出公共API。&lt;/p&gt;
+
+&lt;p&gt;内部接口要有前置下划线。&lt;/p&gt;
+
+&lt;p&gt;如果命名空间(包、模块或类)是内部的，里面的接口也是内部的。&lt;/p&gt;
+
+&lt;p&gt;导入名称应视为实现细节。其他模块不能间接访名字，除非在模块的API文档中明确记载，如os.path中或包的&lt;strong&gt;init&lt;/strong&gt;暴露了子模块。&lt;/p&gt;
+
+&lt;h2 id=&#34;编程建议:edc5269fa41451f694a3996ea7ada34a&#34;&gt;编程建议&lt;/h2&gt;
+
+&lt;p&gt;考-虑多种Python实现(PyPy, Jython, IronPython,Pyrex, Psyco, 等等)。&lt;/p&gt;
+
+&lt;p&gt;例如，CPython对a+=b或a=a+b等语句有高效的实现，但在Jython中运行很慢，尽量改用.join()。&lt;/p&gt;
+
+&lt;p&gt;-None比较用&amp;rsquo;is&amp;rsquo;或&amp;rsquo;is not&amp;rsquo;，不要用等号。&lt;/p&gt;
+
+&lt;p&gt;注意&amp;rdquo;if x is not None&amp;rdquo; 与&amp;rdquo;if x&amp;rdquo; 的区别。&lt;/p&gt;
+
+&lt;p&gt;-用&amp;rdquo;is not&amp;rdquo;代替&amp;rdquo;not &amp;hellip; is&amp;rdquo;。前者的可读性更好。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+if foo is not None
+
+# No
+if not foo is None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-使用基于类的异常。&lt;/p&gt;
+
+&lt;p&gt;比较排序操作最好是实现所有六个操作，而不是代码中实现比较逻辑。functools.total_ordering()装饰符可以生成缺失的比较方法。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;__eq__，__ne__，__lt__，__lt__，__gt__，____）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;PEP207 比较标准表明反射规则由Python完成。因此解释器可能会交换参数的位置，比如替换y &amp;gt; x为x &amp;lt; y，所以有必要实现这5种方法。&lt;/p&gt;
+
+&lt;p&gt;-使用函数定义def代替lambda赋值给标识符：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+def f(x): 
+    return 2*x
+
+# No
+f = lambda x: 2*x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;前者更适合回调和字符串表示。&lt;/p&gt;
+
+&lt;p&gt;-异常类继承自Exception，而不是BaseException。&lt;/p&gt;
+
+&lt;p&gt;源于异常，而不是BaseException例外。从BaseException直接继承的例外情况追赶他们几乎总是错误的事情做保留。&lt;/p&gt;
+
+&lt;p&gt;要设计基于层次的异常，捕捉到需要的异常，而不是异常引发的位置。能回答：“出了什么问题？”，而不是仅仅指出“问题发生”(更多参考：PEP3151 重构OS和IO异常层次）&lt;/p&gt;
+
+&lt;p&gt;-适当使用异常链。在Python3中&amp;rdquo;raise X from Y&amp;rdquo;明确表示更换且保留了原来的traceback。&lt;/p&gt;
+
+&lt;p&gt;替换内部异常(在Python2: &amp;ldquo;raise X&amp;rdquo;或&amp;rdquo;raise X from None&amp;rdquo;)时，确保相关细节转移到新的异常（如转换KeyError为AttributeError保存属性名，或在新的异常中嵌入原始异常)。&lt;/p&gt;
+
+&lt;p&gt;-Python2中用&amp;rdquo; raise ValueError(&amp;lsquo;message&amp;rsquo;)&amp;ldquo;代替&amp;rdquo;raise ValueError, &amp;lsquo;message&amp;rsquo;&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;后者不兼容Python3语法。前者续行方便。&lt;/p&gt;
+
+&lt;p&gt;-捕获异常时尽量指明具体异常，而不是空&amp;rdquo;except:&amp;ldquo;子句。比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+try:
+    import platform_specific_module
+except ImportError:
+    platform_specific_module = None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;空&amp;rdquo;except:&amp;ldquo;子句(相当于except Exception)会捕捉SystemExit和KeyboardInterrupt异常，难以用Control-C中断程序，并可掩盖其他问题。如果 你捕捉信号错误之外所有的异常，使用&amp;rdquo;except Exception&amp;rdquo;。&lt;/p&gt;
+
+&lt;p&gt;空&amp;rdquo;except:&amp;ldquo;子句适用的情况两种情况：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;a, 打印出或记录了traceback，至少让用户将知道已发生错误。 b, 代码需要做一些清理工作，并用 raise转发了异常。这样try&amp;hellip;finally可以捕捉到它。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;-Python 2.6以后建议用as显示绑定异常名：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+try:
+    process_data()
+except Exception as exc:
+    raise DataProcessingFailedError(str(exc))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样才能兼容Python3语法并避免歧义。&lt;/p&gt;
+
+&lt;p&gt;-捕捉操作系统错误时，建议使用Python 3.3引入显式异常层次，支持内省errno值。&lt;/p&gt;
+
+&lt;p&gt;-此外所有try/except子句的代码要尽可的少，以免屏蔽其他的错误。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+try:
+    value = collection[key]
+except KeyError:
+    return key_not_found(key)
+else:
+    return handle_value(value)
+
+# No
+try:
+    # 太泛了!
+    return handle_value(collection[key])
+except KeyError:
+    # 会捕捉到handle_value()中的KeyError
+    return key_not_found(key)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-本地资源建议使用with语句，以确保即时清理。当然try / finally语句也是可以接受的。&lt;/p&gt;
+
+&lt;p&gt;-上下文管理器在做获取和释放资源之外的事情时，应通过独立的函数或方法。例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+with conn.begin_transaction():
+    do_stuff_in_transaction(conn)
+
+# No
+with conn:
+    do_stuff_in_transaction(conn)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;后者指明enter和exit方法。&lt;/p&gt;
+
+&lt;p&gt;-函数或者方法在没有返回时要明确返回None。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yesdef foo(x):
+    if x &amp;gt;= 0:
+        return math.sqrt(x)
+    else:
+        return Nonedef bar(x):
+    if x &amp;lt; 0:
+        return None
+    return math.sqrt(x)# Nodef foo(x):
+    if x &amp;gt;= 0:
+        return math.sqrt(x)def bar(x):
+    if x &amp;lt; 0:
+        return
+    return math.sqrt(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-使用字符串方法而不是string模块。&lt;/p&gt;
+
+&lt;p&gt;python 2.0以后字符串方法总是更快，且Unicode字符串相同的API。&lt;/p&gt;
+
+&lt;p&gt;-使用使用 .startswith()和.endswith()代替字符串切片来检查前缀和后缀。and&lt;/p&gt;
+
+&lt;p&gt;startswith()和endswith更简洁，利于减少错误。例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+if foo.startswith(&#39;bar&#39;):
+
+# No
+if foo[:3] == &#39;bar&#39;:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-使用isinstance()代替对象类型的比较：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+if isinstance(obj, int):
+
+# No
+if type(obj) is type(1):
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;检查是否是字符串时，注意Python 2中str和unicode有公共的基类:&lt;/p&gt;
+
+&lt;p&gt;if isinstance(obj, basestring): 在 Python 2.2 中，types 模块为此定义了 StringTypes 类型，例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+if isinstance(obj, basestring):
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Python3中Unicode和basestring的不再存在(只有str)和字节对象不再是字符串(是整数序列)&lt;/p&gt;
+
+&lt;p&gt;-对序列(字符串、列表 、元组), 空序列为false:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+if not seq:
+   pass
+if seq:
+   pass
+
+# No
+if len(seq):
+   pass
+if not len(seq):
+   pass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-字符串后面不要有大量拖尾空格。&lt;/p&gt;
+
+&lt;p&gt;-不要用 == 进行布尔比较&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Yes
+if greeting::
+   pass
+
+# No
+if greeting == True
+   pass
+if greeting is True: # Worse
+   pass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-Python标准库不使用的功能注释，这块有待用户去发现和体验有用的注释风格。下面有些第三方的建议(略)。&lt;/p&gt;
+
+&lt;p&gt;参考资料&lt;/p&gt;
+
+&lt;p&gt;-&lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP 8 - Style Guide for Python Code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;-作者博客：&lt;a href=&#34;http://my.oschina.net/u/1433482&#34;&gt;http://my.oschina.net/u/1433482&lt;/a&gt;
+-类型：翻译&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Github Push Stucking When Writing Objects</title>
+      <link>http://danigong.github.io/post/github_push_stuck/</link>
+      <pubDate>Sat, 11 Apr 2015 21:35:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/github_push_stuck/</guid>
+      <description>
+
+&lt;h3 id=&#34;to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230&#34;&gt;To solve the github push stucking problem:&lt;/h3&gt;
+
+&lt;p&gt;Try to use the command as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global http.postBuffer 524288000
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

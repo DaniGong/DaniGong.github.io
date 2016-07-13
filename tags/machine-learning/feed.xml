@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Machine Learning on 小🐶&amp;python</title>
+    <title>Machine Learning on B🐶Pythonic</title>
     <link>http://danigong.github.io/tags/machine-learning/</link>
-    <description>Recent content in Machine Learning on 小🐶&amp;python</description>
+    <description>Recent content in Machine Learning on B🐶Pythonic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 10 Jul 2016 14:03:09 +0800</lastBuildDate>
@@ -17,13 +17,19 @@
       <guid>http://danigong.github.io/post/ML_materials/</guid>
       <description>
 
-&lt;h2 id=&#34;机器学习-machine-learning-深度学习-deep-learning-资料-chapter-1:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;##机器学习(Machine Learning)&amp;amp;深度学习(Deep Learning)资料(Chapter 1)&lt;/h2&gt;
-
-&lt;h2 id=&#34;注-机器学习资料-篇目一-https-github-com-ty4z2008-qix-blob-master-dl-md-共500条-篇目二-https-github-com-ty4z2008-qix-blob-master-dl2-md-开始更新:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;#####注:机器学习资料&lt;a href=&#34;https://github.com/ty4z2008/Qix/blob/master/dl.md&#34;&gt;篇目一&lt;/a&gt;共500条,&lt;a href=&#34;https://github.com/ty4z2008/Qix/blob/master/dl2.md&#34;&gt;篇目二&lt;/a&gt;开始更新&lt;/h2&gt;
+&lt;h3 id=&#34;机器学习-machine-learning-深度学习-deep-learning-资料-chapter-1:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;机器学习(Machine Learning)&amp;amp;深度学习(Deep Learning)资料(Chapter 1)&lt;/h3&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;希望转载的朋友-你可以不用联系我-但是-一定要保留原文链接-因为这个项目还在继续也在不定期更新-希望看到文章的朋友能够学到更多-此外-某些资料在中国访问需要梯子:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;#####希望转载的朋友，你可以不用联系我．但是&lt;strong&gt;一定要保留原文链接&lt;/strong&gt;，因为这个项目还在继续也在不定期更新．希望看到文章的朋友能够学到更多．此外:某些资料在中国访问需要梯子.&lt;/h2&gt;
+&lt;h3 id=&#34;注-机器学习资料-篇目一-https-github-com-ty4z2008-qix-blob-master-dl-md-共500条-篇目二-https-github-com-ty4z2008-qix-blob-master-dl2-md-开始更新:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;注:机器学习资料&lt;a href=&#34;https://github.com/ty4z2008/Qix/blob/master/dl.md&#34;&gt;篇目一&lt;/a&gt;共500条,&lt;a href=&#34;https://github.com/ty4z2008/Qix/blob/master/dl2.md&#34;&gt;篇目二&lt;/a&gt;开始更新&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;希望转载的朋友-你可以不用联系我-但是-一定要保留原文链接-因为这个项目还在继续也在不定期更新-希望看到文章的朋友能够学到更多-此外-某些资料在中国访问需要梯子:7f5176d6d6102fa1dc2184e7e7e36bd0&#34;&gt;希望转载的朋友，你可以不用联系我．但是&lt;strong&gt;一定要保留原文链接&lt;/strong&gt;，因为这个项目还在继续也在不定期更新．希望看到文章的朋友能够学到更多．此外:某些资料在中国访问需要梯子.&lt;/h3&gt;
+
+&lt;hr /&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.erogol.com/brief-history-machine-learning/&#34;&gt;《Brief History of Machine Learning》&lt;/a&gt;&lt;/li&gt;
