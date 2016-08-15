@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Configure Venv - B🐶Pythonic</title>
+  <title>Python Generator - B🐶Pythonic</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="安装virtualenv： pip install virtualenv 创建虚拟环境 virtualenv venv venv是新创建的虚拟环境的名称。 同时会创建一个与虚拟环境名称相同的文件夹venv, 里面存储">
+  <meta name="description" content="##生成器 通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占">
   <meta name="author" content="DanielGong">
-  <meta itemprop="name" content="Configure Venv - B🐶Pythonic">
-  <meta itemprop="description" content="安装virtualenv： pip install virtualenv 创建虚拟环境 virtualenv venv venv是新创建的虚拟环境的名称。 同时会创建一个与虚拟环境名称相同的文件夹venv, 里面存储">
+  <meta itemprop="name" content="Python Generator - B🐶Pythonic">
+  <meta itemprop="description" content="##生成器 通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占">
   <meta itemprop="image" content="http://danigong.github.io/img/author.jpg">
   
   
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="http://danigong.github.io/post/configure_venv/" title="Configure Venv" itemprop="url">Configure Venv</a>
+      <a href="http://danigong.github.io/post/python_generator/" title="Python Generator" itemprop="url">Python Generator</a>
   </h1>
   <p class="article-author">By
     
@@ -69,29 +69,179 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2016-07-10 12:43:13 &#43;0800 CST" itemprop="datePublished">2016/07/10/</time>
+    <time datetime="2016-07-15 22:07:29 &#43;0800 CST" itemprop="datePublished">2016/07/15/</time>
   </p>
 </header>
 
 	<div class="article-content">
     
-    <p>安装virtualenv：
-    <code>pip install virtualenv</code></p>
+    <hr />
 
-<p>创建虚拟环境
-    <code>virtualenv venv</code>
-    venv是新创建的虚拟环境的名称。 同时会创建一个与虚拟环境名称相同的文件夹venv, 里面存储了一个独立的Python执行环境。</p>
+<p>##生成器</p>
 
-<p>进入虚拟环境
-    <code>source venv/bin/activate</code>
-    进入虚拟环境后，命令行的提示符会加入虚拟环境的名称，例如：<code>(venv)user@machine:~$</code></p>
+<p>通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面几个元素，那后面绝大多数元素占用的空间都白白浪费了。</p>
 
-<p>退出虚拟环境$
-    <code>deactivate</code></p>
+<p>所以，如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器（Generator）。</p>
 
-<p>删除虚拟环境
-    <code>rm -r venv</code>
-    直接删除虚拟环境所在的文件夹venv就删除了我们创建的venv虚拟环境。</p>
+<p>要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的[]改成()，就创建了一个generator：</p>
+
+<pre><code>&gt;&gt;&gt; L = [x * x for x in range(10)]
+&gt;&gt;&gt; L
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+&gt;&gt;&gt; g = (x * x for x in range(10))
+&gt;&gt;&gt; g
+&lt;generator object &lt;genexpr&gt; at 0x104feab40&gt;
+</code></pre>
+
+<p>创建L和g的区别仅在于最外层的[]和()，L是一个list，而g是一个generator。</p>
+
+<p>我们可以直接打印出list的每一个元素，但我们怎么打印出generator的每一个元素呢？</p>
+
+<p>如果要一个一个打印出来，可以通过generator的next()方法：</p>
+
+<pre><code>&gt;&gt;&gt; g.next()
+0
+&gt;&gt;&gt; g.next()
+1
+&gt;&gt;&gt; g.next()
+4
+&gt;&gt;&gt; g.next()
+9
+&gt;&gt;&gt; g.next()
+16
+&gt;&gt;&gt; g.next()
+25
+&gt;&gt;&gt; g.next()
+36
+&gt;&gt;&gt; g.next()
+49
+&gt;&gt;&gt; g.next()
+64
+&gt;&gt;&gt; g.next()
+81
+&gt;&gt;&gt; g.next()
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+StopIteration
+</code></pre>
+
+<p>我们讲过，generator保存的是算法，每次调用next()，就计算出下一个元素的值，直到计算到最后一个元素，没有更多的元素时，抛出StopIteration的错误。</p>
+
+<p>当然，上面这种不断调用next()方法实在是太变态了，正确的方法是使用for循环，因为generator也是可迭代对象：</p>
+
+<pre><code>&gt;&gt;&gt; g = (x * x for x in range(10))
+&gt;&gt;&gt; for n in g:
+...     print n
+...
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+</code></pre>
+
+<p>所以，我们创建了一个generator后，基本上永远不会调用next()方法，而是通过for循环来迭代它。</p>
+
+<p>generator非常强大。如果推算的算法比较复杂，用类似列表生成式的for循环无法实现的时候，还可以用函数来实现。</p>
+
+<p>比如，著名的斐波拉契数列（Fibonacci），除第一个和第二个数外，任意一个数都可由前两个数相加得到：</p>
+
+<p>1, 1, 2, 3, 5, 8, 13, 21, 34, &hellip;</p>
+
+<p>斐波拉契数列用列表生成式写不出来，但是，用函数把它打印出来却很容易：</p>
+
+<pre><code>def fib(max):
+    n, a, b = 0, 0, 1
+    while n &lt; max:
+        print b
+        a, b = b, a + b
+        n = n + 1
+</code></pre>
+
+<p>上面的函数可以输出斐波那契数列的前N个数：</p>
+
+<pre><code>&gt;&gt;&gt; fib(6)
+1
+1
+2
+3
+5
+8
+</code></pre>
+
+<p>仔细观察，可以看出，fib函数实际上是定义了斐波拉契数列的推算规则，可以从第一个元素开始，推算出后续任意的元素，这种逻辑其实非常类似generator。</p>
+
+<p>也就是说，上面的函数和generator仅一步之遥。要把fib函数变成generator，只需要把print b改为yield b就可以了：</p>
+
+<pre><code>def fib(max):
+    n, a, b = 0, 0, 1
+    while n &lt; max:
+        yield b
+        a, b = b, a + b
+        n = n + 1
+</code></pre>
+
+<p>这就是定义generator的另一种方法。如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator：</p>
+
+<pre><code>&gt;&gt;&gt; fib(6)
+&lt;generator object fib at 0x104feaaa0&gt;
+</code></pre>
+
+<p>这里，最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+
+<p>举个简单的例子，定义一个generator，依次返回数字1，3，5：</p>
+
+<pre><code>&gt;&gt;&gt; def odd():
+...     print 'step 1'
+...     yield 1
+...     print 'step 2'
+...     yield 3
+...     print 'step 3'
+...     yield 5
+...
+&gt;&gt;&gt; o = odd()
+&gt;&gt;&gt; o.next()
+step 1
+1
+&gt;&gt;&gt; o.next()
+step 2
+3
+&gt;&gt;&gt; o.next()
+step 3
+5
+&gt;&gt;&gt; o.next()
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+StopIteration
+</code></pre>
+
+<p>可以看到，odd不是普通函数，而是generator，在执行过程中，遇到yield就中断，下次又继续执行。执行3次yield后，已经没有yield可以执行了，所以，第4次调用next()就报错。</p>
+
+<p>回到fib的例子，我们在循环过程中不断调用yield，就会不断中断。当然要给循环设置一个条件来退出循环，不然就会产生一个无限数列出来。</p>
+
+<p>同样的，把函数改成generator后，我们基本上从来不会用next()来调用它，而是直接使用for循环来迭代：</p>
+
+<pre><code>&gt;&gt;&gt; for n in fib(6):
+...     print n
+...
+1
+1
+2
+3
+5
+8
+</code></pre>
+
+<p>##小结</p>
+
+<p>generator是非常强大的工具，在Python中，可以简单地把列表生成式改成generator，也可以通过函数实现复杂逻辑的generator。</p>
+
+<p>要理解generator的工作原理，它是在for循环的过程中不断计算出下一个元素，并在适当的条件结束for循环。对于函数改成的generator来说，遇到return语句或者执行到函数体最后一行语句，就是结束generator的指令，for循环随之结束。</p>
 
 	</div>
   <footer class="article-footer clearfix">
@@ -109,7 +259,7 @@
 
 
   <div class="article-share" id="share">
-    <div data-url="http://danigong.github.io/post/configure_venv/" data-title="Configure Venv" data-tsina="" class="share clearfix">
+    <div data-url="http://danigong.github.io/post/python_generator/" data-title="Python Generator" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -125,8 +275,8 @@
 
 
 var disqus_config = function () {
-this.page.url = "http://danigong.github.io/post/configure_venv/";
-this.page.identifier = "http://danigong.github.io/post/configure_venv/";
+this.page.url = "http://danigong.github.io/post/python_generator/";
+this.page.identifier = "http://danigong.github.io/post/python_generator/";
 };
 (function() { 
 var d = document, s = d.createElement('script');

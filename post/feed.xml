@@ -6,8 +6,311 @@
     <description>Recent content in Posts on B🐶Pythonic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 10 Jul 2016 14:03:09 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Aug 2016 22:14:50 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Python Coroutine</title>
+      <link>http://danigong.github.io/post/python_coroutine/</link>
+      <pubDate>Mon, 15 Aug 2016 22:14:50 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/python_coroutine/</guid>
+      <description>&lt;p&gt;##协程&lt;/p&gt;
+
+&lt;p&gt;###协程，又称微线程，纤程。英文名Coroutine。&lt;/p&gt;
+
+&lt;p&gt;协程的概念很早就提出来了，但直到最近几年才在某些语言（如Lua）中得到广泛应用。&lt;/p&gt;
+
+&lt;p&gt;子程序，或者称为函数，在所有语言中都是层级调用，比如A调用B，B在执行过程中又调用了C，C执行完毕返回，B执行完毕返回，最后是A执行完毕。&lt;/p&gt;
+
+&lt;p&gt;所以子程序调用是通过栈实现的，一个线程就是执行一个子程序。&lt;/p&gt;
+
+&lt;p&gt;子程序调用总是一个入口，一次返回，调用顺序是明确的。而协程的调用和子程序不同。&lt;/p&gt;
+
+&lt;p&gt;协程看上去也是子程序，但执行过程中，在子程序内部可中断，然后转而执行别的子程序，在适当的时候再返回来接着执行。&lt;/p&gt;
+
+&lt;p&gt;注意，在一个子程序中中断，去执行其他子程序，不是函数调用，有点类似CPU的中断。比如子程序A、B：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def A():
+    print &#39;1&#39;
+    print &#39;2&#39;
+    print &#39;3&#39;
+
+def B():
+    print &#39;x&#39;
+    print &#39;y&#39;
+    print &#39;z&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;假设由协程执行，在执行A的过程中，可以随时中断，去执行B，B也可能在执行过程中中断再去执行A，结果可能是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1
+2
+x
+y
+3
+z
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是在A中是没有调用B的，所以协程的调用比函数调用理解起来要难一些。&lt;/p&gt;
+
+&lt;p&gt;看起来A、B的执行有点像多线程，但协程的特点在于是一个线程执行，那和多线程比，协程有何优势？&lt;/p&gt;
+
+&lt;p&gt;最大的优势就是协程极高的执行效率。因为子程序切换不是线程切换，而是由程序自身控制，因此，没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。&lt;/p&gt;
+
+&lt;p&gt;第二大优势就是不需要多线程的锁机制，因为只有一个线程，也不存在同时写变量冲突，在协程中控制共享资源不加锁，只需要判断状态就好了，所以执行效率比多线程高很多。&lt;/p&gt;
+
+&lt;p&gt;因为协程是一个线程执行，那怎么利用多核CPU呢？最简单的方法是多进程+协程，既充分利用多核，又充分发挥协程的高效率，可获得极高的性能。&lt;/p&gt;
+
+&lt;p&gt;Python对协程的支持还非常有限，用在generator中的yield可以一定程度上实现协程。虽然支持不完全，但已经可以发挥相当大的威力了。&lt;/p&gt;
+
+&lt;p&gt;来看例子：&lt;/p&gt;
+
+&lt;p&gt;传统的生产者-消费者模型是一个线程写消息，一个线程取消息，通过锁机制控制队列和等待，但一不小心就可能死锁。&lt;/p&gt;
+
+&lt;p&gt;如果改用协程，生产者生产消息后，直接通过yield跳转到消费者开始执行，待消费者执行完毕后，切换回生产者继续生产，效率极高：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import time
+
+def consumer():
+    r = &#39;&#39;
+    while True:
+        n = yield r
+        if not n:
+            return
+        print(&#39;[CONSUMER] Consuming %s...&#39; % n)
+        time.sleep(1)
+        r = &#39;200 OK&#39;
+
+def produce(c):
+    c.next()
+    n = 0
+    while n &amp;lt; 5:
+        n = n + 1
+        print(&#39;[PRODUCER] Producing %s...&#39; % n)
+        r = c.send(n)
+        print(&#39;[PRODUCER] Consumer return: %s&#39; % r)
+    c.close()
+
+if __name__==&#39;__main__&#39;:
+    c = consumer()
+    produce(c)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;执行结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[PRODUCER] Producing 1...
+[CONSUMER] Consuming 1...
+[PRODUCER] Consumer return: 200 OK
+[PRODUCER] Producing 2...
+[CONSUMER] Consuming 2...
+[PRODUCER] Consumer return: 200 OK
+[PRODUCER] Producing 3...
+[CONSUMER] Consuming 3...
+[PRODUCER] Consumer return: 200 OK
+[PRODUCER] Producing 4...
+[CONSUMER] Consuming 4...
+[PRODUCER] Consumer return: 200 OK
+[PRODUCER] Producing 5...
+[CONSUMER] Consuming 5...
+[PRODUCER] Consumer return: 200 OK
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意到consumer函数是一个generator（生成器），把一个consumer传入produce后：&lt;/p&gt;
+
+&lt;p&gt;首先调用c.next()启动生成器；&lt;/p&gt;
+
+&lt;p&gt;然后，一旦生产了东西，通过c.send(n)切换到consumer执行；&lt;/p&gt;
+
+&lt;p&gt;consumer通过yield拿到消息，处理，又通过yield把结果传回；&lt;/p&gt;
+
+&lt;p&gt;produce拿到consumer处理的结果，继续生产下一条消息；&lt;/p&gt;
+
+&lt;p&gt;produce决定不生产了，通过c.close()关闭consumer，整个过程结束。&lt;/p&gt;
+
+&lt;p&gt;整个流程无锁，由一个线程执行，produce和consumer协作完成任务，所以称为“协程”，而非线程的抢占式多任务。&lt;/p&gt;
+
+&lt;p&gt;最后套用Donald Knuth的一句话总结协程的特点：&lt;/p&gt;
+
+&lt;p&gt;“子程序就是协程的一种特例。”&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python Generator</title>
+      <link>http://danigong.github.io/post/python_generator/</link>
+      <pubDate>Fri, 15 Jul 2016 22:07:29 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/python_generator/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;p&gt;##生成器&lt;/p&gt;
+
+&lt;p&gt;通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面几个元素，那后面绝大多数元素占用的空间都白白浪费了。&lt;/p&gt;
+
+&lt;p&gt;所以，如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器（Generator）。&lt;/p&gt;
+
+&lt;p&gt;要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的[]改成()，就创建了一个generator：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; L = [x * x for x in range(10)]
+&amp;gt;&amp;gt;&amp;gt; L
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+&amp;gt;&amp;gt;&amp;gt; g = (x * x for x in range(10))
+&amp;gt;&amp;gt;&amp;gt; g
+&amp;lt;generator object &amp;lt;genexpr&amp;gt; at 0x104feab40&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;创建L和g的区别仅在于最外层的[]和()，L是一个list，而g是一个generator。&lt;/p&gt;
+
+&lt;p&gt;我们可以直接打印出list的每一个元素，但我们怎么打印出generator的每一个元素呢？&lt;/p&gt;
+
+&lt;p&gt;如果要一个一个打印出来，可以通过generator的next()方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; g.next()
+0
+&amp;gt;&amp;gt;&amp;gt; g.next()
+1
+&amp;gt;&amp;gt;&amp;gt; g.next()
+4
+&amp;gt;&amp;gt;&amp;gt; g.next()
+9
+&amp;gt;&amp;gt;&amp;gt; g.next()
+16
+&amp;gt;&amp;gt;&amp;gt; g.next()
+25
+&amp;gt;&amp;gt;&amp;gt; g.next()
+36
+&amp;gt;&amp;gt;&amp;gt; g.next()
+49
+&amp;gt;&amp;gt;&amp;gt; g.next()
+64
+&amp;gt;&amp;gt;&amp;gt; g.next()
+81
+&amp;gt;&amp;gt;&amp;gt; g.next()
+Traceback (most recent call last):
+  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt;
+StopIteration
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们讲过，generator保存的是算法，每次调用next()，就计算出下一个元素的值，直到计算到最后一个元素，没有更多的元素时，抛出StopIteration的错误。&lt;/p&gt;
+
+&lt;p&gt;当然，上面这种不断调用next()方法实在是太变态了，正确的方法是使用for循环，因为generator也是可迭代对象：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; g = (x * x for x in range(10))
+&amp;gt;&amp;gt;&amp;gt; for n in g:
+...     print n
+...
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;所以，我们创建了一个generator后，基本上永远不会调用next()方法，而是通过for循环来迭代它。&lt;/p&gt;
+
+&lt;p&gt;generator非常强大。如果推算的算法比较复杂，用类似列表生成式的for循环无法实现的时候，还可以用函数来实现。&lt;/p&gt;
+
+&lt;p&gt;比如，著名的斐波拉契数列（Fibonacci），除第一个和第二个数外，任意一个数都可由前两个数相加得到：&lt;/p&gt;
+
+&lt;p&gt;1, 1, 2, 3, 5, 8, 13, 21, 34, &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;斐波拉契数列用列表生成式写不出来，但是，用函数把它打印出来却很容易：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def fib(max):
+    n, a, b = 0, 0, 1
+    while n &amp;lt; max:
+        print b
+        a, b = b, a + b
+        n = n + 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面的函数可以输出斐波那契数列的前N个数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; fib(6)
+1
+1
+2
+3
+5
+8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;仔细观察，可以看出，fib函数实际上是定义了斐波拉契数列的推算规则，可以从第一个元素开始，推算出后续任意的元素，这种逻辑其实非常类似generator。&lt;/p&gt;
+
+&lt;p&gt;也就是说，上面的函数和generator仅一步之遥。要把fib函数变成generator，只需要把print b改为yield b就可以了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def fib(max):
+    n, a, b = 0, 0, 1
+    while n &amp;lt; max:
+        yield b
+        a, b = b, a + b
+        n = n + 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这就是定义generator的另一种方法。如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; fib(6)
+&amp;lt;generator object fib at 0x104feaaa0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里，最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。&lt;/p&gt;
+
+&lt;p&gt;举个简单的例子，定义一个generator，依次返回数字1，3，5：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; def odd():
+...     print &#39;step 1&#39;
+...     yield 1
+...     print &#39;step 2&#39;
+...     yield 3
+...     print &#39;step 3&#39;
+...     yield 5
+...
+&amp;gt;&amp;gt;&amp;gt; o = odd()
+&amp;gt;&amp;gt;&amp;gt; o.next()
+step 1
+1
+&amp;gt;&amp;gt;&amp;gt; o.next()
+step 2
+3
+&amp;gt;&amp;gt;&amp;gt; o.next()
+step 3
+5
+&amp;gt;&amp;gt;&amp;gt; o.next()
+Traceback (most recent call last):
+  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt;
+StopIteration
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以看到，odd不是普通函数，而是generator，在执行过程中，遇到yield就中断，下次又继续执行。执行3次yield后，已经没有yield可以执行了，所以，第4次调用next()就报错。&lt;/p&gt;
+
+&lt;p&gt;回到fib的例子，我们在循环过程中不断调用yield，就会不断中断。当然要给循环设置一个条件来退出循环，不然就会产生一个无限数列出来。&lt;/p&gt;
+
+&lt;p&gt;同样的，把函数改成generator后，我们基本上从来不会用next()来调用它，而是直接使用for循环来迭代：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; for n in fib(6):
+...     print n
+...
+1
+1
+2
+3
+5
+8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;##小结&lt;/p&gt;
+
+&lt;p&gt;generator是非常强大的工具，在Python中，可以简单地把列表生成式改成generator，也可以通过函数实现复杂逻辑的generator。&lt;/p&gt;
+
+&lt;p&gt;要理解generator的工作原理，它是在for循环的过程中不断计算出下一个元素，并在适当的条件结束for循环。对于函数改成的generator来说，遇到return语句或者执行到函数体最后一行语句，就是结束generator的指令，for循环随之结束。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Machine Learning &amp; Deep Learning</title>
