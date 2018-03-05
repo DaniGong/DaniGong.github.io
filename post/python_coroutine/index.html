@@ -1,5 +1,5 @@
 	<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> Python Coroutine &middot; B🐶Pythonic </title>
+  <title> Python Coroutine &middot; Hugo Blog </title>
 
   
   <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
@@ -17,25 +17,31 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://danigong.github.io/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="http://danigong.github.io/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="B🐶Pythonic" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Hugo Blog" />
 </head>
 
 	<body class="">
 		<div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://danigong.github.io/"><h1>B🐶Pythonic</h1></a>
+      <a href="http://danigong.github.io/"><h1>Hugo Blog</h1></a>
       <p class="lead">
-      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+       Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again. 
       </p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+      <li><a href="http://danigong.github.io/">Home</a> </li>
+      
+        <li><a href="http://danigong.github.io/"> Home </a></li>
+      
+        <li><a href="https://github.com/laozhu"> Works </a></li>
+      
+        <li><a href="http://danigong.github.io/tags/"> Tags </a></li>
       
     </ul>
 
@@ -65,27 +71,25 @@
 <p>协程看上去也是子程序，但执行过程中，在子程序内部可中断，然后转而执行别的子程序，在适当的时候再返回来接着执行。</p>
 
 <p>注意，在一个子程序中中断，去执行其他子程序，不是函数调用，有点类似CPU的中断。比如子程序A、B：</p>
-
-<pre><code>def A():
-    print '1'
-    print '2'
-    print '3'
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def A():
+    print &#39;1&#39;
+    print &#39;2&#39;
+    print &#39;3&#39;
 
 def B():
-    print 'x'
-    print 'y'
-    print 'z'
-</code></pre>
+    print &#39;x&#39;
+    print &#39;y&#39;
+    print &#39;z&#39;
+</pre></div>
 
 <p>假设由协程执行，在执行A的过程中，可以随时中断，去执行B，B也可能在执行过程中中断再去执行A，结果可能是：</p>
-
-<pre><code>1
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">1
 2
 x
 y
 3
 z
-</code></pre>
+</pre></div>
 
 <p>但是在A中是没有调用B的，所以协程的调用比函数调用理解起来要难一些。</p>
 
@@ -104,52 +108,50 @@ z
 <p>传统的生产者-消费者模型是一个线程写消息，一个线程取消息，通过锁机制控制队列和等待，但一不小心就可能死锁。</p>
 
 <p>如果改用协程，生产者生产消息后，直接通过yield跳转到消费者开始执行，待消费者执行完毕后，切换回生产者继续生产，效率极高：</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">import</span> <span style="color: #f8f8f2">time</span>
 
-<pre><code>import time
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">consumer</span><span style="color: #f8f8f2">():</span>
+    <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;&#39;</span>
+    <span style="color: #66d9ef">while</span> <span style="color: #f8f8f2">True:</span>
+        <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">yield</span> <span style="color: #f8f8f2">r</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f92672">not</span> <span style="color: #f8f8f2">n:</span>
+            <span style="color: #66d9ef">return</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;[CONSUMER] Consuming %s...&#39;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">n)</span>
+        <span style="color: #f8f8f2">time</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sleep(</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;200 OK&#39;</span>
 
-def consumer():
-    r = ''
-    while True:
-        n = yield r
-        if not n:
-            return
-        print('[CONSUMER] Consuming %s...' % n)
-        time.sleep(1)
-        r = '200 OK'
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">produce</span><span style="color: #f8f8f2">(c):</span>
+    <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">next()</span>
+    <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+    <span style="color: #66d9ef">while</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">5</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;[PRODUCER] Producing %s...&#39;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">n)</span>
+        <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">send(n)</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;[PRODUCER] Consumer return: %s&#39;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">r)</span>
+    <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
 
-def produce(c):
-    c.next()
-    n = 0
-    while n &lt; 5:
-        n = n + 1
-        print('[PRODUCER] Producing %s...' % n)
-        r = c.send(n)
-        print('[PRODUCER] Consumer return: %s' % r)
-    c.close()
-
-if __name__=='__main__':
-    c = consumer()
-    produce(c)
-</code></pre>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span><span style="color: #f92672">==</span><span style="color: #e6db74">&#39;__main__&#39;</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">consumer()</span>
+    <span style="color: #f8f8f2">produce(c)</span>
+</pre></div>
 
 <p>执行结果：</p>
-
-<pre><code>[PRODUCER] Producing 1...
-[CONSUMER] Consuming 1...
-[PRODUCER] Consumer return: 200 OK
-[PRODUCER] Producing 2...
-[CONSUMER] Consuming 2...
-[PRODUCER] Consumer return: 200 OK
-[PRODUCER] Producing 3...
-[CONSUMER] Consuming 3...
-[PRODUCER] Consumer return: 200 OK
-[PRODUCER] Producing 4...
-[CONSUMER] Consuming 4...
-[PRODUCER] Consumer return: 200 OK
-[PRODUCER] Producing 5...
-[CONSUMER] Consuming 5...
-[PRODUCER] Consumer return: 200 OK
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Producing 1...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">CONSUMER</span><span style="color: #75715e">]</span> Consuming 1...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Consumer return: 200 OK
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Producing 2...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">CONSUMER</span><span style="color: #75715e">]</span> Consuming 2...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Consumer return: 200 OK
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Producing 3...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">CONSUMER</span><span style="color: #75715e">]</span> Consuming 3...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Consumer return: 200 OK
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Producing 4...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">CONSUMER</span><span style="color: #75715e">]</span> Consuming 4...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Consumer return: 200 OK
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Producing 5...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">CONSUMER</span><span style="color: #75715e">]</span> Consuming 5...
+<span style="color: #75715e">[</span><span style="color: #a6e22e">PRODUCER</span><span style="color: #75715e">]</span> Consumer return: 200 OK
+</pre></div>
 
 <p>注意到consumer函数是一个generator（生成器），把一个consumer传入produce后：</p>
 
