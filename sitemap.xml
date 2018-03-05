@@ -3,8 +3,23 @@
   
   <url>
     <loc>http://danigong.github.io/</loc>
-    <lastmod>2016-08-15T22:14:50+08:00</lastmod>
+    <lastmod>2018-03-05T11:01:39+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/The-best-django-project-structure/</loc>
+    <lastmod>2018-03-05T11:01:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/cookiecutter-for-django/</loc>
+    <lastmod>2018-03-05T10:59:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/django_uwsgi_nginx/</loc>
+    <lastmod>2017-12-24T20:50:30+08:00</lastmod>
   </url>
   
   <url>

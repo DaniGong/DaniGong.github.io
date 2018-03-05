@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centos on B🐶Pythonic</title>
+    <link>http://danigong.github.io/tags/centos/</link>
+    <description>Recent content in Centos on B🐶Pythonic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 24 Dec 2017 20:50:30 +0800</lastBuildDate>
+    <atom:link href="http://danigong.github.io/tags/centos/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Centos&#43;nginx&#43;uwsgi&#43;django</title>
+      <link>http://danigong.github.io/post/django_uwsgi_nginx/</link>
+      <pubDate>Sun, 24 Dec 2017 20:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/django_uwsgi_nginx/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html&#34;&gt;https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html&lt;/a&gt;
+&lt;a href=&#34;http://www.jianshu.com/p/7494560da3e6&#34;&gt;http://www.jianshu.com/p/7494560da3e6&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is our stack:&lt;/p&gt;
+
+&lt;p&gt;the web client &amp;lt;-&amp;gt; the web server &amp;lt;-&amp;gt; the socket &amp;lt;-&amp;gt; uWSGI &amp;lt;-&amp;gt; Python&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
