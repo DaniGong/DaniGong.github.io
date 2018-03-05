@@ -6,8 +6,51 @@
     <description>Recent content in Django on B🐶Pythonic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 05 Mar 2018 10:59:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Mar 2018 11:01:39 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/tags/django/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The best django project structure</title>
+      <link>http://danigong.github.io/post/The-best-django-project-structure/</link>
+      <pubDate>Mon, 05 Mar 2018 11:01:39 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/The-best-django-project-structure/</guid>
+      <description>
+
+&lt;h1 id=&#34;项目目录结构:dfe114c833a99a64f54e2cfb47175ca9&#34;&gt;项目目录结构&lt;/h1&gt;
+
+&lt;p&gt;在上一节里我们使用Django的django-admin startproject命令来创建了一个Helloworld的项目，在没有写任何代码的情况下成功运行了这个项目。虽然目前来说这个项目没有任何功能，但是这是我们一个成功的开始，不是吗？&lt;/p&gt;
+
+&lt;h3 id=&#34;helloworld项目的目录结构:dfe114c833a99a64f54e2cfb47175ca9&#34;&gt;Helloworld项目的目录结构&lt;/h3&gt;
+
+&lt;p&gt;我们来看一下这个项目的目录结构&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zhiwehu.gitbooks.io/build-web-application-with-python-django/content/assets/Helloworld project directory structure.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最外层的Helloworld目录，是项目的根目录，在这个目录下我们看到有2个文件，一个是&lt;code&gt;db.sqlite3&lt;/code&gt;是数据库文件，另一个是&lt;code&gt;manage.py&lt;/code&gt;是Django提供的一个管理工具入口，比如上一节中我们使用python manage.py runserver来运行这个web app。
+根目录下面的Helloworld目录，是项目的配置目录，里面放了Django的一些配置信息，包括一个&lt;code&gt;settings.py&lt;/code&gt;，一个根&lt;code&gt;urls.py&lt;/code&gt;和&lt;code&gt;wsgi.py&lt;/code&gt;，这些都是Django运行所需要的配置性文件。
+还有一个firstapp是我使用&lt;code&gt;django-admin startapp firstapp&lt;/code&gt;这个命令创建的一个app，这相当是这个项目的一个功能性的app，Django使用app来划分模块。
+这个项目目录结构好吗？
+虽然我们使用了Django提供的django-admin创建的项目目录结构看起来很简单明了，但是我们应该知道，这只是供学习使用的，在真正的项目里，估计就没有人这样使用了。一个真实的产品项目，我们需要有更多的配置信息、文档、测试等，以及代码仓库配置等。而这个简单的目录结构显然是达不到这样的要求的。&lt;/p&gt;
+
+&lt;h3 id=&#34;推荐的项目目录结构:dfe114c833a99a64f54e2cfb47175ca9&#34;&gt;推荐的项目目录结构&lt;/h3&gt;
+
+&lt;p&gt;在本节里我重点是要介绍一个我认为是最佳的Django项目目录结构，当然所谓的『最佳』因人而异，我同时也会提供其他的一些选项供参考。接下来看一下这个&lt;strong&gt;目录结构&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zhiwehu.gitbooks.io/build-web-application-with-python-django/content/assets/The best django project directory structure.png&#34; alt=&#34;tool-manager&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;接下来我详细说明一下这个目录结构:dfe114c833a99a64f54e2cfb47175ca9&#34;&gt;接下来我详细说明一下这个目录结构&lt;/h3&gt;
+
+&lt;p&gt;最外层的project是项目根目录，这个目录除了之前的manage.py这个文件外，还有更多的配置文件，和其他子目录。这些配置文件后面会详细介绍。
+config目录是配置目录，里面除了包含了根&lt;code&gt;urls.py&lt;/code&gt;文件和&lt;code&gt;wsgi.py&lt;/code&gt;文件，我们将原来的&lt;code&gt;settings.py&lt;/code&gt;扩展成为了一个Python package，因为我们在不同的环境中将使用不同的配置文件，在本地电脑上使用&lt;code&gt;settings.local.py&lt;/code&gt;，而在生产环境中使用&lt;code&gt;settings.production.py&lt;/code&gt;。
+docs是文档目录
+project目录是项目的apps目录，我们将这个web的apps都放在这个目录下面，比如这里已经有一个users的app，同时我们也看到有static和templates这2个目录，这2个并不是app，而是其他apps需要使用的静态文件目录和模板目录。
+requirements目录是放置依赖包的索引文件，我们知道Python使用pip安装Python软件包，所以需要些些Python软件包我们就在一个txt文件里列出这些软件包的名字和版本号。注意我们同样是根据不同的环境有不同的软件包索引，开发环境和生产环境所依赖的Python软件包是不一样的，所以我们也分开在不同的文件中索引。
+utility目录放的是一些项目的工具shell，比如运行这个项目操作系统需要安装的一些底层库和软件包等，这些一般是在部署时使用。
+怎么创建这个目录结构？
+每次开始一个新的Django项目，我们就需要初始化这个项目，创建这个项目的目录结构，然后进行开发。我们知道使用django-admin命令行工具是可以做到这一点的，我们用它来创建了Helloworld项目。而上面这个项目目录结构是怎么创建的呢？接下来我将介绍另一个非常实用的工具&lt;code&gt;cookiecutter&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>cookiecutter for django</title>

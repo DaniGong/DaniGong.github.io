@@ -1,5 +1,5 @@
 	<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> cookiecutter for django &middot; Hugo Blog </title>
+  <title> cookiecutter for django &middot; B🐶Pythonic </title>
 
   
   <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
@@ -17,31 +17,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://danigong.github.io/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="http://danigong.github.io/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="Hugo Blog" />
+  <link href="" rel="alternate" type="application/rss+xml" title="B🐶Pythonic" />
 </head>
 
 	<body class="">
 		<div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://danigong.github.io/"><h1>Hugo Blog</h1></a>
+      <a href="http://danigong.github.io/"><h1>B🐶Pythonic</h1></a>
       <p class="lead">
-       Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again. 
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
       </p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="http://danigong.github.io/">Home</a> </li>
-      
-        <li><a href="http://danigong.github.io/"> Home </a></li>
-      
-        <li><a href="https://github.com/laozhu"> Works </a></li>
-      
-        <li><a href="http://danigong.github.io/tags/"> Tags </a></li>
+      <li><a href="/">Home</a> </li>
       
     </ul>
 
@@ -64,77 +58,78 @@
     <code>cookiecutter https://github.com/pydanny/cookiecutter-django</code></p>
 
 <p>运行上面第二个命令的时候，会问你一大堆问题，这些问题中下示例（附简短讲解）</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">Cloning</span> <span style="color: #f8f8f2">into</span> <span style="color: #960050; background-color: #1e0010">&#39;</span><span style="color: #f8f8f2">cookiecutter</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">django</span><span style="color: #960050; background-color: #1e0010">&#39;</span><span style="color: #f8f8f2">...</span>
-<span style="color: #f8f8f2">remote:</span> <span style="color: #f8f8f2">Counting</span> <span style="color: #f8f8f2">objects:</span> <span style="color: #ae81ff">550</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">done.</span>
-<span style="color: #f8f8f2">remote:</span> <span style="color: #f8f8f2">Compressing</span> <span style="color: #f8f8f2">objects:</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">%</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">310</span><span style="color: #f92672">/</span><span style="color: #ae81ff">310</span><span style="color: #f8f8f2">),</span> <span style="color: #f8f8f2">done.</span>
-<span style="color: #f8f8f2">remote:</span> <span style="color: #f8f8f2">Total</span> <span style="color: #ae81ff">550</span> <span style="color: #f8f8f2">(delta</span> <span style="color: #ae81ff">283</span><span style="color: #f8f8f2">),</span> <span style="color: #f8f8f2">reused</span> <span style="color: #ae81ff">479</span> <span style="color: #f8f8f2">(delta</span> <span style="color: #ae81ff">222</span><span style="color: #f8f8f2">)</span>
-<span style="color: #f8f8f2">Receiving</span> <span style="color: #f8f8f2">objects:</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">%</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">550</span><span style="color: #f92672">/</span><span style="color: #ae81ff">550</span><span style="color: #f8f8f2">),</span> <span style="color: #ae81ff">127.66</span> <span style="color: #f8f8f2">KiB</span> <span style="color: #f92672">|</span> <span style="color: #ae81ff">58</span> <span style="color: #f8f8f2">KiB</span><span style="color: #f92672">/</span><span style="color: #f8f8f2">s,</span> <span style="color: #f8f8f2">done.</span>
-<span style="color: #f8f8f2">Resolving</span> <span style="color: #f8f8f2">deltas:</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">%</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">283</span><span style="color: #f92672">/</span><span style="color: #ae81ff">283</span><span style="color: #f8f8f2">),</span> <span style="color: #f8f8f2">done.</span>
-<span style="color: #75715e"># 问你项目叫什么名字，这里可以大小写，带空格</span>
-<span style="color: #f8f8f2">project_name</span> <span style="color: #f8f8f2">[Project</span> <span style="color: #f8f8f2">Name]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">Reddit</span> <span style="color: #f8f8f2">Clone</span>
-<span style="color: #75715e"># 问你项目的根目录名字，一般是小写没有空格，这个会生成一个目录</span>
-<span style="color: #f8f8f2">project_slug</span> <span style="color: #f8f8f2">[reddit_clone]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">reddit</span>
-<span style="color: #75715e"># 开发者名字</span>
-<span style="color: #f8f8f2">author_name</span> <span style="color: #f8f8f2">[Daniel</span> <span style="color: #f8f8f2">Roy</span> <span style="color: #f8f8f2">Greenfeld]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">Jeffrey</span> <span style="color: #f8f8f2">Hu</span>
-<span style="color: #75715e"># 开发者邮件</span>
-<span style="color: #f8f8f2">email</span> <span style="color: #f8f8f2">[you@example.com]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">zhiwehu@gmail.com</span>
-<span style="color: #75715e"># 项目简短介绍</span>
-<span style="color: #f8f8f2">description</span> <span style="color: #f8f8f2">[A</span> <span style="color: #66d9ef">short</span> <span style="color: #f8f8f2">description</span> <span style="color: #f8f8f2">of</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">project.]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">A</span> <span style="color: #f8f8f2">reddit</span> <span style="color: #f8f8f2">clone.</span>
-<span style="color: #75715e"># 项目域名</span>
-<span style="color: #f8f8f2">domain_name</span> <span style="color: #f8f8f2">[example.com]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">lettoo.com</span>
-<span style="color: #75715e"># 项目版本号</span>
-<span style="color: #f8f8f2">version</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">0.1.0</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">0.0.1</span>
-<span style="color: #75715e"># 时区，就选默认的UTC</span>
-<span style="color: #f8f8f2">timezone</span> <span style="color: #f8f8f2">[UTC]</span><span style="color: #f92672">:</span> 
-<span style="color: #75715e"># 是否使用whitenoise，whitenoise是一个Python实现的静态文件host解决方案，建议初学者选No</span>
-<span style="color: #f8f8f2">use_whitenoise</span> <span style="color: #f8f8f2">[y]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 是否使用celery，[celery](http://www.celeryproject.org/)是一个Python实现的分布式任务队列解决方案，一般用于后台job，建议初学者选No</span>
-<span style="color: #f8f8f2">use_celery</span> <span style="color: #f8f8f2">[n]</span><span style="color: #f92672">:</span> 
-<span style="color: #75715e"># 是否使用mailhog，mailhog是一个用于本地开发环境测试email的，建议初始选No</span>
-<span style="color: #f8f8f2">use_mailhog</span> <span style="color: #f8f8f2">[n]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 是否使用sentry，sentry是一个云端日志跟踪和分析平台，Python实现，同时也是开源平台，你可以自己搭建自己的sentry云日志跟踪分析平台。建议初始选No</span>
-<span style="color: #f8f8f2">use_sentry_for_error_reporting</span> <span style="color: #f8f8f2">[y]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 是否使用opbeat，opbeat是一个云端性能跟踪和分析工具，有一部分错误分析功能，建议初始选No</span>
-<span style="color: #f8f8f2">use_opbeat</span> <span style="color: #f8f8f2">[n]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 是否使用pycharm，pycharm是一个IDE，由大名鼎鼎的jetbrains公司出品，其出品其他有名的IDE如Idea，Webstorm等，因为我是pycharm开发所以选Yes，如果你不使用这个IDE则选No</span>
-<span style="color: #f8f8f2">use_pycharm</span> <span style="color: #f8f8f2">[n]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">y</span>
-<span style="color: #75715e"># 是否是windows操作系统</span>
-<span style="color: #f8f8f2">windows</span> <span style="color: #f8f8f2">[n]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 是否使用Python3</span>
-<span style="color: #f8f8f2">use_python3</span> <span style="color: #f8f8f2">[y]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">y</span>
-<span style="color: #75715e"># 是否使用docker，docker是一个app容器平台，建议初始选No</span>
-<span style="color: #f8f8f2">use_docker</span> <span style="color: #f8f8f2">[y]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 是否使用heroku，heroku是一个PAAS云平台，用于部署web app，建议初始选No</span>
-<span style="color: #f8f8f2">use_heroku</span> <span style="color: #f8f8f2">[n]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 是否使用compressor，compressor是一个压缩解决方案，建议初始选No</span>
-<span style="color: #f8f8f2">use_compressor</span> <span style="color: #f8f8f2">[n]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 使用postgresql版本，这个项目建议本地开发环境和生产环境都使用Postgresql数据库，Postgresql是一个开源数据库，也是Django官方推荐使用的数据库，默认选择1为当前最新的版本。</span>
-<span style="color: #f8f8f2">Select</span> <span style="color: #f8f8f2">postgresql_version:</span>
-<span style="color: #ae81ff">1</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">9.5</span>
-<span style="color: #ae81ff">2</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">9.4</span>
-<span style="color: #ae81ff">3</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">9.3</span>
-<span style="color: #ae81ff">4</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">9.2</span>
-<span style="color: #f8f8f2">Choose</span> <span style="color: #f8f8f2">from</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">1</span>
-<span style="color: #75715e"># 选择哪一种JavaScript任务管理器，这里建议初始选None，我们不希望在这里过多的涉及前端的内容。</span>
-<span style="color: #f8f8f2">Select</span> <span style="color: #f8f8f2">js_task_runner:</span>
-<span style="color: #ae81ff">1</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">Gulp</span>
-<span style="color: #ae81ff">2</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">Grunt</span>
-<span style="color: #ae81ff">3</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">Webpack</span>
-<span style="color: #ae81ff">4</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">None</span>
-<span style="color: #f8f8f2">Choose</span> <span style="color: #f8f8f2">from</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">4</span>
-<span style="color: #75715e"># 是否使用let&#39;s encrypt，let&#39;s encrypt是一个免费生成SSL HTTPS证书的服务，让你的网站免费支持https安全协议，默认选No</span>
-<span style="color: #f8f8f2">use_lets_encrypt</span> <span style="color: #f8f8f2">[n]</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">n</span>
-<span style="color: #75715e"># 开源license，默认选1，如果你是私有项目，选5</span>
-<span style="color: #f8f8f2">Select</span> <span style="color: #f8f8f2">open_source_license:</span>
-<span style="color: #ae81ff">1</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">MIT</span>
-<span style="color: #ae81ff">2</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">BSD</span>
-<span style="color: #ae81ff">3</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">GPLv3</span>
-<span style="color: #ae81ff">4</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">Apache</span> <span style="color: #f8f8f2">Software</span> <span style="color: #f8f8f2">License</span> <span style="color: #ae81ff">2.0</span>
-<span style="color: #ae81ff">5</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">Not</span> <span style="color: #f8f8f2">open</span> <span style="color: #f8f8f2">source</span>
-<span style="color: #f8f8f2">Choose</span> <span style="color: #f8f8f2">from</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">5</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">1</span>
-<span style="color: #960050; background-color: #1e0010">是否使用</span><span style="color: #f8f8f2">AWS</span> <span style="color: #f8f8f2">Elastic</span> <span style="color: #f8f8f2">Beanstalk</span><span style="color: #960050; background-color: #1e0010">，默认选</span><span style="color: #f8f8f2">No</span>
-<span style="color: #f8f8f2">use_elasticbeanstalk_experimental:</span> <span style="color: #f8f8f2">n</span>
-</pre></div>
+
+<pre><code>Cloning into 'cookiecutter-django'...
+remote: Counting objects: 550, done.
+remote: Compressing objects: 100% (310/310), done.
+remote: Total 550 (delta 283), reused 479 (delta 222)
+Receiving objects: 100% (550/550), 127.66 KiB | 58 KiB/s, done.
+Resolving deltas: 100% (283/283), done.
+# 问你项目叫什么名字，这里可以大小写，带空格
+project_name [Project Name]: Reddit Clone
+# 问你项目的根目录名字，一般是小写没有空格，这个会生成一个目录
+project_slug [reddit_clone]: reddit
+# 开发者名字
+author_name [Daniel Roy Greenfeld]: Jeffrey Hu
+# 开发者邮件
+email [you@example.com]: zhiwehu@gmail.com
+# 项目简短介绍
+description [A short description of the project.]: A reddit clone.
+# 项目域名
+domain_name [example.com]: lettoo.com
+# 项目版本号
+version [0.1.0]: 0.0.1
+# 时区，就选默认的UTC
+timezone [UTC]: 
+# 是否使用whitenoise，whitenoise是一个Python实现的静态文件host解决方案，建议初学者选No
+use_whitenoise [y]: n
+# 是否使用celery，[celery](http://www.celeryproject.org/)是一个Python实现的分布式任务队列解决方案，一般用于后台job，建议初学者选No
+use_celery [n]: 
+# 是否使用mailhog，mailhog是一个用于本地开发环境测试email的，建议初始选No
+use_mailhog [n]: n
+# 是否使用sentry，sentry是一个云端日志跟踪和分析平台，Python实现，同时也是开源平台，你可以自己搭建自己的sentry云日志跟踪分析平台。建议初始选No
+use_sentry_for_error_reporting [y]: n
+# 是否使用opbeat，opbeat是一个云端性能跟踪和分析工具，有一部分错误分析功能，建议初始选No
+use_opbeat [n]: n
+# 是否使用pycharm，pycharm是一个IDE，由大名鼎鼎的jetbrains公司出品，其出品其他有名的IDE如Idea，Webstorm等，因为我是pycharm开发所以选Yes，如果你不使用这个IDE则选No
+use_pycharm [n]: y
+# 是否是windows操作系统
+windows [n]: n
+# 是否使用Python3
+use_python3 [y]: y
+# 是否使用docker，docker是一个app容器平台，建议初始选No
+use_docker [y]: n
+# 是否使用heroku，heroku是一个PAAS云平台，用于部署web app，建议初始选No
+use_heroku [n]: n
+# 是否使用compressor，compressor是一个压缩解决方案，建议初始选No
+use_compressor [n]: n
+# 使用postgresql版本，这个项目建议本地开发环境和生产环境都使用Postgresql数据库，Postgresql是一个开源数据库，也是Django官方推荐使用的数据库，默认选择1为当前最新的版本。
+Select postgresql_version:
+1 - 9.5
+2 - 9.4
+3 - 9.3
+4 - 9.2
+Choose from 1, 2, 3, 4 [1]: 1
+# 选择哪一种JavaScript任务管理器，这里建议初始选None，我们不希望在这里过多的涉及前端的内容。
+Select js_task_runner:
+1 - Gulp
+2 - Grunt
+3 - Webpack
+4 - None
+Choose from 1, 2, 3, 4 [1]: 4
+# 是否使用let's encrypt，let's encrypt是一个免费生成SSL HTTPS证书的服务，让你的网站免费支持https安全协议，默认选No
+use_lets_encrypt [n]: n
+# 开源license，默认选1，如果你是私有项目，选5
+Select open_source_license:
+1 - MIT
+2 - BSD
+3 - GPLv3
+4 - Apache Software License 2.0
+5 - Not open source
+Choose from 1, 2, 3, 4, 5 [1]: 1
+是否使用AWS Elastic Beanstalk，默认选No
+use_elasticbeanstalk_experimental: n
+</code></pre>
 
 			</div>
 

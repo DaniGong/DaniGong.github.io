@@ -1,5 +1,5 @@
 	<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> Python Property &middot; Hugo Blog </title>
+  <title> Python Property &middot; B🐶Pythonic </title>
 
   
   <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
@@ -17,31 +17,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://danigong.github.io/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="http://danigong.github.io/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="Hugo Blog" />
+  <link href="" rel="alternate" type="application/rss+xml" title="B🐶Pythonic" />
 </head>
 
 	<body class="">
 		<div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://danigong.github.io/"><h1>Hugo Blog</h1></a>
+      <a href="http://danigong.github.io/"><h1>B🐶Pythonic</h1></a>
       <p class="lead">
-       Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again. 
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
       </p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="http://danigong.github.io/">Home</a> </li>
-      
-        <li><a href="http://danigong.github.io/"> Home </a></li>
-      
-        <li><a href="https://github.com/laozhu"> Works </a></li>
-      
-        <li><a href="http://danigong.github.io/tags/"> Tags </a></li>
+      <li><a href="/">Home</a> </li>
       
     </ul>
 
@@ -69,41 +63,44 @@
 <p>开始</p>
 
 <p>使用属性函数的最简单的方法之一是将它作为一个方法的装饰器来使用。这可以让你将一个类方法转变成一个类属性。当我需要做某些值的合并时，我发现这很有用。其他想要获取它作为方法使用的人，发现在写转换函数时它很有用。让我们来看一个简单的例子：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #f8f8f2">Person</span>(<span style="color: #f8f8f2">object</span>):
-    <span style="color: #e6db74">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+
+<pre><code>class Person(object):
+    &quot;&quot;&quot;&quot;&quot;&quot;
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">__init__</span>(<span style="color: #66d9ef">self</span>, <span style="color: #f8f8f2">first_name</span>, <span style="color: #f8f8f2">last_name</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">first_name</span> = <span style="color: #f8f8f2">first_name</span>
-        <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">last_name</span> = <span style="color: #f8f8f2">last_name</span>
+    #----------------------------------------------------------------------
+    def __init__(self, first_name, last_name):
+        &quot;&quot;&quot;Constructor&quot;&quot;&quot;
+        self.first_name = first_name
+        self.last_name = last_name
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">@property</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">full_name</span>(<span style="color: #66d9ef">self</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #e6db74">        Return the full name</span>
-<span style="color: #e6db74">        &quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #e6db74">&quot;%s %s&quot;</span> % (<span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">first_name</span>, <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">last_name</span>)
-</pre></div>
+    #----------------------------------------------------------------------
+    @property
+    def full_name(self):
+        &quot;&quot;&quot;
+        Return the full name
+        &quot;&quot;&quot;
+        return &quot;%s %s&quot; % (self.first_name, self.last_name)
+</code></pre>
 
 <p>在上面的代码中，我们创建了两个类属性：self.first_name和self.last_name。接下来，我们创建了一个full_name方法，它有一个@property装饰器。这使我们能够在Python解释器会话中有如下的交互：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f8f8f2">person</span><span style="color: #f92672"> =</span> <span style="color: #a6e22e">Person</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Mike&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Driscoll&quot;</span><span style="color: #f8f8f2">)</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">person.full_name</span>
-<span style="color: #e6db74">&#39;Mike Driscoll&#39;</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">person.first_name</span>
-<span style="color: #e6db74">&#39;Mike&#39;</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f8f8f2">person.full_name</span><span style="color: #f92672"> =</span> <span style="color: #e6db74">&quot;Jackalope&quot;</span>
-<span style="color: #a6e22e">Traceback</span> <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">most</span> <span style="color: #a6e22e">recent</span> <span style="color: #a6e22e">call</span> <span style="color: #a6e22e">last</span><span style="color: #f8f8f2">):</span>
-  <span style="color: #f8f8f2">File</span> <span style="color: #e6db74">&quot;&lt;string&gt;&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #a6e22e">line</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">in</span> <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">fragment</span><span style="color: #f92672">&gt;</span>
-<span style="color: #a6e22e">AttributeError</span><span style="color: #f8f8f2">:</span> <span style="color: #a6e22e">can</span><span style="color: #e6db74">&#39;t set attribute</span>
-</pre></div>
+
+<pre><code>&gt;&gt;&gt; person = Person(&quot;Mike&quot;, &quot;Driscoll&quot;)
+&gt;&gt;&gt; person.full_name
+'Mike Driscoll'
+&gt;&gt;&gt; person.first_name
+'Mike'
+&gt;&gt;&gt; person.full_name = &quot;Jackalope&quot;
+Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;fragment&gt;
+AttributeError: can't set attribute
+</code></pre>
 
 <p>正如你所看到的，因为我们将方法变成了属性，我们可以使用正常的点符号访问它。但是，如果我们试图将该属性设为其他值，我们会引发一个AttributeError错误。改变full_name属性的唯一方法是间接这样做：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&gt;&gt;&gt; person.first_name = &quot;Dan&quot;
+
+<pre><code>&gt;&gt;&gt; person.first_name = &quot;Dan&quot;
 &gt;&gt;&gt; person.full_name
-&#39;Dan Driscoll&#39;
-</pre></div>
+'Dan Driscoll'
+</code></pre>
 
 <p>这是一种限制，因此让我们来看看另一个例子，其中我们可以创建一个允许设置的属性。</p>
 
@@ -112,115 +109,121 @@
 <p>让我们假设我们有一些遗留代码，它们是由一些对Python理解得不够好的人写的。如果你像我一样，你之前已经看到过这类的代码：</p>
 
 <p>Python</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #f8f8f2">Fees</span>(<span style="color: #f8f8f2">object</span>):
-    <span style="color: #e6db74">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+
+<pre><code>class Fees(object):
+    &quot;&quot;&quot;&quot;&quot;&quot;
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">__init__</span>(<span style="color: #66d9ef">self</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">None</span>
+    #----------------------------------------------------------------------
+    def __init__(self):
+        &quot;&quot;&quot;Constructor&quot;&quot;&quot;
+        self._fee = None
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">get_fee</span>(<span style="color: #66d9ef">self</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #e6db74">        Return the current fee</span>
-<span style="color: #e6db74">        &quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span>
+    #----------------------------------------------------------------------
+    def get_fee(self):
+        &quot;&quot;&quot;
+        Return the current fee
+        &quot;&quot;&quot;
+        return self._fee
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">set_fee</span>(<span style="color: #66d9ef">self</span>, <span style="color: #f8f8f2">value</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #e6db74">        Set the fee</span>
-<span style="color: #e6db74">        &quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">isinstance</span>(<span style="color: #f8f8f2">value</span>, <span style="color: #f8f8f2">str</span>):
-            <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">Decimal</span>(<span style="color: #f8f8f2">value</span>)
-        <span style="color: #f8f8f2">elif</span> <span style="color: #f8f8f2">isinstance</span>(<span style="color: #f8f8f2">value</span>, <span style="color: #f8f8f2">Decimal</span>):
-            <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">value</span>
-</pre></div>
+    #----------------------------------------------------------------------
+    def set_fee(self, value):
+        &quot;&quot;&quot;
+        Set the fee
+        &quot;&quot;&quot;
+        if isinstance(value, str):
+            self._fee = Decimal(value)
+        elif isinstance(value, Decimal):
+            self._fee = value
+</code></pre>
 
 <p>要使用这个类，我们必须要使用定义的getter和setter方法​​：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&gt;&gt;&gt; f = Fees()
+
+<pre><code>&gt;&gt;&gt; f = Fees()
 &gt;&gt;&gt; f.set_fee(&quot;1&quot;)
 &gt;&gt;&gt; f.get_fee()
-Decimal(&#39;1&#39;)
-</pre></div>
+Decimal('1')
+</code></pre>
 
 <p>如果你想添加可以使用正常点符号访问的属性，而不破坏所有依赖于这段代码的应用程序，你可以通过添加一个属性函数非常简单地改变它：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #f8f8f2">Fees</span>(<span style="color: #f8f8f2">object</span>):
-    <span style="color: #e6db74">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+
+<pre><code>class Fees(object):
+    &quot;&quot;&quot;&quot;&quot;&quot;
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">__init__</span>(<span style="color: #66d9ef">self</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">None</span>
+    #----------------------------------------------------------------------
+    def __init__(self):
+        &quot;&quot;&quot;Constructor&quot;&quot;&quot;
+        self._fee = None
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">get_fee</span>(<span style="color: #66d9ef">self</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #e6db74">        Return the current fee</span>
-<span style="color: #e6db74">        &quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span>
+    #----------------------------------------------------------------------
+    def get_fee(self):
+        &quot;&quot;&quot;
+        Return the current fee
+        &quot;&quot;&quot;
+        return self._fee
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">set_fee</span>(<span style="color: #66d9ef">self</span>, <span style="color: #f8f8f2">value</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #e6db74">        Set the fee</span>
-<span style="color: #e6db74">        &quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">isinstance</span>(<span style="color: #f8f8f2">value</span>, <span style="color: #f8f8f2">str</span>):
-            <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">Decimal</span>(<span style="color: #f8f8f2">value</span>)
-        <span style="color: #f8f8f2">elif</span> <span style="color: #f8f8f2">isinstance</span>(<span style="color: #f8f8f2">value</span>, <span style="color: #f8f8f2">Decimal</span>):
-            <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">value</span>
+    #----------------------------------------------------------------------
+    def set_fee(self, value):
+        &quot;&quot;&quot;
+        Set the fee
+        &quot;&quot;&quot;
+        if isinstance(value, str):
+            self._fee = Decimal(value)
+        elif isinstance(value, Decimal):
+            self._fee = value
  
-    <span style="color: #f8f8f2">fee</span> = <span style="color: #f8f8f2">property</span>(<span style="color: #f8f8f2">get_fee</span>, <span style="color: #f8f8f2">set_fee</span>)
-</pre></div>
+    fee = property(get_fee, set_fee)
+</code></pre>
 
 <p>我们在这段代码的末尾添加了一行。现在我们可以这样做：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&gt;&gt;&gt; f = Fees()
+
+<pre><code>&gt;&gt;&gt; f = Fees()
 &gt;&gt;&gt; f.set_fee(&quot;1&quot;)
 &gt;&gt;&gt; f.fee
-Decimal(&#39;1&#39;)
+Decimal('1')
 &gt;&gt;&gt; f.fee = &quot;2&quot;
 &gt;&gt;&gt; f.get_fee()
-Decimal(&#39;2&#39;)
-</pre></div>
+Decimal('2')
+</code></pre>
 
 <p>正如你所看到的，当我们以这种方式使用属性函数时，它允许fee属性设置并获取值本身而不破坏原有代码。让我们使用属性装饰器来重写这段代码，看看我们是否能得到一个允许设置的属性值。</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #f8f8f2">Fees</span>(<span style="color: #f8f8f2">object</span>):
-    <span style="color: #e6db74">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+
+<pre><code>class Fees(object):
+    &quot;&quot;&quot;&quot;&quot;&quot;
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">__init__</span>(<span style="color: #66d9ef">self</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">None</span>
+    #----------------------------------------------------------------------
+    def __init__(self):
+        &quot;&quot;&quot;Constructor&quot;&quot;&quot;
+        self._fee = None
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">@property</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">fee</span>(<span style="color: #66d9ef">self</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #e6db74">        The fee property - the getter</span>
-<span style="color: #e6db74">        &quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span>
+    #----------------------------------------------------------------------
+    @property
+    def fee(self):
+        &quot;&quot;&quot;
+        The fee property - the getter
+        &quot;&quot;&quot;
+        return self._fee
  
-    <span style="color: #75715e">#----------------------------------------------------------------------</span>
-    <span style="color: #f8f8f2">@fee</span>.<span style="color: #f8f8f2">setter</span>
-    <span style="color: #f8f8f2">def</span> <span style="color: #f8f8f2">fee</span>(<span style="color: #66d9ef">self</span>, <span style="color: #f8f8f2">value</span>):
-        <span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #e6db74">        The setter of the fee property</span>
-<span style="color: #e6db74">        &quot;&quot;&quot;</span>
-        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">isinstance</span>(<span style="color: #f8f8f2">value</span>, <span style="color: #f8f8f2">str</span>):
-            <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">Decimal</span>(<span style="color: #f8f8f2">value</span>)
-        <span style="color: #f8f8f2">elif</span> <span style="color: #f8f8f2">isinstance</span>(<span style="color: #f8f8f2">value</span>, <span style="color: #f8f8f2">Decimal</span>):
-            <span style="color: #66d9ef">self</span>.<span style="color: #f8f8f2">_fee</span> = <span style="color: #f8f8f2">value</span>
+    #----------------------------------------------------------------------
+    @fee.setter
+    def fee(self, value):
+        &quot;&quot;&quot;
+        The setter of the fee property
+        &quot;&quot;&quot;
+        if isinstance(value, str):
+            self._fee = Decimal(value)
+        elif isinstance(value, Decimal):
+            self._fee = value
  
-<span style="color: #75715e">#----------------------------------------------------------------------</span>
-<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> == <span style="color: #e6db74">&quot;__main__&quot;</span>:
-    <span style="color: #f8f8f2">f</span> = <span style="color: #f8f8f2">Fees</span>()
-</pre></div>
+#----------------------------------------------------------------------
+if __name__ == &quot;__main__&quot;:
+    f = Fees()
+</code></pre>
 
 <p>上面的代码演示了如何为fee属性创建一个setter方法。你可以用一个名为@fee.setter的装饰器装饰第二个方法名也为fee的方法来实现这个。当你如下所做时，setter被调用：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&gt;&gt;&gt; f = Fees()
+
+<pre><code>&gt;&gt;&gt; f = Fees()
 &gt;&gt;&gt; f.fee = &quot;1&quot;
-</pre></div>
+</code></pre>
 
 <p>如果你看属性函数的说明，它有fget, fset, fdel和doc几个参数。如果你想对属性使用del命令，你可以使用@fee.deleter创建另一个装饰器来装饰相同名字的函数从而实现删除的同样效果。</p>
 

@@ -1,5 +1,5 @@
 	<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> A Guide to Python&#39;s Function Decorators &middot; Hugo Blog </title>
+  <title> A Guide to Python&#39;s Function Decorators &middot; B🐶Pythonic </title>
 
   
   <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
@@ -17,31 +17,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://danigong.github.io/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="http://danigong.github.io/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="Hugo Blog" />
+  <link href="" rel="alternate" type="application/rss+xml" title="B🐶Pythonic" />
 </head>
 
 	<body class="">
 		<div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://danigong.github.io/"><h1>Hugo Blog</h1></a>
+      <a href="http://danigong.github.io/"><h1>B🐶Pythonic</h1></a>
       <p class="lead">
-       Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again. 
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
       </p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="http://danigong.github.io/">Home</a> </li>
-      
-        <li><a href="http://danigong.github.io/"> Home </a></li>
-      
-        <li><a href="https://github.com/laozhu"> Works </a></li>
-      
-        <li><a href="http://danigong.github.io/tags/"> Tags </a></li>
+      <li><a href="/">Home</a> </li>
       
     </ul>
 
@@ -69,17 +63,19 @@
 <p>Before diving in, there are some prerequisites that should be clear. In Python, functions are first class citizens, they are objects and that means we can do a lot of useful stuff with them.</p>
 
 <h3 id="assign-functions-to-variables:24448b6c2a661c98161fc3da9e5d92cf">Assign functions to variables</h3>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def greet(name):
+
+<pre><code>def greet(name):
     return &quot;hello &quot;+name
 
 greet_someone = greet
 print greet_someone(&quot;John&quot;)
 
 # Outputs: hello John
-</pre></div>
+</code></pre>
 
 <h3 id="define-functions-inside-other-functions:24448b6c2a661c98161fc3da9e5d92cf">Define functions inside other functions</h3>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def greet(name):
+
+<pre><code>def greet(name):
     def get_message():
         return &quot;Hello &quot;
 
@@ -89,10 +85,11 @@ print greet_someone(&quot;John&quot;)
 print greet(&quot;John&quot;)
 
 # Outputs: Hello John
-</pre></div>
+</code></pre>
 
 <h3 id="functions-can-be-passed-as-parameters-to-other-functions:24448b6c2a661c98161fc3da9e5d92cf">Functions can be passed as parameters to other functions</h3>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def greet(name):
+
+<pre><code>def greet(name):
    return &quot;Hello &quot; + name 
 
 def call_func(func):
@@ -102,12 +99,13 @@ def call_func(func):
 print call_func(greet)
 
 # Outputs: Hello John
-</pre></div>
+</code></pre>
 
 <h3 id="functions-can-return-other-functions:24448b6c2a661c98161fc3da9e5d92cf">Functions can return other functions</h3>
 
 <p>In other words, functions generating other functions.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def compose_greet_func():
+
+<pre><code>def compose_greet_func():
     def get_message():
         return &quot;Hello there!&quot;
 
@@ -117,12 +115,13 @@ greet = compose_greet_func()
 print greet()
 
 # Outputs: Hello there!
-</pre></div>
+</code></pre>
 
 <h3 id="inner-functions-have-access-to-the-enclosing-scope:24448b6c2a661c98161fc3da9e5d92cf">Inner functions have access to the enclosing scope</h3>
 
 <p>More commonly known as a closure. A very powerful pattern that we will come across while building decorators. Another thing to note, Python only allows read access to the outer scope and not assignment. Notice how we modified the example above to read a &ldquo;name&rdquo; argument from the enclosing scope of the inner function and return the new function.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def compose_greet_func(name):
+
+<pre><code>def compose_greet_func(name):
     def get_message():
         return &quot;Hello there &quot;+name+&quot;!&quot;
 
@@ -132,42 +131,45 @@ greet = compose_greet_func(&quot;John&quot;)
 print greet()
 
 # Outputs: Hello there John!
-</pre></div>
+</code></pre>
 
 <h2 id="composition-of-decorators:24448b6c2a661c98161fc3da9e5d92cf">Composition of Decorators</h2>
 
 <p>Function decorators are simply wrappers to existing functions. Putting the ideas mentioned above together, we can build a decorator. In this example let&rsquo;s consider a function that wraps the string output of another function by p tags.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def get_text(name):
+
+<pre><code>def get_text(name):
    return &quot;lorem ipsum, {0} dolor sit amet&quot;.format(name)
 
 def p_decorate(func):
    def func_wrapper(name):
-       return &quot;<span style="color: #f92672">&lt;p&gt;</span>{0}<span style="color: #f92672">&lt;/p&gt;</span>&quot;.format(func(name))
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(name))
    return func_wrapper
 
 my_get_text = p_decorate(get_text)
 
 print my_get_text(&quot;John&quot;)
 
-# <span style="color: #f92672">&lt;p&gt;</span>Outputs lorem ipsum, John dolor sit amet<span style="color: #f92672">&lt;/p&gt;</span>
-</pre></div>
+# &lt;p&gt;Outputs lorem ipsum, John dolor sit amet&lt;/p&gt;
+</code></pre>
 
 <p>That was our first decorator. A function that takes another function as an argument, generates a new function, augmenting the work of the original function, and returning the generated function so we can use it anywhere. To have get_text itself be decorated by p_decorate, we just have to assign get_text to the result of p_decorate.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">get_text = p_decorate(get_text)
+
+<pre><code>get_text = p_decorate(get_text)
 
 print get_text(&quot;John&quot;)
 
 # Outputs lorem ipsum, John dolor sit amet
-</pre></div>
+</code></pre>
 
 <p>Another thing to notice is that our decorated function takes a name argument. All what we had to do in the decorator is to let the wrapper of get_text pass that argument.</p>
 
 <h2 id="python-s-decorator-syntax:24448b6c2a661c98161fc3da9e5d92cf">Python&rsquo;s Decorator Syntax</h2>
 
 <p>Python makes creating and using decorators a bit cleaner and nicer for the programmer through some syntactic sugar To decorate get_text we don&rsquo;t have to <code>get_text = p_decorator(get_text)</code> There is a neat shortcut for that, which is to mention the name of the decorating function before the function to be decorated. The name of the decorator should be perpended with an @ symbol.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def p_decorate(func):
+
+<pre><code>def p_decorate(func):
    def func_wrapper(name):
-       return &quot;<span style="color: #f92672">&lt;p&gt;</span>{0}<span style="color: #f92672">&lt;/p&gt;</span>&quot;.format(func(name))
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(name))
    return func_wrapper
 
 @p_decorate
@@ -176,32 +178,35 @@ def get_text(name):
 
 print get_text(&quot;John&quot;)
 
-# Outputs <span style="color: #f92672">&lt;p&gt;</span>lorem ipsum, John dolor sit amet<span style="color: #f92672">&lt;/p&gt;</span>
-</pre></div>
+# Outputs &lt;p&gt;lorem ipsum, John dolor sit amet&lt;/p&gt;
+</code></pre>
 
 <p>Now let&rsquo;s consider we wanted to decorate our get_text function by 2 other functions to wrap a div and strong tag around the string output.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def p_decorate(func):
+
+<pre><code>def p_decorate(func):
    def func_wrapper(name):
-       return &quot;<span style="color: #f92672">&lt;p&gt;</span>{0}<span style="color: #f92672">&lt;/p&gt;</span>&quot;.format(func(name))
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(name))
    return func_wrapper
 
 def strong_decorate(func):
     def func_wrapper(name):
-        return &quot;<span style="color: #f92672">&lt;strong&gt;</span>{0}<span style="color: #f92672">&lt;/strong&gt;</span>&quot;.format(func(name))
+        return &quot;&lt;strong&gt;{0}&lt;/strong&gt;&quot;.format(func(name))
     return func_wrapper
 
 def div_decorate(func):
     def func_wrapper(name):
-        return &quot;<span style="color: #f92672">&lt;div&gt;</span>{0}<span style="color: #f92672">&lt;/div&gt;</span>&quot;.format(func(name))
+        return &quot;&lt;div&gt;{0}&lt;/div&gt;&quot;.format(func(name))
     return func_wrapper
-</pre></div>
+</code></pre>
 
 <p>With the basic approach, decorating get_text would be along the lines of</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">get_text = div_decorate(p_decorate(strong_decorate(get_text)))
-</pre></div>
+
+<pre><code>get_text = div_decorate(p_decorate(strong_decorate(get_text)))
+</code></pre>
 
 <p>With Python&rsquo;s decorator syntax, same thing can be achieved with much more expressive power.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">@div_decorate
+
+<pre><code>@div_decorate
 @p_decorate
 @strong_decorate
 def get_text(name):
@@ -209,17 +214,18 @@ def get_text(name):
 
 print get_text(&quot;John&quot;)
 
-# Outputs <span style="color: #f92672">&lt;div&gt;&lt;p&gt;&lt;strong&gt;</span>lorem ipsum, John dolor sit amet<span style="color: #f92672">&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</span>
-</pre></div>
+# Outputs &lt;div&gt;&lt;p&gt;&lt;strong&gt;lorem ipsum, John dolor sit amet&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;
+</code></pre>
 
 <p>One important thing to notice here is that the order of setting our decorators matters. If the order was different in the example above, the output would have been different.</p>
 
 <h2 id="decorating-methods:24448b6c2a661c98161fc3da9e5d92cf">Decorating Methods</h2>
 
 <p>In Python, methods are functions that expect their first parameter to be a reference to the current object. We can build decorators for methods the same way, while taking self into consideration in the wrapper function.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def p_decorate(func):
+
+<pre><code>def p_decorate(func):
    def func_wrapper(self):
-       return &quot;<span style="color: #f92672">&lt;p&gt;</span>{0}<span style="color: #f92672">&lt;/p&gt;</span>&quot;.format(func(self))
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(self))
    return func_wrapper
 
 class Person(object):
@@ -233,12 +239,13 @@ class Person(object):
 
 my_person = Person()
 print my_person.get_fullname()
-</pre></div>
+</code></pre>
 
 <p>A much better approach would be to make our decorator useful for functions and methods alike. This can be done by putting *args and **kwargs as parameters for the wrapper, then it can accept any arbitrary number of arguments and keyword arguments.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def p_decorate(func):
+
+<pre><code>def p_decorate(func):
    def func_wrapper(*args, **kwargs):
-       return &quot;<span style="color: #f92672">&lt;p&gt;</span>{0}<span style="color: #f92672">&lt;/p&gt;</span>&quot;.format(func(*args, **kwargs))
+       return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(*args, **kwargs))
    return func_wrapper
 
 class Person(object):
@@ -253,15 +260,16 @@ class Person(object):
 my_person = Person()
 
 print my_person.get_fullname()
-</pre></div>
+</code></pre>
 
 <h2 id="passing-arguments-to-decorators:24448b6c2a661c98161fc3da9e5d92cf">Passing arguments to decorators</h2>
 
 <p>Looking back at the example before the one above, you can notice how redundant the decorators in the example are. 3 decorators(div_decorate, p_decorate, strong_decorate) each with the same functionality but wrapping the string with different tags. We can definitely do much better than that. Why not have a more general implementation for one that takes the tag to wrap with as a string? Yes please!</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def tags(tag_name):
+
+<pre><code>def tags(tag_name):
     def tags_decorator(func):
         def func_wrapper(name):
-            return &quot;<span style="color: #960050; background-color: #1e0010">&lt;</span>{0}&gt;{1}<span style="color: #960050; background-color: #1e0010">&lt;</span>/{0}&gt;&quot;.format(tag_name, func(name))
+            return &quot;&lt;{0}&gt;{1}&lt;/{0}&gt;&quot;.format(tag_name, func(name))
         return func_wrapper
     return tags_decorator
 
@@ -271,41 +279,43 @@ def get_text(name):
 
 print get_text(&quot;John&quot;)
 
-# Outputs <span style="color: #f92672">&lt;p&gt;</span>Hello John<span style="color: #f92672">&lt;/p&gt;</span>
-</pre></div>
+# Outputs &lt;p&gt;Hello John&lt;/p&gt;
+</code></pre>
 
 <p>It took a bit more work in this case. Decorators expect to receive a function as an argument, that is why we will have to build a function that takes those extra arguments and generate our decorator on the fly. In the example above tags, is our decorator generator.</p>
 
 <h2 id="debugging-decorated-functions:24448b6c2a661c98161fc3da9e5d92cf">Debugging decorated functions</h2>
 
 <p>At the end of the day decorators are just wrapping our functions, in case of debugging that can be problematic since the wrapper function does not carry the name, module and docstring of the original function. Based on the example above if we do:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">print get_text.__name__
+
+<pre><code>print get_text.__name__
 # Outputs func_wrapper
-</pre></div>
+</code></pre>
 
 <p>The output was expected to be get_text yet, the attributes <strong>name</strong>, <strong>doc</strong>, and <strong>module</strong> of get_text got overridden by those of the wrapper(func_wrapper. Obviously we can re-set them within func_wrapper but Python provides a much nicer way.</p>
 
 <p>Functools to the rescue
 Fortunately Python (as of version 2.5) includes the functools module which contains functools.wraps. Wraps is a decorator for updating the attributes of the wrapping function(func_wrapper) to those of the original function(get_text). This is as simple as decorating func_wrapper by @wraps(func). Here is the updated example:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">from</span> <span style="color: #f8f8f2">functools</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">wraps</span>
 
-<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">tags</span><span style="color: #f8f8f2">(tag_name):</span>
-    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">tags_decorator</span><span style="color: #f8f8f2">(func):</span>
-        <span style="color: #a6e22e">@wraps</span><span style="color: #f8f8f2">(func)</span>
-        <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">func_wrapper</span><span style="color: #f8f8f2">(name):</span>
-            <span style="color: #66d9ef">return</span> <span style="color: #e6db74">&quot;&lt;{0}&gt;{1}&lt;/{0}&gt;&quot;</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">format(tag_name,</span> <span style="color: #f8f8f2">func(name))</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">func_wrapper</span>
-    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">tags_decorator</span>
+<pre><code>from functools import wraps
 
-<span style="color: #a6e22e">@tags</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;p&quot;</span><span style="color: #f8f8f2">)</span>
-<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">get_text</span><span style="color: #f8f8f2">(name):</span>
-    <span style="color: #e6db74">&quot;&quot;&quot;returns some text&quot;&quot;&quot;</span>
-    <span style="color: #66d9ef">return</span> <span style="color: #e6db74">&quot;Hello &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">name</span>
+def tags(tag_name):
+    def tags_decorator(func):
+        @wraps(func)
+        def func_wrapper(name):
+            return &quot;&lt;{0}&gt;{1}&lt;/{0}&gt;&quot;.format(tag_name, func(name))
+        return func_wrapper
+    return tags_decorator
 
-<span style="color: #66d9ef">print</span> <span style="color: #f8f8f2">get_text</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">__name__</span> <span style="color: #75715e"># get_text</span>
-<span style="color: #66d9ef">print</span> <span style="color: #f8f8f2">get_text</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">__doc__</span> <span style="color: #75715e"># returns some text</span>
-<span style="color: #66d9ef">print</span> <span style="color: #f8f8f2">get_text</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">__module__</span> <span style="color: #75715e"># __main__</span>
-</pre></div>
+@tags(&quot;p&quot;)
+def get_text(name):
+    &quot;&quot;&quot;returns some text&quot;&quot;&quot;
+    return &quot;Hello &quot;+name
+
+print get_text.__name__ # get_text
+print get_text.__doc__ # returns some text
+print get_text.__module__ # __main__
+</code></pre>
 
 <p>You can notice from the output that the attributes of get_text are the correct ones now.</p>
 

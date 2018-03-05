@@ -1,5 +1,5 @@
 	<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> Python Generator &middot; Hugo Blog </title>
+  <title> Python Generator &middot; B🐶Pythonic </title>
 
   
   <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
@@ -17,31 +17,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://danigong.github.io/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="http://danigong.github.io/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="Hugo Blog" />
+  <link href="" rel="alternate" type="application/rss+xml" title="B🐶Pythonic" />
 </head>
 
 	<body class="">
 		<div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://danigong.github.io/"><h1>Hugo Blog</h1></a>
+      <a href="http://danigong.github.io/"><h1>B🐶Pythonic</h1></a>
       <p class="lead">
-       Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again. 
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
       </p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="http://danigong.github.io/">Home</a> </li>
-      
-        <li><a href="http://danigong.github.io/"> Home </a></li>
-      
-        <li><a href="https://github.com/laozhu"> Works </a></li>
-      
-        <li><a href="http://danigong.github.io/tags/"> Tags </a></li>
+      <li><a href="/">Home</a> </li>
       
     </ul>
 
@@ -65,49 +59,52 @@
 <p>所以，如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器（Generator）。</p>
 
 <p>要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的[]改成()，就创建了一个generator：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f8f8f2">L</span><span style="color: #f92672"> =</span> <span style="color: #960050; background-color: #1e0010">[</span><span style="color: #a6e22e">x</span> <span style="color: #f92672">*</span> <span style="color: #a6e22e">x</span> <span style="color: #a6e22e">for</span> <span style="color: #f8f8f2">x</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2">)</span><span style="color: #75715e">]</span>
+
+<pre><code>&gt;&gt;&gt; L = [x * x for x in range(10)]
 &gt;&gt;&gt; L
-<span style="color: #75715e">[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">9</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">16</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">25</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">36</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">49</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">64</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">81</span><span style="color: #75715e">]</span>
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 &gt;&gt;&gt; g = (x * x for x in range(10))
 &gt;&gt;&gt; g
-<span style="color: #f92672">&lt;generator</span> <span style="color: #a6e22e">object</span> <span style="color: #960050; background-color: #1e0010">&lt;</span><span style="color: #a6e22e">genexpr</span><span style="color: #f92672">&gt;</span> at 0x104feab40&gt;
-</pre></div>
+&lt;generator object &lt;genexpr&gt; at 0x104feab40&gt;
+</code></pre>
 
 <p>创建L和g的区别仅在于最外层的[]和()，L是一个list，而g是一个generator。</p>
 
 <p>我们可以直接打印出list的每一个元素，但我们怎么打印出generator的每一个元素呢？</p>
 
 <p>如果要一个一个打印出来，可以通过generator的next()方法：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">0</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">1</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">4</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">9</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">16</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">25</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">36</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">49</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">64</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #ae81ff">81</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">g.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #a6e22e">Traceback</span> <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">most</span> <span style="color: #a6e22e">recent</span> <span style="color: #a6e22e">call</span> <span style="color: #a6e22e">last</span><span style="color: #f8f8f2">):</span>
-  <span style="color: #f8f8f2">File</span> <span style="color: #e6db74">&quot;&lt;stdin&gt;&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #a6e22e">line</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">in</span> <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">module</span><span style="color: #f92672">&gt;</span>
-<span style="color: #a6e22e">StopIteration</span>
-</pre></div>
+
+<pre><code>&gt;&gt;&gt; g.next()
+0
+&gt;&gt;&gt; g.next()
+1
+&gt;&gt;&gt; g.next()
+4
+&gt;&gt;&gt; g.next()
+9
+&gt;&gt;&gt; g.next()
+16
+&gt;&gt;&gt; g.next()
+25
+&gt;&gt;&gt; g.next()
+36
+&gt;&gt;&gt; g.next()
+49
+&gt;&gt;&gt; g.next()
+64
+&gt;&gt;&gt; g.next()
+81
+&gt;&gt;&gt; g.next()
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+StopIteration
+</code></pre>
 
 <p>我们讲过，generator保存的是算法，每次调用next()，就计算出下一个元素的值，直到计算到最后一个元素，没有更多的元素时，抛出StopIteration的错误。</p>
 
 <p>当然，上面这种不断调用next()方法实在是太变态了，正确的方法是使用for循环，因为generator也是可迭代对象：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&gt;&gt;&gt; g = (x * x for x in range(10))
+
+<pre><code>&gt;&gt;&gt; g = (x * x for x in range(10))
 &gt;&gt;&gt; for n in g:
 ...     print n
 ...
@@ -121,7 +118,7 @@
 49
 64
 81
-</pre></div>
+</code></pre>
 
 <p>所以，我们创建了一个generator后，基本上永远不会调用next()方法，而是通过for循环来迭代它。</p>
 
@@ -132,73 +129,79 @@
 <p>1, 1, 2, 3, 5, 8, 13, 21, 34, &hellip;</p>
 
 <p>斐波拉契数列用列表生成式写不出来，但是，用函数把它打印出来却很容易：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def fib(max):
+
+<pre><code>def fib(max):
     n, a, b = 0, 0, 1
     while n &lt; max:
         print b
         a, b = b, a + b
         n = n + 1
-</pre></div>
+</code></pre>
 
 <p>上面的函数可以输出斐波那契数列的前N个数：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&gt;&gt;&gt; fib(6)
+
+<pre><code>&gt;&gt;&gt; fib(6)
 1
 1
 2
 3
 5
 8
-</pre></div>
+</code></pre>
 
 <p>仔细观察，可以看出，fib函数实际上是定义了斐波拉契数列的推算规则，可以从第一个元素开始，推算出后续任意的元素，这种逻辑其实非常类似generator。</p>
 
 <p>也就是说，上面的函数和generator仅一步之遥。要把fib函数变成generator，只需要把print b改为yield b就可以了：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">def fib(max):
+
+<pre><code>def fib(max):
     n, a, b = 0, 0, 1
     while n &lt; max:
         yield b
         a, b = b, a + b
         n = n + 1
-</pre></div>
+</code></pre>
 
 <p>这就是定义generator的另一种方法。如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&gt;&gt;&gt; fib(6)
+
+<pre><code>&gt;&gt;&gt; fib(6)
 &lt;generator object fib at 0x104feaaa0&gt;
-</pre></div>
+</code></pre>
 
 <p>这里，最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
 
 <p>举个简单的例子，定义一个generator，依次返回数字1，3，5：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">def</span> <span style="color: #a6e22e">odd</span><span style="color: #f8f8f2">():</span>
-<span style="color: #a6e22e">...</span>     <span style="color: #a6e22e">print</span> <span style="color: #e6db74">&#39;step 1&#39;</span>
-<span style="color: #a6e22e">...</span>     <span style="color: #66d9ef">yield</span> <span style="color: #ae81ff">1</span>
-<span style="color: #a6e22e">...</span>     <span style="color: #a6e22e">print</span> <span style="color: #e6db74">&#39;step 2&#39;</span>
-<span style="color: #a6e22e">...</span>     <span style="color: #66d9ef">yield</span> <span style="color: #ae81ff">3</span>
-<span style="color: #a6e22e">...</span>     <span style="color: #a6e22e">print</span> <span style="color: #e6db74">&#39;step 3&#39;</span>
-<span style="color: #a6e22e">...</span>     <span style="color: #66d9ef">yield</span> <span style="color: #ae81ff">5</span>
-<span style="color: #a6e22e">...</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f8f8f2">o</span><span style="color: #f92672"> =</span> <span style="color: #a6e22e">odd</span><span style="color: #f8f8f2">()</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">o.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #a6e22e">step</span> <span style="color: #ae81ff">1</span>
-<span style="color: #ae81ff">1</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">o.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #a6e22e">step</span> <span style="color: #ae81ff">2</span>
-<span style="color: #ae81ff">3</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">o.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #a6e22e">step</span> <span style="color: #ae81ff">3</span>
-<span style="color: #ae81ff">5</span>
-<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #a6e22e">o.next</span><span style="color: #f8f8f2">()</span>
-<span style="color: #a6e22e">Traceback</span> <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">most</span> <span style="color: #a6e22e">recent</span> <span style="color: #a6e22e">call</span> <span style="color: #a6e22e">last</span><span style="color: #f8f8f2">):</span>
-  <span style="color: #f8f8f2">File</span> <span style="color: #e6db74">&quot;&lt;stdin&gt;&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #a6e22e">line</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">in</span> <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">module</span><span style="color: #f92672">&gt;</span>
-<span style="color: #a6e22e">StopIteration</span>
-</pre></div>
+
+<pre><code>&gt;&gt;&gt; def odd():
+...     print 'step 1'
+...     yield 1
+...     print 'step 2'
+...     yield 3
+...     print 'step 3'
+...     yield 5
+...
+&gt;&gt;&gt; o = odd()
+&gt;&gt;&gt; o.next()
+step 1
+1
+&gt;&gt;&gt; o.next()
+step 2
+3
+&gt;&gt;&gt; o.next()
+step 3
+5
+&gt;&gt;&gt; o.next()
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+StopIteration
+</code></pre>
 
 <p>可以看到，odd不是普通函数，而是generator，在执行过程中，遇到yield就中断，下次又继续执行。执行3次yield后，已经没有yield可以执行了，所以，第4次调用next()就报错。</p>
 
 <p>回到fib的例子，我们在循环过程中不断调用yield，就会不断中断。当然要给循环设置一个条件来退出循环，不然就会产生一个无限数列出来。</p>
 
 <p>同样的，把函数改成generator后，我们基本上从来不会用next()来调用它，而是直接使用for循环来迭代：</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&gt;&gt;&gt; for n in fib(6):
+
+<pre><code>&gt;&gt;&gt; for n in fib(6):
 ...     print n
 ...
 1
@@ -207,7 +210,7 @@
 3
 5
 8
-</pre></div>
+</code></pre>
 
 <h2 id="小结:5a7c58757d5502c33c2b70739d3bc9d3">小结</h2>
 
