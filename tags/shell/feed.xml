@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on B🐶Pythonic</title>
-    <link>http://danigong.github.io/tags/git/</link>
-    <description>Recent content in Git on B🐶Pythonic</description>
+    <title>Shell on B🐶Pythonic</title>
+    <link>http://danigong.github.io/tags/shell/</link>
+    <description>Recent content in Shell on B🐶Pythonic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 07 Mar 2018 16:45:07 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/git/feed/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://danigong.github.io/tags/shell/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>how_to_update_hugo_blog</title>
@@ -60,47 +60,6 @@ echo &amp;quot;-------Done-------&amp;quot;
 &lt;/ul&gt;
 
 &lt;p&gt;Add &lt;code&gt;alias addblog=&amp;quot;xxx.sh&amp;quot;&lt;/code&gt; into &lt;code&gt;.bashrc&lt;/code&gt; file. Then &lt;code&gt;source ~/.bashrc&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Deploy Hugo Site on GitHub Pages</title>
-      <link>http://danigong.github.io/post/deploy_hugo_site_to_github/</link>
-      <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create a Repository: danigong.github.io (replace danigong with your own github username)&lt;/li&gt;
-&lt;li&gt;Change directory to root directory of the site.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$ hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cd public
-$ git init
-$ git remote add origin https://github.com/danigong/danigong.github.io.git
-$ git add -A
-$ git commit -m &amp;quot;first commit&amp;quot;
-$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Github Push Stucking When Writing Objects</title>
-      <link>http://danigong.github.io/post/github_push_stuck/</link>
-      <pubDate>Sat, 11 Apr 2015 21:35:05 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/post/github_push_stuck/</guid>
-      <description>
-
-&lt;h3 id=&#34;to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230&#34;&gt;To solve the github push stucking problem:&lt;/h3&gt;
-
-&lt;p&gt;Try to use the command as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git config --global http.postBuffer 524288000
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

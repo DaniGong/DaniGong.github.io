@@ -38,6 +38,8 @@
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       
+        <li><a href="/post/how_to_update_hugo_blog/"> how_to_update_hugo_blog </a></li>
+      
         <li><a href="/about/"> About </a></li>
       
     </ul>
@@ -61,11 +63,13 @@
       
 			<li><a href="http://danigong.github.io/tags/django" title="django">django<sup>3</sup></a></li>
       
-			<li><a href="http://danigong.github.io/tags/git" title="git">git<sup>2</sup></a></li>
+			<li><a href="http://danigong.github.io/tags/git" title="git">git<sup>3</sup></a></li>
       
 			<li><a href="http://danigong.github.io/tags/github" title="github">github<sup>2</sup></a></li>
       
-			<li><a href="http://danigong.github.io/tags/hugo" title="hugo">hugo<sup>1</sup></a></li>
+			<li><a href="http://danigong.github.io/tags/hugo" title="hugo">hugo<sup>2</sup></a></li>
+      
+			<li><a href="http://danigong.github.io/tags/linux" title="linux">linux<sup>1</sup></a></li>
       
 			<li><a href="http://danigong.github.io/tags/machine-learning" title="machine-learning">machine-learning<sup>1</sup></a></li>
       
@@ -79,7 +83,9 @@
       
 			<li><a href="http://danigong.github.io/tags/pyramid" title="pyramid">pyramid<sup>1</sup></a></li>
       
-			<li><a href="http://danigong.github.io/tags/python" title="python">python<sup>13</sup></a></li>
+			<li><a href="http://danigong.github.io/tags/python" title="python">python<sup>14</sup></a></li>
+      
+			<li><a href="http://danigong.github.io/tags/shell" title="shell">shell<sup>1</sup></a></li>
       
 			<li><a href="http://danigong.github.io/tags/sublime" title="sublime">sublime<sup>1</sup></a></li>
       
@@ -97,7 +103,7 @@
       
       
       <li class="archive-list-item">
-        <a class="archive-list-link" href="http://danigong.github.io/post/#2018-03">2018/03/</a><span class="archive-list-count">3</span>
+        <a class="archive-list-link" href="http://danigong.github.io/post/#2018-03">2018/03/</a><span class="archive-list-count">4</span>
       </li>
       
       
@@ -145,6 +151,63 @@
 <div class="posts">
 
       
+  <div class="post" style="word-wrap: break-word;">
+    <h1 class="post-title">
+      <a href="http://danigong.github.io/post/how_to_update_hugo_blog/">
+        how_to_update_hugo_blog
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Mar 7, 2018</span>
+
+    
+
+<h3 id="quick-start:a9f50bd812f223c6d6f384347fb30a71">Quick Start</h3>
+
+<ul>
+<li>1. Open iTerm2</li>
+<li>2. <code>control+command+h</code> to open the tab with hugo profile</li>
+<li>3. <code>addblog</code> to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.</li>
+<li>4. <code>deployblog</code> to deploy newest update to github.</li>
+</ul>
+
+<h3 id="detail:a9f50bd812f223c6d6f384347fb30a71">Detail</h3>
+
+<ul>
+<li>create blog shell script:</li>
+</ul>
+
+<pre><code>echo &quot;Blog Title: &quot;
+read Title
+cd /Users/DanielGong/HugoSite/testsite
+hugo new post/$Title.md
+subl /Users/DanielGong/HugoSite/testsite/content/post/$Title.md
+</code></pre>
+
+<ul>
+<li>deploy blog shell script:</li>
+</ul>
+
+<pre><code>echo &quot;-------Begin-------&quot;
+
+cd /Users/DanielGong/HugoSite/testsite
+hugo --theme=gs-hyde --baseUrl=&quot;http://danigong.github.io/&quot;
+cd public
+git add -A
+git commit -m &quot;auto_commit&quot;
+git push origin master
+
+echo &quot;-------Done-------&quot;
+</code></pre>
+
+<ul>
+<li>customize command:</li>
+</ul>
+
+<p>Add <code>alias addblog=&quot;xxx.sh&quot;</code> into <code>.bashrc</code> file. Then <code>source ~/.bashrc</code></p>
+
+  </div>
+  
   <div class="post" style="word-wrap: break-word;">
     <h1 class="post-title">
       <a href="http://danigong.github.io/post/markdown_online_editor/">

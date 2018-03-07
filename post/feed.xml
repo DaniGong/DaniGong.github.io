@@ -6,8 +6,62 @@
     <description>Recent content in Posts on B🐶Pythonic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Mar 2018 11:25:30 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Mar 2018 16:45:07 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>how_to_update_hugo_blog</title>
+      <link>http://danigong.github.io/post/how_to_update_hugo_blog/</link>
+      <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
+      <description>
+
+&lt;h3 id=&#34;quick-start:a9f50bd812f223c6d6f384347fb30a71&#34;&gt;Quick Start&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. Open iTerm2&lt;/li&gt;
+&lt;li&gt;2. &lt;code&gt;control+command+h&lt;/code&gt; to open the tab with hugo profile&lt;/li&gt;
+&lt;li&gt;3. &lt;code&gt;addblog&lt;/code&gt; to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.&lt;/li&gt;
+&lt;li&gt;4. &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;detail:a9f50bd812f223c6d6f384347fb30a71&#34;&gt;Detail&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;create blog shell script:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;Blog Title: &amp;quot;
+read Title
+cd /Users/DanielGong/HugoSite/testsite
+hugo new post/$Title.md
+subl /Users/DanielGong/HugoSite/testsite/content/post/$Title.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;deploy blog shell script:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;-------Begin-------&amp;quot;
+
+cd /Users/DanielGong/HugoSite/testsite
+hugo --theme=gs-hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;
+cd public
+git add -A
+git commit -m &amp;quot;auto_commit&amp;quot;
+git push origin master
+
+echo &amp;quot;-------Done-------&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;customize command:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Add &lt;code&gt;alias addblog=&amp;quot;xxx.sh&amp;quot;&lt;/code&gt; into &lt;code&gt;.bashrc&lt;/code&gt; file. Then &lt;code&gt;source ~/.bashrc&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Markdown Online Editor</title>
@@ -4890,23 +4944,6 @@ if greeting is True: # Worse
 
 &lt;p&gt;-作者博客：&lt;a href=&#34;http://my.oschina.net/u/1433482&#34;&gt;http://my.oschina.net/u/1433482&lt;/a&gt;
 -类型：翻译&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Github Push Stucking When Writing Objects</title>
-      <link>http://danigong.github.io/post/github_push_stuck/</link>
-      <pubDate>Sat, 11 Apr 2015 21:35:05 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/post/github_push_stuck/</guid>
-      <description>
-
-&lt;h3 id=&#34;to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230&#34;&gt;To solve the github push stucking problem:&lt;/h3&gt;
-
-&lt;p&gt;Try to use the command as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git config --global http.postBuffer 524288000
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
