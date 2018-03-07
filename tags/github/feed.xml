@@ -6,8 +6,34 @@
     <description>Recent content in Github on B🐶Pythonic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 28 May 2016 20:27:28 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Mar 2018 17:09:40 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/tags/github/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to create a github.io repo</title>
+      <link>http://danigong.github.io/post/how_to_create_a_github_io_repo/</link>
+      <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/how_to_create_a_github_io_repo/</guid>
+      <description>
+
+&lt;h2 id=&#34;开通自己的github-io-repo:018a1d9a116761721e09a6de2cf767a8&#34;&gt;开通自己的github.io repo&lt;/h2&gt;
+
+&lt;p&gt;github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可以参照如下步骤完成：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;创建repo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当然，一切的前提是你得首先有个github的账户，这里还请自行解决。登陆你的账户后，你可以创建一个新的repo。请务必注意该repo的名字，必须保持格式&lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;，其中&lt;code&gt;&amp;lt;username&amp;gt;&lt;/code&gt;替换成你的github账户名，这里假定创建的repo为&lt;code&gt;danielgong.github.io&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;把你创建的repo clone到本地就可以了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;git clone https://github.com/tobiasalin/tobiasalin.github.io&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Deploy Hugo Site on GitHub Pages</title>
