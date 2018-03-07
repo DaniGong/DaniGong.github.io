@@ -23,7 +23,8 @@
 &lt;li&gt;1. Open iTerm2&lt;/li&gt;
 &lt;li&gt;2. &lt;code&gt;control+command+h&lt;/code&gt; to open the tab with hugo profile&lt;/li&gt;
 &lt;li&gt;3. &lt;code&gt;addblog&lt;/code&gt; to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.&lt;/li&gt;
-&lt;li&gt;4. &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/li&gt;
+&lt;li&gt;4. Note: Blog Title should not contain space and strip out &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the template.&lt;/li&gt;
+&lt;li&gt;5. &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;detail:a9f50bd812f223c6d6f384347fb30a71&#34;&gt;Detail&lt;/h3&gt;
