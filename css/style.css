@@ -1,6 +1,7 @@
 
 
 
+ol,ul{list-style:none}
 
 .clearfix{zoom:1}
 .clearfix:before,.clearfix:after{content:"";display:table}
