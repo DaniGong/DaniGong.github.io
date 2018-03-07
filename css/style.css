@@ -1,3 +1,15 @@
+
+
+
+
+.clearfix{zoom:1}
+.clearfix:before,.clearfix:after{content:"";display:table}
+.clearfix:after{clear:both}
+@media only screen and (min-width: 1024px){#asidepart{position:relative;float:left;width:18%;margin:2em 0 0 3%}
+}.asidetitle{font-size:1.1em;color:#2ca6cb;padding:0 0 .3125em 0;border-bottom:.1875em solid #ccc;}
+.asidetitle a{color:#2ca6cb;}
+.asidetitle a:hover{color:black;-webkit-transition:color 0.5s;-moz-transition:color 0.5s;-o-transition:color 0.5s;-ms-transition:color 0.5s;transition:color 0.5s}
+
 .tagslist{margin:1em 0 0;}
 @media only screen and (min-width: 768px){.tagslist{width:45%;float:left;margin:0 5% 0 0}
 }@media only screen and (min-width: 1024px){.tagslist{width:100%;float:none;margin:1em 0 0}
