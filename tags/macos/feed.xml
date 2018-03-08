@@ -25,6 +25,13 @@
 &lt;/ul&gt;
 
 &lt;p&gt;命令运行之后需要重新加载Finder：快捷键&lt;code&gt;option+command+esc&lt;/code&gt;，选中Finder，重新启动即可&lt;/p&gt;
+
+&lt;h2 id=&#34;或者:331140ea9da6aadec02376128c2c9739&#34;&gt;或者&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. &lt;code&gt;defaults write com.apple.finder AppleShowAllFiles FALSE&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2. &lt;code&gt;killall Finder&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
