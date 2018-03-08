@@ -6,8 +6,27 @@
     <description>Recent content in Linux on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 08 Mar 2018 14:18:34 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 08 Mar 2018 14:37:42 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/tags/linux/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Show all files in finder</title>
+      <link>http://danigong.github.io/post/Show_all_files_in_finder/</link>
+      <pubDate>Thu, 08 Mar 2018 14:37:42 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/Show_all_files_in_finder/</guid>
+      <description>
+
+&lt;h2 id=&#34;如何在mac-os-x中开启或关闭显示隐藏文件命令:331140ea9da6aadec02376128c2c9739&#34;&gt;如何在Mac OS X中开启或关闭显示隐藏文件命令&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool true&lt;/code&gt;      此命令显示隐藏文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool false&lt;/code&gt;      此命令关闭显示隐藏文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;命令运行之后需要重新加载Finder：快捷键&lt;code&gt;option+command+esc&lt;/code&gt;，选中Finder，重新启动即可&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Force empty trash</title>

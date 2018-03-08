@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 
-  <title> How to update hugo blog &middot; Pythonic🐶 </title>
+  <title> Show all files in finder &middot; Pythonic🐶 </title>
 
   
   <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
@@ -62,54 +62,18 @@
 
 		<div class="content container">
 			<div class="post" style="word-wrap: break-word;">
-			 	<h1>How to update hugo blog</h1>
-			  <span class="post-date">Wed, Mar 7, 2018</span>
+			 	<h1>Show all files in finder</h1>
+			  <span class="post-date">Thu, Mar 8, 2018</span>
 			      
 
-<h3 id="quick-start:a9f50bd812f223c6d6f384347fb30a71">Quick Start</h3>
+<h2 id="如何在mac-os-x中开启或关闭显示隐藏文件命令:331140ea9da6aadec02376128c2c9739">如何在Mac OS X中开启或关闭显示隐藏文件命令</h2>
 
 <ul>
-<li>1. Open iTerm2</li>
-<li>2. <code>control+command+h</code> to open the tab with hugo profile</li>
-<li>3. <code>addblog</code> to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.</li>
-<li>4. Note: Blog Title should not contain space and strip out <code>menu = &quot;main&quot;</code> in the template.</li>
-<li>5. <code>deployblog</code> to deploy newest update to github.</li>
+<li><code>defaults write com.apple.finder AppleShowAllFiles -bool true</code>      此命令显示隐藏文件</li>
+<li><code>defaults write com.apple.finder AppleShowAllFiles -bool false</code>      此命令关闭显示隐藏文件</li>
 </ul>
 
-<h3 id="detail:a9f50bd812f223c6d6f384347fb30a71">Detail</h3>
-
-<ul>
-<li>create blog shell script:</li>
-</ul>
-
-<pre><code>echo &quot;Blog Title: &quot;
-read Title
-cd /Users/DanielGong/HugoSite/testsite
-hugo new post/$Title.md
-subl /Users/DanielGong/HugoSite/testsite/content/post/$Title.md
-</code></pre>
-
-<ul>
-<li>deploy blog shell script:</li>
-</ul>
-
-<pre><code>echo &quot;-------Begin-------&quot;
-
-cd /Users/DanielGong/HugoSite/testsite
-hugo --theme=gs-hyde --baseUrl=&quot;http://danigong.github.io/&quot;
-cd public
-git add -A
-git commit -m &quot;auto_commit&quot;
-git push origin master
-
-echo &quot;-------Done-------&quot;
-</code></pre>
-
-<ul>
-<li>customize command:</li>
-</ul>
-
-<p>Add <code>alias addblog=&quot;xxx.sh&quot;</code> into <code>.bashrc</code> file. Then <code>source ~/.bashrc</code></p>
+<p>命令运行之后需要重新加载Finder：快捷键<code>option+command+esc</code>，选中Finder，重新启动即可</p>
 
 			</div>
 
