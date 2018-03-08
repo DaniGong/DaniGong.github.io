@@ -15,9 +15,7 @@
       <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_create_a_github_io_repo/</guid>
-      <description>
-
-&lt;h2 id=&#34;开通自己的github-io-repo:018a1d9a116761721e09a6de2cf767a8&#34;&gt;开通自己的github.io repo&lt;/h2&gt;
+      <description>&lt;p&gt;开通自己的github.io repo&lt;/p&gt;
 
 &lt;p&gt;github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可以参照如下步骤完成：&lt;/p&gt;
 
@@ -41,9 +39,7 @@
       <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
-      <description>
-
-&lt;h3 id=&#34;quick-start:a9f50bd812f223c6d6f384347fb30a71&#34;&gt;Quick Start&lt;/h3&gt;
+      <description>&lt;p&gt;Quick Start&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1. Open iTerm2&lt;/li&gt;
@@ -53,7 +49,7 @@
 &lt;li&gt;5. &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;detail:a9f50bd812f223c6d6f384347fb30a71&#34;&gt;Detail&lt;/h3&gt;
+&lt;p&gt;Detail&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;create blog shell script:&lt;/li&gt;
@@ -120,9 +116,7 @@ $ git push -u origin master
       <pubDate>Sat, 11 Apr 2015 21:35:05 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/github_push_stuck/</guid>
-      <description>
-
-&lt;h3 id=&#34;to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230&#34;&gt;To solve the github push stucking problem:&lt;/h3&gt;
+      <description>&lt;p&gt;To solve the github push stucking problem:&lt;/p&gt;
 
 &lt;p&gt;Try to use the command as follows:&lt;/p&gt;
 

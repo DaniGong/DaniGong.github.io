@@ -15,9 +15,7 @@
       <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_create_a_github_io_repo/</guid>
-      <description>
-
-&lt;h2 id=&#34;开通自己的github-io-repo:018a1d9a116761721e09a6de2cf767a8&#34;&gt;开通自己的github.io repo&lt;/h2&gt;
+      <description>&lt;p&gt;开通自己的github.io repo&lt;/p&gt;
 
 &lt;p&gt;github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可以参照如下步骤完成：&lt;/p&gt;
 
@@ -65,9 +63,7 @@ $ git push -u origin master
       <pubDate>Sat, 11 Apr 2015 21:35:05 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/github_push_stuck/</guid>
-      <description>
-
-&lt;h3 id=&#34;to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230&#34;&gt;To solve the github push stucking problem:&lt;/h3&gt;
+      <description>&lt;p&gt;To solve the github push stucking problem:&lt;/p&gt;
 
 &lt;p&gt;Try to use the command as follows:&lt;/p&gt;
 

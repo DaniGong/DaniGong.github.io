@@ -15,9 +15,7 @@
       <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
-      <description>
-
-&lt;h3 id=&#34;quick-start:a9f50bd812f223c6d6f384347fb30a71&#34;&gt;Quick Start&lt;/h3&gt;
+      <description>&lt;p&gt;Quick Start&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1. Open iTerm2&lt;/li&gt;
@@ -27,7 +25,7 @@
 &lt;li&gt;5. &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;detail:a9f50bd812f223c6d6f384347fb30a71&#34;&gt;Detail&lt;/h3&gt;
+&lt;p&gt;Detail&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;create blog shell script:&lt;/li&gt;
