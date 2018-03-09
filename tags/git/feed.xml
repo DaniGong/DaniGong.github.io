@@ -15,7 +15,7 @@
       <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_create_a_github_io_repo/</guid>
-      <description>&lt;p&gt;开通自己的github.io repo&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;开通自己的github.io repo&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可以参照如下步骤完成：&lt;/p&gt;
 
@@ -25,9 +25,7 @@
 
 &lt;p&gt;&lt;strong&gt;把你创建的repo clone到本地就可以了&lt;/strong&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;git clone https://github.com/tobiasalin/tobiasalin.github.io&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
     </item>
     
