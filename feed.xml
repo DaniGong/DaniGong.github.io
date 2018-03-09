@@ -106,21 +106,17 @@
       <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
-      <description>&lt;p&gt;Quick Start&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;1. Open iTerm2&lt;/li&gt;
-&lt;li&gt;2. &lt;code&gt;control+command+h&lt;/code&gt; to open the tab with hugo profile&lt;/li&gt;
-&lt;li&gt;3. &lt;code&gt;addblog&lt;/code&gt; to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.&lt;/li&gt;
-&lt;li&gt;4. Note: Blog Title should not contain space and strip out &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the template.&lt;/li&gt;
-&lt;li&gt;5. &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;1 - Open iTerm2
+2 - &lt;code&gt;control+command+h&lt;/code&gt; to open the tab with hugo profile
+3 - &lt;code&gt;addblog&lt;/code&gt; to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.
+4 - Note: Blog Title should not contain space and strip out &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the template.
+5 - &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/p&gt;
 
-&lt;p&gt;Detail&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Detail&lt;/strong&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;create blog shell script:&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;create blog shell script:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;echo &amp;quot;Blog Title: &amp;quot;
 read Title
@@ -129,9 +125,7 @@ hugo new post/$Title.md
 subl /Users/DanielGong/HugoSite/testsite/content/post/$Title.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;ul&gt;
-&lt;li&gt;deploy blog shell script:&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;eploy blog shell script:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;echo &amp;quot;-------Begin-------&amp;quot;
 
@@ -145,9 +139,7 @@ git push origin master
 echo &amp;quot;-------Done-------&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;ul&gt;
-&lt;li&gt;customize command:&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;customize command:&lt;/p&gt;
 
 &lt;p&gt;Add &lt;code&gt;alias addblog=&amp;quot;xxx.sh&amp;quot;&lt;/code&gt; into &lt;code&gt;.bashrc&lt;/code&gt; file. Then &lt;code&gt;source ~/.bashrc&lt;/code&gt;&lt;/p&gt;
 </description>

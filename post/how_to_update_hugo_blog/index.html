@@ -65,21 +65,17 @@
 			<div class="post" style="word-wrap: break-word;">
 			 	<h1>How to update hugo blog</h1>
 			  <span class="post-date">Wed, Mar 7, 2018</span>
-			      <p>Quick Start</p>
+			      <p><strong>Quick Start</strong></p>
 
-<ul>
-<li>1. Open iTerm2</li>
-<li>2. <code>control+command+h</code> to open the tab with hugo profile</li>
-<li>3. <code>addblog</code> to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.</li>
-<li>4. Note: Blog Title should not contain space and strip out <code>menu = &quot;main&quot;</code> in the template.</li>
-<li>5. <code>deployblog</code> to deploy newest update to github.</li>
-</ul>
+<p>1 - Open iTerm2
+2 - <code>control+command+h</code> to open the tab with hugo profile
+3 - <code>addblog</code> to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.
+4 - Note: Blog Title should not contain space and strip out <code>menu = &quot;main&quot;</code> in the template.
+5 - <code>deployblog</code> to deploy newest update to github.</p>
 
-<p>Detail</p>
+<p><strong>Detail</strong></p>
 
-<ul>
-<li>create blog shell script:</li>
-</ul>
+<p>create blog shell script:</p>
 
 <pre><code>echo &quot;Blog Title: &quot;
 read Title
@@ -88,9 +84,7 @@ hugo new post/$Title.md
 subl /Users/DanielGong/HugoSite/testsite/content/post/$Title.md
 </code></pre>
 
-<ul>
-<li>deploy blog shell script:</li>
-</ul>
+<p>eploy blog shell script:</p>
 
 <pre><code>echo &quot;-------Begin-------&quot;
 
@@ -104,9 +98,7 @@ git push origin master
 echo &quot;-------Done-------&quot;
 </code></pre>
 
-<ul>
-<li>customize command:</li>
-</ul>
+<p>customize command:</p>
 
 <p>Add <code>alias addblog=&quot;xxx.sh&quot;</code> into <code>.bashrc</code> file. Then <code>source ~/.bashrc</code></p>
 
