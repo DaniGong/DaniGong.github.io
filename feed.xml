@@ -15,20 +15,24 @@
       <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/Why_nGrinder/</guid>
-      <description>&lt;p&gt;nGrinder与其他工具比较&lt;/p&gt;
+      <description>&lt;p&gt;nGrinder与其他工具比较&amp;ndash;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;JMeter
-基于UI操作，容易上手，但是不具备编程能力。其次JMeter基于线程模拟数千用户几乎不可能。&lt;/li&gt;
-&lt;li&gt;Tsung
-基于Erlang，能模拟上千用户并且易于扩展。但是基于XML的DSL，描述场景能力弱，而且需要大量的数据处理才知道测试结果。&lt;/li&gt;
-&lt;li&gt;Locust
-基于python的gevent，能模拟百万个用户。但是需要对python有一定理解。&lt;/li&gt;
-&lt;li&gt;Loadrunner
-这个可以说是应用最多的一个，很方便，但是还是太重。往后的方向肯定是客户端工具逐步向平台化发展，所以loadrunner注定慢慢被淘汰（个人拙见）。而且不开源，扩展性不高，收费。&lt;/li&gt;
-&lt;li&gt;nGrinder
-单节点支持3000并发、支持分布式、可监控被测服务器、可录制脚本、开源、平台化。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;JMeter&lt;/strong&gt;
+基于UI操作，容易上手，但是不具备编程能力。其次JMeter基于线程模拟数千用户几乎不可能。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tsung&lt;/strong&gt;
+基于Erlang，能模拟上千用户并且易于扩展。但是基于XML的DSL，描述场景能力弱，而且需要大量的数据处理才知道测试结果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Locust&lt;/strong&gt;
+基于python的gevent，能模拟百万个用户。但是需要对python有一定理解。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Loadrunner&lt;/strong&gt;
+这个可以说是应用最多的一个，很方便，但是还是太重。往后的方向肯定是客户端工具逐步向平台化发展，所以loadrunner注定慢慢被淘汰（个人拙见）。而且不开源，扩展性不高，收费。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;nGrinder&lt;/strong&gt;
+单节点支持3000并发、支持分布式、可监控被测服务器、可录制脚本、开源、平台化。&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
@@ -38,25 +42,27 @@
       <pubDate>Thu, 08 Mar 2018 14:37:42 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/Show_all_files_in_finder/</guid>
-      <description>
+      <description>&lt;p&gt;如何在Mac OS X中开启或关闭显示隐藏文件命令&lt;/p&gt;
 
-&lt;p&gt;如何在Mac OS X中开启或关闭显示隐藏文件命令&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可以这样：&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;可以这样:331140ea9da6aadec02376128c2c9739&#34;&gt;可以这样：&lt;/h2&gt;
-
+&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool true&lt;/code&gt;      - 此命令显示隐藏文件&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool false&lt;/code&gt;     - 此命令关闭显示隐藏文件&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;命令运行之后需要重新加载Finder：快捷键&lt;code&gt;option+command+esc&lt;/code&gt;，选中Finder，重新启动即可&lt;/p&gt;
 
-&lt;h2 id=&#34;或者这样:331140ea9da6aadec02376128c2c9739&#34;&gt;或者这样：&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;或者这样：&lt;/strong&gt;&lt;/p&gt;
 
+&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles FALSE&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;killall Finder&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
@@ -66,7 +72,11 @@
       <pubDate>Thu, 08 Mar 2018 14:18:34 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/Force_empty_trash/</guid>
-      <description>&lt;p&gt;&lt;code&gt;sudo rm -rf ~/.Trash/&lt;/code&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;可以这样&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo rm -rf ~/.Trash/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
@@ -80,17 +90,15 @@
 
 &lt;p&gt;github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可以参照如下步骤完成：&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;创建repo&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;创建repo&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;当然，一切的前提是你得首先有个github的账户，这里还请自行解决。登陆你的账户后，你可以创建一个新的repo。请务必注意该repo的名字，必须保持格式&lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;，其中&lt;code&gt;&amp;lt;username&amp;gt;&lt;/code&gt;替换成你的github账户名，这里假定创建的repo为&lt;code&gt;danielgong.github.io&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;当然，一切的前提是你得首先有个github的账户，这里还请自行解决。登陆你的账户后，你可以创建一个新的repo。请务必注意该repo的名字，必须保持格式&lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;，其中&lt;code&gt;&amp;lt;username&amp;gt;&lt;/code&gt;替换成你的github账户名，这里假定创建的repo为 &amp;gt; &lt;code&gt;danielgong.github.io&lt;/code&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;把你创建的repo clone到本地就可以了&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;把你创建的repo clone到本地就可以了&lt;/strong&gt;&lt;/p&gt;
 
+&lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;git clone https://github.com/tobiasalin/tobiasalin.github.io&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

@@ -15,25 +15,27 @@
       <pubDate>Thu, 08 Mar 2018 14:37:42 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/Show_all_files_in_finder/</guid>
-      <description>
+      <description>&lt;p&gt;如何在Mac OS X中开启或关闭显示隐藏文件命令&lt;/p&gt;
 
-&lt;p&gt;如何在Mac OS X中开启或关闭显示隐藏文件命令&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可以这样：&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;可以这样:331140ea9da6aadec02376128c2c9739&#34;&gt;可以这样：&lt;/h2&gt;
-
+&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool true&lt;/code&gt;      - 此命令显示隐藏文件&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool false&lt;/code&gt;     - 此命令关闭显示隐藏文件&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;命令运行之后需要重新加载Finder：快捷键&lt;code&gt;option+command+esc&lt;/code&gt;，选中Finder，重新启动即可&lt;/p&gt;
 
-&lt;h2 id=&#34;或者这样:331140ea9da6aadec02376128c2c9739&#34;&gt;或者这样：&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;或者这样：&lt;/strong&gt;&lt;/p&gt;
 
+&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles FALSE&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;killall Finder&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
@@ -43,7 +45,11 @@
       <pubDate>Thu, 08 Mar 2018 14:18:34 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/Force_empty_trash/</guid>
-      <description>&lt;p&gt;&lt;code&gt;sudo rm -rf ~/.Trash/&lt;/code&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;可以这样&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;sudo rm -rf ~/.Trash/&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

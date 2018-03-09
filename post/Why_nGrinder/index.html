@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 
-  <title> Force empty trash &middot; Pythonic🐶 </title>
+  <title> Why nGrinder? &middot; Pythonic🐶 </title>
 
   
   <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
@@ -63,12 +63,25 @@
 
 		<div class="content container">
 			<div class="post" style="word-wrap: break-word;">
-			 	<h1>Force empty trash</h1>
-			  <span class="post-date">Thu, Mar 8, 2018</span>
-			      <p><strong>可以这样</strong></p>
+			 	<h1>Why nGrinder?</h1>
+			  <span class="post-date">Fri, Mar 9, 2018</span>
+			      <p>nGrinder与其他工具比较&ndash;</p>
 
 <blockquote>
-<p><code>sudo rm -rf ~/.Trash/</code></p>
+<p><strong>JMeter</strong>
+基于UI操作，容易上手，但是不具备编程能力。其次JMeter基于线程模拟数千用户几乎不可能。</p>
+
+<p><strong>Tsung</strong>
+基于Erlang，能模拟上千用户并且易于扩展。但是基于XML的DSL，描述场景能力弱，而且需要大量的数据处理才知道测试结果。</p>
+
+<p><strong>Locust</strong>
+基于python的gevent，能模拟百万个用户。但是需要对python有一定理解。</p>
+
+<p><strong>Loadrunner</strong>
+这个可以说是应用最多的一个，很方便，但是还是太重。往后的方向肯定是客户端工具逐步向平台化发展，所以loadrunner注定慢慢被淘汰（个人拙见）。而且不开源，扩展性不高，收费。</p>
+
+<p><strong>nGrinder</strong>
+单节点支持3000并发、支持分布式、可监控被测服务器、可录制脚本、开源、平台化。</p>
 </blockquote>
 
 			</div>
