@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualenv on Pythonic🐶</title>
+    <link>http://danigong.github.io/tags/virtualenv/</link>
+    <description>Recent content in Virtualenv on Pythonic🐶</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 10 Jul 2016 12:43:13 +0800</lastBuildDate>
+    <atom:link href="http://danigong.github.io/tags/virtualenv/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Configure Venv</title>
+      <link>http://danigong.github.io/post/configure_venv/</link>
+      <pubDate>Sun, 10 Jul 2016 12:43:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/configure_venv/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装virtualenv&lt;/strong&gt;
+&lt;code&gt;pip install virtualenv&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;创建虚拟环境&lt;/strong&gt;
+&lt;code&gt;virtualenv venv&lt;/code&gt;
+venv是新创建的虚拟环境的名称。 同时会创建一个与虚拟环境名称相同的文件夹venv, 里面存储了一个独立的Python执行环境。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;进入虚拟环境&lt;/strong&gt;
+&lt;code&gt;source venv/bin/activate&lt;/code&gt;
+进入虚拟环境后，命令行的提示符会加入虚拟环境的名称，例如：&lt;code&gt;(venv)user@machine:~$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;退出虚拟环境&lt;/strong&gt;
+&lt;code&gt;deactivate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;删除虚拟环境&lt;/strong&gt;
+&lt;code&gt;rm -r venv&lt;/code&gt;
+直接删除虚拟环境所在的文件夹venv就删除了我们创建的venv虚拟环境。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

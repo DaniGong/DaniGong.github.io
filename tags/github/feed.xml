@@ -37,12 +37,13 @@
       <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
       <description>&lt;hr /&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Create a Repository: danigong.github.io (replace danigong with your own github username)&lt;/li&gt;
-&lt;li&gt;Change directory to root directory of the site.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$ hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;1. Create a Repository: danigong.github.io (replace danigong with your own github username)&lt;/li&gt;
+&lt;li&gt;2. Change directory to root directory of the site.&lt;/li&gt;
+&lt;li&gt;3. &lt;code&gt;hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;blockquote&gt;
 &lt;pre&gt;&lt;code&gt;$ cd public
 $ git init
 $ git remote add origin https://github.com/danigong/danigong.github.io.git
@@ -50,6 +51,7 @@ $ git add -A
 $ git commit -m &amp;quot;first commit&amp;quot;
 $ git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
