@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ngrinder on Pythonic🐶</title>
+    <link>http://danigong.github.io/tags/ngrinder/</link>
+    <description>Recent content in Ngrinder on Pythonic🐶</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 09 Mar 2018 16:36:55 +0800</lastBuildDate>
+    <atom:link href="http://danigong.github.io/tags/ngrinder/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why_nGrinder?</title>
+      <link>http://danigong.github.io/post/Why_nGrinder/</link>
+      <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/Why_nGrinder/</guid>
+      <description>&lt;p&gt;nGrinder与其他工具比较&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JMeter
+基于UI操作，容易上手，但是不具备编程能力。其次JMeter基于线程模拟数千用户几乎不可能。&lt;/li&gt;
+&lt;li&gt;Tsung
+基于Erlang，能模拟上千用户并且易于扩展。但是基于XML的DSL，描述场景能力弱，而且需要大量的数据处理才知道测试结果。&lt;/li&gt;
+&lt;li&gt;Locust
+基于python的gevent，能模拟百万个用户。但是需要对python有一定理解。&lt;/li&gt;
+&lt;li&gt;Loadrunner
+这个可以说是应用最多的一个，很方便，但是还是太重。往后的方向肯定是客户端工具逐步向平台化发展，所以loadrunner注定慢慢被淘汰（个人拙见）。而且不开源，扩展性不高，收费。&lt;/li&gt;
+&lt;li&gt;nGrinder
+单节点支持3000并发、支持分布式、可监控被测服务器、可录制脚本、开源、平台化。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
