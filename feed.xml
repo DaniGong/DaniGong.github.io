@@ -6,8 +6,81 @@
     <description>Recent content on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 11 Mar 2018 15:17:57 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Mar 2018 15:29:43 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Fluent Python Reading Notes</title>
+      <link>http://danigong.github.io/post/Fluent_Python_Reading_Notes/</link>
+      <pubDate>Mon, 12 Mar 2018 15:29:43 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/Fluent_Python_Reading_Notes/</guid>
+      <description>
+
+&lt;h3 id=&#34;1:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;1&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dict()&lt;/code&gt; is slower than &lt;code&gt;{}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list()&lt;/code&gt; is slower than &lt;code&gt;()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[x] 需要符号查找（不能预先知道&lt;code&gt;list()&lt;/code&gt;有没有被重定义）&lt;/li&gt;
+&lt;li&gt;[x] 方法调用&lt;/li&gt;
+&lt;li&gt;[x] 要检查有没有可迭代变量传入&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;2&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;特殊方法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;__len__()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__getitem__()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__setitem__()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__iter__()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;是为了被&lt;code&gt;python解释器&lt;/code&gt;调用的，自己不用调用它们，所以没有&lt;code&gt;A.__len__()&lt;/code&gt;方法，只有&lt;code&gt;len(A)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;3&lt;/h3&gt;
+
+&lt;p&gt;自定义布尔值 -&amp;gt; 实现&lt;code&gt;__bool__&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;4:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;4&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;__str__()&lt;/code&gt; : readable, 面向用户&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__repr__()&lt;/code&gt; : unambigous, 面向DEV&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;5:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;5&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;The Zen of Python&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 实用胜于纯粹&lt;/li&gt;
+&lt;li&gt;2. 不能让特例特殊到开始破坏规则&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;6:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;6&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;内置序列类型&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;容器序列：任意类型，引用 - &lt;code&gt;list, tuple, deque&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;扁平序列：单一类型，值 － &lt;code&gt;str(3.0), byte(3.0), bytearray, memoryview&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>Jmeter Thread Group</title>
@@ -3725,32 +3798,6 @@ venv是新创建的虚拟环境的名称。 同时会创建一个与虚拟环境
 &lt;p&gt;&lt;strong&gt;删除虚拟环境&lt;/strong&gt;
 &lt;code&gt;rm -r venv&lt;/code&gt;
 直接删除虚拟环境所在的文件夹venv就删除了我们创建的venv虚拟环境。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Deploy Hugo Site on GitHub Pages</title>
-      <link>http://danigong.github.io/post/deploy_hugo_site_to_github/</link>
-      <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1. Create a Repository: danigong.github.io (replace danigong with your own github username)&lt;/li&gt;
-&lt;li&gt;2. Change directory to root directory of the site.&lt;/li&gt;
-&lt;li&gt;3. &lt;code&gt;hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;$ cd public
-$ git init
-$ git remote add origin https://github.com/danigong/danigong.github.io.git
-$ git add -A
-$ git commit -m &amp;quot;first commit&amp;quot;
-$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
 </description>
     </item>
     
