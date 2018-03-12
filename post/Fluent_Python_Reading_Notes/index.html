@@ -298,7 +298,88 @@
 
 <h3 id="26:c44d5f57678f01c760738e3a6271e3a0">26</h3>
 
-<p><strong><code>散列表</code></strong>是<code>字典</code>类型性能出众的根本原因。</p>
+<ul>
+<li><strong><code>散列表</code></strong>是<code>字典</code>类型性能出众的根本原因。</li>
+<li><strong><code>collections.abc.Mapping</code>的instance</strong></li>
+<li><strong>原子不可变数据类型</strong>（<code>str, byte</code>和数值类型）</li>
+<li><strong>散列值</strong>就是<code>id()</code>函数的返回值</li>
+</ul>
+
+<h3 id="27:c44d5f57678f01c760738e3a6271e3a0">27</h3>
+
+<p><strong>字典创建方法</strong></p>
+
+<blockquote>
+<ul>
+<li>1. <code>a = dict(one=1,two=2,three=3)</code></li>
+<li>2. <code>b = {'one':1,'two':2,'three':3}</code></li>
+<li>3. <code>c = dict(zip(['one','two','three'],[1,2,3]))</code></li>
+<li>4. 字典推导 <code>dictcomp</code></li>
+</ul>
+</blockquote>
+
+<h3 id="28:c44d5f57678f01c760738e3a6271e3a0">28</h3>
+
+<p><strong><code>dict.setdefault</code></strong>处理不存在于<code>dict</code>中的<code>key</code></p>
+
+<h3 id="29:c44d5f57678f01c760738e3a6271e3a0">29</h3>
+
+<p><strong><code>collections.defaultdict</code></strong>是处理找不到<code>key</code>的一个选择</p>
+
+<p><code>dd = defautdict(list)</code>，如果<code>'new-key'</code>不存在，<code>dd['new-key']</code>会执行：</p>
+
+<blockquote>
+<ul>
+<li>1. <code>list()</code>建新列表</li>
+<li>2. 这个新列表作为<code>值</code>，<code>new-key</code>为<code>key</code>，放入<code>dd</code></li>
+<li>3. 返回这个列表的引用</li>
+</ul>
+</blockquote>
+
+<h3 id="30:c44d5f57678f01c760738e3a6271e3a0">30</h3>
+
+<p><strong><code>__missing__</code>只会被<code>__getitem__</code>调用</strong></p>
+
+<h3 id="31:c44d5f57678f01c760738e3a6271e3a0">31</h3>
+
+<p><strong>如果要自定义一个映射类型，应该继承<code>collections.UserDict</code></strong></p>
+
+<h3 id="32:c44d5f57678f01c760738e3a6271e3a0">32</h3>
+
+<p><strong>字典的变种</strong></p>
+
+<blockquote>
+<ul>
+<li>1. <code>collections.OrderedDict</code>: <code>popitem</code>方法 -&gt; 删除并返回</li>
+<li>2. <code>collections.ChainMap</code>: 多个字典逐个查找</li>
+<li>3. <code>collections.Counter</code>:</li>
+</ul>
+
+<blockquote>
+<pre><code>    ct = Counter('abracadabra')
+</code></pre>
+
+<ul>
+<li>-&gt;</li>
+</ul>
+
+<pre><code>    Counter({'a':5,'b':2,'r':2,'c':1,'d':1})
+</code></pre>
+</blockquote>
+
+<ul>
+<li>4. <code>UserDict</code>用户涌来继承写子类</li>
+<li>5. <code>TransformDict</code></li>
+</ul>
+</blockquote>
+
+<h3 id="33:c44d5f57678f01c760738e3a6271e3a0">33</h3>
+
+<p><strong>不可变映射类型</strong></p>
+
+<ul>
+<li><code>types.MappingProxyType</code>：<code>只读的映射视图</code></li>
+</ul>
 
 			</div>
 

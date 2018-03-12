@@ -248,7 +248,88 @@
 
 &lt;h3 id=&#34;26:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;26&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;散列表&lt;/code&gt;&lt;/strong&gt;是&lt;code&gt;字典&lt;/code&gt;类型性能出众的根本原因。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;散列表&lt;/code&gt;&lt;/strong&gt;是&lt;code&gt;字典&lt;/code&gt;类型性能出众的根本原因。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;collections.abc.Mapping&lt;/code&gt;的instance&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;原子不可变数据类型&lt;/strong&gt;（&lt;code&gt;str, byte&lt;/code&gt;和数值类型）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;散列值&lt;/strong&gt;就是&lt;code&gt;id()&lt;/code&gt;函数的返回值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;27:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;27&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;字典创建方法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. &lt;code&gt;a = dict(one=1,two=2,three=3)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2. &lt;code&gt;b = {&#39;one&#39;:1,&#39;two&#39;:2,&#39;three&#39;:3}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;3. &lt;code&gt;c = dict(zip([&#39;one&#39;,&#39;two&#39;,&#39;three&#39;],[1,2,3]))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;4. 字典推导 &lt;code&gt;dictcomp&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;28:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;28&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;dict.setdefault&lt;/code&gt;&lt;/strong&gt;处理不存在于&lt;code&gt;dict&lt;/code&gt;中的&lt;code&gt;key&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;29:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;29&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;collections.defaultdict&lt;/code&gt;&lt;/strong&gt;是处理找不到&lt;code&gt;key&lt;/code&gt;的一个选择&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;dd = defautdict(list)&lt;/code&gt;，如果&lt;code&gt;&#39;new-key&#39;&lt;/code&gt;不存在，&lt;code&gt;dd[&#39;new-key&#39;]&lt;/code&gt;会执行：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. &lt;code&gt;list()&lt;/code&gt;建新列表&lt;/li&gt;
+&lt;li&gt;2. 这个新列表作为&lt;code&gt;值&lt;/code&gt;，&lt;code&gt;new-key&lt;/code&gt;为&lt;code&gt;key&lt;/code&gt;，放入&lt;code&gt;dd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;3. 返回这个列表的引用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;30:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;30&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;__missing__&lt;/code&gt;只会被&lt;code&gt;__getitem__&lt;/code&gt;调用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;31:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;31&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;如果要自定义一个映射类型，应该继承&lt;code&gt;collections.UserDict&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;32:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;32&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;字典的变种&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. &lt;code&gt;collections.OrderedDict&lt;/code&gt;: &lt;code&gt;popitem&lt;/code&gt;方法 -&amp;gt; 删除并返回&lt;/li&gt;
+&lt;li&gt;2. &lt;code&gt;collections.ChainMap&lt;/code&gt;: 多个字典逐个查找&lt;/li&gt;
+&lt;li&gt;3. &lt;code&gt;collections.Counter&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;    ct = Counter(&#39;abracadabra&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;    Counter({&#39;a&#39;:5,&#39;b&#39;:2,&#39;r&#39;:2,&#39;c&#39;:1,&#39;d&#39;:1})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;4. &lt;code&gt;UserDict&lt;/code&gt;用户涌来继承写子类&lt;/li&gt;
+&lt;li&gt;5. &lt;code&gt;TransformDict&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;33:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;33&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;不可变映射类型&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;types.MappingProxyType&lt;/code&gt;：&lt;code&gt;只读的映射视图&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
