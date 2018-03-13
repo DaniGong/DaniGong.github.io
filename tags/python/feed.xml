@@ -420,6 +420,35 @@
 &lt;h3 id=&#34;43:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;43&lt;/h3&gt;
 
 &lt;p&gt;Python3 中默认使用 &lt;code&gt;utf8&lt;/code&gt; 编码源码&lt;/p&gt;
+
+&lt;h3 id=&#34;44:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;44&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;判断编码&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;以下是肉眼方法&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. &lt;code&gt;HTTP&lt;/code&gt;和&lt;code&gt;XML&lt;/code&gt;，包含明确指明内容编码的&lt;em&gt;首部&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;2. 包含大于127的字节值，那么就不是ASCII&lt;/li&gt;
+&lt;li&gt;3. 如果 &lt;code&gt;b&#39;\x00&#39;&lt;/code&gt; 经常出现，那么就不是8位编码方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;统一字符编码侦测包：&lt;code&gt;Chardet&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;45:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;45&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Python中，函数是一等对象&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. 运行时创建&lt;/li&gt;
+&lt;li&gt;2. 能赋值给变量或数据结构中的元素&lt;/li&gt;
+&lt;li&gt;3. 能作为参数传给函数&lt;/li&gt;
+&lt;li&gt;4. 能被&lt;code&gt;return&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

@@ -471,6 +471,35 @@
 
 <p>Python3 中默认使用 <code>utf8</code> 编码源码</p>
 
+<h3 id="44:c44d5f57678f01c760738e3a6271e3a0">44</h3>
+
+<p><strong>判断编码</strong></p>
+
+<p>以下是肉眼方法</p>
+
+<blockquote>
+<ul>
+<li>1. <code>HTTP</code>和<code>XML</code>，包含明确指明内容编码的<em>首部</em></li>
+<li>2. 包含大于127的字节值，那么就不是ASCII</li>
+<li>3. 如果 <code>b'\x00'</code> 经常出现，那么就不是8位编码方案</li>
+</ul>
+</blockquote>
+
+<p>统一字符编码侦测包：<code>Chardet</code></p>
+
+<h3 id="45:c44d5f57678f01c760738e3a6271e3a0">45</h3>
+
+<p><strong>Python中，函数是一等对象</strong></p>
+
+<blockquote>
+<ul>
+<li>1. 运行时创建</li>
+<li>2. 能赋值给变量或数据结构中的元素</li>
+<li>3. 能作为参数传给函数</li>
+<li>4. 能被<code>return</code></li>
+</ul>
+</blockquote>
+
 			</div>
 
 			
