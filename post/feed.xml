@@ -449,6 +449,29 @@
 &lt;li&gt;4. 能被&lt;code&gt;return&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
+
+&lt;h3 id=&#34;46:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;46&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;__doc__&lt;/code&gt;用于生成对象的帮助文本&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;47:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;47&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;函数式编程&lt;/strong&gt;：特点之一是使用高阶函数&lt;/p&gt;
+
+&lt;p&gt;高阶函数：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. 接受函数作为参数&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;或&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;2. 把函数作为结果返回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;48:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;48&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;map, filter 和 reduce&lt;/code&gt; 在Python3中已经不是内置函数
+被 &lt;code&gt;listcomps&lt;/code&gt; 和 &lt;code&gt;genexps&lt;/code&gt; 所替代（可读性原因）&lt;/p&gt;
 </description>
     </item>
     
