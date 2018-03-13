@@ -523,6 +523,89 @@
 <p><code>map, filter 和 reduce</code> 在Python3中已经不是内置函数
 被 <code>listcomps</code> 和 <code>genexps</code> 所替代（可读性原因）</p>
 
+<h3 id="49:c44d5f57678f01c760738e3a6271e3a0">49</h3>
+
+<p>匿名函数：<code>lambda</code></p>
+
+<h3 id="50:c44d5f57678f01c760738e3a6271e3a0">50</h3>
+
+<p>使用<code>callable()</code>函数来判断一个对象能否调用</p>
+
+<h3 id="51:c44d5f57678f01c760738e3a6271e3a0">51</h3>
+
+<p>用户定义可调用类型，只需实现实例方法<code>__call__</code></p>
+
+<h3 id="52:c44d5f57678f01c760738e3a6271e3a0">52</h3>
+
+<p><strong>函数内省</strong></p>
+
+<h3 id="53:c44d5f57678f01c760738e3a6271e3a0">53</h3>
+
+<p><strong>函数有但一般对象没有的特殊方法：</strong></p>
+
+<blockquote>
+<ul>
+<li><code>__annotations__</code></li>
+<li><code>__call__</code>：实现<code>()</code>运算符</li>
+</ul>
+</blockquote>
+
+<h3 id="54:c44d5f57678f01c760738e3a6271e3a0">54</h3>
+
+<p><strong>函数注解</strong>只存放在<code>__annotations__</code>属性里，Python不做检查、验证、强制&hellip;</p>
+
+<p>注解只是元数据，可以供IDE、框架和装饰器工具使用</p>
+
+<h3 id="55:c44d5f57678f01c760738e3a6271e3a0">55</h3>
+
+<p><strong>函数式编程</strong></p>
+
+<blockquote>
+<ul>
+<li>1. <code>operator</code> -&gt; <code>itemgetter</code>(get下标)，<code>attrgetter</code>(get name)</li>
+<li>2. <code>functools</code> 内包含 <code>reduce</code>函数，<code>partial</code>冻结参数，<code>partialmethod</code></li>
+</ul>
+</blockquote>
+
+<p>Example:</p>
+
+<blockquote>
+<pre><code>    triple = partial(mul,3)
+    triple(7) -&gt; 21
+</code></pre>
+</blockquote>
+
+<h3 id="56:c44d5f57678f01c760738e3a6271e3a0">56</h3>
+
+<p><code>globals()</code> <strong>策略模式</strong></p>
+
+<h3 id="57:c44d5f57678f01c760738e3a6271e3a0">57</h3>
+
+<p><strong>命令模式</strong>：是回调机制的面向对象替代品</p>
+
+<h3 id="58:c44d5f57678f01c760738e3a6271e3a0">58</h3>
+
+<p><code>nonlocal</code>关键字。</p>
+
+<p><strong>装饰器</strong> 目的是增强函数</p>
+
+<h3 id="59:c44d5f57678f01c760738e3a6271e3a0">59</h3>
+
+<p><strong>元编程</strong> -&gt; 在运行时改变程序的行为</p>
+
+<p><strong>装饰器的两大特性</strong>：</p>
+
+<blockquote>
+<ul>
+<li>1. 能把装饰的函数替换成其他函数</li>
+<li>2. 在加载模块时立即执行</li>
+</ul>
+</blockquote>
+
+<h3 id="60:c44d5f57678f01c760738e3a6271e3a0">60</h3>
+
+<p><strong>装饰器</strong> 在被装饰的函数定义之后立即运行。通常是在导入时（加载模块时）</p>
+
 			</div>
 
 			

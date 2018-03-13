@@ -472,6 +472,89 @@
 
 &lt;p&gt;&lt;code&gt;map, filter 和 reduce&lt;/code&gt; 在Python3中已经不是内置函数
 被 &lt;code&gt;listcomps&lt;/code&gt; 和 &lt;code&gt;genexps&lt;/code&gt; 所替代（可读性原因）&lt;/p&gt;
+
+&lt;h3 id=&#34;49:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;49&lt;/h3&gt;
+
+&lt;p&gt;匿名函数：&lt;code&gt;lambda&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;50:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;50&lt;/h3&gt;
+
+&lt;p&gt;使用&lt;code&gt;callable()&lt;/code&gt;函数来判断一个对象能否调用&lt;/p&gt;
+
+&lt;h3 id=&#34;51:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;51&lt;/h3&gt;
+
+&lt;p&gt;用户定义可调用类型，只需实现实例方法&lt;code&gt;__call__&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;52:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;52&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;函数内省&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;53:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;53&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;函数有但一般对象没有的特殊方法：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;__annotations__&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__call__&lt;/code&gt;：实现&lt;code&gt;()&lt;/code&gt;运算符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;54:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;54&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;函数注解&lt;/strong&gt;只存放在&lt;code&gt;__annotations__&lt;/code&gt;属性里，Python不做检查、验证、强制&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;注解只是元数据，可以供IDE、框架和装饰器工具使用&lt;/p&gt;
+
+&lt;h3 id=&#34;55:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;55&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;函数式编程&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. &lt;code&gt;operator&lt;/code&gt; -&amp;gt; &lt;code&gt;itemgetter&lt;/code&gt;(get下标)，&lt;code&gt;attrgetter&lt;/code&gt;(get name)&lt;/li&gt;
+&lt;li&gt;2. &lt;code&gt;functools&lt;/code&gt; 内包含 &lt;code&gt;reduce&lt;/code&gt;函数，&lt;code&gt;partial&lt;/code&gt;冻结参数，&lt;code&gt;partialmethod&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;    triple = partial(mul,3)
+    triple(7) -&amp;gt; 21
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;56:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;56&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;globals()&lt;/code&gt; &lt;strong&gt;策略模式&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;57:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;57&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;命令模式&lt;/strong&gt;：是回调机制的面向对象替代品&lt;/p&gt;
+
+&lt;h3 id=&#34;58:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;58&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;nonlocal&lt;/code&gt;关键字。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;装饰器&lt;/strong&gt; 目的是增强函数&lt;/p&gt;
+
+&lt;h3 id=&#34;59:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;59&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;元编程&lt;/strong&gt; -&amp;gt; 在运行时改变程序的行为&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;装饰器的两大特性&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. 能把装饰的函数替换成其他函数&lt;/li&gt;
+&lt;li&gt;2. 在加载模块时立即执行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;60:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;60&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;装饰器&lt;/strong&gt; 在被装饰的函数定义之后立即运行。通常是在导入时（加载模块时）&lt;/p&gt;
 </description>
     </item>
     
