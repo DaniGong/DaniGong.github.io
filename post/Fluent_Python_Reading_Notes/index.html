@@ -381,6 +381,96 @@
 <li><code>types.MappingProxyType</code>：<code>只读的映射视图</code></li>
 </ul>
 
+<h3 id="34:c44d5f57678f01c760738e3a6271e3a0">34</h3>
+
+<p><code>set</code> -&gt; 许多唯一对象的聚集；<code>frozenset</code> -&gt; 不可变</p>
+
+<p><strong>集合</strong></p>
+
+<blockquote>
+<ul>
+<li>1. 用于去重复：<code>list</code> -&gt; <code>set</code> -&gt; <code>list</code></li>
+<li>2. 合集，交集，差集 -&gt; 场景：元素出现次数</li>
+</ul>
+</blockquote>
+
+<p><strong>如果是空集必须写成<code>set()</code></strong></p>
+
+<h3 id="35:c44d5f57678f01c760738e3a6271e3a0">35</h3>
+
+<p><strong>散列表</strong>：稀疏数组（总有空白元素的数组）
+<code>key:value</code> -&gt; 一个<code>表元</code></p>
+
+<p>因为所有表元大小一致，所以可以通过<code>偏移量</code>来读取某个表元</p>
+
+<p>用<code>hash()</code>来计算<code>散列值</code></p>
+
+<h3 id="36:c44d5f57678f01c760738e3a6271e3a0">36</h3>
+
+<p>存放数量巨大的记录用<code>tuple</code>或<code>namedtuple</code></p>
+
+<p><code>dict</code> 散列 -&gt; 内存消耗大</p>
+
+<h3 id="37:c44d5f57678f01c760738e3a6271e3a0">37</h3>
+
+<p><strong><code>dict</code></strong>：<strong>空间</strong>换<strong>时间</strong> -&gt; <strong>读取快</strong> 但 <strong>内存消耗大</strong></p>
+
+<p>Python解释器可能为字典扩容 -&gt; 导致新建一个更大的散列表</p>
+
+<h3 id="38:c44d5f57678f01c760738e3a6271e3a0">38</h3>
+
+<p><strong>集合 <code>set</code></strong></p>
+
+<blockquote>
+<ul>
+<li>1. 元素必须可散列</li>
+<li>2. 很耗内存</li>
+<li>3. 高效查找</li>
+<li>4. 次序取决于添加次序</li>
+<li>5. 添加元素可能改变已有元素次序(*37*中的扩容)</li>
+</ul>
+</blockquote>
+
+<h3 id="39:c44d5f57678f01c760738e3a6271e3a0">39</h3>
+
+<p><strong>字符</strong>的最佳定义是<code>Unicode</code>字符</p>
+
+<p><code>Python3</code> 从 <code>str</code>对象中获取的元素是<code>Unicode</code>字符</p>
+
+<p><strong><em>字符的具体表述取决于所用的编码</em></strong></p>
+
+<blockquote>
+<ul>
+<li>编码：码位 -&gt; 字节序列</li>
+<li>解码：字节序列 -&gt; 码位（字符的标识）</li>
+</ul>
+</blockquote>
+
+<h3 id="40:c44d5f57678f01c760738e3a6271e3a0">40</h3>
+
+<p><strong>字面量</strong>：双眼所见</p>
+
+<h3 id="41:c44d5f57678f01c760738e3a6271e3a0">41</h3>
+
+<p><code>utf_8</code> 的别名：<code>utf8</code>, <code>u8</code>, <code>utf-8</code></p>
+
+<h3 id="42:c44d5f57678f01c760738e3a6271e3a0">42</h3>
+
+<p><strong>编码种类</strong></p>
+
+<blockquote>
+<ul>
+<li><code>latin1</code>(iso8859-1)：是其他编码的基础</li>
+<li><code>cp1252</code>：Windows制定的<code>latin1</code>的超集，添加了有用的符号</li>
+<li><code>gb2312</code>：用于编码简体中文的<strong>陈旧</strong>标准</li>
+<li><code>utf-8</code>：web最常见的8位编码，与<code>ASCII</code>兼容</li>
+</ul>
+</blockquote>
+
+<h3 id="43:c44d5f57678f01c760738e3a6271e3a0">43</h3>
+
+<p>Python3 中默认使用 <code>utf8</code> 编码源码</p>
+
 			</div>
 
 			

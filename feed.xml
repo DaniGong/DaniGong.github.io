@@ -330,6 +330,96 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;types.MappingProxyType&lt;/code&gt;：&lt;code&gt;只读的映射视图&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&#34;34:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;34&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;set&lt;/code&gt; -&amp;gt; 许多唯一对象的聚集；&lt;code&gt;frozenset&lt;/code&gt; -&amp;gt; 不可变&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;集合&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. 用于去重复：&lt;code&gt;list&lt;/code&gt; -&amp;gt; &lt;code&gt;set&lt;/code&gt; -&amp;gt; &lt;code&gt;list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2. 合集，交集，差集 -&amp;gt; 场景：元素出现次数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;如果是空集必须写成&lt;code&gt;set()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;35:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;35&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;散列表&lt;/strong&gt;：稀疏数组（总有空白元素的数组）
+&lt;code&gt;key:value&lt;/code&gt; -&amp;gt; 一个&lt;code&gt;表元&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;因为所有表元大小一致，所以可以通过&lt;code&gt;偏移量&lt;/code&gt;来读取某个表元&lt;/p&gt;
+
+&lt;p&gt;用&lt;code&gt;hash()&lt;/code&gt;来计算&lt;code&gt;散列值&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;36:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;36&lt;/h3&gt;
+
+&lt;p&gt;存放数量巨大的记录用&lt;code&gt;tuple&lt;/code&gt;或&lt;code&gt;namedtuple&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;dict&lt;/code&gt; 散列 -&amp;gt; 内存消耗大&lt;/p&gt;
+
+&lt;h3 id=&#34;37:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;37&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;dict&lt;/code&gt;&lt;/strong&gt;：&lt;strong&gt;空间&lt;/strong&gt;换&lt;strong&gt;时间&lt;/strong&gt; -&amp;gt; &lt;strong&gt;读取快&lt;/strong&gt; 但 &lt;strong&gt;内存消耗大&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Python解释器可能为字典扩容 -&amp;gt; 导致新建一个更大的散列表&lt;/p&gt;
+
+&lt;h3 id=&#34;38:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;38&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;集合 &lt;code&gt;set&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1. 元素必须可散列&lt;/li&gt;
+&lt;li&gt;2. 很耗内存&lt;/li&gt;
+&lt;li&gt;3. 高效查找&lt;/li&gt;
+&lt;li&gt;4. 次序取决于添加次序&lt;/li&gt;
+&lt;li&gt;5. 添加元素可能改变已有元素次序(*37*中的扩容)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;39:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;39&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;字符&lt;/strong&gt;的最佳定义是&lt;code&gt;Unicode&lt;/code&gt;字符&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Python3&lt;/code&gt; 从 &lt;code&gt;str&lt;/code&gt;对象中获取的元素是&lt;code&gt;Unicode&lt;/code&gt;字符&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;字符的具体表述取决于所用的编码&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;编码：码位 -&amp;gt; 字节序列&lt;/li&gt;
+&lt;li&gt;解码：字节序列 -&amp;gt; 码位（字符的标识）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;40:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;40&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;字面量&lt;/strong&gt;：双眼所见&lt;/p&gt;
+
+&lt;h3 id=&#34;41:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;41&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;utf_8&lt;/code&gt; 的别名：&lt;code&gt;utf8&lt;/code&gt;, &lt;code&gt;u8&lt;/code&gt;, &lt;code&gt;utf-8&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;42:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;42&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;编码种类&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;latin1&lt;/code&gt;(iso8859-1)：是其他编码的基础&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cp1252&lt;/code&gt;：Windows制定的&lt;code&gt;latin1&lt;/code&gt;的超集，添加了有用的符号&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gb2312&lt;/code&gt;：用于编码简体中文的&lt;strong&gt;陈旧&lt;/strong&gt;标准&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;utf-8&lt;/code&gt;：web最常见的8位编码，与&lt;code&gt;ASCII&lt;/code&gt;兼容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;43:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;43&lt;/h3&gt;
+
+&lt;p&gt;Python3 中默认使用 &lt;code&gt;utf8&lt;/code&gt; 编码源码&lt;/p&gt;
 </description>
     </item>
     
