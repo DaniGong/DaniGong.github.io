@@ -6,8 +6,37 @@
     <description>Recent content in Posts on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 12 Mar 2018 15:29:43 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Mar 2018 16:17:16 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A Comparison between HTTP1 and HTTP2</title>
+      <link>http://danigong.github.io/post/A_Comparison_between_HTTP1_and_HTTP2/</link>
+      <pubDate>Tue, 13 Mar 2018 16:17:16 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/A_Comparison_between_HTTP1_and_HTTP2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;code&gt;HTTP1.1 HTTP 2.0&lt;/code&gt;主要区别&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多路复用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;HTTP2.0&lt;/code&gt;使用了多路复用的技术，做到同一个连接并发处理多个请求，而且并发请求的数量比&lt;code&gt;HTTP1.1&lt;/code&gt;大了好几个数量级。当然&lt;code&gt;HTTP1.1&lt;/code&gt;也可以多建立几个TCP连接，来支持处理更多并发的请求，但是创建TCP连接本身也是有开销的。TCP连接有一个预热和保护的过程，先检查数据是否传送成功，一旦成功过，则慢慢加大传输速度。因此对应瞬时并发的连接，服务器的响应就会变慢。所以最好能使用一个建立好的连接，并且这个连接可以支持瞬时并发的请求。
+关于多路复用，可以参看&lt;a href=&#34;http://blog.csdn.net/linsongbin1/article/details/54865371&#34;&gt;学习NIO&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;数据压缩&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;HTTP1.1&lt;/code&gt;不支持header数据的压缩，&lt;code&gt;HTTP2.0&lt;/code&gt;使用HPACK算法对header的数据进行压缩，这样数据体积小了，在网络上传输就会更快。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;服务器推送&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;意思是说，当我们对支持&lt;code&gt;HTTP2.0&lt;/code&gt;的web server请求数据的时候，服务器会顺便把一些客户端需要的资源一起推送到客户端，免得客户端再次创建连接发送请求到服务器端获取。这种方式非常合适加载静态资源。服务器端推送的这些资源其实存在客户端的某处地方，客户端直接从本地加载这些资源就可以了，不用走网络，速度自然是快很多的。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>Fluent Python Reading Notes</title>
@@ -4248,32 +4277,6 @@ Fudan NLP里包含中文分词、关键词抽取、命名实体识别、词性�
 &lt;/ul&gt;
 
 &lt;p&gt;介绍:对本土化特征学习的分析&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Configure Venv</title>
-      <link>http://danigong.github.io/post/configure_venv/</link>
-      <pubDate>Sun, 10 Jul 2016 12:43:13 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/post/configure_venv/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;安装virtualenv&lt;/strong&gt;
-&lt;code&gt;pip install virtualenv&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;创建虚拟环境&lt;/strong&gt;
-&lt;code&gt;virtualenv venv&lt;/code&gt;
-venv是新创建的虚拟环境的名称。 同时会创建一个与虚拟环境名称相同的文件夹venv, 里面存储了一个独立的Python执行环境。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;进入虚拟环境&lt;/strong&gt;
-&lt;code&gt;source venv/bin/activate&lt;/code&gt;
-进入虚拟环境后，命令行的提示符会加入虚拟环境的名称，例如：&lt;code&gt;(venv)user@machine:~$&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;退出虚拟环境&lt;/strong&gt;
-&lt;code&gt;deactivate&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;删除虚拟环境&lt;/strong&gt;
-&lt;code&gt;rm -r venv&lt;/code&gt;
-直接删除虚拟环境所在的文件夹venv就删除了我们创建的venv虚拟环境。&lt;/p&gt;
 </description>
     </item>
     

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Http on Pythonic🐶</title>
+    <link>http://danigong.github.io/tags/http/</link>
+    <description>Recent content in Http on Pythonic🐶</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 13 Mar 2018 16:17:16 +0800</lastBuildDate>
+    <atom:link href="http://danigong.github.io/tags/http/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A Comparison between HTTP1 and HTTP2</title>
+      <link>http://danigong.github.io/post/A_Comparison_between_HTTP1_and_HTTP2/</link>
+      <pubDate>Tue, 13 Mar 2018 16:17:16 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/A_Comparison_between_HTTP1_and_HTTP2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;code&gt;HTTP1.1 HTTP 2.0&lt;/code&gt;主要区别&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多路复用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;HTTP2.0&lt;/code&gt;使用了多路复用的技术，做到同一个连接并发处理多个请求，而且并发请求的数量比&lt;code&gt;HTTP1.1&lt;/code&gt;大了好几个数量级。当然&lt;code&gt;HTTP1.1&lt;/code&gt;也可以多建立几个TCP连接，来支持处理更多并发的请求，但是创建TCP连接本身也是有开销的。TCP连接有一个预热和保护的过程，先检查数据是否传送成功，一旦成功过，则慢慢加大传输速度。因此对应瞬时并发的连接，服务器的响应就会变慢。所以最好能使用一个建立好的连接，并且这个连接可以支持瞬时并发的请求。
+关于多路复用，可以参看&lt;a href=&#34;http://blog.csdn.net/linsongbin1/article/details/54865371&#34;&gt;学习NIO&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;数据压缩&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;HTTP1.1&lt;/code&gt;不支持header数据的压缩，&lt;code&gt;HTTP2.0&lt;/code&gt;使用HPACK算法对header的数据进行压缩，这样数据体积小了，在网络上传输就会更快。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;服务器推送&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;意思是说，当我们对支持&lt;code&gt;HTTP2.0&lt;/code&gt;的web server请求数据的时候，服务器会顺便把一些客户端需要的资源一起推送到客户端，免得客户端再次创建连接发送请求到服务器端获取。这种方式非常合适加载静态资源。服务器端推送的这些资源其实存在客户端的某处地方，客户端直接从本地加载这些资源就可以了，不用走网络，速度自然是快很多的。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
