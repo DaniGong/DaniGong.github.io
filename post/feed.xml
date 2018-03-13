@@ -584,6 +584,33 @@
 &lt;h3 id=&#34;60:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;60&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;装饰器&lt;/strong&gt; 在被装饰的函数定义之后立即运行。通常是在导入时（加载模块时）&lt;/p&gt;
+
+&lt;h3 id=&#34;61:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;61&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;变量作用域规则&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    b = 6
+    def f2(a):
+        print(a)
+        print(b)
+        b = 9
+    
+    f2(3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出 &lt;code&gt;3&lt;/code&gt;, &lt;code&gt;local variable &#39;b&#39; referenced before assignment&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Python编译函数定义体时，它判断&lt;code&gt;b&lt;/code&gt;是局部变量，因为在函数中给它赋值了。生成的字节码证实了这种判断，Python会尝试从本地环境获取&lt;code&gt;b&lt;/code&gt;。后面调用&lt;code&gt;f2(3)&lt;/code&gt;时，&lt;code&gt;f2&lt;/code&gt;的定义体会获取并打印局部变量&lt;code&gt;a&lt;/code&gt;的值，但是尝试获取局部变量&lt;code&gt;b&lt;/code&gt;的值时，发现&lt;code&gt;b&lt;/code&gt;没有绑定值。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;这不是缺陷&lt;/strong&gt;，而是&lt;strong&gt;设计选择&lt;/strong&gt;：Python不要求声明变量，但是假定在函数定义体中赋值的变量是局部变量。&lt;/p&gt;
+
+&lt;p&gt;如果在函数中赋值时想让解释器把&lt;code&gt;b&lt;/code&gt;当成全局变量，要使用&lt;code&gt;global&lt;/code&gt;声明。&lt;/p&gt;
+
+&lt;h3 id=&#34;62:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;62&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;闭包&lt;/strong&gt; 不等同于 &lt;strong&gt;匿名函数&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;闭包是延伸了作用域的函数&lt;/strong&gt;，函数是不是匿名的没有关系，关键是它能否访问定义体&lt;strong&gt;之外&lt;/strong&gt;定义的&lt;strong&gt;非&lt;/strong&gt;全局变量&lt;/p&gt;
 </description>
     </item>
     
