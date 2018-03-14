@@ -11,13 +11,13 @@
     
     <item>
       <title>Fluent Python Reading Notes</title>
-      <link>http://danigong.github.io/post/Fluent_Python_Reading_Notes/</link>
+      <link>http://danigong.github.io/post/fluent_python_reading_notes/</link>
       <pubDate>Mon, 12 Mar 2018 15:29:43 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/Fluent_Python_Reading_Notes/</guid>
+      <guid>http://danigong.github.io/post/fluent_python_reading_notes/</guid>
       <description>
 
-&lt;h3 id=&#34;1:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;1&lt;/h3&gt;
+&lt;h3 id=&#34;1:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;1&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -32,7 +32,7 @@
 &lt;li&gt;[x] 要检查有没有可迭代变量传入&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;2:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;2&lt;/h3&gt;
+&lt;h3 id=&#34;2:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;2&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;特殊方法&lt;/strong&gt;&lt;/p&gt;
 
@@ -47,11 +47,11 @@
 
 &lt;p&gt;是为了被&lt;code&gt;python解释器&lt;/code&gt;调用的，自己不用调用它们，所以没有&lt;code&gt;A.__len__()&lt;/code&gt;方法，只有&lt;code&gt;len(A)&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;3:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;3&lt;/h3&gt;
+&lt;h3 id=&#34;3:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;3&lt;/h3&gt;
 
 &lt;p&gt;自定义布尔值 -&amp;gt; 实现&lt;code&gt;__bool__&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;4:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;4&lt;/h3&gt;
+&lt;h3 id=&#34;4:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;4&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -60,7 +60,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;5:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;5&lt;/h3&gt;
+&lt;h3 id=&#34;5:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;5&lt;/h3&gt;
 
 &lt;p&gt;&lt;em&gt;The Zen of Python&lt;/em&gt;&lt;/p&gt;
 
@@ -69,7 +69,7 @@
 &lt;li&gt;2. 不能让特例特殊到开始破坏规则&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;6:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;6&lt;/h3&gt;
+&lt;h3 id=&#34;6:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;6&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;内置序列类型&lt;/strong&gt;&lt;/p&gt;
 
@@ -85,7 +85,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;7:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;7&lt;/h3&gt;
+&lt;h3 id=&#34;7:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;7&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -94,7 +94,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;8:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;8&lt;/h3&gt;
+&lt;h3 id=&#34;8:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;8&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -104,17 +104,17 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;9:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;9&lt;/h3&gt;
+&lt;h3 id=&#34;9:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;9&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;列表推导的作用只有一个：&lt;/strong&gt; 生成列表&lt;/p&gt;
 
-&lt;h3 id=&#34;10:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;10&lt;/h3&gt;
+&lt;h3 id=&#34;10:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;10&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;genexps&lt;/code&gt;优于&lt;code&gt;listcomps&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;genexps&lt;/code&gt;遵守了迭代器协议，可以逐个产生元素，而不是先建立一个完整的列表，避免了额外的内存占用&lt;/p&gt;
 
-&lt;h3 id=&#34;11:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;11&lt;/h3&gt;
+&lt;h3 id=&#34;11:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;11&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;元组拆包&lt;/strong&gt;&lt;/p&gt;
 
@@ -125,13 +125,13 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;12:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;12&lt;/h3&gt;
+&lt;h3 id=&#34;12:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;12&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;*&lt;/code&gt;来处理剩下的元素&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Python3: &lt;strong&gt;平行赋值&lt;/strong&gt;: &lt;code&gt;a,b,*rest = range(5)&lt;/code&gt; -&amp;gt; &lt;code&gt;(0,1,[2,3,4])&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;13:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;13&lt;/h3&gt;
+&lt;h3 id=&#34;13:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;13&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;namedtuple&lt;/code&gt;和&lt;code&gt;tuple&lt;/code&gt;创建实例消耗内存一样，因为字段名都存在类里：&lt;/p&gt;
 
@@ -143,11 +143,11 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;14:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;14&lt;/h3&gt;
+&lt;h3 id=&#34;14:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;14&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;tuple&lt;/code&gt;没有&lt;code&gt;__reversed__&lt;/code&gt;方法，但可以&lt;code&gt;reversed(my_tuple)&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;15:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;15&lt;/h3&gt;
+&lt;h3 id=&#34;15:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;15&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;切片赋值&lt;/strong&gt;：改变&lt;code&gt;list&lt;/code&gt;中连续多个值&lt;/p&gt;
 
@@ -157,7 +157,7 @@
 
 &lt;p&gt;-&amp;gt; &lt;code&gt;l:[0,1,20,30,5,6,7,8,9]&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;16:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;16&lt;/h3&gt;
+&lt;h3 id=&#34;16:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;16&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;__iadd__&lt;/code&gt;方法：就地加法&lt;/p&gt;
 
@@ -168,7 +168,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;17:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;17&lt;/h3&gt;
+&lt;h3 id=&#34;17:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;17&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;id(object)&lt;/code&gt; -&amp;gt; return &amp;ldquo;Identity(内存地址)&amp;rdquo; of an object&lt;/strong&gt;&lt;/p&gt;
 
@@ -179,11 +179,11 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;18:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;18&lt;/h3&gt;
+&lt;h3 id=&#34;18:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;18&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;如果一个方法对对象进行的是就地改动，那就应该返回&lt;code&gt;None&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;19:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;19&lt;/h3&gt;
+&lt;h3 id=&#34;19:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;19&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;list.sort&lt;/code&gt; -&amp;gt; 就地改&lt;/li&gt;
@@ -194,7 +194,7 @@
 &lt;code&gt;sorted(fruits, key=len)&lt;/code&gt;
 &lt;code&gt;sorted(fruits, key=lower)&lt;/code&gt; &amp;hellip;&lt;/p&gt;
 
-&lt;h3 id=&#34;20:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;20&lt;/h3&gt;
+&lt;h3 id=&#34;20:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;20&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;bisect&lt;/code&gt; 二分查找&lt;/strong&gt;&lt;/p&gt;
 
@@ -205,7 +205,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;21:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;21&lt;/h3&gt;
+&lt;h3 id=&#34;21:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;21&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;字符串格式化&lt;/strong&gt;&lt;/p&gt;
 
@@ -220,20 +220,20 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;22:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;22&lt;/h3&gt;
+&lt;h3 id=&#34;22:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;22&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;array&lt;/code&gt; 场景-&amp;gt;1000万个浮点数
 &lt;code&gt;deque&lt;/code&gt; 场景-&amp;gt;需要频繁对序列进行&lt;code&gt;FIFO&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;23:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;23&lt;/h3&gt;
+&lt;h3 id=&#34;23:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;23&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;memoryview&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;24:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;24&lt;/h3&gt;
+&lt;h3 id=&#34;24:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;24&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;numpy, scipy&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;25:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;25&lt;/h3&gt;
+&lt;h3 id=&#34;25:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;25&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;collections.deque&lt;/code&gt;&lt;/strong&gt;：线程安全、快速从两端添加、删除元素。&lt;/p&gt;
 
@@ -246,7 +246,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;26:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;26&lt;/h3&gt;
+&lt;h3 id=&#34;26:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;26&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;散列表&lt;/code&gt;&lt;/strong&gt;是&lt;code&gt;字典&lt;/code&gt;类型性能出众的根本原因。&lt;/li&gt;
@@ -255,7 +255,7 @@
 &lt;li&gt;&lt;strong&gt;散列值&lt;/strong&gt;就是&lt;code&gt;id()&lt;/code&gt;函数的返回值&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;27:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;27&lt;/h3&gt;
+&lt;h3 id=&#34;27:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;27&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;字典创建方法&lt;/strong&gt;&lt;/p&gt;
 
@@ -268,11 +268,11 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;28:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;28&lt;/h3&gt;
+&lt;h3 id=&#34;28:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;28&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;dict.setdefault&lt;/code&gt;&lt;/strong&gt;处理不存在于&lt;code&gt;dict&lt;/code&gt;中的&lt;code&gt;key&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;29:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;29&lt;/h3&gt;
+&lt;h3 id=&#34;29:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;29&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;collections.defaultdict&lt;/code&gt;&lt;/strong&gt;是处理找不到&lt;code&gt;key&lt;/code&gt;的一个选择&lt;/p&gt;
 
@@ -286,15 +286,15 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;30:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;30&lt;/h3&gt;
+&lt;h3 id=&#34;30:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;30&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;__missing__&lt;/code&gt;只会被&lt;code&gt;__getitem__&lt;/code&gt;调用&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;31:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;31&lt;/h3&gt;
+&lt;h3 id=&#34;31:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;31&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;如果要自定义一个映射类型，应该继承&lt;code&gt;collections.UserDict&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;32:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;32&lt;/h3&gt;
+&lt;h3 id=&#34;32:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;32&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;字典的变种&lt;/strong&gt;&lt;/p&gt;
 
@@ -323,7 +323,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;33:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;33&lt;/h3&gt;
+&lt;h3 id=&#34;33:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;33&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;不可变映射类型&lt;/strong&gt;&lt;/p&gt;
 
@@ -331,7 +331,7 @@
 &lt;li&gt;&lt;code&gt;types.MappingProxyType&lt;/code&gt;：&lt;code&gt;只读的映射视图&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;34:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;34&lt;/h3&gt;
+&lt;h3 id=&#34;34:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;34&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;set&lt;/code&gt; -&amp;gt; 许多唯一对象的聚集；&lt;code&gt;frozenset&lt;/code&gt; -&amp;gt; 不可变&lt;/p&gt;
 
@@ -346,7 +346,7 @@
 
 &lt;p&gt;&lt;strong&gt;如果是空集必须写成&lt;code&gt;set()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;35:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;35&lt;/h3&gt;
+&lt;h3 id=&#34;35:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;35&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;散列表&lt;/strong&gt;：稀疏数组（总有空白元素的数组）
 &lt;code&gt;key:value&lt;/code&gt; -&amp;gt; 一个&lt;code&gt;表元&lt;/code&gt;&lt;/p&gt;
@@ -355,19 +355,19 @@
 
 &lt;p&gt;用&lt;code&gt;hash()&lt;/code&gt;来计算&lt;code&gt;散列值&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;36:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;36&lt;/h3&gt;
+&lt;h3 id=&#34;36:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;36&lt;/h3&gt;
 
 &lt;p&gt;存放数量巨大的记录用&lt;code&gt;tuple&lt;/code&gt;或&lt;code&gt;namedtuple&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;dict&lt;/code&gt; 散列 -&amp;gt; 内存消耗大&lt;/p&gt;
 
-&lt;h3 id=&#34;37:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;37&lt;/h3&gt;
+&lt;h3 id=&#34;37:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;37&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;dict&lt;/code&gt;&lt;/strong&gt;：&lt;strong&gt;空间&lt;/strong&gt;换&lt;strong&gt;时间&lt;/strong&gt; -&amp;gt; &lt;strong&gt;读取快&lt;/strong&gt; 但 &lt;strong&gt;内存消耗大&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Python解释器可能为字典扩容 -&amp;gt; 导致新建一个更大的散列表&lt;/p&gt;
 
-&lt;h3 id=&#34;38:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;38&lt;/h3&gt;
+&lt;h3 id=&#34;38:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;38&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;集合 &lt;code&gt;set&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -381,7 +381,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;39:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;39&lt;/h3&gt;
+&lt;h3 id=&#34;39:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;39&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;字符&lt;/strong&gt;的最佳定义是&lt;code&gt;Unicode&lt;/code&gt;字符&lt;/p&gt;
 
@@ -396,15 +396,15 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;40:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;40&lt;/h3&gt;
+&lt;h3 id=&#34;40:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;40&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;字面量&lt;/strong&gt;：双眼所见&lt;/p&gt;
 
-&lt;h3 id=&#34;41:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;41&lt;/h3&gt;
+&lt;h3 id=&#34;41:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;41&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;utf_8&lt;/code&gt; 的别名：&lt;code&gt;utf8&lt;/code&gt;, &lt;code&gt;u8&lt;/code&gt;, &lt;code&gt;utf-8&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;42:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;42&lt;/h3&gt;
+&lt;h3 id=&#34;42:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;42&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;编码种类&lt;/strong&gt;&lt;/p&gt;
 
@@ -417,11 +417,11 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;43:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;43&lt;/h3&gt;
+&lt;h3 id=&#34;43:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;43&lt;/h3&gt;
 
 &lt;p&gt;Python3 中默认使用 &lt;code&gt;utf8&lt;/code&gt; 编码源码&lt;/p&gt;
 
-&lt;h3 id=&#34;44:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;44&lt;/h3&gt;
+&lt;h3 id=&#34;44:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;44&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;判断编码&lt;/strong&gt;&lt;/p&gt;
 
@@ -437,7 +437,7 @@
 
 &lt;p&gt;统一字符编码侦测包：&lt;code&gt;Chardet&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;45:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;45&lt;/h3&gt;
+&lt;h3 id=&#34;45:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;45&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;Python中，函数是一等对象&lt;/strong&gt;&lt;/p&gt;
 
@@ -450,11 +450,11 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;46:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;46&lt;/h3&gt;
+&lt;h3 id=&#34;46:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;46&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;__doc__&lt;/code&gt;用于生成对象的帮助文本&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;47:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;47&lt;/h3&gt;
+&lt;h3 id=&#34;47:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;47&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;函数式编程&lt;/strong&gt;：特点之一是使用高阶函数&lt;/p&gt;
 
@@ -468,28 +468,28 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;48:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;48&lt;/h3&gt;
+&lt;h3 id=&#34;48:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;48&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;map, filter 和 reduce&lt;/code&gt; 在Python3中已经不是内置函数
 被 &lt;code&gt;listcomps&lt;/code&gt; 和 &lt;code&gt;genexps&lt;/code&gt; 所替代（可读性原因）&lt;/p&gt;
 
-&lt;h3 id=&#34;49:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;49&lt;/h3&gt;
+&lt;h3 id=&#34;49:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;49&lt;/h3&gt;
 
 &lt;p&gt;匿名函数：&lt;code&gt;lambda&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;50:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;50&lt;/h3&gt;
+&lt;h3 id=&#34;50:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;50&lt;/h3&gt;
 
 &lt;p&gt;使用&lt;code&gt;callable()&lt;/code&gt;函数来判断一个对象能否调用&lt;/p&gt;
 
-&lt;h3 id=&#34;51:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;51&lt;/h3&gt;
+&lt;h3 id=&#34;51:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;51&lt;/h3&gt;
 
 &lt;p&gt;用户定义可调用类型，只需实现实例方法&lt;code&gt;__call__&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;52:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;52&lt;/h3&gt;
+&lt;h3 id=&#34;52:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;52&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;函数内省&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;53:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;53&lt;/h3&gt;
+&lt;h3 id=&#34;53:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;53&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;函数有但一般对象没有的特殊方法：&lt;/strong&gt;&lt;/p&gt;
 
@@ -500,13 +500,13 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;54:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;54&lt;/h3&gt;
+&lt;h3 id=&#34;54:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;54&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;函数注解&lt;/strong&gt;只存放在&lt;code&gt;__annotations__&lt;/code&gt;属性里，Python不做检查、验证、强制&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;注解只是元数据，可以供IDE、框架和装饰器工具使用&lt;/p&gt;
 
-&lt;h3 id=&#34;55:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;55&lt;/h3&gt;
+&lt;h3 id=&#34;55:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;55&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;函数式编程&lt;/strong&gt;&lt;/p&gt;
 
@@ -525,21 +525,21 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;56:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;56&lt;/h3&gt;
+&lt;h3 id=&#34;56:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;56&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;globals()&lt;/code&gt; &lt;strong&gt;策略模式&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;57:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;57&lt;/h3&gt;
+&lt;h3 id=&#34;57:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;57&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;命令模式&lt;/strong&gt;：是回调机制的面向对象替代品&lt;/p&gt;
 
-&lt;h3 id=&#34;58:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;58&lt;/h3&gt;
+&lt;h3 id=&#34;58:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;58&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;nonlocal&lt;/code&gt;关键字。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;装饰器&lt;/strong&gt; 目的是增强函数&lt;/p&gt;
 
-&lt;h3 id=&#34;59:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;59&lt;/h3&gt;
+&lt;h3 id=&#34;59:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;59&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;元编程&lt;/strong&gt; -&amp;gt; 在运行时改变程序的行为&lt;/p&gt;
 
@@ -552,11 +552,11 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;60:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;60&lt;/h3&gt;
+&lt;h3 id=&#34;60:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;60&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;装饰器&lt;/strong&gt; 在被装饰的函数定义之后立即运行。通常是在导入时（加载模块时）&lt;/p&gt;
 
-&lt;h3 id=&#34;61:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;61&lt;/h3&gt;
+&lt;h3 id=&#34;61:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;61&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;变量作用域规则&lt;/strong&gt;&lt;/p&gt;
 
@@ -577,7 +577,7 @@
 
 &lt;p&gt;如果在函数中赋值时想让解释器把&lt;code&gt;b&lt;/code&gt;当成全局变量，要使用&lt;code&gt;global&lt;/code&gt;声明。&lt;/p&gt;
 
-&lt;h3 id=&#34;62:c44d5f57678f01c760738e3a6271e3a0&#34;&gt;62&lt;/h3&gt;
+&lt;h3 id=&#34;62:4a22f77d54a24d61e2db0db0ae70e44d&#34;&gt;62&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;闭包&lt;/strong&gt; 不等同于 &lt;strong&gt;匿名函数&lt;/strong&gt;&lt;/p&gt;
 
