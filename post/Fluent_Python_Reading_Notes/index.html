@@ -70,7 +70,7 @@
 			  <span class="post-date">Mon, Mar 12, 2018</span>
 			      
 
-<h3 id="1:c44d5f57678f01c760738e3a6271e3a0">1</h3>
+<h3 id="1:4a22f77d54a24d61e2db0db0ae70e44d">1</h3>
 
 <blockquote>
 <ul>
@@ -85,7 +85,7 @@
 <li>[x] 要检查有没有可迭代变量传入</li>
 </ul>
 
-<h3 id="2:c44d5f57678f01c760738e3a6271e3a0">2</h3>
+<h3 id="2:4a22f77d54a24d61e2db0db0ae70e44d">2</h3>
 
 <p><strong>特殊方法</strong></p>
 
@@ -100,11 +100,11 @@
 
 <p>是为了被<code>python解释器</code>调用的，自己不用调用它们，所以没有<code>A.__len__()</code>方法，只有<code>len(A)</code></p>
 
-<h3 id="3:c44d5f57678f01c760738e3a6271e3a0">3</h3>
+<h3 id="3:4a22f77d54a24d61e2db0db0ae70e44d">3</h3>
 
 <p>自定义布尔值 -&gt; 实现<code>__bool__</code></p>
 
-<h3 id="4:c44d5f57678f01c760738e3a6271e3a0">4</h3>
+<h3 id="4:4a22f77d54a24d61e2db0db0ae70e44d">4</h3>
 
 <blockquote>
 <ul>
@@ -113,7 +113,7 @@
 </ul>
 </blockquote>
 
-<h3 id="5:c44d5f57678f01c760738e3a6271e3a0">5</h3>
+<h3 id="5:4a22f77d54a24d61e2db0db0ae70e44d">5</h3>
 
 <p><em>The Zen of Python</em></p>
 
@@ -122,7 +122,7 @@
 <li>2. 不能让特例特殊到开始破坏规则</li>
 </ul>
 
-<h3 id="6:c44d5f57678f01c760738e3a6271e3a0">6</h3>
+<h3 id="6:4a22f77d54a24d61e2db0db0ae70e44d">6</h3>
 
 <p><strong>内置序列类型</strong></p>
 
@@ -138,7 +138,7 @@
 </ul>
 </blockquote>
 
-<h3 id="7:c44d5f57678f01c760738e3a6271e3a0">7</h3>
+<h3 id="7:4a22f77d54a24d61e2db0db0ae70e44d">7</h3>
 
 <blockquote>
 <ul>
@@ -147,7 +147,7 @@
 </ul>
 </blockquote>
 
-<h3 id="8:c44d5f57678f01c760738e3a6271e3a0">8</h3>
+<h3 id="8:4a22f77d54a24d61e2db0db0ae70e44d">8</h3>
 
 <blockquote>
 <ul>
@@ -157,17 +157,17 @@
 </ul>
 </blockquote>
 
-<h3 id="9:c44d5f57678f01c760738e3a6271e3a0">9</h3>
+<h3 id="9:4a22f77d54a24d61e2db0db0ae70e44d">9</h3>
 
 <p><strong>列表推导的作用只有一个：</strong> 生成列表</p>
 
-<h3 id="10:c44d5f57678f01c760738e3a6271e3a0">10</h3>
+<h3 id="10:4a22f77d54a24d61e2db0db0ae70e44d">10</h3>
 
 <p><strong><code>genexps</code>优于<code>listcomps</code></strong></p>
 
 <p><code>genexps</code>遵守了迭代器协议，可以逐个产生元素，而不是先建立一个完整的列表，避免了额外的内存占用</p>
 
-<h3 id="11:c44d5f57678f01c760738e3a6271e3a0">11</h3>
+<h3 id="11:4a22f77d54a24d61e2db0db0ae70e44d">11</h3>
 
 <p><strong>元组拆包</strong></p>
 
@@ -178,13 +178,13 @@
 </ul>
 </blockquote>
 
-<h3 id="12:c44d5f57678f01c760738e3a6271e3a0">12</h3>
+<h3 id="12:4a22f77d54a24d61e2db0db0ae70e44d">12</h3>
 
 <p><strong><code>*</code>来处理剩下的元素</strong></p>
 
 <p>Python3: <strong>平行赋值</strong>: <code>a,b,*rest = range(5)</code> -&gt; <code>(0,1,[2,3,4])</code></p>
 
-<h3 id="13:c44d5f57678f01c760738e3a6271e3a0">13</h3>
+<h3 id="13:4a22f77d54a24d61e2db0db0ae70e44d">13</h3>
 
 <p><code>namedtuple</code>和<code>tuple</code>创建实例消耗内存一样，因为字段名都存在类里：</p>
 
@@ -196,11 +196,11 @@
 </ul>
 </blockquote>
 
-<h3 id="14:c44d5f57678f01c760738e3a6271e3a0">14</h3>
+<h3 id="14:4a22f77d54a24d61e2db0db0ae70e44d">14</h3>
 
 <p><code>tuple</code>没有<code>__reversed__</code>方法，但可以<code>reversed(my_tuple)</code></p>
 
-<h3 id="15:c44d5f57678f01c760738e3a6271e3a0">15</h3>
+<h3 id="15:4a22f77d54a24d61e2db0db0ae70e44d">15</h3>
 
 <p><strong>切片赋值</strong>：改变<code>list</code>中连续多个值</p>
 
@@ -210,7 +210,7 @@
 
 <p>-&gt; <code>l:[0,1,20,30,5,6,7,8,9]</code></p>
 
-<h3 id="16:c44d5f57678f01c760738e3a6271e3a0">16</h3>
+<h3 id="16:4a22f77d54a24d61e2db0db0ae70e44d">16</h3>
 
 <p><code>__iadd__</code>方法：就地加法</p>
 
@@ -221,7 +221,7 @@
 </ul>
 </blockquote>
 
-<h3 id="17:c44d5f57678f01c760738e3a6271e3a0">17</h3>
+<h3 id="17:4a22f77d54a24d61e2db0db0ae70e44d">17</h3>
 
 <p><strong><code>id(object)</code> -&gt; return &ldquo;Identity(内存地址)&rdquo; of an object</strong></p>
 
@@ -232,11 +232,11 @@
 </ul>
 </blockquote>
 
-<h3 id="18:c44d5f57678f01c760738e3a6271e3a0">18</h3>
+<h3 id="18:4a22f77d54a24d61e2db0db0ae70e44d">18</h3>
 
 <p><strong>如果一个方法对对象进行的是就地改动，那就应该返回<code>None</code></strong></p>
 
-<h3 id="19:c44d5f57678f01c760738e3a6271e3a0">19</h3>
+<h3 id="19:4a22f77d54a24d61e2db0db0ae70e44d">19</h3>
 
 <ul>
 <li><code>list.sort</code> -&gt; 就地改</li>
@@ -247,7 +247,7 @@
 <code>sorted(fruits, key=len)</code>
 <code>sorted(fruits, key=lower)</code> &hellip;</p>
 
-<h3 id="20:c44d5f57678f01c760738e3a6271e3a0">20</h3>
+<h3 id="20:4a22f77d54a24d61e2db0db0ae70e44d">20</h3>
 
 <p><strong><code>bisect</code> 二分查找</strong></p>
 
@@ -258,7 +258,7 @@
 </ul>
 </blockquote>
 
-<h3 id="21:c44d5f57678f01c760738e3a6271e3a0">21</h3>
+<h3 id="21:4a22f77d54a24d61e2db0db0ae70e44d">21</h3>
 
 <p><strong>字符串格式化</strong></p>
 
@@ -273,20 +273,20 @@
 </ul>
 </blockquote>
 
-<h3 id="22:c44d5f57678f01c760738e3a6271e3a0">22</h3>
+<h3 id="22:4a22f77d54a24d61e2db0db0ae70e44d">22</h3>
 
 <p><code>array</code> 场景-&gt;1000万个浮点数
 <code>deque</code> 场景-&gt;需要频繁对序列进行<code>FIFO</code></p>
 
-<h3 id="23:c44d5f57678f01c760738e3a6271e3a0">23</h3>
+<h3 id="23:4a22f77d54a24d61e2db0db0ae70e44d">23</h3>
 
 <p><strong><code>memoryview</code></strong></p>
 
-<h3 id="24:c44d5f57678f01c760738e3a6271e3a0">24</h3>
+<h3 id="24:4a22f77d54a24d61e2db0db0ae70e44d">24</h3>
 
 <p><strong><code>numpy, scipy</code></strong></p>
 
-<h3 id="25:c44d5f57678f01c760738e3a6271e3a0">25</h3>
+<h3 id="25:4a22f77d54a24d61e2db0db0ae70e44d">25</h3>
 
 <p><strong><code>collections.deque</code></strong>：线程安全、快速从两端添加、删除元素。</p>
 
@@ -299,7 +299,7 @@
 </ul>
 </blockquote>
 
-<h3 id="26:c44d5f57678f01c760738e3a6271e3a0">26</h3>
+<h3 id="26:4a22f77d54a24d61e2db0db0ae70e44d">26</h3>
 
 <ul>
 <li><strong><code>散列表</code></strong>是<code>字典</code>类型性能出众的根本原因。</li>
@@ -308,7 +308,7 @@
 <li><strong>散列值</strong>就是<code>id()</code>函数的返回值</li>
 </ul>
 
-<h3 id="27:c44d5f57678f01c760738e3a6271e3a0">27</h3>
+<h3 id="27:4a22f77d54a24d61e2db0db0ae70e44d">27</h3>
 
 <p><strong>字典创建方法</strong></p>
 
@@ -321,11 +321,11 @@
 </ul>
 </blockquote>
 
-<h3 id="28:c44d5f57678f01c760738e3a6271e3a0">28</h3>
+<h3 id="28:4a22f77d54a24d61e2db0db0ae70e44d">28</h3>
 
 <p><strong><code>dict.setdefault</code></strong>处理不存在于<code>dict</code>中的<code>key</code></p>
 
-<h3 id="29:c44d5f57678f01c760738e3a6271e3a0">29</h3>
+<h3 id="29:4a22f77d54a24d61e2db0db0ae70e44d">29</h3>
 
 <p><strong><code>collections.defaultdict</code></strong>是处理找不到<code>key</code>的一个选择</p>
 
@@ -339,15 +339,15 @@
 </ul>
 </blockquote>
 
-<h3 id="30:c44d5f57678f01c760738e3a6271e3a0">30</h3>
+<h3 id="30:4a22f77d54a24d61e2db0db0ae70e44d">30</h3>
 
 <p><strong><code>__missing__</code>只会被<code>__getitem__</code>调用</strong></p>
 
-<h3 id="31:c44d5f57678f01c760738e3a6271e3a0">31</h3>
+<h3 id="31:4a22f77d54a24d61e2db0db0ae70e44d">31</h3>
 
 <p><strong>如果要自定义一个映射类型，应该继承<code>collections.UserDict</code></strong></p>
 
-<h3 id="32:c44d5f57678f01c760738e3a6271e3a0">32</h3>
+<h3 id="32:4a22f77d54a24d61e2db0db0ae70e44d">32</h3>
 
 <p><strong>字典的变种</strong></p>
 
@@ -376,7 +376,7 @@
 </ul>
 </blockquote>
 
-<h3 id="33:c44d5f57678f01c760738e3a6271e3a0">33</h3>
+<h3 id="33:4a22f77d54a24d61e2db0db0ae70e44d">33</h3>
 
 <p><strong>不可变映射类型</strong></p>
 
@@ -384,7 +384,7 @@
 <li><code>types.MappingProxyType</code>：<code>只读的映射视图</code></li>
 </ul>
 
-<h3 id="34:c44d5f57678f01c760738e3a6271e3a0">34</h3>
+<h3 id="34:4a22f77d54a24d61e2db0db0ae70e44d">34</h3>
 
 <p><code>set</code> -&gt; 许多唯一对象的聚集；<code>frozenset</code> -&gt; 不可变</p>
 
@@ -399,7 +399,7 @@
 
 <p><strong>如果是空集必须写成<code>set()</code></strong></p>
 
-<h3 id="35:c44d5f57678f01c760738e3a6271e3a0">35</h3>
+<h3 id="35:4a22f77d54a24d61e2db0db0ae70e44d">35</h3>
 
 <p><strong>散列表</strong>：稀疏数组（总有空白元素的数组）
 <code>key:value</code> -&gt; 一个<code>表元</code></p>
@@ -408,19 +408,19 @@
 
 <p>用<code>hash()</code>来计算<code>散列值</code></p>
 
-<h3 id="36:c44d5f57678f01c760738e3a6271e3a0">36</h3>
+<h3 id="36:4a22f77d54a24d61e2db0db0ae70e44d">36</h3>
 
 <p>存放数量巨大的记录用<code>tuple</code>或<code>namedtuple</code></p>
 
 <p><code>dict</code> 散列 -&gt; 内存消耗大</p>
 
-<h3 id="37:c44d5f57678f01c760738e3a6271e3a0">37</h3>
+<h3 id="37:4a22f77d54a24d61e2db0db0ae70e44d">37</h3>
 
 <p><strong><code>dict</code></strong>：<strong>空间</strong>换<strong>时间</strong> -&gt; <strong>读取快</strong> 但 <strong>内存消耗大</strong></p>
 
 <p>Python解释器可能为字典扩容 -&gt; 导致新建一个更大的散列表</p>
 
-<h3 id="38:c44d5f57678f01c760738e3a6271e3a0">38</h3>
+<h3 id="38:4a22f77d54a24d61e2db0db0ae70e44d">38</h3>
 
 <p><strong>集合 <code>set</code></strong></p>
 
@@ -434,7 +434,7 @@
 </ul>
 </blockquote>
 
-<h3 id="39:c44d5f57678f01c760738e3a6271e3a0">39</h3>
+<h3 id="39:4a22f77d54a24d61e2db0db0ae70e44d">39</h3>
 
 <p><strong>字符</strong>的最佳定义是<code>Unicode</code>字符</p>
 
@@ -449,15 +449,15 @@
 </ul>
 </blockquote>
 
-<h3 id="40:c44d5f57678f01c760738e3a6271e3a0">40</h3>
+<h3 id="40:4a22f77d54a24d61e2db0db0ae70e44d">40</h3>
 
 <p><strong>字面量</strong>：双眼所见</p>
 
-<h3 id="41:c44d5f57678f01c760738e3a6271e3a0">41</h3>
+<h3 id="41:4a22f77d54a24d61e2db0db0ae70e44d">41</h3>
 
 <p><code>utf_8</code> 的别名：<code>utf8</code>, <code>u8</code>, <code>utf-8</code></p>
 
-<h3 id="42:c44d5f57678f01c760738e3a6271e3a0">42</h3>
+<h3 id="42:4a22f77d54a24d61e2db0db0ae70e44d">42</h3>
 
 <p><strong>编码种类</strong></p>
 
@@ -470,11 +470,11 @@
 </ul>
 </blockquote>
 
-<h3 id="43:c44d5f57678f01c760738e3a6271e3a0">43</h3>
+<h3 id="43:4a22f77d54a24d61e2db0db0ae70e44d">43</h3>
 
 <p>Python3 中默认使用 <code>utf8</code> 编码源码</p>
 
-<h3 id="44:c44d5f57678f01c760738e3a6271e3a0">44</h3>
+<h3 id="44:4a22f77d54a24d61e2db0db0ae70e44d">44</h3>
 
 <p><strong>判断编码</strong></p>
 
@@ -490,7 +490,7 @@
 
 <p>统一字符编码侦测包：<code>Chardet</code></p>
 
-<h3 id="45:c44d5f57678f01c760738e3a6271e3a0">45</h3>
+<h3 id="45:4a22f77d54a24d61e2db0db0ae70e44d">45</h3>
 
 <p><strong>Python中，函数是一等对象</strong></p>
 
@@ -503,11 +503,11 @@
 </ul>
 </blockquote>
 
-<h3 id="46:c44d5f57678f01c760738e3a6271e3a0">46</h3>
+<h3 id="46:4a22f77d54a24d61e2db0db0ae70e44d">46</h3>
 
 <p><strong><code>__doc__</code>用于生成对象的帮助文本</strong></p>
 
-<h3 id="47:c44d5f57678f01c760738e3a6271e3a0">47</h3>
+<h3 id="47:4a22f77d54a24d61e2db0db0ae70e44d">47</h3>
 
 <p><strong>函数式编程</strong>：特点之一是使用高阶函数</p>
 
@@ -521,28 +521,28 @@
 </ul>
 </blockquote>
 
-<h3 id="48:c44d5f57678f01c760738e3a6271e3a0">48</h3>
+<h3 id="48:4a22f77d54a24d61e2db0db0ae70e44d">48</h3>
 
 <p><code>map, filter 和 reduce</code> 在Python3中已经不是内置函数
 被 <code>listcomps</code> 和 <code>genexps</code> 所替代（可读性原因）</p>
 
-<h3 id="49:c44d5f57678f01c760738e3a6271e3a0">49</h3>
+<h3 id="49:4a22f77d54a24d61e2db0db0ae70e44d">49</h3>
 
 <p>匿名函数：<code>lambda</code></p>
 
-<h3 id="50:c44d5f57678f01c760738e3a6271e3a0">50</h3>
+<h3 id="50:4a22f77d54a24d61e2db0db0ae70e44d">50</h3>
 
 <p>使用<code>callable()</code>函数来判断一个对象能否调用</p>
 
-<h3 id="51:c44d5f57678f01c760738e3a6271e3a0">51</h3>
+<h3 id="51:4a22f77d54a24d61e2db0db0ae70e44d">51</h3>
 
 <p>用户定义可调用类型，只需实现实例方法<code>__call__</code></p>
 
-<h3 id="52:c44d5f57678f01c760738e3a6271e3a0">52</h3>
+<h3 id="52:4a22f77d54a24d61e2db0db0ae70e44d">52</h3>
 
 <p><strong>函数内省</strong></p>
 
-<h3 id="53:c44d5f57678f01c760738e3a6271e3a0">53</h3>
+<h3 id="53:4a22f77d54a24d61e2db0db0ae70e44d">53</h3>
 
 <p><strong>函数有但一般对象没有的特殊方法：</strong></p>
 
@@ -553,13 +553,13 @@
 </ul>
 </blockquote>
 
-<h3 id="54:c44d5f57678f01c760738e3a6271e3a0">54</h3>
+<h3 id="54:4a22f77d54a24d61e2db0db0ae70e44d">54</h3>
 
 <p><strong>函数注解</strong>只存放在<code>__annotations__</code>属性里，Python不做检查、验证、强制&hellip;</p>
 
 <p>注解只是元数据，可以供IDE、框架和装饰器工具使用</p>
 
-<h3 id="55:c44d5f57678f01c760738e3a6271e3a0">55</h3>
+<h3 id="55:4a22f77d54a24d61e2db0db0ae70e44d">55</h3>
 
 <p><strong>函数式编程</strong></p>
 
@@ -578,21 +578,21 @@
 </code></pre>
 </blockquote>
 
-<h3 id="56:c44d5f57678f01c760738e3a6271e3a0">56</h3>
+<h3 id="56:4a22f77d54a24d61e2db0db0ae70e44d">56</h3>
 
 <p><code>globals()</code> <strong>策略模式</strong></p>
 
-<h3 id="57:c44d5f57678f01c760738e3a6271e3a0">57</h3>
+<h3 id="57:4a22f77d54a24d61e2db0db0ae70e44d">57</h3>
 
 <p><strong>命令模式</strong>：是回调机制的面向对象替代品</p>
 
-<h3 id="58:c44d5f57678f01c760738e3a6271e3a0">58</h3>
+<h3 id="58:4a22f77d54a24d61e2db0db0ae70e44d">58</h3>
 
 <p><code>nonlocal</code>关键字。</p>
 
 <p><strong>装饰器</strong> 目的是增强函数</p>
 
-<h3 id="59:c44d5f57678f01c760738e3a6271e3a0">59</h3>
+<h3 id="59:4a22f77d54a24d61e2db0db0ae70e44d">59</h3>
 
 <p><strong>元编程</strong> -&gt; 在运行时改变程序的行为</p>
 
@@ -605,11 +605,11 @@
 </ul>
 </blockquote>
 
-<h3 id="60:c44d5f57678f01c760738e3a6271e3a0">60</h3>
+<h3 id="60:4a22f77d54a24d61e2db0db0ae70e44d">60</h3>
 
 <p><strong>装饰器</strong> 在被装饰的函数定义之后立即运行。通常是在导入时（加载模块时）</p>
 
-<h3 id="61:c44d5f57678f01c760738e3a6271e3a0">61</h3>
+<h3 id="61:4a22f77d54a24d61e2db0db0ae70e44d">61</h3>
 
 <p><strong>变量作用域规则</strong></p>
 
@@ -630,7 +630,7 @@
 
 <p>如果在函数中赋值时想让解释器把<code>b</code>当成全局变量，要使用<code>global</code>声明。</p>
 
-<h3 id="62:c44d5f57678f01c760738e3a6271e3a0">62</h3>
+<h3 id="62:4a22f77d54a24d61e2db0db0ae70e44d">62</h3>
 
 <p><strong>闭包</strong> 不等同于 <strong>匿名函数</strong></p>
 
