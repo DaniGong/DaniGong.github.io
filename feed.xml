@@ -6,8 +6,25 @@
     <description>Recent content on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 17 Mar 2018 16:59:13 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Apr 2018 16:29:42 +0800</lastBuildDate>
     <atom:link href="http://danigong.github.io/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用pip安装包提示TLS证书错误解决办法</title>
+      <link>http://danigong.github.io/post/pip_install_TLS_ERROR/</link>
+      <pubDate>Thu, 26 Apr 2018 16:29:42 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/pip_install_TLS_ERROR/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping&lt;/code&gt;
+出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pip可以解决这个问题。但是如果使用传统的&lt;code&gt;python -m pip install --upgrade pip&lt;/code&gt;的方式，还是会出现那个问题。这是一个鸡和蛋的问题，你因为TLS证书的问题需要去升级pip，升pip的时候又因为TLS证书的原因不能下载最新版本的pip。这时候就没有办法了，只能手动的去升级pip。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mac或者linux操作系统：在终端下执行命令：&lt;code&gt;curl https://bootstrap.pypa.io/get-pip.py | python&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;windows操作系统：从&lt;a href=&#34;https://bootstrap.pypa.io/get-pip.py下载get-pip.py文件，然后使用python运行这个文件`python&#34;&gt;https://bootstrap.pypa.io/get-pip.py下载get-pip.py文件，然后使用python运行这个文件`python&lt;/a&gt; get-pip.py`即可。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Java Thread Dump</title>
@@ -1733,184 +1750,6 @@ if __name__==&#39;__main__&#39;:
 &lt;p&gt;最后套用Donald Knuth的一句话总结协程的特点：&lt;/p&gt;
 
 &lt;p&gt;“子程序就是协程的一种特例。”&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Python Generator</title>
-      <link>http://danigong.github.io/post/python_generator/</link>
-      <pubDate>Fri, 15 Jul 2016 22:07:29 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/post/python_generator/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;生成器:5a7c58757d5502c33c2b70739d3bc9d3&#34;&gt;生成器&lt;/h2&gt;
-
-&lt;p&gt;通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面几个元素，那后面绝大多数元素占用的空间都白白浪费了。&lt;/p&gt;
-
-&lt;p&gt;所以，如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器（Generator）。&lt;/p&gt;
-
-&lt;p&gt;要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的[]改成()，就创建了一个generator：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; L = [x * x for x in range(10)]
-&amp;gt;&amp;gt;&amp;gt; L
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-&amp;gt;&amp;gt;&amp;gt; g = (x * x for x in range(10))
-&amp;gt;&amp;gt;&amp;gt; g
-&amp;lt;generator object &amp;lt;genexpr&amp;gt; at 0x104feab40&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;创建L和g的区别仅在于最外层的[]和()，L是一个list，而g是一个generator。&lt;/p&gt;
-
-&lt;p&gt;我们可以直接打印出list的每一个元素，但我们怎么打印出generator的每一个元素呢？&lt;/p&gt;
-
-&lt;p&gt;如果要一个一个打印出来，可以通过generator的next()方法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; g.next()
-0
-&amp;gt;&amp;gt;&amp;gt; g.next()
-1
-&amp;gt;&amp;gt;&amp;gt; g.next()
-4
-&amp;gt;&amp;gt;&amp;gt; g.next()
-9
-&amp;gt;&amp;gt;&amp;gt; g.next()
-16
-&amp;gt;&amp;gt;&amp;gt; g.next()
-25
-&amp;gt;&amp;gt;&amp;gt; g.next()
-36
-&amp;gt;&amp;gt;&amp;gt; g.next()
-49
-&amp;gt;&amp;gt;&amp;gt; g.next()
-64
-&amp;gt;&amp;gt;&amp;gt; g.next()
-81
-&amp;gt;&amp;gt;&amp;gt; g.next()
-Traceback (most recent call last):
-  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt;
-StopIteration
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;我们讲过，generator保存的是算法，每次调用next()，就计算出下一个元素的值，直到计算到最后一个元素，没有更多的元素时，抛出StopIteration的错误。&lt;/p&gt;
-
-&lt;p&gt;当然，上面这种不断调用next()方法实在是太变态了，正确的方法是使用for循环，因为generator也是可迭代对象：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; g = (x * x for x in range(10))
-&amp;gt;&amp;gt;&amp;gt; for n in g:
-...     print n
-...
-0
-1
-4
-9
-16
-25
-36
-49
-64
-81
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;所以，我们创建了一个generator后，基本上永远不会调用next()方法，而是通过for循环来迭代它。&lt;/p&gt;
-
-&lt;p&gt;generator非常强大。如果推算的算法比较复杂，用类似列表生成式的for循环无法实现的时候，还可以用函数来实现。&lt;/p&gt;
-
-&lt;p&gt;比如，著名的斐波拉契数列（Fibonacci），除第一个和第二个数外，任意一个数都可由前两个数相加得到：&lt;/p&gt;
-
-&lt;p&gt;1, 1, 2, 3, 5, 8, 13, 21, 34, &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;斐波拉契数列用列表生成式写不出来，但是，用函数把它打印出来却很容易：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def fib(max):
-    n, a, b = 0, 0, 1
-    while n &amp;lt; max:
-        print b
-        a, b = b, a + b
-        n = n + 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面的函数可以输出斐波那契数列的前N个数：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; fib(6)
-1
-1
-2
-3
-5
-8
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;仔细观察，可以看出，fib函数实际上是定义了斐波拉契数列的推算规则，可以从第一个元素开始，推算出后续任意的元素，这种逻辑其实非常类似generator。&lt;/p&gt;
-
-&lt;p&gt;也就是说，上面的函数和generator仅一步之遥。要把fib函数变成generator，只需要把print b改为yield b就可以了：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def fib(max):
-    n, a, b = 0, 0, 1
-    while n &amp;lt; max:
-        yield b
-        a, b = b, a + b
-        n = n + 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这就是定义generator的另一种方法。如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; fib(6)
-&amp;lt;generator object fib at 0x104feaaa0&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里，最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。&lt;/p&gt;
-
-&lt;p&gt;举个简单的例子，定义一个generator，依次返回数字1，3，5：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; def odd():
-...     print &#39;step 1&#39;
-...     yield 1
-...     print &#39;step 2&#39;
-...     yield 3
-...     print &#39;step 3&#39;
-...     yield 5
-...
-&amp;gt;&amp;gt;&amp;gt; o = odd()
-&amp;gt;&amp;gt;&amp;gt; o.next()
-step 1
-1
-&amp;gt;&amp;gt;&amp;gt; o.next()
-step 2
-3
-&amp;gt;&amp;gt;&amp;gt; o.next()
-step 3
-5
-&amp;gt;&amp;gt;&amp;gt; o.next()
-Traceback (most recent call last):
-  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt;
-StopIteration
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;可以看到，odd不是普通函数，而是generator，在执行过程中，遇到yield就中断，下次又继续执行。执行3次yield后，已经没有yield可以执行了，所以，第4次调用next()就报错。&lt;/p&gt;
-
-&lt;p&gt;回到fib的例子，我们在循环过程中不断调用yield，就会不断中断。当然要给循环设置一个条件来退出循环，不然就会产生一个无限数列出来。&lt;/p&gt;
-
-&lt;p&gt;同样的，把函数改成generator后，我们基本上从来不会用next()来调用它，而是直接使用for循环来迭代：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; for n in fib(6):
-...     print n
-...
-1
-1
-2
-3
-5
-8
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;小结:5a7c58757d5502c33c2b70739d3bc9d3&#34;&gt;小结&lt;/h2&gt;
-
-&lt;p&gt;generator是非常强大的工具，在Python中，可以简单地把列表生成式改成generator，也可以通过函数实现复杂逻辑的generator。&lt;/p&gt;
-
-&lt;p&gt;要理解generator的工作原理，它是在for循环的过程中不断计算出下一个元素，并在适当的条件结束for循环。对于函数改成的generator来说，遇到return语句或者执行到函数体最后一行语句，就是结束generator的指令，for循环随之结束。&lt;/p&gt;
 </description>
     </item>
     

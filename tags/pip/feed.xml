@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pip on Pythonic🐶</title>
+    <link>http://danigong.github.io/tags/pip/</link>
+    <description>Recent content in Pip on Pythonic🐶</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 26 Apr 2018 16:29:42 +0800</lastBuildDate>
+    <atom:link href="http://danigong.github.io/tags/pip/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用pip安装包提示TLS证书错误解决办法</title>
+      <link>http://danigong.github.io/post/pip_install_TLS_ERROR/</link>
+      <pubDate>Thu, 26 Apr 2018 16:29:42 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/pip_install_TLS_ERROR/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping&lt;/code&gt;
+出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pip可以解决这个问题。但是如果使用传统的&lt;code&gt;python -m pip install --upgrade pip&lt;/code&gt;的方式，还是会出现那个问题。这是一个鸡和蛋的问题，你因为TLS证书的问题需要去升级pip，升pip的时候又因为TLS证书的原因不能下载最新版本的pip。这时候就没有办法了，只能手动的去升级pip。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mac或者linux操作系统：在终端下执行命令：&lt;code&gt;curl https://bootstrap.pypa.io/get-pip.py | python&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;windows操作系统：从&lt;a href=&#34;https://bootstrap.pypa.io/get-pip.py下载get-pip.py文件，然后使用python运行这个文件`python&#34;&gt;https://bootstrap.pypa.io/get-pip.py下载get-pip.py文件，然后使用python运行这个文件`python&lt;/a&gt; get-pip.py`即可。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
