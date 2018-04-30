@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.40.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
@@ -21,9 +21,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/favicon.png">
 
-  
-  <link href="" rel="alternate" type="application/rss+xml" title="Pythonic🐶" />
-</head>
+  </head>
 
 	<body class="theme-base-0d">
 		<div class="sidebar">
@@ -40,11 +38,9 @@
       <img src="http://danigong.github.io/img/author.png"></img>
       <li><a href="/">Home</a> </li>
       
-        <li><a href="/post/pip_install_TLS_ERROR/"> 使用pip安装包提示TLS证书错误解决办法 </a></li>
+        <li><a href="/about"> About </a></li>
       
-        <li><a href="/about/"> About </a></li>
-      
-        <li><a href="/fp_reading_notes/"> FP Note </a></li>
+        <li><a href="/fp_reading_notes"> FP Note </a></li>
       
     </ul>
     <div class="social-font clearfix">
@@ -58,9 +54,7 @@
     
     
     
-  </div>
- <p>&copy; 2018. All rights reserved. </p>
-  
+  </div>  
 </div>
   
 </div>
@@ -80,7 +74,7 @@
 
 <p>许多项目都有自己的编码风格指南，冲突时自己的指南为准。</p>
 
-<h2 id="一致性考虑:edc5269fa41451f694a3996ea7ada34a">一致性考虑</h2>
+<h2 id="一致性考虑">一致性考虑</h2>
 
 <p>Guido的关键点之一是：代码更多是用来读而不是写。本指南旨在改善Python代码的可读性，即PEP 20所说的“可读性计数&rdquo;(Readability counts)。</p>
 
@@ -100,9 +94,9 @@
 
 <p>-旧版本兼容。</p>
 
-<h2 id="代码布局:edc5269fa41451f694a3996ea7ada34a">代码布局</h2>
+<h2 id="代码布局">代码布局</h2>
 
-<h3 id="缩进:edc5269fa41451f694a3996ea7ada34a">缩进</h3>
+<h3 id="缩进">缩进</h3>
 
 <p>每级缩进用4个空格。</p>
 
@@ -190,7 +184,7 @@ result = some_function_that_takes_arguments(
 )
 </code></pre>
 
-<h3 id="空格或tab:edc5269fa41451f694a3996ea7ada34a">空格或Tab?</h3>
+<h3 id="空格或tab">空格或Tab?</h3>
 
 <p>-空格是首选的缩进方法。</p>
 
@@ -202,7 +196,7 @@ result = some_function_that_takes_arguments(
 
 <p>Python2命令行解释器使用-t选项时有非法混合Tab和空格的情况会告警。当使用-tt警告提升为错误。强烈推荐这些选项！另外个人推荐pep8和autopep8模块。</p>
 
-<h3 id="最大行宽:edc5269fa41451f694a3996ea7ada34a">最大行宽</h3>
+<h3 id="最大行宽">最大行宽</h3>
 
 <p>限制所有行的最大行宽为79字符。</p>
 
@@ -241,7 +235,7 @@ result = some_function_that_takes_arguments(
                       color, emphasis, highlight)
 </code></pre>
 
-<h3 id="空行:edc5269fa41451f694a3996ea7ada34a">空行</h3>
+<h3 id="空行">空行</h3>
 
 <p>-两行空行分割顶层函数和类的定义。</p>
 
@@ -253,7 +247,7 @@ result = some_function_that_takes_arguments(
 
 <p>-Python接 contol-L作为空白符；许多工具视它为分页符，这些要因编辑器而异。</p>
 
-<h3 id="源文件编码:edc5269fa41451f694a3996ea7ada34a">源文件编码</h3>
+<h3 id="源文件编码">源文件编码</h3>
 
 <p>在核心Python发布的代码应该总是使用UTF-8(ASCII在Python 2)。</p>
 
@@ -263,7 +257,7 @@ result = some_function_that_takes_arguments(
 
 <p>Python 3.0及以后版本，PEP 3131可供参考，部分内容如下：在Python标准库必须使用ASCII标识符，并尽量只使用英文字母。此外字符串和注释也必须用ASCII。唯一的例外是：（a）测试非ASCII的功能，和（b）作者的名字不是拉丁字母。</p>
 
-<h3 id="导入:edc5269fa41451f694a3996ea7ada34a">导入</h3>
+<h3 id="导入">导入</h3>
 
 <p>导入在单独行</p>
 
@@ -316,15 +310,15 @@ import foo.bar.yourclass
 
 <p>通配符导入(from <module> import *)应该避免，因为它不清楚命名空间有哪些名称存，混淆读者和许多自动化的工具。唯一的例外是重新发布对外的API时可以考虑使用。</p>
 
-<h2 id="字符串引用:edc5269fa41451f694a3996ea7ada34a">字符串引用</h2>
+<h2 id="字符串引用">字符串引用</h2>
 
 <p>Python中单引号字符串和双引号字符串都是相同的。注意尽量避免在字符串中的反斜杠以提高可读性。</p>
 
 <p>根据PEP 257, 三个引号都使用双引号。</p>
 
-<h2 id="表达式和语句中的空格:edc5269fa41451f694a3996ea7ada34a">表达式和语句中的空格</h2>
+<h2 id="表达式和语句中的空格">表达式和语句中的空格</h2>
 
-<h3 id="强制要求:edc5269fa41451f694a3996ea7ada34a">强制要求</h3>
+<h3 id="强制要求">强制要求</h3>
 
 <p>-括号里边避免空格</p>
 
@@ -468,7 +462,7 @@ do_one(); do_two(); do_three(long, argument,
 if foo == 'blah': one(); two(); three()
 </code></pre>
 
-<h2 id="注释:edc5269fa41451f694a3996ea7ada34a">注释</h2>
+<h2 id="注释">注释</h2>
 
 <p>与代码自相矛盾的注释比没注释更差。修改代码时要优先更新注释！</p>
 
@@ -478,13 +472,13 @@ if foo == 'blah': one(); two(); three()
 
 <p>非英语国家的程序员请用英语书写你的注释，除非你120%确信代码永远不会被不懂你的语言的人阅读。</p>
 
-<h3 id="注释块:edc5269fa41451f694a3996ea7ada34a">注释块</h3>
+<h3 id="注释块">注释块</h3>
 
 <p>注释块通常应用在代码前，并和这些代码有同样的缩进。每行以 &lsquo;# &lsquo;(除非它是注释内的缩进文本，注意#后面有空格)。</p>
 
 <p>注释块内的段落用仅包含单个 &lsquo;#&rsquo; 的行分割。</p>
 
-<h3 id="行内注释:edc5269fa41451f694a3996ea7ada34a">行内注释</h3>
+<h3 id="行内注释">行内注释</h3>
 
 <p>慎用行内注释(Inline Comments) 节俭使用行内注释。 行内注释是和语句在同一行，至少用两个空格和语句分开。行内注释不是必需的，重复罗嗦会使人分心。不要这样做：</p>
 
@@ -496,7 +490,7 @@ if foo == 'blah': one(); two(); three()
 <pre><code>x = x + 1 # Compensate for border
 </code></pre>
 
-<h3 id="文档字符串:edc5269fa41451f694a3996ea7ada34a">文档字符串</h3>
+<h3 id="文档字符串">文档字符串</h3>
 
 <p>文档字符串的标准参见：PEP 257。</p>
 
@@ -511,7 +505,7 @@ Optional plotz says to frobnicate the bizbaz first.
 
 <p>-单行的文档字符串，结尾的 &ldquo;&rdquo;&rdquo; 在同一行。</p>
 
-<h2 id="版本标签:edc5269fa41451f694a3996ea7ada34a">版本标签</h2>
+<h2 id="版本标签">版本标签</h2>
 
 <p>版本注记 (Version Bookkeeping)</p>
 
@@ -520,15 +514,15 @@ Optional plotz says to frobnicate the bizbaz first.
 <pre><code>__version__ = &quot;$Revision$&quot;# $Source$
 </code></pre>
 
-<h2 id="命名约定:edc5269fa41451f694a3996ea7ada34a">命名约定</h2>
+<h2 id="命名约定">命名约定</h2>
 
 <p>Python库的命名约定有点混乱，不可能完全一致。但依然有些普遍推荐的命名规范的。新的模块和包 (包括第三方的框架) 应该遵循这些标准。对不同风格的已有的库，建议保持内部的一致性。</p>
 
-<h3 id="最重要的原则:edc5269fa41451f694a3996ea7ada34a">最重要的原则</h3>
+<h3 id="最重要的原则">最重要的原则</h3>
 
 <p>用户可见的API命名应遵循使用约定而不是实现。</p>
 
-<h3 id="描述-命名风格:edc5269fa41451f694a3996ea7ada34a">描述：命名风格</h3>
+<h3 id="描述-命名风格">描述：命名风格</h3>
 
 <p>有多种命名风格：</p>
 
@@ -569,7 +563,7 @@ Optional plotz says to frobnicate the bizbaz first.
 
 <p>-<strong>double_leading_and_trailing_underscore</strong>(双前后下划线)：用户名字空间的魔法对象或属性。例如:<strong>init</strong> , <strong>import</strong> or <strong>file</strong>，不要自己发明这样的名字。</p>
 
-<h3 id="命名约定规范:edc5269fa41451f694a3996ea7ada34a">命名约定规范</h3>
+<h3 id="命名约定规范">命名约定规范</h3>
 
 <p>-避免采用的名字</p>
 
@@ -643,7 +637,7 @@ Optional plotz says to frobnicate the bizbaz first.
 
 <p>3.简单的公开数据属性，最好只公开属性名，没有复杂的访问/修改方法，python的Property提供了很好的封装方法。 d.如果不希望子类使用的属性，考虑用两个前置下划线(没有后置下划线)命名。</p>
 
-<h3 id="公共和内部接口:edc5269fa41451f694a3996ea7ada34a">公共和内部接口</h3>
+<h3 id="公共和内部接口">公共和内部接口</h3>
 
 <p>任何向后兼容的保证只适用于公共接口。</p>
 
@@ -657,7 +651,7 @@ Optional plotz says to frobnicate the bizbaz first.
 
 <p>导入名称应视为实现细节。其他模块不能间接访名字，除非在模块的API文档中明确记载，如os.path中或包的<strong>init</strong>暴露了子模块。</p>
 
-<h2 id="编程建议:edc5269fa41451f694a3996ea7ada34a">编程建议</h2>
+<h2 id="编程建议">编程建议</h2>
 
 <p>考-虑多种Python实现(PyPy, Jython, IronPython,Pyrex, Psyco, 等等)。</p>
 
@@ -872,16 +866,6 @@ if greeting is True: # Worse
 		
   </body>
   
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-115398530-1', 'auto');
-  ga('send', 'pageview');
-  $('#messagesbsb').remove();
-</script>
-
 
 
   </html>

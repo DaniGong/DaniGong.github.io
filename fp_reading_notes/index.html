@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.40.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
@@ -21,9 +21,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/favicon.png">
 
-  
-  <link href="" rel="alternate" type="application/rss+xml" title="Pythonic🐶" />
-</head>
+  </head>
 
 	<body class="theme-base-0d">
 		<div class="sidebar">
@@ -40,11 +38,9 @@
       <img src="http://danigong.github.io/img/author.png"></img>
       <li><a href="/">Home</a> </li>
       
-        <li><a href="/post/pip_install_TLS_ERROR/"> 使用pip安装包提示TLS证书错误解决办法 </a></li>
+        <li><a href="/about"> About </a></li>
       
-        <li><a href="/about/"> About </a></li>
-      
-        <li><a href="/fp_reading_notes/"> FP Note </a></li>
+        <li><a href="/fp_reading_notes"> FP Note </a></li>
       
     </ul>
     <div class="social-font clearfix">
@@ -58,9 +54,7 @@
     
     
     
-  </div>
- <p>&copy; 2018. All rights reserved. </p>
-  
+  </div>  
 </div>
   
 </div>
@@ -72,7 +66,7 @@
 			  <span class="post-date">Mon, Mar 12, 2018</span>
 			      
 
-<h3 id="1:5f871522afb4c8f73815d5199dd60799">1</h3>
+<h3 id="1">1</h3>
 
 <blockquote>
 <ul>
@@ -81,13 +75,13 @@
 </ul>
 </blockquote>
 
-<ul>
-<li>[x] 需要符号查找（不能预先知道<code>list()</code>有没有被重定义）</li>
-<li>[x] 方法调用</li>
-<li>[x] 要检查有没有可迭代变量传入</li>
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> 需要符号查找（不能预先知道<code>list()</code>有没有被重定义）</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> 方法调用</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> 要检查有没有可迭代变量传入</label></li>
 </ul>
 
-<h3 id="2:5f871522afb4c8f73815d5199dd60799">2</h3>
+<h3 id="2">2</h3>
 
 <p><strong>特殊方法</strong></p>
 
@@ -102,11 +96,11 @@
 
 <p>是为了被<code>python解释器</code>调用的，自己不用调用它们，所以没有<code>A.__len__()</code>方法，只有<code>len(A)</code></p>
 
-<h3 id="3:5f871522afb4c8f73815d5199dd60799">3</h3>
+<h3 id="3">3</h3>
 
 <p>自定义布尔值 -&gt; 实现<code>__bool__</code></p>
 
-<h3 id="4:5f871522afb4c8f73815d5199dd60799">4</h3>
+<h3 id="4">4</h3>
 
 <blockquote>
 <ul>
@@ -115,7 +109,7 @@
 </ul>
 </blockquote>
 
-<h3 id="5:5f871522afb4c8f73815d5199dd60799">5</h3>
+<h3 id="5">5</h3>
 
 <p><em>The Zen of Python</em></p>
 
@@ -124,7 +118,7 @@
 <li>2. 不能让特例特殊到开始破坏规则</li>
 </ul>
 
-<h3 id="6:5f871522afb4c8f73815d5199dd60799">6</h3>
+<h3 id="6">6</h3>
 
 <p><strong>内置序列类型</strong></p>
 
@@ -140,7 +134,7 @@
 </ul>
 </blockquote>
 
-<h3 id="7:5f871522afb4c8f73815d5199dd60799">7</h3>
+<h3 id="7">7</h3>
 
 <blockquote>
 <ul>
@@ -149,7 +143,7 @@
 </ul>
 </blockquote>
 
-<h3 id="8:5f871522afb4c8f73815d5199dd60799">8</h3>
+<h3 id="8">8</h3>
 
 <blockquote>
 <ul>
@@ -159,17 +153,17 @@
 </ul>
 </blockquote>
 
-<h3 id="9:5f871522afb4c8f73815d5199dd60799">9</h3>
+<h3 id="9">9</h3>
 
 <p><strong>列表推导的作用只有一个：</strong> 生成列表</p>
 
-<h3 id="10:5f871522afb4c8f73815d5199dd60799">10</h3>
+<h3 id="10">10</h3>
 
 <p><strong><code>genexps</code>优于<code>listcomps</code></strong></p>
 
 <p><code>genexps</code>遵守了迭代器协议，可以逐个产生元素，而不是先建立一个完整的列表，避免了额外的内存占用</p>
 
-<h3 id="11:5f871522afb4c8f73815d5199dd60799">11</h3>
+<h3 id="11">11</h3>
 
 <p><strong>元组拆包</strong></p>
 
@@ -180,13 +174,13 @@
 </ul>
 </blockquote>
 
-<h3 id="12:5f871522afb4c8f73815d5199dd60799">12</h3>
+<h3 id="12">12</h3>
 
 <p><strong><code>*</code>来处理剩下的元素</strong></p>
 
 <p>Python3: <strong>平行赋值</strong>: <code>a,b,*rest = range(5)</code> -&gt; <code>(0,1,[2,3,4])</code></p>
 
-<h3 id="13:5f871522afb4c8f73815d5199dd60799">13</h3>
+<h3 id="13">13</h3>
 
 <p><code>namedtuple</code>和<code>tuple</code>创建实例消耗内存一样，因为字段名都存在类里：</p>
 
@@ -198,11 +192,11 @@
 </ul>
 </blockquote>
 
-<h3 id="14:5f871522afb4c8f73815d5199dd60799">14</h3>
+<h3 id="14">14</h3>
 
 <p><code>tuple</code>没有<code>__reversed__</code>方法，但可以<code>reversed(my_tuple)</code></p>
 
-<h3 id="15:5f871522afb4c8f73815d5199dd60799">15</h3>
+<h3 id="15">15</h3>
 
 <p><strong>切片赋值</strong>：改变<code>list</code>中连续多个值</p>
 
@@ -212,7 +206,7 @@
 
 <p>-&gt; <code>l:[0,1,20,30,5,6,7,8,9]</code></p>
 
-<h3 id="16:5f871522afb4c8f73815d5199dd60799">16</h3>
+<h3 id="16">16</h3>
 
 <p><code>__iadd__</code>方法：就地加法</p>
 
@@ -223,7 +217,7 @@
 </ul>
 </blockquote>
 
-<h3 id="17:5f871522afb4c8f73815d5199dd60799">17</h3>
+<h3 id="17">17</h3>
 
 <p><strong><code>id(object)</code> -&gt; return &ldquo;Identity(内存地址)&rdquo; of an object</strong></p>
 
@@ -234,11 +228,11 @@
 </ul>
 </blockquote>
 
-<h3 id="18:5f871522afb4c8f73815d5199dd60799">18</h3>
+<h3 id="18">18</h3>
 
 <p><strong>如果一个方法对对象进行的是就地改动，那就应该返回<code>None</code></strong></p>
 
-<h3 id="19:5f871522afb4c8f73815d5199dd60799">19</h3>
+<h3 id="19">19</h3>
 
 <ul>
 <li><code>list.sort</code> -&gt; 就地改</li>
@@ -249,7 +243,7 @@
 <code>sorted(fruits, key=len)</code>
 <code>sorted(fruits, key=lower)</code> &hellip;</p>
 
-<h3 id="20:5f871522afb4c8f73815d5199dd60799">20</h3>
+<h3 id="20">20</h3>
 
 <p><strong><code>bisect</code> 二分查找</strong></p>
 
@@ -260,7 +254,7 @@
 </ul>
 </blockquote>
 
-<h3 id="21:5f871522afb4c8f73815d5199dd60799">21</h3>
+<h3 id="21">21</h3>
 
 <p><strong>字符串格式化</strong></p>
 
@@ -275,20 +269,20 @@
 </ul>
 </blockquote>
 
-<h3 id="22:5f871522afb4c8f73815d5199dd60799">22</h3>
+<h3 id="22">22</h3>
 
 <p><code>array</code> 场景-&gt;1000万个浮点数
 <code>deque</code> 场景-&gt;需要频繁对序列进行<code>FIFO</code></p>
 
-<h3 id="23:5f871522afb4c8f73815d5199dd60799">23</h3>
+<h3 id="23">23</h3>
 
 <p><strong><code>memoryview</code></strong></p>
 
-<h3 id="24:5f871522afb4c8f73815d5199dd60799">24</h3>
+<h3 id="24">24</h3>
 
 <p><strong><code>numpy, scipy</code></strong></p>
 
-<h3 id="25:5f871522afb4c8f73815d5199dd60799">25</h3>
+<h3 id="25">25</h3>
 
 <p><strong><code>collections.deque</code></strong>：线程安全、快速从两端添加、删除元素。</p>
 
@@ -301,7 +295,7 @@
 </ul>
 </blockquote>
 
-<h3 id="26:5f871522afb4c8f73815d5199dd60799">26</h3>
+<h3 id="26">26</h3>
 
 <ul>
 <li><strong><code>散列表</code></strong>是<code>字典</code>类型性能出众的根本原因。</li>
@@ -310,7 +304,7 @@
 <li><strong>散列值</strong>就是<code>id()</code>函数的返回值</li>
 </ul>
 
-<h3 id="27:5f871522afb4c8f73815d5199dd60799">27</h3>
+<h3 id="27">27</h3>
 
 <p><strong>字典创建方法</strong></p>
 
@@ -323,11 +317,11 @@
 </ul>
 </blockquote>
 
-<h3 id="28:5f871522afb4c8f73815d5199dd60799">28</h3>
+<h3 id="28">28</h3>
 
 <p><strong><code>dict.setdefault</code></strong>处理不存在于<code>dict</code>中的<code>key</code></p>
 
-<h3 id="29:5f871522afb4c8f73815d5199dd60799">29</h3>
+<h3 id="29">29</h3>
 
 <p><strong><code>collections.defaultdict</code></strong>是处理找不到<code>key</code>的一个选择</p>
 
@@ -341,15 +335,15 @@
 </ul>
 </blockquote>
 
-<h3 id="30:5f871522afb4c8f73815d5199dd60799">30</h3>
+<h3 id="30">30</h3>
 
 <p><strong><code>__missing__</code>只会被<code>__getitem__</code>调用</strong></p>
 
-<h3 id="31:5f871522afb4c8f73815d5199dd60799">31</h3>
+<h3 id="31">31</h3>
 
 <p><strong>如果要自定义一个映射类型，应该继承<code>collections.UserDict</code></strong></p>
 
-<h3 id="32:5f871522afb4c8f73815d5199dd60799">32</h3>
+<h3 id="32">32</h3>
 
 <p><strong>字典的变种</strong></p>
 
@@ -378,7 +372,7 @@
 </ul>
 </blockquote>
 
-<h3 id="33:5f871522afb4c8f73815d5199dd60799">33</h3>
+<h3 id="33">33</h3>
 
 <p><strong>不可变映射类型</strong></p>
 
@@ -386,7 +380,7 @@
 <li><code>types.MappingProxyType</code>：<code>只读的映射视图</code></li>
 </ul>
 
-<h3 id="34:5f871522afb4c8f73815d5199dd60799">34</h3>
+<h3 id="34">34</h3>
 
 <p><code>set</code> -&gt; 许多唯一对象的聚集；<code>frozenset</code> -&gt; 不可变</p>
 
@@ -401,7 +395,7 @@
 
 <p><strong>如果是空集必须写成<code>set()</code></strong></p>
 
-<h3 id="35:5f871522afb4c8f73815d5199dd60799">35</h3>
+<h3 id="35">35</h3>
 
 <p><strong>散列表</strong>：稀疏数组（总有空白元素的数组）
 <code>key:value</code> -&gt; 一个<code>表元</code></p>
@@ -410,19 +404,19 @@
 
 <p>用<code>hash()</code>来计算<code>散列值</code></p>
 
-<h3 id="36:5f871522afb4c8f73815d5199dd60799">36</h3>
+<h3 id="36">36</h3>
 
 <p>存放数量巨大的记录用<code>tuple</code>或<code>namedtuple</code></p>
 
 <p><code>dict</code> 散列 -&gt; 内存消耗大</p>
 
-<h3 id="37:5f871522afb4c8f73815d5199dd60799">37</h3>
+<h3 id="37">37</h3>
 
 <p><strong><code>dict</code></strong>：<strong>空间</strong>换<strong>时间</strong> -&gt; <strong>读取快</strong> 但 <strong>内存消耗大</strong></p>
 
 <p>Python解释器可能为字典扩容 -&gt; 导致新建一个更大的散列表</p>
 
-<h3 id="38:5f871522afb4c8f73815d5199dd60799">38</h3>
+<h3 id="38">38</h3>
 
 <p><strong>集合 <code>set</code></strong></p>
 
@@ -436,7 +430,7 @@
 </ul>
 </blockquote>
 
-<h3 id="39:5f871522afb4c8f73815d5199dd60799">39</h3>
+<h3 id="39">39</h3>
 
 <p><strong>字符</strong>的最佳定义是<code>Unicode</code>字符</p>
 
@@ -451,15 +445,15 @@
 </ul>
 </blockquote>
 
-<h3 id="40:5f871522afb4c8f73815d5199dd60799">40</h3>
+<h3 id="40">40</h3>
 
 <p><strong>字面量</strong>：双眼所见</p>
 
-<h3 id="41:5f871522afb4c8f73815d5199dd60799">41</h3>
+<h3 id="41">41</h3>
 
 <p><code>utf_8</code> 的别名：<code>utf8</code>, <code>u8</code>, <code>utf-8</code></p>
 
-<h3 id="42:5f871522afb4c8f73815d5199dd60799">42</h3>
+<h3 id="42">42</h3>
 
 <p><strong>编码种类</strong></p>
 
@@ -472,11 +466,11 @@
 </ul>
 </blockquote>
 
-<h3 id="43:5f871522afb4c8f73815d5199dd60799">43</h3>
+<h3 id="43">43</h3>
 
 <p>Python3 中默认使用 <code>utf8</code> 编码源码</p>
 
-<h3 id="44:5f871522afb4c8f73815d5199dd60799">44</h3>
+<h3 id="44">44</h3>
 
 <p><strong>判断编码</strong></p>
 
@@ -492,7 +486,7 @@
 
 <p>统一字符编码侦测包：<code>Chardet</code></p>
 
-<h3 id="45:5f871522afb4c8f73815d5199dd60799">45</h3>
+<h3 id="45">45</h3>
 
 <p><strong>Python中，函数是一等对象</strong></p>
 
@@ -505,11 +499,11 @@
 </ul>
 </blockquote>
 
-<h3 id="46:5f871522afb4c8f73815d5199dd60799">46</h3>
+<h3 id="46">46</h3>
 
 <p><strong><code>__doc__</code>用于生成对象的帮助文本</strong></p>
 
-<h3 id="47:5f871522afb4c8f73815d5199dd60799">47</h3>
+<h3 id="47">47</h3>
 
 <p><strong>函数式编程</strong>：特点之一是使用高阶函数</p>
 
@@ -523,28 +517,28 @@
 </ul>
 </blockquote>
 
-<h3 id="48:5f871522afb4c8f73815d5199dd60799">48</h3>
+<h3 id="48">48</h3>
 
 <p><code>map, filter 和 reduce</code> 在Python3中已经不是内置函数
 被 <code>listcomps</code> 和 <code>genexps</code> 所替代（可读性原因）</p>
 
-<h3 id="49:5f871522afb4c8f73815d5199dd60799">49</h3>
+<h3 id="49">49</h3>
 
 <p>匿名函数：<code>lambda</code></p>
 
-<h3 id="50:5f871522afb4c8f73815d5199dd60799">50</h3>
+<h3 id="50">50</h3>
 
 <p>使用<code>callable()</code>函数来判断一个对象能否调用</p>
 
-<h3 id="51:5f871522afb4c8f73815d5199dd60799">51</h3>
+<h3 id="51">51</h3>
 
 <p>用户定义可调用类型，只需实现实例方法<code>__call__</code></p>
 
-<h3 id="52:5f871522afb4c8f73815d5199dd60799">52</h3>
+<h3 id="52">52</h3>
 
 <p><strong>函数内省</strong></p>
 
-<h3 id="53:5f871522afb4c8f73815d5199dd60799">53</h3>
+<h3 id="53">53</h3>
 
 <p><strong>函数有但一般对象没有的特殊方法：</strong></p>
 
@@ -555,13 +549,13 @@
 </ul>
 </blockquote>
 
-<h3 id="54:5f871522afb4c8f73815d5199dd60799">54</h3>
+<h3 id="54">54</h3>
 
 <p><strong>函数注解</strong>只存放在<code>__annotations__</code>属性里，Python不做检查、验证、强制&hellip;</p>
 
 <p>注解只是元数据，可以供IDE、框架和装饰器工具使用</p>
 
-<h3 id="55:5f871522afb4c8f73815d5199dd60799">55</h3>
+<h3 id="55">55</h3>
 
 <p><strong>函数式编程</strong></p>
 
@@ -580,21 +574,21 @@
 </code></pre>
 </blockquote>
 
-<h3 id="56:5f871522afb4c8f73815d5199dd60799">56</h3>
+<h3 id="56">56</h3>
 
 <p><code>globals()</code> <strong>策略模式</strong></p>
 
-<h3 id="57:5f871522afb4c8f73815d5199dd60799">57</h3>
+<h3 id="57">57</h3>
 
 <p><strong>命令模式</strong>：是回调机制的面向对象替代品</p>
 
-<h3 id="58:5f871522afb4c8f73815d5199dd60799">58</h3>
+<h3 id="58">58</h3>
 
 <p><code>nonlocal</code>关键字。</p>
 
 <p><strong>装饰器</strong> 目的是增强函数</p>
 
-<h3 id="59:5f871522afb4c8f73815d5199dd60799">59</h3>
+<h3 id="59">59</h3>
 
 <p><strong>元编程</strong> -&gt; 在运行时改变程序的行为</p>
 
@@ -607,11 +601,11 @@
 </ul>
 </blockquote>
 
-<h3 id="60:5f871522afb4c8f73815d5199dd60799">60</h3>
+<h3 id="60">60</h3>
 
 <p><strong>装饰器</strong> 在被装饰的函数定义之后立即运行。通常是在导入时（加载模块时）</p>
 
-<h3 id="61:5f871522afb4c8f73815d5199dd60799">61</h3>
+<h3 id="61">61</h3>
 
 <p><strong>变量作用域规则</strong></p>
 
@@ -632,7 +626,7 @@
 
 <p>如果在函数中赋值时想让解释器把<code>b</code>当成全局变量，要使用<code>global</code>声明。</p>
 
-<h3 id="62:5f871522afb4c8f73815d5199dd60799">62</h3>
+<h3 id="62">62</h3>
 
 <p><strong>闭包</strong> 不等同于 <strong>匿名函数</strong></p>
 
@@ -645,16 +639,6 @@
 		
   </body>
   
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-115398530-1', 'auto');
-  ga('send', 'pageview');
-  $('#messagesbsb').remove();
-</script>
-
 
 
   </html>
