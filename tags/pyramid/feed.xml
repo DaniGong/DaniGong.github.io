@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 28 May 2016 20:09:35 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/pyramid/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/pyramid/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Pyramid Dev Environment Setup</title>
@@ -15,18 +17,7 @@
       <pubDate>Sat, 28 May 2016 20:09:35 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/pyramid_dev_env_set/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Download Setuptool: &lt;a href=&#34;http://peak.telecommunity.com/dist/ez_setup.py&#34;&gt;http://peak.telecommunity.com/dist/ez_setup.py&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Install Setuptool: &lt;code&gt;sudo python ez_setup.py&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Install virtulenv: &lt;code&gt;sudo easy_install virtualenv&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Install Pyramid: &lt;code&gt;virtualenv —no-site-packages env&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd env&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;bin/easy_install pyramid&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Will contain pyramid, template(Chameleon、Mako), PasteDeploy&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description> Download Setuptool: http://peak.telecommunity.com/dist/ez_setup.py Install Setuptool: sudo python ez_setup.py Install virtulenv: sudo easy_install virtualenv Install Pyramid: virtualenv —no-site-packages env cd env bin/easy_install pyramid Will contain pyramid, template(Chameleon、Mako), PasteDeploy  </description>
     </item>
     
   </channel>

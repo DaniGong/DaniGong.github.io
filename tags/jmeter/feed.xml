@@ -7,68 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 11 Mar 2018 15:17:57 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/jmeter/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/jmeter/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Jmeter Thread Group</title>
-      <link>http://danigong.github.io/post/Jmeter_Thread_Group/</link>
+      <link>http://danigong.github.io/post/jmeter_thread_group/</link>
       <pubDate>Sun, 11 Mar 2018 15:17:57 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/Jmeter_Thread_Group/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;1、Action to be take after a Sampler error&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Continue&lt;/code&gt;：忽略错误，继续执行操作&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Start Next Thread Loop&lt;/code&gt;：忽略错误，线程当前循环终止，执行下一个循环&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Stop Thread&lt;/code&gt;：停止当前线程，其他线程不受影响&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Stop Test&lt;/code&gt;：当前执行的采样器结束后，停止整个测试计划&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Stop Test Now&lt;/code&gt;：立即停止整个测试计划&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;2、Thread Properties&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Number of Threads(users)&lt;/code&gt;：当前线程数量，可以简单的理解为用户数量。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ramp-up Period (in seconds)&lt;/code&gt;：达到上面指定线程数所花费的时间，单位为秒。举个栗子：假设线程数为100个，花费时间20s，那么每秒启动的线程数 = 线程数/时间，即100/20 = 5。换句话说，就是1秒启动5个线程。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Loop Count&lt;/code&gt;：勾选“永远”选项，则线程组一直循环。否则，以后面所填数量为准。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Delay Thread creation until needed&lt;/code&gt;：当线程需要执行的时候，才会被创建。如果不勾选此选项，所有线程在开始时就全部被创建。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Scheduler&lt;/code&gt;：勾选此选项，才可修改下面的调度器配置&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;3、Scheduler Configuration&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Duration(seconds)&lt;/code&gt;：整个测试计划持续的时间。（优先于后面的结束时间选项)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Startup delay(seconds)&lt;/code&gt;：测试计划启动后，会被延迟启动，时间为选项填入的时间。（优先于后面的启动时间选项）&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://danigong.github.io/post/jmeter_thread_group/</guid>
+      <description>1、Action to be take after a Sampler error Continue：忽略错误，继续执行操作 Start Next Thread Loop：忽略错误，线程当前循环终止，执行下一个循环 Stop Threa</description>
     </item>
     
     <item>
       <title>Why nGrinder?</title>
-      <link>http://danigong.github.io/post/Why_nGrinder/</link>
+      <link>http://danigong.github.io/post/why_ngrinder/</link>
       <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/Why_nGrinder/</guid>
-      <description>&lt;p&gt;nGrinder与其他工具比较&amp;ndash;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;JMeter&lt;/strong&gt;
-基于UI操作，容易上手，但是不具备编程能力。其次JMeter基于线程模拟数千用户几乎不可能。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tsung&lt;/strong&gt;
-基于Erlang，能模拟上千用户并且易于扩展。但是基于XML的DSL，描述场景能力弱，而且需要大量的数据处理才知道测试结果。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Locust&lt;/strong&gt;
-基于python的gevent，能模拟百万个用户。但是需要对python有一定理解。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Loadrunner&lt;/strong&gt;
-这个可以说是应用最多的一个，很方便，但是还是太重。往后的方向肯定是客户端工具逐步向平台化发展，所以loadrunner注定慢慢被淘汰（个人拙见）。而且不开源，扩展性不高，收费。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;nGrinder&lt;/strong&gt;
-单节点支持3000并发、支持分布式、可监控被测服务器、可录制脚本、开源、平台化。&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://danigong.github.io/post/why_ngrinder/</guid>
+      <description>nGrinder与其他工具比较&amp;ndash; JMeter 基于UI操作，容易上手，但是不具备编程能力。其次JMeter基于线程模拟数千用户几乎不可能。 Tsung</description>
     </item>
     
   </channel>

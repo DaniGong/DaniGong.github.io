@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 07 Mar 2018 17:09:40 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/github/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/github/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>How to create a github.io repo</title>
@@ -15,18 +17,7 @@
       <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_create_a_github_io_repo/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;开通自己的github.io repo&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可以参照如下步骤完成：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;创建repo&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;当然，一切的前提是你得首先有个github的账户，这里还请自行解决。登陆你的账户后，你可以创建一个新的repo。请务必注意该repo的名字，必须保持格式&lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;，其中&lt;code&gt;&amp;lt;username&amp;gt;&lt;/code&gt;替换成你的github账户名，这里假定创建的repo为 &amp;gt; &lt;code&gt;danielgong.github.io&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;把你创建的repo clone到本地就可以了&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;git clone https://github.com/tobiasalin/tobiasalin.github.io&lt;/code&gt;&lt;/p&gt;
-</description>
+      <description>开通自己的github.io repo github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可</description>
     </item>
     
     <item>
@@ -35,24 +26,7 @@
       <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1. Create a Repository: danigong.github.io (replace danigong with your own github username)&lt;/li&gt;
-&lt;li&gt;2. Change directory to root directory of the site.&lt;/li&gt;
-&lt;li&gt;3. &lt;code&gt;hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;$ cd public
-$ git init
-$ git remote add origin https://github.com/danigong/danigong.github.io.git
-$ git add -A
-$ git commit -m &amp;quot;first commit&amp;quot;
-$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-</description>
+      <description> 1. Create a Repository: danigong.github.io (replace danigong with your own github username) 2. Change directory to root directory of the site. 3. hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;   $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master   </description>
     </item>
     
     <item>
@@ -61,13 +35,9 @@ $ git push -u origin master
       <pubDate>Sat, 11 Apr 2015 21:35:05 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/github_push_stuck/</guid>
-      <description>&lt;p&gt;To solve the github push stucking problem:&lt;/p&gt;
-
-&lt;p&gt;Try to use the command as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git config --global http.postBuffer 524288000
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>To solve the github push stucking problem:
+Try to use the command as follows:
+git config --global http.postBuffer 524288000  </description>
     </item>
     
   </channel>

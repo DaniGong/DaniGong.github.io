@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 07 Mar 2018 16:45:07 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/hugo/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/hugo/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>How to update hugo blog</title>
@@ -15,45 +17,10 @@
       <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1. Open iTerm2&lt;/li&gt;
-&lt;li&gt;2. &lt;code&gt;control+command+h&lt;/code&gt; to open the tab with hugo profile&lt;/li&gt;
-&lt;li&gt;3. &lt;code&gt;addblog&lt;/code&gt; to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.&lt;/li&gt;
-&lt;li&gt;4. Note: Blog Title should not contain space and strip out &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the template.&lt;/li&gt;
-&lt;li&gt;5. &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Detail&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;create blog shell script:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo &amp;quot;Blog Title: &amp;quot;
-read Title
-cd /Users/DanielGong/HugoSite/testsite
-hugo new post/$Title.md
-subl /Users/DanielGong/HugoSite/testsite/content/post/$Title.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;eploy blog shell script:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo &amp;quot;-------Begin-------&amp;quot;
-
-cd /Users/DanielGong/HugoSite/testsite
-hugo --theme=gs-hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;
-cd public
-git add -A
-git commit -m &amp;quot;auto_commit&amp;quot;
-git push origin master
-
-echo &amp;quot;-------Done-------&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;customize command:&lt;/p&gt;
-
-&lt;p&gt;Add &lt;code&gt;alias addblog=&amp;quot;xxx.sh&amp;quot;&lt;/code&gt; into &lt;code&gt;.bashrc&lt;/code&gt; file. Then &lt;code&gt;source ~/.bashrc&lt;/code&gt;&lt;/p&gt;
-</description>
+      <description>Quick Start
+ 1. Open iTerm2 2. control+command+h to open the tab with hugo profile 3. addblog to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it. 4. Note: Blog Title should not contain space and strip out menu = &amp;quot;main&amp;quot; in the template. 5. deployblog to deploy newest update to github.  Detail
+create blog shell script:
+echo &amp;quot;Blog Title: &amp;quot; read Title cd /Users/DanielGong/HugoSite/testsite hugo new post/$Title.</description>
     </item>
     
     <item>
@@ -62,24 +29,7 @@ echo &amp;quot;-------Done-------&amp;quot;
       <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1. Create a Repository: danigong.github.io (replace danigong with your own github username)&lt;/li&gt;
-&lt;li&gt;2. Change directory to root directory of the site.&lt;/li&gt;
-&lt;li&gt;3. &lt;code&gt;hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;$ cd public
-$ git init
-$ git remote add origin https://github.com/danigong/danigong.github.io.git
-$ git add -A
-$ git commit -m &amp;quot;first commit&amp;quot;
-$ git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-</description>
+      <description> 1. Create a Repository: danigong.github.io (replace danigong with your own github username) 2. Change directory to root directory of the site. 3. hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;   $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master   </description>
     </item>
     
   </channel>

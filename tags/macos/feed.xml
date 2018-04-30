@@ -7,50 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 08 Mar 2018 14:37:42 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/macos/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/macos/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Show all files in finder</title>
-      <link>http://danigong.github.io/post/Show_all_files_in_finder/</link>
+      <link>http://danigong.github.io/post/show_all_files_in_finder/</link>
       <pubDate>Thu, 08 Mar 2018 14:37:42 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/Show_all_files_in_finder/</guid>
-      <description>&lt;p&gt;如何在Mac OS X中开启或关闭显示隐藏文件命令&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;可以这样：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool true&lt;/code&gt;      - 此命令显示隐藏文件&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool false&lt;/code&gt;     - 此命令关闭显示隐藏文件&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;命令运行之后需要重新加载Finder：快捷键&lt;code&gt;option+command+esc&lt;/code&gt;，选中Finder，重新启动即可&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;或者这样：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles FALSE&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;killall Finder&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://danigong.github.io/post/show_all_files_in_finder/</guid>
+      <description>如何在Mac OS X中开启或关闭显示隐藏文件命令 可以这样： defaults write com.apple.finder AppleShowAllFiles -bool true - 此命令显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -bool false - 此命令关闭显示隐藏文件 命令运行之后需要重</description>
     </item>
     
     <item>
       <title>Force empty trash</title>
-      <link>http://danigong.github.io/post/Force_empty_trash/</link>
+      <link>http://danigong.github.io/post/force_empty_trash/</link>
       <pubDate>Thu, 08 Mar 2018 14:18:34 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/Force_empty_trash/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;可以这样&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;sudo rm -rf ~/.Trash/&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://danigong.github.io/post/force_empty_trash/</guid>
+      <description>可以这样 sudo rm -rf ~/.Trash/</description>
     </item>
     
     <item>
@@ -59,16 +35,8 @@
       <pubDate>Mon, 27 May 2013 23:12:14 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;p&gt;A simple way to open sublime with terminal:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Open terminal.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Use &lt;code&gt;subl&lt;/code&gt; command to edit a file.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description>A simple way to open sublime with terminal:
+ Open terminal. ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl Use subl command to edit a file.  </description>
     </item>
     
   </channel>

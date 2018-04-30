@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 27 May 2013 23:12:14 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/sublime/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/sublime/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Open Sublime with Terminal</title>
@@ -15,16 +17,8 @@
       <pubDate>Mon, 27 May 2013 23:12:14 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;p&gt;A simple way to open sublime with terminal:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Open terminal.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Use &lt;code&gt;subl&lt;/code&gt; command to edit a file.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description>A simple way to open sublime with terminal:
+ Open terminal. ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl Use subl command to edit a file.  </description>
     </item>
     
   </channel>

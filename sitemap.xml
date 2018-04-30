@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>http://danigong.github.io/</loc>
-    <lastmod>2018-04-26T16:29:42+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://danigong.github.io/post/pip_install_TLS_ERROR/</loc>
-    <lastmod>2018-04-26T16:29:42+08:00</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>http://danigong.github.io/post/java_thread_dump/</loc>
@@ -18,7 +8,7 @@
   </url>
   
   <url>
-    <loc>http://danigong.github.io/post/A_Comparison_between_HTTP1_and_HTTP2/</loc>
+    <loc>http://danigong.github.io/post/a_comparison_between_http1_and_http2/</loc>
     <lastmod>2018-03-13T16:17:16+08:00</lastmod>
   </url>
   
@@ -28,22 +18,22 @@
   </url>
   
   <url>
-    <loc>http://danigong.github.io/post/Jmeter_Thread_Group/</loc>
+    <loc>http://danigong.github.io/post/jmeter_thread_group/</loc>
     <lastmod>2018-03-11T15:17:57+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://danigong.github.io/post/Why_nGrinder/</loc>
+    <loc>http://danigong.github.io/post/why_ngrinder/</loc>
     <lastmod>2018-03-09T16:36:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://danigong.github.io/post/Show_all_files_in_finder/</loc>
+    <loc>http://danigong.github.io/post/show_all_files_in_finder/</loc>
     <lastmod>2018-03-08T14:37:42+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://danigong.github.io/post/Force_empty_trash/</loc>
+    <loc>http://danigong.github.io/post/force_empty_trash/</loc>
     <lastmod>2018-03-08T14:18:34+08:00</lastmod>
   </url>
   
@@ -63,7 +53,7 @@
   </url>
   
   <url>
-    <loc>http://danigong.github.io/post/The-best-django-project-structure/</loc>
+    <loc>http://danigong.github.io/post/the-best-django-project-structure/</loc>
     <lastmod>2018-03-05T11:01:39+08:00</lastmod>
   </url>
   
@@ -88,7 +78,7 @@
   </url>
   
   <url>
-    <loc>http://danigong.github.io/post/ML_materials/</loc>
+    <loc>http://danigong.github.io/post/ml_materials/</loc>
     <lastmod>2016-07-10T14:03:09+08:00</lastmod>
   </url>
   
@@ -140,6 +130,189 @@
   <url>
     <loc>http://danigong.github.io/about/</loc>
     <lastmod>2013-05-25T22:16:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/pep8_english_version/</loc>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/centos/</loc>
+    <lastmod>2017-12-24T20:50:30+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/cookiecutter/</loc>
+    <lastmod>2018-03-05T11:01:39+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/django/</loc>
+    <lastmod>2018-03-05T11:01:39+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/git/</loc>
+    <lastmod>2018-03-07T17:09:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/github/</loc>
+    <lastmod>2018-03-07T17:09:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/http/</loc>
+    <lastmod>2018-03-13T16:17:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/hugo/</loc>
+    <lastmod>2018-03-07T16:45:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/java/</loc>
+    <lastmod>2018-03-17T16:59:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/jmeter/</loc>
+    <lastmod>2018-03-11T15:17:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/linux/</loc>
+    <lastmod>2018-03-08T14:37:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/loadrunner/</loc>
+    <lastmod>2018-03-09T16:36:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/locust/</loc>
+    <lastmod>2018-03-09T16:36:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/machine-learning/</loc>
+    <lastmod>2016-07-10T14:03:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/macos/</loc>
+    <lastmod>2018-03-08T14:37:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/markdown/</loc>
+    <lastmod>2018-03-07T11:25:30+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/mongodb/</loc>
+    <lastmod>2016-05-28T20:14:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/nginx/</loc>
+    <lastmod>2017-12-24T20:50:30+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/ngrinder/</loc>
+    <lastmod>2018-03-09T16:36:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/perf/</loc>
+    <lastmod>2018-03-17T16:59:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/post/</loc>
+    <lastmod>2018-03-17T16:59:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/pyramid/</loc>
+    <lastmod>2016-05-28T20:09:35+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/python/</loc>
+    <lastmod>2018-03-12T15:29:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/</loc>
+    <lastmod>2018-03-17T16:59:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/shell/</loc>
+    <lastmod>2018-03-07T16:45:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/sublime/</loc>
+    <lastmod>2013-05-27T23:12:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/</loc>
+    <lastmod>2017-12-24T20:50:30+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/tsung/</loc>
+    <lastmod>2018-03-09T16:36:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/uwsgi/</loc>
+    <lastmod>2017-12-24T20:50:30+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/tags/virtualenv/</loc>
+    <lastmod>2016-07-10T12:43:13+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

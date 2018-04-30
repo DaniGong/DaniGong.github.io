@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Pythonic🐶</title>
+    <link>http://danigong.github.io/tags/</link>
+    <description>Recent content in Tags on Pythonic🐶</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 24 Dec 2017 20:50:30 +0800</lastBuildDate>
+    
+	<atom:link href="http://danigong.github.io/tags/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos</title>
+      <link>http://danigong.github.io/tags/centos/</link>
+      <pubDate>Sun, 24 Dec 2017 20:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cookiecutter</title>
+      <link>http://danigong.github.io/tags/cookiecutter/</link>
+      <pubDate>Mon, 05 Mar 2018 11:01:39 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/cookiecutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>http://danigong.github.io/tags/django/</link>
+      <pubDate>Mon, 05 Mar 2018 11:01:39 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://danigong.github.io/tags/git/</link>
+      <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>http://danigong.github.io/tags/github/</link>
+      <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>http://danigong.github.io/tags/http/</link>
+      <pubDate>Tue, 13 Mar 2018 16:17:16 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://danigong.github.io/tags/hugo/</link>
+      <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>http://danigong.github.io/tags/java/</link>
+      <pubDate>Sat, 17 Mar 2018 16:59:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jmeter</title>
+      <link>http://danigong.github.io/tags/jmeter/</link>
+      <pubDate>Sun, 11 Mar 2018 15:17:57 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/jmeter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://danigong.github.io/tags/linux/</link>
+      <pubDate>Thu, 08 Mar 2018 14:37:42 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Loadrunner</title>
+      <link>http://danigong.github.io/tags/loadrunner/</link>
+      <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/loadrunner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Locust</title>
+      <link>http://danigong.github.io/tags/locust/</link>
+      <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/locust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>http://danigong.github.io/tags/machine-learning/</link>
+      <pubDate>Sun, 10 Jul 2016 14:03:09 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macos</title>
+      <link>http://danigong.github.io/tags/macos/</link>
+      <pubDate>Thu, 08 Mar 2018 14:37:42 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>http://danigong.github.io/tags/markdown/</link>
+      <pubDate>Wed, 07 Mar 2018 11:25:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mongodb</title>
+      <link>http://danigong.github.io/tags/mongodb/</link>
+      <pubDate>Sat, 28 May 2016 20:14:28 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>http://danigong.github.io/tags/nginx/</link>
+      <pubDate>Sun, 24 Dec 2017 20:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ngrinder</title>
+      <link>http://danigong.github.io/tags/ngrinder/</link>
+      <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/ngrinder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perf</title>
+      <link>http://danigong.github.io/tags/perf/</link>
+      <pubDate>Sat, 17 Mar 2018 16:59:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/perf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pyramid</title>
+      <link>http://danigong.github.io/tags/pyramid/</link>
+      <pubDate>Sat, 28 May 2016 20:09:35 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/pyramid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://danigong.github.io/tags/python/</link>
+      <pubDate>Mon, 12 Mar 2018 15:29:43 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>http://danigong.github.io/tags/shell/</link>
+      <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sublime</title>
+      <link>http://danigong.github.io/tags/sublime/</link>
+      <pubDate>Mon, 27 May 2013 23:12:14 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/sublime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tsung</title>
+      <link>http://danigong.github.io/tags/tsung/</link>
+      <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/tsung/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uwsgi</title>
+      <link>http://danigong.github.io/tags/uwsgi/</link>
+      <pubDate>Sun, 24 Dec 2017 20:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/uwsgi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualenv</title>
+      <link>http://danigong.github.io/tags/virtualenv/</link>
+      <pubDate>Sun, 10 Jul 2016 12:43:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/virtualenv/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

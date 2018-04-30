@@ -7,50 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 08 Mar 2018 14:37:42 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/linux/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/linux/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Show all files in finder</title>
-      <link>http://danigong.github.io/post/Show_all_files_in_finder/</link>
+      <link>http://danigong.github.io/post/show_all_files_in_finder/</link>
       <pubDate>Thu, 08 Mar 2018 14:37:42 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/Show_all_files_in_finder/</guid>
-      <description>&lt;p&gt;如何在Mac OS X中开启或关闭显示隐藏文件命令&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;可以这样：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool true&lt;/code&gt;      - 此命令显示隐藏文件&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles -bool false&lt;/code&gt;     - 此命令关闭显示隐藏文件&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;命令运行之后需要重新加载Finder：快捷键&lt;code&gt;option+command+esc&lt;/code&gt;，选中Finder，重新启动即可&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;或者这样：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;defaults write com.apple.finder AppleShowAllFiles FALSE&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;killall Finder&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://danigong.github.io/post/show_all_files_in_finder/</guid>
+      <description>如何在Mac OS X中开启或关闭显示隐藏文件命令 可以这样： defaults write com.apple.finder AppleShowAllFiles -bool true - 此命令显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -bool false - 此命令关闭显示隐藏文件 命令运行之后需要重</description>
     </item>
     
     <item>
       <title>Force empty trash</title>
-      <link>http://danigong.github.io/post/Force_empty_trash/</link>
+      <link>http://danigong.github.io/post/force_empty_trash/</link>
       <pubDate>Thu, 08 Mar 2018 14:18:34 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/Force_empty_trash/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;可以这样&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;sudo rm -rf ~/.Trash/&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://danigong.github.io/post/force_empty_trash/</guid>
+      <description>可以这样 sudo rm -rf ~/.Trash/</description>
     </item>
     
     <item>
@@ -59,45 +35,10 @@
       <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1. Open iTerm2&lt;/li&gt;
-&lt;li&gt;2. &lt;code&gt;control+command+h&lt;/code&gt; to open the tab with hugo profile&lt;/li&gt;
-&lt;li&gt;3. &lt;code&gt;addblog&lt;/code&gt; to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.&lt;/li&gt;
-&lt;li&gt;4. Note: Blog Title should not contain space and strip out &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the template.&lt;/li&gt;
-&lt;li&gt;5. &lt;code&gt;deployblog&lt;/code&gt; to deploy newest update to github.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Detail&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;create blog shell script:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo &amp;quot;Blog Title: &amp;quot;
-read Title
-cd /Users/DanielGong/HugoSite/testsite
-hugo new post/$Title.md
-subl /Users/DanielGong/HugoSite/testsite/content/post/$Title.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;eploy blog shell script:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo &amp;quot;-------Begin-------&amp;quot;
-
-cd /Users/DanielGong/HugoSite/testsite
-hugo --theme=gs-hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;
-cd public
-git add -A
-git commit -m &amp;quot;auto_commit&amp;quot;
-git push origin master
-
-echo &amp;quot;-------Done-------&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;customize command:&lt;/p&gt;
-
-&lt;p&gt;Add &lt;code&gt;alias addblog=&amp;quot;xxx.sh&amp;quot;&lt;/code&gt; into &lt;code&gt;.bashrc&lt;/code&gt; file. Then &lt;code&gt;source ~/.bashrc&lt;/code&gt;&lt;/p&gt;
-</description>
+      <description>Quick Start
+ 1. Open iTerm2 2. control+command+h to open the tab with hugo profile 3. addblog to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it. 4. Note: Blog Title should not contain space and strip out menu = &amp;quot;main&amp;quot; in the template. 5. deployblog to deploy newest update to github.  Detail
+create blog shell script:
+echo &amp;quot;Blog Title: &amp;quot; read Title cd /Users/DanielGong/HugoSite/testsite hugo new post/$Title.</description>
     </item>
     
   </channel>
