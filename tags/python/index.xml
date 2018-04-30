@@ -151,14 +151,5 @@ the web client &amp;lt;-&amp;gt; the web server &amp;lt;-&amp;gt; the socket &am
       <description>本文给出主Python版本标准库的编码约定。CPython的C代码风格参见PEP7。 本文和PEP 257 文档字符串标准改编自Guido最初的《Py</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>http://danigong.github.io/post/pep8_english_version/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://danigong.github.io/post/pep8_english_version/</guid>
-      <description>Visit https://www.python.org/dev/peps/pep-0008/</description>
-    </item>
-    
   </channel>
 </rss>

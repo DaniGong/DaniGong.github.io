@@ -254,14 +254,5 @@ git config --global http.postBuffer 524288000  </description>
       <description>Reading Notes. Tech notes collections for storing and sharing.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>http://danigong.github.io/post/pep8_english_version/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://danigong.github.io/post/pep8_english_version/</guid>
-      <description>Visit https://www.python.org/dev/peps/pep-0008/</description>
-    </item>
-    
   </channel>
 </rss>
