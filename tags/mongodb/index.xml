@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mongodb on Hugo Blog</title>
+    <title>Mongodb on Pythonic🐶</title>
     <link>http://danigong.github.io/tags/mongodb/</link>
-    <description>Recent content in Mongodb on Hugo Blog</description>
+    <description>Recent content in Mongodb on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>zh-CN</language>
     <lastBuildDate>Sat, 28 May 2016 20:14:28 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Mongodb Setup</title>
@@ -16,17 +17,7 @@
       <pubDate>Sat, 28 May 2016 20:14:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/mongodb_setup/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;brew update&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;brew install mongodb&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;setup python driver for mongoldb:
-&lt;code&gt;
-pip install pymongo
-&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description> brew update brew install mongodb setup python driver for mongoldb:  pip install pymongo   </description>
     </item>
     
   </channel>

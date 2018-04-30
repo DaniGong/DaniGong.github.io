@@ -1,56 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cookiecutter on Hugo Blog</title>
+    <title>Cookiecutter on Pythonic🐶</title>
     <link>http://danigong.github.io/tags/cookiecutter/</link>
-    <description>Recent content in Cookiecutter on Hugo Blog</description>
+    <description>Recent content in Cookiecutter on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>zh-CN</language>
     <lastBuildDate>Mon, 05 Mar 2018 11:01:39 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/cookiecutter/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://danigong.github.io/tags/cookiecutter/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>The best django project structure</title>
-      <link>http://danigong.github.io/post/The-best-django-project-structure/</link>
+      <link>http://danigong.github.io/post/the-best-django-project-structure/</link>
       <pubDate>Mon, 05 Mar 2018 11:01:39 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/The-best-django-project-structure/</guid>
-      <description>
-
-&lt;h1 id=&#34;项目目录结构:dfe114c833a99a64f54e2cfb47175ca9&#34;&gt;项目目录结构&lt;/h1&gt;
-
-&lt;p&gt;在上一节里我们使用Django的django-admin startproject命令来创建了一个Helloworld的项目，在没有写任何代码的情况下成功运行了这个项目。虽然目前来说这个项目没有任何功能，但是这是我们一个成功的开始，不是吗？&lt;/p&gt;
-
-&lt;h3 id=&#34;helloworld项目的目录结构:dfe114c833a99a64f54e2cfb47175ca9&#34;&gt;Helloworld项目的目录结构&lt;/h3&gt;
-
-&lt;p&gt;我们来看一下这个项目的目录结构&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://zhiwehu.gitbooks.io/build-web-application-with-python-django/content/assets/Helloworld project directory structure.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最外层的Helloworld目录，是项目的根目录，在这个目录下我们看到有2个文件，一个是&lt;code&gt;db.sqlite3&lt;/code&gt;是数据库文件，另一个是&lt;code&gt;manage.py&lt;/code&gt;是Django提供的一个管理工具入口，比如上一节中我们使用python manage.py runserver来运行这个web app。
-根目录下面的Helloworld目录，是项目的配置目录，里面放了Django的一些配置信息，包括一个&lt;code&gt;settings.py&lt;/code&gt;，一个根&lt;code&gt;urls.py&lt;/code&gt;和&lt;code&gt;wsgi.py&lt;/code&gt;，这些都是Django运行所需要的配置性文件。
-还有一个firstapp是我使用&lt;code&gt;django-admin startapp firstapp&lt;/code&gt;这个命令创建的一个app，这相当是这个项目的一个功能性的app，Django使用app来划分模块。
-这个项目目录结构好吗？
-虽然我们使用了Django提供的django-admin创建的项目目录结构看起来很简单明了，但是我们应该知道，这只是供学习使用的，在真正的项目里，估计就没有人这样使用了。一个真实的产品项目，我们需要有更多的配置信息、文档、测试等，以及代码仓库配置等。而这个简单的目录结构显然是达不到这样的要求的。&lt;/p&gt;
-
-&lt;h3 id=&#34;推荐的项目目录结构:dfe114c833a99a64f54e2cfb47175ca9&#34;&gt;推荐的项目目录结构&lt;/h3&gt;
-
-&lt;p&gt;在本节里我重点是要介绍一个我认为是最佳的Django项目目录结构，当然所谓的『最佳』因人而异，我同时也会提供其他的一些选项供参考。接下来看一下这个&lt;strong&gt;目录结构&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://zhiwehu.gitbooks.io/build-web-application-with-python-django/content/assets/The best django project directory structure.png&#34; alt=&#34;tool-manager&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;接下来我详细说明一下这个目录结构:dfe114c833a99a64f54e2cfb47175ca9&#34;&gt;接下来我详细说明一下这个目录结构&lt;/h3&gt;
-
-&lt;p&gt;最外层的project是项目根目录，这个目录除了之前的manage.py这个文件外，还有更多的配置文件，和其他子目录。这些配置文件后面会详细介绍。
-config目录是配置目录，里面除了包含了根&lt;code&gt;urls.py&lt;/code&gt;文件和&lt;code&gt;wsgi.py&lt;/code&gt;文件，我们将原来的&lt;code&gt;settings.py&lt;/code&gt;扩展成为了一个Python package，因为我们在不同的环境中将使用不同的配置文件，在本地电脑上使用&lt;code&gt;settings.local.py&lt;/code&gt;，而在生产环境中使用&lt;code&gt;settings.production.py&lt;/code&gt;。
-docs是文档目录
-project目录是项目的apps目录，我们将这个web的apps都放在这个目录下面，比如这里已经有一个users的app，同时我们也看到有static和templates这2个目录，这2个并不是app，而是其他apps需要使用的静态文件目录和模板目录。
-requirements目录是放置依赖包的索引文件，我们知道Python使用pip安装Python软件包，所以需要些些Python软件包我们就在一个txt文件里列出这些软件包的名字和版本号。注意我们同样是根据不同的环境有不同的软件包索引，开发环境和生产环境所依赖的Python软件包是不一样的，所以我们也分开在不同的文件中索引。
-utility目录放的是一些项目的工具shell，比如运行这个项目操作系统需要安装的一些底层库和软件包等，这些一般是在部署时使用。
-怎么创建这个目录结构？
-每次开始一个新的Django项目，我们就需要初始化这个项目，创建这个项目的目录结构，然后进行开发。我们知道使用django-admin命令行工具是可以做到这一点的，我们用它来创建了Helloworld项目。而上面这个项目目录结构是怎么创建的呢？接下来我将介绍另一个非常实用的工具&lt;code&gt;cookiecutter&lt;/code&gt;&lt;/p&gt;
-</description>
+      <guid>http://danigong.github.io/post/the-best-django-project-structure/</guid>
+      <description>项目目录结构 在上一节里我们使用Django的django-admin startproject命令来创建了一个Helloworld的项目，在没</description>
     </item>
     
     <item>
@@ -59,88 +26,7 @@ utility目录放的是一些项目的工具shell，比如运行这个项目操�
       <pubDate>Mon, 05 Mar 2018 10:59:16 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/cookiecutter-for-django/</guid>
-      <description>&lt;p&gt;cookiecutter
-这是一个专门用于创建项目目录结构的工具，同时也是使用Python来实现的，它可以使用一个模板来创建一个项目，比如上面我介绍的项目目录结构实际上是一个模板，也是github开源的，链接：&lt;a href=&#34;https://github.com/pydanny/cookiecutter-django&#34;&gt;https://github.com/pydanny/cookiecutter-django&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;安装cookiecutter
-    &lt;code&gt;pip install cookiecutter&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;创建项目
-    &lt;code&gt;cookiecutter https://github.com/pydanny/cookiecutter-django&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;运行上面第二个命令的时候，会问你一大堆问题，这些问题中下示例（附简短讲解）&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Cloning&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;into&lt;/span&gt; &lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;cookiecutter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;django&lt;/span&gt;&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;...&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;remote:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Counting&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;objects:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;550&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;done.&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;remote:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Compressing&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;objects:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;310&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;310&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;done.&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;remote:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Total&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;550&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(delta&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;283&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;reused&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;479&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(delta&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;222&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Receiving&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;objects:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;550&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;550&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;127.66&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;KiB&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;KiB&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;s,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;done.&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Resolving&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;deltas:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;283&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;283&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;done.&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 问你项目叫什么名字，这里可以大小写，带空格&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;project_name&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[Project&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Name]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Reddit&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Clone&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 问你项目的根目录名字，一般是小写没有空格，这个会生成一个目录&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;project_slug&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[reddit_clone]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;reddit&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 开发者名字&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;author_name&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[Daniel&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Roy&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Greenfeld]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Jeffrey&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Hu&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 开发者邮件&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;email&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[you@example.com]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;zhiwehu@gmail.com&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 项目简短介绍&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;description&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[A&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;short&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;description&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;of&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;the&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;project.]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;A&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;reddit&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;clone.&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 项目域名&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;domain_name&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[example.com]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;lettoo.com&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 项目版本号&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;version&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0.1.0&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0.0.1&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 时区，就选默认的UTC&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;timezone&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[UTC]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; 
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用whitenoise，whitenoise是一个Python实现的静态文件host解决方案，建议初学者选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_whitenoise&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[y]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用celery，[celery](http://www.celeryproject.org/)是一个Python实现的分布式任务队列解决方案，一般用于后台job，建议初学者选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_celery&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[n]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; 
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用mailhog，mailhog是一个用于本地开发环境测试email的，建议初始选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_mailhog&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[n]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用sentry，sentry是一个云端日志跟踪和分析平台，Python实现，同时也是开源平台，你可以自己搭建自己的sentry云日志跟踪分析平台。建议初始选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_sentry_for_error_reporting&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[y]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用opbeat，opbeat是一个云端性能跟踪和分析工具，有一部分错误分析功能，建议初始选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_opbeat&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[n]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用pycharm，pycharm是一个IDE，由大名鼎鼎的jetbrains公司出品，其出品其他有名的IDE如Idea，Webstorm等，因为我是pycharm开发所以选Yes，如果你不使用这个IDE则选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_pycharm&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[n]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;y&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否是windows操作系统&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;windows&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[n]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用Python3&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_python3&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[y]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;y&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用docker，docker是一个app容器平台，建议初始选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_docker&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[y]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用heroku，heroku是一个PAAS云平台，用于部署web app，建议初始选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_heroku&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[n]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用compressor，compressor是一个压缩解决方案，建议初始选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_compressor&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[n]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 使用postgresql版本，这个项目建议本地开发环境和生产环境都使用Postgresql数据库，Postgresql是一个开源数据库，也是Django官方推荐使用的数据库，默认选择1为当前最新的版本。&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Select&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;postgresql_version:&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;9.5&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;9.4&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;9.3&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;9.2&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Choose&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 选择哪一种JavaScript任务管理器，这里建议初始选None，我们不希望在这里过多的涉及前端的内容。&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Select&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;js_task_runner:&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Gulp&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Grunt&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Webpack&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;None&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Choose&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 是否使用let&amp;#39;s encrypt，let&amp;#39;s encrypt是一个免费生成SSL HTTPS证书的服务，让你的网站免费支持https安全协议，默认选No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_lets_encrypt&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[n]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;span style=&#34;color: #75715e&#34;&gt;# 开源license，默认选1，如果你是私有项目，选5&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Select&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;open_source_license:&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MIT&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;BSD&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;GPLv3&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Apache&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Software&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;License&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;2.0&lt;/span&gt;
-&lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Not&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;open&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;source&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;Choose&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;5&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;是否使用&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;AWS&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Elastic&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Beanstalk&lt;/span&gt;&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;，默认选&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;No&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;use_elasticbeanstalk_experimental:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;n&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+      <description>cookiecutter 这是一个专门用于创建项目目录结构的工具，同时也是使用Python来实现的，它可以使用一个模板来创建一个项目，比如上面我介绍的项目目录结构实</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualenv on Pythonic🐶</title>
+    <link>http://danigong.github.io/tags/virtualenv/</link>
+    <description>Recent content in Virtualenv on Pythonic🐶</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 10 Jul 2016 12:43:13 +0800</lastBuildDate>
+    
+	<atom:link href="http://danigong.github.io/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configure Venv</title>
+      <link>http://danigong.github.io/post/configure_venv/</link>
+      <pubDate>Sun, 10 Jul 2016 12:43:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/configure_venv/</guid>
+      <description>安装virtualenv pip install virtualenv 创建虚拟环境 virtualenv venv venv是新创建的虚拟环境的名称。 同时会创建一个与虚拟环境名称相同的文件夹venv, 里面存储了</description>
+    </item>
+    
+  </channel>
+</rss>

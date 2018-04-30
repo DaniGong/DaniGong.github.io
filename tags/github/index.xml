@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github on Hugo Blog</title>
+    <title>Github on Pythonic🐶</title>
     <link>http://danigong.github.io/tags/github/</link>
-    <description>Recent content in Github on Hugo Blog</description>
+    <description>Recent content in Github on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Sat, 28 May 2016 20:27:28 +0800</lastBuildDate>
-    <atom:link href="http://danigong.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 07 Mar 2018 17:09:40 +0800</lastBuildDate>
+    
+	<atom:link href="http://danigong.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to create a github.io repo</title>
+      <link>http://danigong.github.io/post/how_to_create_a_github_io_repo/</link>
+      <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/how_to_create_a_github_io_repo/</guid>
+      <description>开通自己的github.io repo github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可</description>
+    </item>
     
     <item>
       <title>Deploy Hugo Site on GitHub Pages</title>
@@ -16,21 +26,7 @@
       <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create a Repository: danigong.github.io (replace danigong with your own github username)&lt;/li&gt;
-&lt;li&gt;Change directory to root directory of the site.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$ hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ cd &lt;/span&gt;public
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ &lt;/span&gt;git init
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ &lt;/span&gt;git remote add origin https://github.com/danigong/danigong.github.io.git
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ &lt;/span&gt;git add -A
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ &lt;/span&gt;git commit -m &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;first commit&amp;quot;&lt;/span&gt;
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ &lt;/span&gt;git push -u origin master
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+      <description> 1. Create a Repository: danigong.github.io (replace danigong with your own github username) 2. Change directory to root directory of the site. 3. hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;   $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master   </description>
     </item>
     
     <item>
@@ -39,14 +35,9 @@
       <pubDate>Sat, 11 Apr 2015 21:35:05 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/github_push_stuck/</guid>
-      <description>
-
-&lt;h3 id=&#34;to-solve-the-github-push-stucking-problem:93da96cc9cf3d51ce119af504ce37230&#34;&gt;To solve the github push stucking problem:&lt;/h3&gt;
-
-&lt;p&gt;Try to use the command as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;git config --global http.postBuffer 524288000
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+      <description>To solve the github push stucking problem:
+Try to use the command as follows:
+git config --global http.postBuffer 524288000  </description>
     </item>
     
   </channel>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Macos on Pythonic🐶</title>
-    <link>http://danigong.github.io/tags/macos/</link>
-    <description>Recent content in Macos on Pythonic🐶</description>
+    <title>Linux on Pythonic🐶</title>
+    <link>http://danigong.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 08 Mar 2018 14:37:42 +0800</lastBuildDate>
     
-	<atom:link href="http://danigong.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://danigong.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -30,13 +30,15 @@
     </item>
     
     <item>
-      <title>Open Sublime with Terminal</title>
-      <link>http://danigong.github.io/post/mac_open_sublime/</link>
-      <pubDate>Mon, 27 May 2013 23:12:14 +0800</pubDate>
+      <title>How to update hugo blog</title>
+      <link>http://danigong.github.io/post/how_to_update_hugo_blog/</link>
+      <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
-      <description>A simple way to open sublime with terminal:
- Open terminal. ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl Use subl command to edit a file.  </description>
+      <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
+      <description>Quick Start
+ 1. Open iTerm2 2. control+command+h to open the tab with hugo profile 3. addblog to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it. 4. Note: Blog Title should not contain space and strip out menu = &amp;quot;main&amp;quot; in the template. 5. deployblog to deploy newest update to github.  Detail
+create blog shell script:
+echo &amp;quot;Blog Title: &amp;quot; read Title cd /Users/DanielGong/HugoSite/testsite hugo new post/$Title.</description>
     </item>
     
   </channel>
