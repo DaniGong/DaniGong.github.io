@@ -6,10 +6,19 @@
     <description>Recent content in Python on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 12 Mar 2018 15:29:43 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Apr 2018 20:09:35 +0800</lastBuildDate>
     
 	<atom:link href="http://danigong.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PEP8 English Version</title>
+      <link>http://danigong.github.io/post/pep8_english_version/</link>
+      <pubDate>Mon, 30 Apr 2018 20:09:35 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/pep8_english_version/</guid>
+      <description>Visit https://www.python.org/dev/peps/pep-0008/</description>
+    </item>
     
     <item>
       <title>Fluent Python Reading Notes</title>
