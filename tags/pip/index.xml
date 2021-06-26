@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pip on Pythonic🐶</title>
+    <link>http://danigong.github.io/tags/pip/</link>
+    <description>Recent content in Pip on Pythonic🐶</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 26 Apr 2018 16:29:42 +0800</lastBuildDate>
+    
+	<atom:link href="http://danigong.github.io/tags/pip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用pip安装包提示TLS证书错误解决办法</title>
+      <link>http://danigong.github.io/post/pip_install_tls_error/</link>
+      <pubDate>Thu, 26 Apr 2018 16:29:42 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/pip_install_tls_error/</guid>
+      <description>Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping 出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pip可</description>
+    </item>
+    
+  </channel>
+</rss>
