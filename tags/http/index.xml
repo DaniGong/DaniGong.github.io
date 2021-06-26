@@ -6,7 +6,7 @@
     <description>Recent content in Http on Pythonic🐶</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 13 Mar 2018 16:17:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 13 Mar 2019 16:17:16 +0800</lastBuildDate>
     
 	<atom:link href="http://danigong.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>A Comparison between HTTP1 and HTTP2</title>
       <link>http://danigong.github.io/post/a_comparison_between_http1_and_http2/</link>
-      <pubDate>Tue, 13 Mar 2018 16:17:16 +0800</pubDate>
+      <pubDate>Wed, 13 Mar 2019 16:17:16 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/a_comparison_between_http1_and_http2/</guid>
       <description>HTTP1.1 HTTP 2.0主要区别 多路复用 HTTP2.0使用了多路复用的技术，做到同一个连接并发处理多个请求，而且并发请求的数量比HTTP1.1大了好几个数</description>
