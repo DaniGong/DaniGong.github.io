@@ -1,39 +1,11 @@
-
-
-
-ol,ul{list-style:none}
-
-.clearfix{zoom:1}
-.clearfix:before,.clearfix:after{content:"";display:table}
-.clearfix:after{clear:both}
-@media only screen and (min-width: 1024px){#asidepart{position:relative;float:left;width:18%;margin:2em 0 0 3%}
-}.asidetitle{font-size:1.1em;color:#2ca6cb;padding:0 0 .3125em 0;border-bottom:.1875em solid #ccc;}
-.asidetitle a{color:#2ca6cb;}
-.asidetitle a:hover{color:black;-webkit-transition:color 0.5s;-moz-transition:color 0.5s;-o-transition:color 0.5s;-ms-transition:color 0.5s;transition:color 0.5s}
-
-.tagslist{margin:1em 0 0;}
-@media only screen and (min-width: 768px){.tagslist{width:45%;float:left;margin:0 5% 0 0}
-}@media only screen and (min-width: 1024px){.tagslist{width:100%;float:none;margin:1em 0 0}
-}.tagslist ul{padding:.5em 0}
-.tagslist ul li{list-style: none;}
-.tagslist ul li{float:left;}
-.tagslist ul li a{display:block;margin:.3125em;padding:.125em .3125em;background:#dbdbdb57;border-radius: 5px;
-}
-.tagslist ul li a:hover{color:black;background:#2ca6cb}
-
-@media only screen and (min-width: 768px){.archiveslist{width:45%;float:left;margin:0 5% 0 0}
-}@media only screen and (min-width: 1024px){.archiveslist{width:100%;float:none;margin:1em 0 0}
-}.archiveslist li{font-size:.8em;line-height:2em;}
-.archiveslist li a{padding:.5em;}
-.archiveslist li a:hover{color:black;-webkit-transition:color 0.25s;-moz-transition:color 0.25s;-o-transition:color 0.25s;-ms-transition:color 0.25s;transition:color 0.25s}
-.archiveslist .archive-list-count:before{content:"("}
-.archiveslist .archive-list-count:after{content:")"}
-.archive-list{padding:.5em 0}
-.archive-float ul{padding:0}
-.archive-float li{float:left;margin:.3em;}
-@media only screen and (min-width: 1024px){.archive-float li{float:none}
+body { 
+	visibility: hidden 
 }
 
+.navmargin {
+	margin-top: 2em;
+}
 
-.social-font a[title="weibo"]::before,.social-font a[title="twitter"]::before,.social-font a[title="github"]::before,.social-font a[title="facebook"]::before,.social-font a[title="linkedin"]::before{font-family:"FontAwesome";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-
+h2 {
+    white-space: normal;
+}
