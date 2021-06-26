@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>Development</title>
-      <link>http://danigong.github.io/tags/development/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://danigong.github.io/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Django</title>
       <link>http://danigong.github.io/tags/django/</link>
       <pubDate>Mon, 05 Mar 2018 11:01:39 +0800</pubDate>
@@ -62,15 +53,6 @@
       <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
       
       <guid>http://danigong.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>http://danigong.github.io/tags/golang/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://danigong.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
