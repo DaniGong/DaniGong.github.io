@@ -143,7 +143,7 @@
   </url>
   
   <url>
-    <loc>http://danigong.github.io/post/a_comparison_between_http1_and_http2/</loc>
+    <loc>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</loc>
   </url>
   
   <url>
@@ -166,6 +166,12 @@
   <url>
     <loc>http://danigong.github.io/tags/django/</loc>
     <lastmod>2018-03-05T11:01:39+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danigong.github.io/</loc>
+    <lastmod>2021-06-26T16:55:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -279,12 +285,6 @@
   
   <url>
     <loc>http://danigong.github.io/tags/python/</loc>
-    <lastmod>2021-06-26T16:55:24+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://danigong.github.io/</loc>
     <lastmod>2021-06-26T16:55:24+08:00</lastmod>
     <priority>0</priority>
   </url>
