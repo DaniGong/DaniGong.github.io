@@ -6,7 +6,16 @@
     <description>Recent content in Tags on G eek S&#39;s notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 26 Jun 2021 16:55:24 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Jun 2021 22:55:05 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo</title>
+      <link>http://danigong.github.io/tags/hugo/</link>
+      <pubDate>Sat, 26 Jun 2021 22:55:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>python</title>
       <link>http://danigong.github.io/tags/python/</link>
@@ -130,15 +139,6 @@
       <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
       
       <guid>http://danigong.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>http://danigong.github.io/tags/hugo/</link>
-      <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
-      
-      <guid>http://danigong.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

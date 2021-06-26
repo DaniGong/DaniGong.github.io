@@ -6,7 +6,17 @@
     <description>Recent content on G eek S&#39;s notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 26 Jun 2021 16:55:24 +0800</lastBuildDate><atom:link href="http://danigong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Jun 2021 22:55:05 +0800</lastBuildDate><atom:link href="http://danigong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>how_to_upgrade_hugo</title>
+      <link>http://danigong.github.io/post/how_to_upgrade_hugo/</link>
+      <pubDate>Sat, 26 Jun 2021 22:55:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/how_to_upgrade_hugo/</guid>
+      <description>Recommended Way Binary (Cross-platform) Download the appropriate version for your platform from Hugo Releases. Once downloaded, the binary can be run from anywhere. You don’t need to install it into a global location. This works well for shared hosts and other systems where you don’t have a privileged account.
+Ideally, you should install it somewhere in your PATH for easy use. /usr/local/bin is the most probable location. </description>
+    </item>
+    
     <item>
       <title>type, ojbect and class</title>
       <link>http://danigong.github.io/post/type_object_and_class/</link>
