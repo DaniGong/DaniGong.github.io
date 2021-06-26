@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 
-  <title> Pip &middot; G eek S </title>
+  <title> 使用pip安装包提示TLS证书错误解决办法 &middot; G eek S </title>
 
   
   <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
@@ -23,9 +23,8 @@
 
   </head>
 
-<body class="theme-base-0d">
-
-<div class="sidebar">
+	<body class="theme-base-0d">
+		<div class="sidebar">
 
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
@@ -61,14 +60,27 @@
 </div>
 
 
-  <div class="content container">
-    <ul class="posts" style="word-wrap: break-word;">
-        
-        <li>
-          <span><a href="http://danigong.github.io/post/pip_install_tls_error_update/">使用pip安装包提示TLS证书错误解决办法</a> <time class="pull-right post-list">Thu, Apr 26, 2018</time></span>
-        </li>
-        
-    </ul>
-  </div>
-</body>
-</html>
+		<div class="content container">
+			<div class="post" style="word-wrap: break-word;">
+			 	<h1>使用pip安装包提示TLS证书错误解决办法</h1>
+			  <span class="post-date">Thu, Apr 26, 2018</span>
+			      <p>Updated
+* <code>Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping</code>
+出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pip可以解决这个问题。但是如果使用传统的<code>python -m pip install --upgrade pip</code>的方式，还是会出现那个问题。这是一个鸡和蛋的问题，你因为TLS证书的问题需要去升级pip，升pip的时候又因为TLS证书的原因不能下载最新版本的pip。这时候就没有办法了，只能手动的去升级pip。</p>
+
+<ul>
+<li>mac或者linux操作系统：在终端下执行命令：<code>curl https://bootstrap.pypa.io/get-pip.py | python</code>。</li>
+<li>windows操作系统：从<a href="https://bootstrap.pypa.io/get-pip.py下载get-pip.py文件，然后使用python运行这个文件`python">https://bootstrap.pypa.io/get-pip.py下载get-pip.py文件，然后使用python运行这个文件`python</a> get-pip.py`即可。</li>
+</ul>
+
+			</div>
+
+			
+		</div>
+		
+  </body>
+  
+
+
+  </html>
+

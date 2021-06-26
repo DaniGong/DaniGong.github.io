@@ -13,11 +13,11 @@
     
     <item>
       <title>使用pip安装包提示TLS证书错误解决办法</title>
-      <link>http://danigong.github.io/post/pip_install_tls_error/</link>
+      <link>http://danigong.github.io/post/pip_install_tls_error_update/</link>
       <pubDate>Thu, 26 Apr 2018 16:29:42 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/pip_install_tls_error/</guid>
-      <description>Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping 出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pip可</description>
+      <guid>http://danigong.github.io/post/pip_install_tls_error_update/</guid>
+      <description>Updated * Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping 出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pi</description>
     </item>
     
   </channel>
