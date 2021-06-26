@@ -13,10 +13,10 @@
     
     <item>
       <title>The best django project structure</title>
-      <link>http://danigong.github.io/post/the-best-django-project-structure/</link>
+      <link>http://danigong.github.io/post/the_best_django_project_structure/</link>
       <pubDate>Mon, 05 Mar 2018 11:01:39 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/the-best-django-project-structure/</guid>
+      <guid>http://danigong.github.io/post/the_best_django_project_structure/</guid>
       <description>项目目录结构 在上一节里我们使用Django的django-admin startproject命令来创建了一个Helloworld的项目，在没</description>
     </item>
     

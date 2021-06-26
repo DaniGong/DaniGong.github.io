@@ -31,10 +31,10 @@
     
     <item>
       <title>PEP8 English Version</title>
-      <link>http://danigong.github.io/post/pep8_english_version/</link>
+      <link>http://danigong.github.io/post/pep8_eng_version/</link>
       <pubDate>Mon, 30 Apr 2018 20:09:35 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/pep8_english_version/</guid>
+      <guid>http://danigong.github.io/post/pep8_eng_version/</guid>
       <description>Visit https://www.python.org/dev/peps/pep-0008/</description>
     </item>
     
@@ -125,10 +125,10 @@ Visit: https://www.zybuluo.com/mdeditor</description>
     
     <item>
       <title>The best django project structure</title>
-      <link>http://danigong.github.io/post/the-best-django-project-structure/</link>
+      <link>http://danigong.github.io/post/the_best_django_project_structure/</link>
       <pubDate>Mon, 05 Mar 2018 11:01:39 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/the-best-django-project-structure/</guid>
+      <guid>http://danigong.github.io/post/the_best_django_project_structure/</guid>
       <description>项目目录结构 在上一节里我们使用Django的django-admin startproject命令来创建了一个Helloworld的项目，在没</description>
     </item>
     
