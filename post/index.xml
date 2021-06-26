@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>A Comparison between HTTP1 and HTTP2</title>
+      <link>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</link>
+      <pubDate>Wed, 13 Mar 2019 16:17:16 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</guid>
+      <description>HTTP1.1 HTTP 2.0主要区别 多路复用 HTTP2.0使用了多路复用的技术，做到同一个连接并发处理多个请求，而且并发请求的数量比HTTP1.1大了好几个数</description>
+    </item>
+    
+    <item>
       <title>PEP8 English Version</title>
       <link>http://danigong.github.io/post/pep8_eng_version_update/</link>
       <pubDate>Mon, 30 Apr 2018 20:09:35 +0800</pubDate>
@@ -252,15 +261,6 @@ git config --global http.postBuffer 524288000  </description>
       <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
       <description>A simple way to open sublime with terminal:
  Open terminal. ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl Use subl command to edit a file.  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</guid>
-      <description>+ Tags = [&amp;ldquo;http&amp;rdquo;] date = &amp;ldquo;2019-03-13T16:17:16+08:00&amp;rdquo; title = &amp;ldquo;A Comparison between HTTP1 and HTTP2&amp;rdquo; draft: false +++ HTTP1.1 HTTP 2.0主要区别 多路复用 HTTP2.0使用了多路复用的技术，做到同一个连接并发处理多个请求，而且并发请</description>
     </item>
     
   </channel>
