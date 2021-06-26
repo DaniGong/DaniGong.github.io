@@ -13,10 +13,10 @@
     
     <item>
       <title>Why nGrinder?</title>
-      <link>http://danigong.github.io/post/why_ngrinder/</link>
+      <link>http://danigong.github.io/post/why_ngrinder_update/</link>
       <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
       
-      <guid>http://danigong.github.io/post/why_ngrinder/</guid>
+      <guid>http://danigong.github.io/post/why_ngrinder_update/</guid>
       <description>nGrinder与其他工具比较&amp;ndash; JMeter 基于UI操作，容易上手，但是不具备编程能力。其次JMeter基于线程模拟数千用户几乎不可能。 Tsung</description>
     </item>
     
