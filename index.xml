@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>G eek S</title>
@@ -6,11 +6,7 @@
     <description>Recent content on G eek S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 26 Jun 2021 16:55:24 +0800</lastBuildDate>
-    
-	<atom:link href="http://danigong.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 26 Jun 2021 16:55:24 +0800</lastBuildDate><atom:link href="http://danigong.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>type, ojbect and class</title>
       <link>http://danigong.github.io/post/type_object_and_class/</link>
@@ -44,7 +40,7 @@
       <pubDate>Thu, 26 Apr 2018 16:29:42 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/pip_install_tls_error_update/</guid>
-      <description>Updated * Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping 出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pi</description>
+      <description>Updated Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping 出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pip</description>
     </item>
     
     <item>
@@ -117,9 +113,7 @@
       
       <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
       <description>Quick Start
- 1. Open iTerm2 2. control+command+h to open the tab with hugo profile 3. addblog to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it. 4. Note: Blog Title should not contain space and strip out menu = &amp;quot;main&amp;quot; in the template. 5. deployblog to deploy newest update to github.  Detail
-create blog shell script:
-echo &amp;quot;Blog Title: &amp;quot; read Title cd /Users/DanielGong/HugoSite/testsite hugo new post/$Title.</description>
+   Open iTerm2    control+command+h to open the tab with hugo profile    addblog to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.    Note: Blog Title should not contain space and strip out menu = &amp;quot;main&amp;quot; in the template.    deployblog to deploy newest update to github.</description>
     </item>
     
     <item>
@@ -203,7 +197,7 @@ the web client &amp;lt;-&amp;gt; the web server &amp;lt;-&amp;gt; the socket &am
       <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
-      <description> 1. Create a Repository: danigong.github.io (replace danigong with your own github username) 2. Change directory to root directory of the site. 3. hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;   $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master   </description>
+      <description>    Create a Repository: danigong.github.io (replace danigong with your own github username)    Change directory to root directory of the site.    hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;      $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master </description>
     </item>
     
     <item>
@@ -212,7 +206,7 @@ the web client &amp;lt;-&amp;gt; the web server &amp;lt;-&amp;gt; the socket &am
       <pubDate>Sat, 28 May 2016 20:14:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/mongodb_setup/</guid>
-      <description> brew update brew install mongodb setup python driver for mongoldb:  pip install pymongo   </description>
+      <description>  brew update brew install mongodb setup python driver for mongoldb:  pip install pymongo </description>
     </item>
     
     <item>
@@ -221,7 +215,7 @@ the web client &amp;lt;-&amp;gt; the web server &amp;lt;-&amp;gt; the socket &am
       <pubDate>Sat, 28 May 2016 20:09:35 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/pyramid_dev_env_set/</guid>
-      <description> Download Setuptool: http://peak.telecommunity.com/dist/ez_setup.py Install Setuptool: sudo python ez_setup.py Install virtulenv: sudo easy_install virtualenv Install Pyramid: virtualenv —no-site-packages env cd env bin/easy_install pyramid Will contain pyramid, template(Chameleon、Mako), PasteDeploy  </description>
+      <description>  Download Setuptool: http://peak.telecommunity.com/dist/ez_setup.py Install Setuptool: sudo python ez_setup.py Install virtulenv: sudo easy_install virtualenv Install Pyramid: virtualenv —no-site-packages env cd env bin/easy_install pyramid Will contain pyramid, template(Chameleon、Mako), PasteDeploy  </description>
     </item>
     
     <item>
@@ -259,7 +253,7 @@ the web client &amp;lt;-&amp;gt; the web server &amp;lt;-&amp;gt; the socket &am
       <guid>http://danigong.github.io/post/github_push_stuck/</guid>
       <description>To solve the github push stucking problem:
 Try to use the command as follows:
-git config --global http.postBuffer 524288000  </description>
+git config --global http.postBuffer 524288000 </description>
     </item>
     
     <item>
@@ -268,7 +262,7 @@ git config --global http.postBuffer 524288000  </description>
       <pubDate>Mon, 27 May 2013 23:12:14 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
-      <description>A simple way to open sublime with terminal:
+      <description> A simple way to open sublime with terminal:
  Open terminal. ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl Use subl command to edit a file.  </description>
     </item>
     

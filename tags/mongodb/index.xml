@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mongodb on G eek S</title>
+    <title>mongodb on G eek S</title>
     <link>http://danigong.github.io/tags/mongodb/</link>
-    <description>Recent content in Mongodb on G eek S</description>
+    <description>Recent content in mongodb on G eek S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 28 May 2016 20:14:28 +0800</lastBuildDate>
-    
-	<atom:link href="http://danigong.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 28 May 2016 20:14:28 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mongodb Setup</title>
       <link>http://danigong.github.io/post/mongodb_setup/</link>
       <pubDate>Sat, 28 May 2016 20:14:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/mongodb_setup/</guid>
-      <description> brew update brew install mongodb setup python driver for mongoldb:  pip install pymongo   </description>
+      <description>  brew update brew install mongodb setup python driver for mongoldb:  pip install pymongo </description>
     </item>
     
   </channel>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Centos on G eek S</title>
+    <title>centos on G eek S</title>
     <link>http://danigong.github.io/tags/centos/</link>
-    <description>Recent content in Centos on G eek S</description>
+    <description>Recent content in centos on G eek S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 24 Dec 2017 20:50:30 +0800</lastBuildDate>
-    
-	<atom:link href="http://danigong.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Dec 2017 20:50:30 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Centos&#43;nginx&#43;uwsgi&#43;django</title>
       <link>http://danigong.github.io/post/django_uwsgi_nginx/</link>

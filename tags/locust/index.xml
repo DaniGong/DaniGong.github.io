@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Locust on G eek S</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Locust on G eek S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 09 Mar 2018 16:36:55 +0800</lastBuildDate>
-    
-	<atom:link href="http://danigong.github.io/tags/locust/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 09 Mar 2018 16:36:55 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/locust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why nGrinder?</title>
       <link>http://danigong.github.io/post/why_ngrinder_update/</link>

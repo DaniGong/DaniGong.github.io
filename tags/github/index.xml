@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github on G eek S</title>
+    <title>github on G eek S</title>
     <link>http://danigong.github.io/tags/github/</link>
-    <description>Recent content in Github on G eek S</description>
+    <description>Recent content in github on G eek S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Mar 2018 17:09:40 +0800</lastBuildDate>
-    
-	<atom:link href="http://danigong.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 07 Mar 2018 17:09:40 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to create a github.io repo</title>
       <link>http://danigong.github.io/post/how_to_create_a_github_io_repo/</link>
@@ -26,7 +22,7 @@
       <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
-      <description> 1. Create a Repository: danigong.github.io (replace danigong with your own github username) 2. Change directory to root directory of the site. 3. hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;   $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master   </description>
+      <description>    Create a Repository: danigong.github.io (replace danigong with your own github username)    Change directory to root directory of the site.    hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;      $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master </description>
     </item>
     
     <item>
@@ -37,7 +33,7 @@
       <guid>http://danigong.github.io/post/github_push_stuck/</guid>
       <description>To solve the github push stucking problem:
 Try to use the command as follows:
-git config --global http.postBuffer 524288000  </description>
+git config --global http.postBuffer 524288000 </description>
     </item>
     
   </channel>

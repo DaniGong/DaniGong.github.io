@@ -1,71 +1,52 @@
-	<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.40.1" />
+<meta charset="utf-8">
+<meta name="description" content="Be Pythonic">
+<meta name="generator" content="Hugo 0.84.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="G eek S">
+<title>Jmeter Thread Group - G eek S</title>
+</head>
+<body>
 
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-
-  <title> Jmeter Thread Group &middot; G eek S </title>
-
-  
-  <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://danigong.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://danigong.github.io/css/hyde.css">
-  <link rel="stylesheet" href="http://danigong.github.io/css/style.css"> 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
-
-  </head>
-
-	<body class="theme-base-0d">
-		<div class="sidebar">
-
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="http://danigong.github.io/"><h1 style="font-size:35px">G eek S</h1></a>
-      <p class="lead">
-       Be Pythonic 
-      </p>
+<header>
+  <div class="container clearfix">
+    <a class="path" href="http://danigong.github.io/">[G eek S]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
     </div>
+  </div>
+</header>
 
-    <ul class="sidebar-nav">
-      <img src="http://danigong.github.io/img/author.png"></img>
-      <li><a href="/">Home</a> </li>
-      
-        <li><a href="/about"> About </a></li>
-      
-        <li><a href="/fp_reading_notes"> FP Note </a></li>
-      
-    </ul>
-    <div class="social-font clearfix">
-      GS's&nbsp;
-    
-    <a href="http://weibo.com/GS" target="_blank" title="weibo">Weibo</a>
-    
-    
-    
-    <a href="https://github.com/DaniGong" target="_blank" title="github">Github</a>
-    
-    
-    
-  </div>  
-</div>
+<div class="container">
+
+
+<main role="main" class="article">
   
-</div>
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2018-03-11">March 11, 2018</time></span>
 
 
-		<div class="content container">
-			<div class="post" style="word-wrap: break-word;">
-			 	<h1>Jmeter Thread Group</h1>
-			  <span class="post-date">Sun, Mar 11, 2018</span>
-			      <p><strong>1、Action to be take after a Sampler error</strong></p>
 
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/jmeter">Jmeter</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">Jmeter Thread Group</h1>
+  <section class="body" itemprop="articleBody">
+    <p><strong>1、Action to be take after a Sampler error</strong></p>
 <ul>
 <li><code>Continue</code>：忽略错误，继续执行操作</li>
 <li><code>Start Next Thread Loop</code>：忽略错误，线程当前循环终止，执行下一个循环</li>
@@ -73,9 +54,7 @@
 <li><code>Stop Test</code>：当前执行的采样器结束后，停止整个测试计划</li>
 <li><code>Stop Test Now</code>：立即停止整个测试计划</li>
 </ul>
-
 <p><strong>2、Thread Properties</strong></p>
-
 <ul>
 <li><code>Number of Threads(users)</code>：当前线程数量，可以简单的理解为用户数量。</li>
 <li><code>Ramp-up Period (in seconds)</code>：达到上面指定线程数所花费的时间，单位为秒。举个栗子：假设线程数为100个，花费时间20s，那么每秒启动的线程数 = 线程数/时间，即100/20 = 5。换句话说，就是1秒启动5个线程。</li>
@@ -83,22 +62,25 @@
 <li><code>Delay Thread creation until needed</code>：当线程需要执行的时候，才会被创建。如果不勾选此选项，所有线程在开始时就全部被创建。</li>
 <li><code>Scheduler</code>：勾选此选项，才可修改下面的调度器配置</li>
 </ul>
-
 <p><strong>3、Scheduler Configuration</strong></p>
-
 <ul>
 <li><code>Duration(seconds)</code>：整个测试计划持续的时间。（优先于后面的结束时间选项)</li>
 <li><code>Startup delay(seconds)</code>：测试计划启动后，会被延迟启动，时间为选项填入的时间。（优先于后面的启动时间选项）</li>
 </ul>
 
-			</div>
+  </section>
+</article>
 
-			
-		</div>
-		
-  </body>
-  
+</main>
 
+</div>
 
-  </html>
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2021 G eek S - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
 

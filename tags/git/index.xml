@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on G eek S</title>
+    <title>git on G eek S</title>
     <link>http://danigong.github.io/tags/git/</link>
-    <description>Recent content in Git on G eek S</description>
+    <description>Recent content in git on G eek S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Mar 2018 17:09:40 +0800</lastBuildDate>
-    
-	<atom:link href="http://danigong.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 07 Mar 2018 17:09:40 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to create a github.io repo</title>
       <link>http://danigong.github.io/post/how_to_create_a_github_io_repo/</link>
@@ -27,9 +23,7 @@
       
       <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
       <description>Quick Start
- 1. Open iTerm2 2. control+command+h to open the tab with hugo profile 3. addblog to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it. 4. Note: Blog Title should not contain space and strip out menu = &amp;quot;main&amp;quot; in the template. 5. deployblog to deploy newest update to github.  Detail
-create blog shell script:
-echo &amp;quot;Blog Title: &amp;quot; read Title cd /Users/DanielGong/HugoSite/testsite hugo new post/$Title.</description>
+   Open iTerm2    control+command+h to open the tab with hugo profile    addblog to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.    Note: Blog Title should not contain space and strip out menu = &amp;quot;main&amp;quot; in the template.    deployblog to deploy newest update to github.</description>
     </item>
     
     <item>
@@ -38,7 +32,7 @@ echo &amp;quot;Blog Title: &amp;quot; read Title cd /Users/DanielGong/HugoSite/t
       <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
-      <description> 1. Create a Repository: danigong.github.io (replace danigong with your own github username) 2. Change directory to root directory of the site. 3. hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;   $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master   </description>
+      <description>    Create a Repository: danigong.github.io (replace danigong with your own github username)    Change directory to root directory of the site.    hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;      $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master </description>
     </item>
     
     <item>
@@ -49,7 +43,7 @@ echo &amp;quot;Blog Title: &amp;quot; read Title cd /Users/DanielGong/HugoSite/t
       <guid>http://danigong.github.io/post/github_push_stuck/</guid>
       <description>To solve the github push stucking problem:
 Try to use the command as follows:
-git config --global http.postBuffer 524288000  </description>
+git config --global http.postBuffer 524288000 </description>
     </item>
     
   </channel>

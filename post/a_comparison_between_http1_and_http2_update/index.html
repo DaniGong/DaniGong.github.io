@@ -1,100 +1,80 @@
-	<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.40.1" />
+<meta charset="utf-8">
+<meta name="description" content="Be Pythonic">
+<meta name="generator" content="Hugo 0.84.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="G eek S">
+<title>A Comparison between HTTP1 and HTTP2 - G eek S</title>
+</head>
+<body>
 
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-
-  <title> A Comparison between HTTP1 and HTTP2 &middot; G eek S </title>
-
-  
-  <link rel="stylesheet" href="http://danigong.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://danigong.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://danigong.github.io/css/hyde.css">
-  <link rel="stylesheet" href="http://danigong.github.io/css/style.css"> 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
-
-  </head>
-
-	<body class="theme-base-0d">
-		<div class="sidebar">
-
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="http://danigong.github.io/"><h1 style="font-size:35px">G eek S</h1></a>
-      <p class="lead">
-       Be Pythonic 
-      </p>
+<header>
+  <div class="container clearfix">
+    <a class="path" href="http://danigong.github.io/">[G eek S]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
     </div>
+  </div>
+</header>
 
-    <ul class="sidebar-nav">
-      <img src="http://danigong.github.io/img/author.png"></img>
-      <li><a href="/">Home</a> </li>
-      
-        <li><a href="/about"> About </a></li>
-      
-        <li><a href="/fp_reading_notes"> FP Note </a></li>
-      
-    </ul>
-    <div class="social-font clearfix">
-      GS's&nbsp;
-    
-    <a href="http://weibo.com/GS" target="_blank" title="weibo">Weibo</a>
-    
-    
-    
-    <a href="https://github.com/DaniGong" target="_blank" title="github">Github</a>
-    
-    
-    
-  </div>  
-</div>
+<div class="container">
+
+
+<main role="main" class="article">
   
-</div>
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2019-03-13">March 13, 2019</time></span>
 
 
-		<div class="content container">
-			<div class="post" style="word-wrap: break-word;">
-			 	<h1>A Comparison between HTTP1 and HTTP2</h1>
-			  <span class="post-date">Wed, Mar 13, 2019</span>
-			      <p><strong><code>HTTP1.1 HTTP 2.0</code>主要区别</strong></p>
 
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/http">http</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">A Comparison between HTTP1 and HTTP2</h1>
+  <section class="body" itemprop="articleBody">
+    <p><strong><code>HTTP1.1 HTTP 2.0</code>主要区别</strong></p>
 <p><strong>多路复用</strong></p>
-
 <blockquote>
 <p><code>HTTP2.0</code>使用了多路复用的技术，做到同一个连接并发处理多个请求，而且并发请求的数量比<code>HTTP1.1</code>大了好几个数量级。当然<code>HTTP1.1</code>也可以多建立几个TCP连接，来支持处理更多并发的请求，但是创建TCP连接本身也是有开销的。TCP连接有一个预热和保护的过程，先检查数据是否传送成功，一旦成功过，则慢慢加大传输速度。因此对应瞬时并发的连接，服务器的响应就会变慢。所以最好能使用一个建立好的连接，并且这个连接可以支持瞬时并发的请求。
 关于多路复用，可以参看<a href="http://blog.csdn.net/linsongbin1/article/details/54865371">学习NIO</a>。</p>
 </blockquote>
-
 <p><strong>数据压缩</strong></p>
-
 <blockquote>
 <p><code>HTTP1.1</code>不支持header数据的压缩，<code>HTTP2.0</code>使用HPACK算法对header的数据进行压缩，这样数据体积小了，在网络上传输就会更快。</p>
 </blockquote>
-
 <p><strong>服务器推送</strong></p>
-
 <blockquote>
 <p>意思是说，当我们对支持<code>HTTP2.0</code>的web server请求数据的时候，服务器会顺便把一些客户端需要的资源一起推送到客户端，免得客户端再次创建连接发送请求到服务器端获取。这种方式非常合适加载静态资源。服务器端推送的这些资源其实存在客户端的某处地方，客户端直接从本地加载这些资源就可以了，不用走网络，速度自然是快很多的。</p>
 </blockquote>
-
 <p>updated</p>
 
-			</div>
+  </section>
+</article>
 
-			
-		</div>
-		
-  </body>
-  
+</main>
 
+</div>
 
-  </html>
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2021 G eek S - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
 

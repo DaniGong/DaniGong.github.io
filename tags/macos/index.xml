@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Macos on G eek S</title>
+    <title>macos on G eek S</title>
     <link>http://danigong.github.io/tags/macos/</link>
-    <description>Recent content in Macos on G eek S</description>
+    <description>Recent content in macos on G eek S</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 08 Mar 2018 14:37:42 +0800</lastBuildDate>
-    
-	<atom:link href="http://danigong.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 08 Mar 2018 14:37:42 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Show all files in finder</title>
       <link>http://danigong.github.io/post/show_all_files_in_finder_update/</link>
@@ -35,7 +31,7 @@
       <pubDate>Mon, 27 May 2013 23:12:14 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
-      <description>A simple way to open sublime with terminal:
+      <description> A simple way to open sublime with terminal:
  Open terminal. ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl Use subl command to edit a file.  </description>
     </item>
     
