@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Fluent Python Reading Notes">
-<meta name="generator" content="Hugo 0.84.1" />
+<meta name="generator" content="Hugo 0.90.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
@@ -150,7 +150,7 @@
 <p><code>tuple</code>没有<code>__reversed__</code>方法，但可以<code>reversed(my_tuple)</code></p>
 <h3 id="15">15</h3>
 <p><strong>切片赋值</strong>：改变<code>list</code>中连续多个值</p>
-<pre><code>    l = list(range(10))
+<pre tabindex="0"><code>    l = list(range(10))
     l[2:5] = [20,30]
 </code></pre><p>-&gt; <code>l:[0,1,20,30,5,6,7,8,9]</code></p>
 <h3 id="16">16</h3>
@@ -316,7 +316,7 @@
 <blockquote>
 </blockquote>
 </blockquote>
-<pre><code>    ct = Counter('abracadabra')
+<pre tabindex="0"><code>    ct = Counter('abracadabra')
 </code></pre><blockquote>
 <blockquote>
 <ul>
@@ -328,7 +328,7 @@
 <blockquote>
 </blockquote>
 </blockquote>
-<pre><code>    Counter({'a':5,'b':2,'r':2,'c':1,'d':1})
+<pre tabindex="0"><code>    Counter({'a':5,'b':2,'r':2,'c':1,'d':1})
 </code></pre><blockquote>
 <ul>
 <li>
@@ -544,7 +544,7 @@
 <p>Example:</p>
 <blockquote>
 </blockquote>
-<pre><code>    triple = partial(mul,3)
+<pre tabindex="0"><code>    triple = partial(mul,3)
     triple(7) -&gt; 21
 </code></pre><h3 id="56">56</h3>
 <p><code>globals()</code> <strong>策略模式</strong></p>
@@ -574,7 +574,7 @@
 <p><strong>装饰器</strong> 在被装饰的函数定义之后立即运行。通常是在导入时（加载模块时）</p>
 <h3 id="61">61</h3>
 <p><strong>变量作用域规则</strong></p>
-<pre><code>    b = 6
+<pre tabindex="0"><code>    b = 6
     def f2(a):
         print(a)
         print(b)
