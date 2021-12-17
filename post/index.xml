@@ -6,7 +6,20 @@
     <description>Recent content in Posts on G eek S&#39;s notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 26 Jun 2021 22:55:05 +0800</lastBuildDate><atom:link href="http://danigong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Dec 2021 17:50:30 +0800</lastBuildDate><atom:link href="http://danigong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MobaXTerm</title>
+      <link>http://danigong.github.io/post/mobaxterm/</link>
+      <pubDate>Fri, 17 Dec 2021 17:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/mobaxterm/</guid>
+      <description>Download Link:
+https://mobaxterm.mobatek.net/download-home-edition.html
+Introduction:
+MobaXterm is your ultimate toolbox for remote computing. In a single Windows application, it provides loads of functions that are tailored for programmers, webmasters, IT administrators and pretty much all users who need to handle their remote jobs in a more simple fashion.
+MobaXterm provides all the important remote network tools (SSH, X11, RDP, VNC, FTP, MOSH, &amp;hellip;) and Unix commands (bash, ls, cat, sed, grep, awk, rsync, &amp;hellip;) to Windows desktop, in a single portable exe file which works out of the box.</description>
+    </item>
+    
     <item>
       <title>how to upgrade hugo</title>
       <link>http://danigong.github.io/post/how_to_upgrade_hugo/</link>
