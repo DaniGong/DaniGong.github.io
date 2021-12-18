@@ -16,5 +16,14 @@
       <description>一切皆为object 一切皆继承object 一切都是type的实例，包括type本身</description>
     </item>
     
+    <item>
+      <title>PEP8 Chinese Version</title>
+      <link>http://danigong.github.io/post/translated_pep8/</link>
+      <pubDate>Sat, 11 Jul 2015 20:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/translated_pep8/</guid>
+      <description>本文给出主Python版本标准库的编码约定。CPython的C代码风格参见PEP7。 本文和PEP 257 文档字符串标准改编自Guido最初的《Py</description>
+    </item>
+    
   </channel>
 </rss>
