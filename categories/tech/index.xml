@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech on G eek S&#39;s notes</title>
+    <link>http://danigong.github.io/categories/tech/</link>
+    <description>Recent content in tech on G eek S&#39;s notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Jun 2021 16:55:24 +0800</lastBuildDate><atom:link href="http://danigong.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>type, ojbect and class</title>
+      <link>http://danigong.github.io/post/type_object_and_class/</link>
+      <pubDate>Sat, 26 Jun 2021 16:55:24 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/type_object_and_class/</guid>
+      <description>一切皆为object 一切皆继承object 一切都是type的实例，包括type本身</description>
+    </item>
+    
+  </channel>
+</rss>
