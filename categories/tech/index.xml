@@ -6,7 +6,31 @@
     <description>Recent content in tech on G eek S&#39;s notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 26 Jun 2021 16:55:24 +0800</lastBuildDate><atom:link href="http://danigong.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Dec 2021 17:50:30 +0800</lastBuildDate><atom:link href="http://danigong.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MobaXTerm</title>
+      <link>http://danigong.github.io/post/mobaxterm/</link>
+      <pubDate>Fri, 17 Dec 2021 17:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/mobaxterm/</guid>
+      <description>Download Link:
+https://mobaxterm.mobatek.net/download-home-edition.html
+Introduction:
+MobaXterm is your ultimate toolbox for remote computing. In a single Windows application, it provides loads of functions that are tailored for programmers, webmasters, IT administrators and pretty much all users who need to handle their remote jobs in a more simple fashion.
+MobaXterm provides all the important remote network tools (SSH, X11, RDP, VNC, FTP, MOSH, &amp;hellip;) and Unix commands (bash, ls, cat, sed, grep, awk, rsync, &amp;hellip;) to Windows desktop, in a single portable exe file which works out of the box.</description>
+    </item>
+    
+    <item>
+      <title>how to upgrade hugo</title>
+      <link>http://danigong.github.io/post/how_to_upgrade_hugo/</link>
+      <pubDate>Sat, 26 Jun 2021 22:55:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/how_to_upgrade_hugo/</guid>
+      <description>Recommended Way Binary (Cross-platform) Download the appropriate version for your platform from Hugo Releases. Once downloaded, the binary can be run from anywhere. You don’t need to install it into a global location. This works well for shared hosts and other systems where you don’t have a privileged account.
+ https://github.com/gohugoio/hugo/releases
+ Ideally, you should install it somewhere in your PATH for easy use. /usr/local/bin is the most probable location. Hugo Home  https://gohugo.</description>
+    </item>
+    
     <item>
       <title>type, ojbect and class</title>
       <link>http://danigong.github.io/post/type_object_and_class/</link>
@@ -17,12 +41,271 @@
     </item>
     
     <item>
+      <title>Markdown Notes</title>
+      <link>http://danigong.github.io/post/markdown_notes/</link>
+      <pubDate>Fri, 18 Dec 2020 10:05:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/markdown_notes/</guid>
+      <description>Markdown简单速查 标题 #, ##, ###&amp;hellip; 字体 ** 粗体 | * 斜体 | *** 斜体加粗 | ~~ 删除线 引用 &amp;gt; 分割线 --- 或 *** 图片 ![截图](xxx.png) 超链接 [超链接名</description>
+    </item>
+    
+    <item>
+      <title>Java Features</title>
+      <link>http://danigong.github.io/post/java_features/</link>
+      <pubDate>Tue, 17 Mar 2020 16:59:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/java_features/</guid>
+      <description>Features and Advantages of Java 简单性 面向对象 可移植性 高性能 分布式 动态性 多线程 安全性 健壮性 人多! 3 &amp;lsquo;J&amp;rsquo;s</description>
+    </item>
+    
+    <item>
+      <title>A Comparison between HTTP1 and HTTP2</title>
+      <link>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</link>
+      <pubDate>Wed, 13 Mar 2019 16:17:16 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</guid>
+      <description>HTTP1.1 HTTP 2.0主要区别 多路复用 HTTP2.0使用了多路复用的技术，做到同一个连接并发处理多个请求，而且并发请求的数量比HTTP1.1大了好几个数</description>
+    </item>
+    
+    <item>
+      <title>PEP8 English Version</title>
+      <link>http://danigong.github.io/post/pep8_eng_version_update/</link>
+      <pubDate>Mon, 30 Apr 2018 20:09:35 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/pep8_eng_version_update/</guid>
+      <description>Visit https://www.python.org/dev/peps/pep-0008/</description>
+    </item>
+    
+    <item>
+      <title>使用pip安装包提示TLS证书错误解决办法</title>
+      <link>http://danigong.github.io/post/pip_install_tls_error_update/</link>
+      <pubDate>Thu, 26 Apr 2018 16:29:42 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/pip_install_tls_error_update/</guid>
+      <description>Updated Could not fetch URL https://pypi.python.org/simple/pytest-xdist/: There was a problem confirming the ssl certificate: [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:590) - skipping 出现这个错误的原因是python.org已经不支持TLSv1.0和TLSv1.1了。更新pip</description>
+    </item>
+    
+    <item>
+      <title>Java Thread Dump</title>
+      <link>http://danigong.github.io/post/java_thread_dump/</link>
+      <pubDate>Sat, 17 Mar 2018 16:59:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/java_thread_dump/</guid>
+      <description>转载自：http://blog.csdn.net/rachel_luo/article/details/8920596 一、Thread Dum</description>
+    </item>
+    
+    <item>
+      <title>Fluent Python Reading Notes</title>
+      <link>http://danigong.github.io/fp_reading_notes/</link>
+      <pubDate>Mon, 12 Mar 2018 15:29:43 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/fp_reading_notes/</guid>
+      <description>1 dict() is slower than {} list() is slower than () 需要符号查找（不能预先知道list()有没有被重定义） 方法调用 要检查有没有可迭代变量传入 2 特殊方法 __len__() __getitem__() __setitem__() __iter__() 是为了被py</description>
+    </item>
+    
+    <item>
+      <title>Jmeter Thread Group</title>
+      <link>http://danigong.github.io/post/jmeter_thread_group_update/</link>
+      <pubDate>Sun, 11 Mar 2018 15:17:57 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/jmeter_thread_group_update/</guid>
+      <description>1、Action to be take after a Sampler error Continue：忽略错误，继续执行操作 Start Next Thread Loop：忽略错误，线程当前循环终止，执行下一个循环 Stop Threa</description>
+    </item>
+    
+    <item>
+      <title>Why nGrinder?</title>
+      <link>http://danigong.github.io/post/why_ngrinder_update/</link>
+      <pubDate>Fri, 09 Mar 2018 16:36:55 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/why_ngrinder_update/</guid>
+      <description>nGrinder与其他工具比较&amp;ndash; JMeter 基于UI操作，容易上手，但是不具备编程能力。其次JMeter基于线程模拟数千用户几乎不可能。 Tsung</description>
+    </item>
+    
+    <item>
+      <title>Show all files in finder</title>
+      <link>http://danigong.github.io/post/show_all_files_in_finder_update/</link>
+      <pubDate>Thu, 08 Mar 2018 14:37:42 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/show_all_files_in_finder_update/</guid>
+      <description>如何在Mac OS X中开启或关闭显示隐藏文件命令 可以这样： defaults write com.apple.finder AppleShowAllFiles -bool true - 此命令显示隐藏文件 defaults write com.apple.finder AppleShowAllFiles -bool false - 此命令关闭显示隐藏文件 命令运行之后需要重</description>
+    </item>
+    
+    <item>
+      <title>Force empty trash</title>
+      <link>http://danigong.github.io/post/force_empty_trash/</link>
+      <pubDate>Thu, 08 Mar 2018 14:18:34 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/force_empty_trash/</guid>
+      <description>可以这样 sudo rm -rf ~/.Trash/</description>
+    </item>
+    
+    <item>
+      <title>How to create a github.io repo</title>
+      <link>http://danigong.github.io/post/how_to_create_a_github_io_repo/</link>
+      <pubDate>Wed, 07 Mar 2018 17:09:40 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/how_to_create_a_github_io_repo/</guid>
+      <description>开通自己的github.io repo github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可</description>
+    </item>
+    
+    <item>
+      <title>How to update hugo blog</title>
+      <link>http://danigong.github.io/post/how_to_update_hugo_blog/</link>
+      <pubDate>Wed, 07 Mar 2018 16:45:07 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/how_to_update_hugo_blog/</guid>
+      <description>Quick Start
+   Open iTerm2    control+command+h to open the tab with hugo profile    addblog to create a new blog post, hugo command will create a new post tesmplate and subl command will help open it.    Note: Blog Title should not contain space and strip out menu = &amp;quot;main&amp;quot; in the template.    deployblog to deploy newest update to github.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Online Editor</title>
+      <link>http://danigong.github.io/post/markdown_online_editor/</link>
+      <pubDate>Wed, 07 Mar 2018 11:25:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/markdown_online_editor/</guid>
+      <description>Online Markdown Language Editor
+Visit: https://www.zybuluo.com/mdeditor</description>
+    </item>
+    
+    <item>
+      <title>The best django project structure</title>
+      <link>http://danigong.github.io/post/the_best_django_project_structure/</link>
+      <pubDate>Mon, 05 Mar 2018 11:01:39 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/the_best_django_project_structure/</guid>
+      <description>项目目录结构 在上一节里我们使用Django的django-admin startproject命令来创建了一个Helloworld的项目，在没</description>
+    </item>
+    
+    <item>
+      <title>cookiecutter for django</title>
+      <link>http://danigong.github.io/post/cookiecutter-for-django/</link>
+      <pubDate>Mon, 05 Mar 2018 10:59:16 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/cookiecutter-for-django/</guid>
+      <description>cookiecutter 这是一个专门用于创建项目目录结构的工具，同时也是使用Python来实现的，它可以使用一个模板来创建一个项目，比如上面我介绍的项目目录结构实</description>
+    </item>
+    
+    <item>
+      <title>Centos&#43;nginx&#43;uwsgi&#43;django</title>
+      <link>http://danigong.github.io/post/django_uwsgi_nginx/</link>
+      <pubDate>Sun, 24 Dec 2017 20:50:30 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/django_uwsgi_nginx/</guid>
+      <description>https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html http://www.jianshu.com/p/7494560da3e6
+This is our stack:
+the web client &amp;lt;-&amp;gt; the web server &amp;lt;-&amp;gt; the socket &amp;lt;-&amp;gt; uWSGI &amp;lt;-&amp;gt; Python</description>
+    </item>
+    
+    <item>
+      <title>Python Coroutine</title>
+      <link>http://danigong.github.io/post/python_coroutine/</link>
+      <pubDate>Mon, 15 Aug 2016 22:14:50 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/python_coroutine/</guid>
+      <description>协程 协程，又称微线程，纤程。英文名Coroutine。 协程的概念很早就提出来了，但直到最近几年才在某些语言（如Lua）中得到广泛应用。 子程序</description>
+    </item>
+    
+    <item>
+      <title>Python Generator</title>
+      <link>http://danigong.github.io/post/python_generator/</link>
+      <pubDate>Fri, 15 Jul 2016 22:07:29 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/python_generator/</guid>
+      <description>生成器 通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占用很</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning &amp; Deep Learning</title>
+      <link>http://danigong.github.io/post/ml_materials/</link>
+      <pubDate>Sun, 10 Jul 2016 14:03:09 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/ml_materials/</guid>
+      <description>机器学习(Machine Learning)&amp;amp;深度学习(Deep Learning)资料(Chapter 1) 注:机器学习资料篇目一共500</description>
+    </item>
+    
+    <item>
+      <title>Configure Venv</title>
+      <link>http://danigong.github.io/post/configure_venv/</link>
+      <pubDate>Sun, 10 Jul 2016 12:43:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/configure_venv/</guid>
+      <description>安装virtualenv pip install virtualenv 创建虚拟环境 virtualenv venv venv是新创建的虚拟环境的名称。 同时会创建一个与虚拟环境名称相同的文件夹venv, 里面存储了</description>
+    </item>
+    
+    <item>
+      <title>Deploy Hugo Site on GitHub Pages</title>
+      <link>http://danigong.github.io/post/deploy_hugo_site_to_github/</link>
+      <pubDate>Sat, 28 May 2016 20:27:28 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/deploy_hugo_site_to_github/</guid>
+      <description>    Create a Repository: danigong.github.io (replace danigong with your own github username)    Change directory to root directory of the site.    hugo --theme=hyde --baseUrl=&amp;quot;http://danigong.github.io/&amp;quot;      $ cd public $ git init $ git remote add origin https://github.com/danigong/danigong.github.io.git $ git add -A $ git commit -m &amp;quot;first commit&amp;quot; $ git push -u origin master </description>
+    </item>
+    
+    <item>
+      <title>Mongodb Setup</title>
+      <link>http://danigong.github.io/post/mongodb_setup/</link>
+      <pubDate>Sat, 28 May 2016 20:14:28 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/mongodb_setup/</guid>
+      <description>  brew update brew install mongodb setup python driver for mongoldb:  pip install pymongo </description>
+    </item>
+    
+    <item>
+      <title>Pyramid Dev Environment Setup</title>
+      <link>http://danigong.github.io/post/pyramid_dev_env_set/</link>
+      <pubDate>Sat, 28 May 2016 20:09:35 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/pyramid_dev_env_set/</guid>
+      <description>  Download Setuptool: http://peak.telecommunity.com/dist/ez_setup.py Install Setuptool: sudo python ez_setup.py Install virtulenv: sudo easy_install virtualenv Install Pyramid: virtualenv —no-site-packages env cd env bin/easy_install pyramid Will contain pyramid, template(Chameleon、Mako), PasteDeploy  </description>
+    </item>
+    
+    <item>
+      <title>A Guide to Python&#39;s Function Decorators</title>
+      <link>http://danigong.github.io/post/python_decorator_guide/</link>
+      <pubDate>Wed, 25 May 2016 22:26:53 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/python_decorator_guide/</guid>
+      <description>Python is rich with powerful features and expressive syntax. One of my favorites is decorators. In the context of design patterns, decorators dynamically alter the functionality of a function, method or class without having to directly use subclasses. This is ideal when you need to extend the functionality of functions that you don&amp;rsquo;t want to modify. We can implement the decorator pattern anywhere, but Python facilitates the implementation by providing much more expressive features and syntax for that.</description>
+    </item>
+    
+    <item>
+      <title>Python Property</title>
+      <link>http://danigong.github.io/post/python_property/</link>
+      <pubDate>Mon, 13 Jul 2015 22:55:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/python_property/</guid>
+      <description>Python“属性（property）”详解 Python中有一个被称为属性函数(property)的小概念，它可以做一些有用的事情。在这篇文</description>
+    </item>
+    
+    <item>
       <title>PEP8 Chinese Version</title>
       <link>http://danigong.github.io/post/translated_pep8/</link>
       <pubDate>Sat, 11 Jul 2015 20:50:30 +0800</pubDate>
       
       <guid>http://danigong.github.io/post/translated_pep8/</guid>
       <description>本文给出主Python版本标准库的编码约定。CPython的C代码风格参见PEP7。 本文和PEP 257 文档字符串标准改编自Guido最初的《Py</description>
+    </item>
+    
+    <item>
+      <title>Github Push Stucking When Writing Objects</title>
+      <link>http://danigong.github.io/post/github_push_stuck/</link>
+      <pubDate>Sat, 11 Apr 2015 21:35:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/github_push_stuck/</guid>
+      <description>To solve the github push stucking problem:
+Try to use the command as follows:
+git config --global http.postBuffer 524288000 </description>
+    </item>
+    
+    <item>
+      <title>Open Sublime with Terminal</title>
+      <link>http://danigong.github.io/post/mac_open_sublime/</link>
+      <pubDate>Mon, 27 May 2013 23:12:14 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/mac_open_sublime/</guid>
+      <description> A simple way to open sublime with terminal:
+ Open terminal. ln -s /Applications/Sublime\Text\2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl Use subl command to edit a file.  </description>
     </item>
     
   </channel>
