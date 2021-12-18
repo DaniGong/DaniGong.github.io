@@ -35,6 +35,12 @@
     <loc>http://danigong.github.io/post/markdown_notes/</loc>
     <lastmod>2020-12-18T10:05:30+08:00</lastmod>
   </url><url>
+    <loc>http://danigong.github.io/tags/java/</loc>
+    <lastmod>2020-03-17T16:59:13+08:00</lastmod>
+  </url><url>
+    <loc>http://danigong.github.io/post/java_features/</loc>
+    <lastmod>2020-03-17T16:59:13+08:00</lastmod>
+  </url><url>
     <loc>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</loc>
     <lastmod>2019-03-13T16:17:16+08:00</lastmod>
   </url><url>
@@ -49,9 +55,6 @@
   </url><url>
     <loc>http://danigong.github.io/post/pip_install_tls_error_update/</loc>
     <lastmod>2018-04-26T16:29:42+08:00</lastmod>
-  </url><url>
-    <loc>http://danigong.github.io/tags/java/</loc>
-    <lastmod>2018-03-17T16:59:13+08:00</lastmod>
   </url><url>
     <loc>http://danigong.github.io/post/java_thread_dump/</loc>
     <lastmod>2018-03-17T16:59:13+08:00</lastmod>

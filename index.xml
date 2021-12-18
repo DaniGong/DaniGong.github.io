@@ -49,6 +49,15 @@ Ideally, you should install it somewhere in your PATH for easy use. /usr/local/b
     </item>
     
     <item>
+      <title>Java Features</title>
+      <link>http://danigong.github.io/post/java_features/</link>
+      <pubDate>Tue, 17 Mar 2020 16:59:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/java_features/</guid>
+      <description>Features and Advantages of Java 简单性 面向对象 可移植性 高性能 分布式 动态性 多线程 安全性 健壮性 人多! 3 &amp;lsquo;J&amp;rsquo;s</description>
+    </item>
+    
+    <item>
       <title>A Comparison between HTTP1 and HTTP2</title>
       <link>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</link>
       <pubDate>Wed, 13 Mar 2019 16:17:16 +0800</pubDate>

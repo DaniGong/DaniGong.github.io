@@ -6,7 +6,16 @@
     <description>Recent content in java on G eek S&#39;s notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 17 Mar 2018 16:59:13 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Mar 2020 16:59:13 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java Features</title>
+      <link>http://danigong.github.io/post/java_features/</link>
+      <pubDate>Tue, 17 Mar 2020 16:59:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/java_features/</guid>
+      <description>Features and Advantages of Java 简单性 面向对象 可移植性 高性能 分布式 动态性 多线程 安全性 健壮性 人多! 3 &amp;lsquo;J&amp;rsquo;s</description>
+    </item>
+    
     <item>
       <title>Java Thread Dump</title>
       <link>http://danigong.github.io/post/java_thread_dump/</link>
