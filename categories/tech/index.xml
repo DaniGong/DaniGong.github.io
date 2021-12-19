@@ -59,6 +59,15 @@ MobaXterm provides all the important remote network tools (SSH, X11, RDP, VNC, F
     </item>
     
     <item>
+      <title>Java Notes</title>
+      <link>http://danigong.github.io/post/java_notes/</link>
+      <pubDate>Thu, 12 Mar 2020 15:29:43 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/java_notes/</guid>
+      <description>1 实例变量 如果不自行初始化，它的值是默认值 *0 0.0&amp;hellip; 除了8个基本类型，它的默认值都是 null</description>
+    </item>
+    
+    <item>
       <title>A Comparison between HTTP1 and HTTP2</title>
       <link>http://danigong.github.io/post/a_comparison_between_http1_and_http2_update/</link>
       <pubDate>Wed, 13 Mar 2019 16:17:16 +0800</pubDate>
