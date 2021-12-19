@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Be Pythonic">
+<meta name="generator" content="Hugo 0.90.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="G eek S&#39;s notes">
+<title>Reflection in Python - G eek S&#39;s notes</title>
+</head>
+<body>
+
+<header>
+  <div class="container clearfix">
+    <a class="path" href="http://danigong.github.io/">[G eek S&#39;s notes]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2021-12-18">December 18, 2021</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="/categories/tech">tech</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/python">python</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">Reflection in Python</h1>
+  <section class="body" itemprop="articleBody">
+    <h2 id="python-reflection---python中的反射">Python Reflection - Python中的反射</h2>
+<p>我们常常会遇到这样的需求：需要执行对象里的某个方法，或需要调用对象中的某个变量，但是由于种种原因我们无法确定这个方法或变量是否存在，这是我们需要用一个特殊的方法或机制要访问和操作这个未知的方法或变量</p>
+<h3 id="常见场景">常见场景</h3>
+<ol>
+<li>动态加载模块</li>
+<li>Web框架中的URL路由</li>
+<li>你的伙伴封装好了很多py文件，然后你负责根据不同需求去调用不同的模块</li>
+<li>你谢了一个类，其中封装了很多方法，这是你需要提供一个统一的入口供他人调用（类似路由转发）</li>
+</ol>
+<h3 id="python中的反射">Python中的反射</h3>
+<pre tabindex="0"><code>1. __import__() #动态加载模块
+2. hasattr() #判断实例是否存在字符串对应的属性
+3. gettattr #获取属性
+4. setattr() #将对应字符串的已存在的属性添加到实例当中
+5. delattr() #删除属性
+</code></pre><h3 id="sample-1">Sample 1</h3>
+<pre tabindex="0"><code># 动态导入func_001模块
+func001_module = __import__('src.func_001', 'fromlist=True)
+# 判断是否存在对应类
+if hasattr(func001_module, 'Func001'):
+    # 创建Func001类实例对象
+    func001 = getattr(func001_module, 'Func001')
+    # 判断是否存在process成员方法
+    if hasattr(func001, 'process'):
+        # 获取process方法
+        func001_process = getattr(func001, 'process')
+        # 执行
+        func001_process(func001)
+
+</code></pre><h3 id="sample-2">Sample 2</h3>
+<p>一个类中：</p>
+<pre tabindex="0"><code>def add(self):
+    pass
+def delete(self):
+    pass
+def update(self):
+    pass
+...
+
+def before_run(self, method):
+    if hasattr(self, method):
+        func = getattr(self, method)
+        func()
+</code></pre><h3 id="为什么不建议使用eval">为什么不建议使用eval()</h3>
+<p>反射就是通过字符串的形式，导入模块；通过字符串的形式，去模块寻找指定函数，并执行。利用字符串的形式去对象（模块）中操作（查找/获取/删除/添加）成员，一种基于字符串的事件驱动！</p>
+<p>有时候也是为了防止使用eval这种比较危险的函数。<strong>eval由于直接执行的就是命令，是有可能带来安全风险的。</strong></p>
+
+  </section>
+</article>
+
+</main>
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2021 G eek S&#39;s notes - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+    <h4><span class="">github repo - <a href="https://github.com/DaniGong/DaniGong.github.io">DaniGong</a></span></h4>
+
+  </div>
+</footer>
+
+</body>
+</html>
+

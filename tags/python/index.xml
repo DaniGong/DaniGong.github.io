@@ -6,7 +6,16 @@
     <description>Recent content in python on G eek S&#39;s notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 26 Jun 2021 16:55:24 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Dec 2021 23:33:05 +0800</lastBuildDate><atom:link href="http://danigong.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflection in Python</title>
+      <link>http://danigong.github.io/post/python_reflection/</link>
+      <pubDate>Sat, 18 Dec 2021 23:33:05 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/python_reflection/</guid>
+      <description>Python Reflection - Python中的反射 我们常常会遇到这样的需求：需要执行对象里的某个方法，或需要调用对象中的某个变量，但是由于种种原因我们无法确定这个方</description>
+    </item>
+    
     <item>
       <title>type, ojbect and class</title>
       <link>http://danigong.github.io/post/type_object_and_class/</link>
