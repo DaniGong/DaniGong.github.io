@@ -50,6 +50,15 @@ MobaXterm provides all the important remote network tools (SSH, X11, RDP, VNC, F
     </item>
     
     <item>
+      <title>Idea Settings</title>
+      <link>http://danigong.github.io/post/idea_settings/</link>
+      <pubDate>Tue, 17 Mar 2020 16:59:13 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/idea_settings/</guid>
+      <description>一、 全局JDK设置（默认配置） 1.设置在：“Configure“下的“Structure for New Projects” 第一步 2.选择安装路径进行配置</description>
+    </item>
+    
+    <item>
       <title>Java Features</title>
       <link>http://danigong.github.io/post/java_features/</link>
       <pubDate>Tue, 17 Mar 2020 16:59:13 +0800</pubDate>
