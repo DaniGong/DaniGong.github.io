@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>OOP Solid</title>
+      <link>http://danigong.github.io/post/oop_solid/</link>
+      <pubDate>Tue, 30 Nov 2021 22:09:35 +0800</pubDate>
+      
+      <guid>http://danigong.github.io/post/oop_solid/</guid>
+      <description>面向对象设计SOLID原则 英文简写 名称 SRP 单一职责原则 OCP 开放封闭原则 LSP 里氏替换原则 ISP 接口隔离原则 DIP 依赖倒置原则 1.单一职责原则 一个类或成员方法</description>
+    </item>
+    
+    <item>
       <title>type, ojbect and class</title>
       <link>http://danigong.github.io/post/type_object_and_class/</link>
       <pubDate>Sat, 26 Jun 2021 16:55:24 +0800</pubDate>

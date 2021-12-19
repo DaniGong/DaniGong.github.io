@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Be Pythonic">
+<meta name="generator" content="Hugo 0.90.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="G eek S&#39;s notes">
+<title>OOP Solid - G eek S&#39;s notes</title>
+</head>
+<body>
+
+<header>
+  <div class="container clearfix">
+    <a class="path" href="http://danigong.github.io/">[G eek S&#39;s notes]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2021-11-30">November 30, 2021</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="/categories/tech">tech</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/python">python</a>
+
+        <a href="/tags/java">java</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">OOP Solid</h1>
+  <section class="body" itemprop="articleBody">
+    <h2 id="面向对象设计solid原则">面向对象设计SOLID原则</h2>
+<table>
+<thead>
+<tr>
+<th>英文简写</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SRP</td>
+<td>单一职责原则</td>
+</tr>
+<tr>
+<td>OCP</td>
+<td>开放封闭原则</td>
+</tr>
+<tr>
+<td>LSP</td>
+<td>里氏替换原则</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td>接口隔离原则</td>
+</tr>
+<tr>
+<td>DIP</td>
+<td>依赖倒置原则</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1单一职责原则">1.单一职责原则</h3>
+<p>一个类或成员方法，不能承担过多的职责。过多的职责，会增加代码直接的耦合性。</p>
+<p>tip：1.不同的应用场景，不同的阶段，会有不同的职责划分，以及对职责的不同的判定。如电商的商品模块，最开始可能只有几张表，库存，分类，属性都是杂合一起的，随着业务的增大和服务化，会有非常多更细的划分。读者只需知道一点，即为不是一成不变的划分
+2.杜绝过度设计。有些设计逻辑中，恨不能一个方法一个类。这很不现实，而且会增加大量的开发成本。
+不满足原则，需要拆分的可能情况
+1.类中的代码行数过多,属性和方法较多。
+2.依赖过多
+3.少量属性被大量的方法和逻辑使用</p>
+<h3 id="2开放封闭原则">2.开放封闭原则</h3>
+<p>对扩展开放，对修改关闭</p>
+<p>tip:1.开闭原则是大部分设计模式所基于的逻辑
+2.很多时候使用继承和多态的方式
+3.在业务的实现过程中，其实就是尽可能的知道和理解业务的扩展走向，以及逻辑分离
+4.如上图所示，促销逻辑很大的任务就是计算促销的金额，但是促销的类型又有很多，只是个很好的扩展点。所以满减，满折，X件Y折，红包。都是对应的不同的扩展逻辑，可以根据业务的具体形态做增加和减少，以及后续的如第二件半价这种促销逻辑的扩展和增加</p>
+<h3 id="3里氏替换原则">3.里氏替换原则</h3>
+<p>一个子类的实例，应该能够替换其任何超类的实例</p>
+<p>tip:1.由于继承比较有侵入性,会增加父类和子类的耦合。采用里氏替换的思想，可以极大程度上改善这种显现
+2.子类需要覆盖和实现父类的方法时，方法的形参要比父类的方法更加宽松
+3.子类可以增加自己的特殊方法</p>
+<h3 id="4接口隔离原则">4.接口隔离原则</h3>
+<p>类不应该依赖不需要的接口</p>
+<p>tip:1.相对于单一职责来讲,接口隔离更侧重于接口的设计,方法的设计逻辑。
+2.具体接口和函数的设计，是否符合原则，也不是一成不变的。也是需要多维度的判断。</p>
+<h3 id="5依赖倒置原则">5.依赖倒置原则</h3>
+<p>高层模块不应该依赖底层模块(调用链中,调用者为高层),高层模块和底层模块
+应该通过抽象做对应的依赖。具体实现细节依赖抽象</p>
+<p>1.控制反转(IOC)
+把需要技术控制的过程,转义给框架层面。是一种设计指导思想</p>
+<p>2.依赖注入(DI)
+不通过内部做new的操作，再内部做实例化依赖的对象，而是通过构造方法或是参数的传递</p>
+<p>3.依赖注入框架
+比如spring、 google guice、thinkphp、laravel等提供了类似框架能力。只需要简单的配置，即可让框架来去实现具体的依赖关系，以及对象管理，和对象生命周期的管理。</p>
+<p>tip:1.理解了控制反转和依赖注入，会更好的理解依赖倒置的原则。
+2.依赖倒置的逻辑，基本上所有的框架产品的一种指导思想。毕竟不管多么庞大的功能，都是有模块组成的，模块都是有很多类组成的，类都是数据和方法组成的。所以，方法之间有依赖，类之间有依赖，模块间也有依赖。这些依赖，不可能都需要技术去实现和配置，所以很多的框架都是为了解决这些问题。</p>
+
+  </section>
+</article>
+
+</main>
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2021 G eek S&#39;s notes - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+    <h4><span class="">github repo - <a href="https://github.com/DaniGong/DaniGong.github.io">DaniGong</a></span></h4>
+
+  </div>
+</footer>
+
+</body>
+</html>
+
