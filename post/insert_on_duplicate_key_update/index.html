@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Be Pythonic">
+<meta name="generator" content="Hugo 0.90.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="G eek S&#39;s notes">
+<title>INSERT ON DUPLICATE KEY UPDATE - G eek S&#39;s notes</title>
+</head>
+<body>
+
+<header>
+  <div class="container clearfix">
+    <a class="path" href="http://danigong.github.io/">[G eek S&#39;s notes]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2021-12-24">December 24, 2021</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="/categories/tech">tech</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/sql">sql</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">INSERT ON DUPLICATE KEY UPDATE</h1>
+  <section class="body" itemprop="articleBody">
+    <h2 id="mysql的on-duplicate-key-update-使用说明与总结">MySQL的on duplicate key update 使用说明与总结</h2>
+<p>今天查看数据入库脚本时，看到使用的插入语句是：</p>
+<pre tabindex="0"><code>INSERT INTO tablename(field1,field2, field3, ...) VALUES(value1, value2, value3, ...) ON DUPLICATE KEY UPDATE field1=value1,field2=value2, field3=value3, ...;
+</code></pre><pre tabindex="0"><code>INSERT INTO tbl_test(id,name,age,address) VALUES(1,'huahua1',202,'京华市2')
+ON DUPLICATE KEY UPDATE
+name = IFNULL(VALUES(name),name),
+age = VALUES(age)
+</code></pre><p>自己第一次遇到，正好查询文档学习下。</p>
+<p>　　使用这条语句的原因，是为了更好的执行插入和更新，因为我们再插入一条语句时，表中可能已经存在了这条语句，我们想实现更新的功能，或者表中没有这条语句，我们想实现插入的功能，而这条语句直接可以同时解决插入和更新的功能。</p>
+<p>　　那么这条语句是如何解释呢，我们很容易理解前面的部分，就是一个简单的插入语句，让我们看下后面的部分ON DUPLICATE KEY UPDATE field1=value1,field2=value2&hellip;我们看到后面是一个更新的操作，后面指定了更新的字段，也就是说判断出表中没有这条数据，执行的前半部分，插入指定字段得值，在判断出表中有数据，则执行的的更新操作，更新后半部分指定的字段的值。</p>
+<p>　　那么下一个问题出来了，我们是如何判断出这条数据是存在的，又需要更新哪些字段呢。</p>
+<p>规则如下：</p>
+<p>　　如果你插入的记录导致UNIQUE索引重复，那么就会认为该条记录存在，则执行update语句而不是insert语句，反之，则执行insert语句而不是更新语句。</p>
+<p>　　比如我创建表的时候设置的唯一索引为字段a，b，c，那么当a，b，c三个字段完全重复时候，此时就要执行更新语句。当然满足一部分唯一索引是不会触发更新操作的，此时会执行插入操作。</p>
+<p>　　而至于要更新哪些字段，要看我们自己的需求了。</p>
+
+  </section>
+</article>
+
+</main>
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2021 G eek S&#39;s notes - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+    <h4><span class="">github repo - <a href="https://github.com/DaniGong/DaniGong.github.io">DaniGong</a></span></h4>
+
+  </div>
+</footer>
+
+</body>
+</html>
+
